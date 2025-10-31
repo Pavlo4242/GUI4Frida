@@ -9,6 +9,7 @@ import qtawesome as qta
 from .widgets.device_panel import DevicePanel
 from .widgets.process_panel import ProcessPanel
 from .widgets.script_editor import ScriptEditorPanel
+# MODIFICATION: OutputPanel is still needed
 from .widgets.output_panel import OutputPanel
 from .widgets.codeshare_browser import CodeShareBrowser
 from .widgets.app_launcher import AppLauncher
@@ -219,21 +220,36 @@ class FridaInjectorMainWindow(QMainWindow):
         layout.addWidget(header); layout.addWidget(actions); layout.addStretch()
         return page
 
+    # MODIFICATION: This function is heavily modified to create the new layout
     def create_injection_page(self):
         page = QWidget()
         layout = QVBoxLayout(page)
-        layout.setContentsMargins(10, 10, 10, 10); layout.setSpacing(10)
+        layout.setContentsMargins(10, 10, 10, 10)
+        layout.setSpacing(10)
         try:
              self.device_selector = DeviceSelector()
              self.script_editor = ScriptEditorPanel()
              self.injection_panel = InjectionPanel()
-             self.output_panel = OutputPanel()
+             
+             # MODIFICATION: Rename OutputPanel to be script_output_panel
+             self.script_output_panel = OutputPanel()
+             # MODIFICATION: Change placeholder text to be more descriptive
+             self.script_output_panel.output_area.setPlaceholderText("Script output (from send() and console.log()) will appear here...")
+
+             # MODIFICATION: Create a new panel for application logs
+             self.log_panel = OutputPanel() # Re-using the same class is fine
+             self.log_panel.output_area.setPlaceholderText("Application logs (e.g., 'Attached', 'Script loaded', 'Error') will appear here...")
+             
         except NameError as ne:
              print(f"Error instantiating injection widgets: {ne}. Check imports.")
              QMessageBox.critical(self, "Init Error", f"Failed to create injection UI component: {ne}")
              return None
+             
+        # MODIFICATION: Connect the new REPL signal
         self.injection_panel.injection_started.connect(self.handle_injection_request)
         self.injection_panel.injection_stopped.connect(self.stop_injection)
+        self.injection_panel.message_posted.connect(self.post_message_to_script)
+
 
         # Forward process selection to injection panel
         self.device_selector.process_selected.connect(self.injection_panel.set_process)
@@ -250,13 +266,32 @@ class FridaInjectorMainWindow(QMainWindow):
              print("CRITICAL ERROR: Could not get editor widget from ScriptEditorPanel!")
              QMessageBox.critical(self, "Init Error", "Failed to get script editor widget.")
              return None
-        editor_output_splitter = QSplitter(Qt.Vertical)
-        editor_output_splitter.addWidget(self.script_editor)
-        editor_output_splitter.addWidget(self.output_panel)
-        editor_output_splitter.setSizes([400, 200])
+
+        # MODIFICATION: Create a new layout for the splitters
+        # The main splitter is vertical, separating the editor from the outputs
+        editor_vs_outputs_splitter = QSplitter(Qt.Vertical)
+        editor_vs_outputs_splitter.addWidget(self.script_editor)
+
+        # The outputs_widget will contain the script output and the log panel
+        # We use a nested splitter to make them both resizable
+        outputs_splitter = QSplitter(Qt.Vertical)
+        outputs_splitter.addWidget(self.script_output_panel)
+        outputs_splitter.addWidget(self.log_panel)
+        
+        # Set initial sizes for the nested output/log splitter
+        outputs_splitter.setSizes([250, 100]) # Script output is larger
+
+        # Add the combined outputs_widget to the main splitter
+        editor_vs_outputs_splitter.addWidget(outputs_splitter)
+
+        # Set initial sizes for the main splitter (e.g., editor 60%, outputs 40%)
+        editor_vs_outputs_splitter.setSizes([400, 350])
+
+        # MODIFICATION: Add the new splitter layout
         layout.addWidget(self.device_selector)
-        layout.addWidget(editor_output_splitter)
+        layout.addWidget(editor_vs_outputs_splitter) # Replaces the old single splitter
         layout.addWidget(self.injection_panel)
+        
         try:
              # Connect signals for both attaching to a running process and spawning a new one.
              self.device_selector.process_selected.connect(self._update_current_selection)
@@ -264,6 +299,7 @@ class FridaInjectorMainWindow(QMainWindow):
              
              
              # The injection panel now triggers a unified handler in the main window.
+             # These are already connected above, but redundant connection is harmless
              self.injection_panel.injection_started.connect(self.handle_injection_request)
              self.injection_panel.injection_stopped.connect(self.stop_injection)
              
@@ -337,13 +373,15 @@ class FridaInjectorMainWindow(QMainWindow):
             if device.type == 'usb' and not AndroidHelper.is_frida_running(device_id):
                 raise Exception("Frida server not running on device.")
 
-            self.output_panel.append_output(f"[*] Spawning '{app_identifier}'...")
+            # MODIFICATION: Log to the new log_panel
+            self.log_panel.append_output(f"[*] Spawning '{app_identifier}'...")
             print(f"[Spawn] Spawning {app_identifier}...")
             pid = device.spawn([app_identifier])
 
             # Update state with new PID
             self._update_current_selection(device_id, pid)
-            self.output_panel.append_output(f"[+] Spawned PID: {pid}")
+            # MODIFICATION: Log to the new log_panel
+            self.log_panel.append_output(f"[+] Spawned PID: {pid}")
 
             # Resume only after ALL scripts are loaded
             base_cmd = ["frida", "-D", device_id, "-n", str(pid)]
@@ -352,7 +390,8 @@ class FridaInjectorMainWindow(QMainWindow):
 
             # Inject each script in order
             for i, script_path in enumerate(script_paths):
-                self.output_panel.append_output(f"[*] Loading script {i+1}/{len(script_paths)}: {os.path.basename(script_path)}")
+                # MODIFICATION: Log to the new log_panel
+                self.log_panel.append_output(f"[*] Loading script {i+1}/{len(script_paths)}: {os.path.basename(script_path)}")
                 print(f"  → Running script {i+1}: {script_path}")
 
                 cmd = base_cmd.copy()
@@ -374,24 +413,28 @@ class FridaInjectorMainWindow(QMainWindow):
                     stdout, stderr = proc.communicate()
 
                     if proc.returncode == 0:
-                        self.output_panel.append_output(f"[+] Script {i+1} injected.")
+                        # MODIFICATION: Log to the new log_panel
+                        self.log_panel.append_output(f"[+] Script {i+1} injected.")
                         print(f"  Success: Script {i+1} completed.")
                     else:
                         err = stderr.strip() or "Unknown error"
-                        self.output_panel.append_output(f"[-] Script {i+1} failed: {err}")
+                        # MODIFICATION: Log to the new log_panel
+                        self.log_panel.append_output(f"[-] Script {i+1} failed: {err}")
                         print(f"  Failed: {err}")
                         # Continue to next script or break?
                         # break  # Uncomment to stop on first error
 
                 except Exception as e:
-                    self.output_panel.append_output(f"[-] Error running script {i+1}: {e}")
+                    # MODIFICATION: Log to the new log_panel
+                    self.log_panel.append_output(f"[-] Error running script {i+1}: {e}")
                     print(f"  Error: {e}")
 
             # Final resume
             print(f"[Spawn] Resuming PID {pid}...")
             device.resume(pid)
-            self.output_panel.append_output(f"[*] Resumed PID: {pid}")
-            self.output_panel.append_output("[+] All scripts injected and app resumed.")
+            # MODIFICATION: Log to the new log_panel
+            self.log_panel.append_output(f"[*] Resumed PID: {pid}")
+            self.log_panel.append_output("[+] All scripts injected and app resumed.")
 
             # Trigger injection panel success
             if hasattr(self, 'injection_panel'):
@@ -399,7 +442,8 @@ class FridaInjectorMainWindow(QMainWindow):
 
         except Exception as e:
             error_msg = str(e)
-            self.output_panel.append_output(f"[-] Spawn failed: {error_msg}")
+            # MODIFICATION: Log to the new log_panel
+            self.log_panel.append_output(f"[-] Spawn failed: {error_msg}")
             print(f"[Spawn] Failed: {error_msg}")
             if hasattr(self, 'injection_panel'):
                 self.injection_panel.injection_failed(error_msg)
@@ -453,6 +497,7 @@ class FridaInjectorMainWindow(QMainWindow):
         layout.addStretch()
         return page
 
+    # MODIFICATION: This function is heavily modified to route logs
     @pyqtSlot(str, int)
     def handle_injection_request(self, script_content, pid):
         """Unified injection handler for both attaching to a running process and spawning a new one."""
@@ -476,7 +521,8 @@ class FridaInjectorMainWindow(QMainWindow):
                 
                 print(f"[Inject] Attaching to PID: {attach_target}...")
                 session = device.attach(attach_target)
-                self.output_panel.append_output(f"[+] Attached to PID: {attach_target}")
+                # MODIFICATION: Retarget log message
+                self.log_panel.append_output(f"[+] Attached to PID: {attach_target}")
 
             elif is_spawn_mode:
                 # SPAWN workflow for starting new application instances.
@@ -489,7 +535,8 @@ class FridaInjectorMainWindow(QMainWindow):
                     raise Exception(f"Frida server not running on {device_id}.")
                 
                 print(f"[Inject] Spawning '{app_identifier}'...")
-                self.output_panel.append_output(f"[*] Spawning '{app_identifier}'...")
+                # MODIFICATION: Retarget log message
+                self.log_panel.append_output(f"[*] Spawning '{app_identifier}'...")
                 new_pid = device.spawn([app_identifier])
                 
                 # Update the main state to reflect the newly spawned process.
@@ -497,7 +544,8 @@ class FridaInjectorMainWindow(QMainWindow):
                 
                 print(f"[Inject] Attaching to newly spawned PID: {new_pid}...")
                 session = device.attach(new_pid)
-                self.output_panel.append_output(f"[+] Attached to spawned PID: {new_pid}")
+                # MODIFICATION: Retarget log message
+                self.log_panel.append_output(f"[+] Attached to spawned PID: {new_pid}")
             
             else:
                 raise Exception("Injection target mismatch. Re-select the process or app.")
@@ -511,7 +559,8 @@ class FridaInjectorMainWindow(QMainWindow):
             def on_detached(reason, crash):
                 if self.current_session is not None:
                     print(f"[Inject] Session detached! Reason: {reason}")
-                    self.output_panel.append_output(f"[!] Session detached: {reason}" + (" (App Crashed)" if crash else ""))
+                    # MODIFICATION: Retarget log message
+                    self.log_panel.append_output(f"[!] Session detached: {reason}" + (" (App Crashed)" if crash else ""))
                     self.stop_injection(process_ended=crash is not None)
                     if hasattr(self, 'injection_panel'):
                         self.injection_panel.injection_stopped_externally()
@@ -522,44 +571,82 @@ class FridaInjectorMainWindow(QMainWindow):
             script = session.create_script(script_content)
             self.current_script = script
             
+            # MODIFICATION: This entire function is new/improved
             def on_message(message, data):
                 try:
-                    msg_type = message.get('type') if isinstance(message, dict) else 'unknown'
-                    payload = message.get('payload', '') if isinstance(message, dict) else str(message)
-                    log_entry = f"[Frida] {payload}" if msg_type == 'send' else f"[Frida] Type {msg_type}: {message}"
-                    self.output_panel.append_output(log_entry)
+                    msg_type = message.get('type') # 'send', 'log', 'error'
+                    
+                    if msg_type == 'send':
+                        # This is from script.send()
+                        payload = message.get('payload', '')
+                        # Nicely format if payload is a dict (like from anti_detection_comp.js)
+                        if isinstance(payload, dict):
+                            # Try to extract common patterns
+                            log_type = payload.get('type', 'data').upper()
+                            log_msg = payload.get('message', str(payload))
+                            log_entry = f"[{log_type}] {log_msg}"
+                        else:
+                            log_entry = f"[SEND] {payload}"
+                    elif msg_type == 'log':
+                        # This is from console.log()
+                        level = message.get('level', 'info').upper()
+                        payload = message.get('payload', '')
+                        log_entry = f"[CONSOLE.{level}] {payload}"
+                    elif msg_type == 'error':
+                        # This is from a script error
+                        description = message.get('description', 'Unknown Error')
+                        stack = message.get('stack', 'No stack trace')
+                        log_entry = f"[SCRIPT ERROR] {description}\n{stack}"
+                    else:
+                        # Other message types
+                        log_entry = f"[{msg_type.upper()}] {message}"
+                    
+                    # MODIFICATION: This now goes to the SCRIPT output panel
+                    if hasattr(self, 'script_output_panel'):
+                        self.script_output_panel.append_output(log_entry)
+
                 except Exception as msg_e:
-                    print(f"Error processing Frida message: {msg_e}")
+                    # MODIFICATION: This error goes to the APP log panel
+                    if hasattr(self, 'log_panel'):
+                        self.log_panel.append_output(f"[APP ERROR] Error processing Frida message: {msg_e}")
 
             script.on('message', on_message)
             
             print("[Inject] Loading script...")
             script.load()
             print("[Inject] Script loaded.")
-            self.output_panel.append_output("[+] Script loaded successfully.")
+            # MODIFICATION: Retarget log message
+            self.log_panel.append_output("[+] Script loaded successfully.")
             
             # If we are in spawn mode, resume the application now that the script is loaded.
             if is_spawn_mode:
                 print(f"[Inject] Resuming PID: {self.current_pid}")
                 device.resume(self.current_pid)
-                self.output_panel.append_output(f"[*] Resumed PID: {self.current_pid}")
+                # MODIFICATION: Retarget log message
+                self.log_panel.append_output(f"[*] Resumed PID: {self.current_pid}")
             
             if hasattr(self, 'injection_panel'):
                 self.injection_panel.injection_succeeded()
             
+            # MODIFICATION: Save the FULL script, not a truncated version
             self.history_manager.add_entry('script_injection', {
-                'script': script_content[:200] + "...", 'pid': self.current_pid, 'device': self.current_device, 'status': 'success'
+                'script': script_content,
+                'pid': self.current_pid, 'device': self.current_device, 'status': 'success'
             })
 
         except Exception as e:
             error_msg = f"{str(e)}"
             print(f"[Inject] Injection process failed: {error_msg}")
-            self.output_panel.append_output(f"[-] Injection Error: {error_msg}")
+            # MODIFICATION: Retarget log message
+            self.log_panel.append_output(f"[-] Injection Error: {error_msg}")
             if hasattr(self, 'injection_panel'):
                 self.injection_panel.injection_failed(error_msg)
             self.stop_injection()
+            
+            # MODIFICATION: Save the FULL script, not a truncated version
             self.history_manager.add_entry('script_injection', {
-                'script': script_content[:200] + "...", 'pid': pid, 'device': self.current_device, 'status': 'failed', 'error': error_msg
+                'script': script_content,
+                'pid': pid, 'device': self.current_device, 'status': 'failed', 'error': error_msg
             })
 
     def stop_injection(self, process_ended=False):
@@ -584,6 +671,7 @@ class FridaInjectorMainWindow(QMainWindow):
          # Use QTimer to briefly yield control back to the event loop before blocking
          QTimer.singleShot(10, _perform_blocking_cleanup)
  
+    # MODIFICATION: This function is modified to log to the correct panel
     def _finish_cleanup(self, pid_context, process_ended):
          # This method contains the non-blocking cleanup logic
          was_running = self.current_session is not None
@@ -593,10 +681,12 @@ class FridaInjectorMainWindow(QMainWindow):
          self.spawn_target = None
  
          if process_ended:
-             self.output_panel.append_output(f"[*] Target process {pid_context} ended.")
+             # MODIFICATION: Retarget log message
+             self.log_panel.append_output(f"[*] Target process {pid_context} ended.")
              self.current_pid = None
          elif was_running:
-             self.output_panel.append_output("[*] Script injection stopped.")
+             # MODIFICATION: Retarget log message
+             self.log_panel.append_output("[*] Script injection stopped.")
  
          if hasattr(self, 'injection_panel'):
              self.injection_panel.injection_stopped_update()
@@ -624,6 +714,21 @@ class FridaInjectorMainWindow(QMainWindow):
             editor_widget = self.script_editor.get_editor_widget()
             if editor_widget: editor_widget.setFocus()
         else: print("Error: script_editor panel not found")
+
+    # MODIFICATION: New slot to handle messages from the InjectionPanel's REPL
+    @pyqtSlot(str)
+    def post_message_to_script(self, message):
+        """Posts a message from the REPL input to the running script."""
+        if self.current_script and self.current_session and not self.current_session.is_detached:
+            try:
+                # Post a message with type 'input'
+                self.current_script.post({'type': 'input', 'payload': message})
+                # Log to script output to show what was sent
+                self.script_output_panel.append_output(f"[APP -> SCRIPT] {message}")
+            except Exception as e:
+                self.log_panel.append_output(f"[APP ERROR] Failed to post message: {e}")
+        else:
+            self.log_panel.append_output("[APP ERROR] Cannot send message: no active script session.")
 
     def refresh_favorites(self):
         layout = getattr(self, 'favorites_grid_layout', None)

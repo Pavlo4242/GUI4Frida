@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QPushButton,
                            QLabel, QTableWidget, QTableWidgetItem, QHeaderView,
-                           QMenu, QMessageBox)
+                           QMenu, QMessageBox, QApplication) # MODIFICATION: Added QApplication
 from PyQt5.QtCore import Qt, pyqtSignal
 import qtawesome as qta
 from datetime import datetime
@@ -74,6 +74,7 @@ class HistoryPage(QWidget):
         
         self.refresh_history()
         
+    # MODIFICATION: This function is modified to truncate script for display only
     def refresh_history(self):
         self.table.setRowCount(0)
         
@@ -91,11 +92,26 @@ class HistoryPage(QWidget):
             
             # Details
             details = entry['details']
-            if isinstance(details, dict):
+            
+            # MODIFICATION: Custom formatting for script_injection entries
+            if entry['type'] == 'script_injection' and isinstance(details, dict):
+                details_copy = details.copy() # Make a copy to modify
+                script_content = details_copy.get('script', '')
+                
+                # Truncate *only for display*
+                if len(script_content) > 100:
+                    details_copy['script'] = script_content[:100] + "... (full script in context menu)"
+                
+                details_text = "\n".join(f"{k}: {v}" for k, v in details_copy.items())
+            
+            elif isinstance(details, dict):
                 details_text = "\n".join(f"{k}: {v}" for k, v in details.items())
             else:
                 details_text = str(details)
+                
             details_item = QTableWidgetItem(details_text)
+            # MODIFICATION: Store the original full entry data in the item for later use
+            details_item.setData(Qt.UserRole, entry) 
             
             # Action buttons
             action_widget = QWidget()
@@ -104,6 +120,7 @@ class HistoryPage(QWidget):
             
             if 'script' in entry['details']:
                 inject_btn = QPushButton(qta.icon('fa5s.syringe'), "")
+                # MODIFICATION: Ensure we are emitting the *full* script
                 inject_btn.clicked.connect(
                     lambda x, s=entry['details']['script']: self.script_selected.emit(s)
                 )
@@ -133,16 +150,30 @@ class HistoryPage(QWidget):
     def show_context_menu(self, position):
         menu = QMenu()
         
-        copy_action = menu.addAction("Copy Details")
+        copy_action = menu.addAction("Copy Full Details")
         copy_action.triggered.connect(
             lambda: self.copy_details(self.table.currentRow())
         )
         
         menu.exec_(self.table.viewport().mapToGlobal(position))
         
+    # MODIFICATION: This function now copies the full, untruncated details
     def copy_details(self, row):
         if row >= 0:
             details_item = self.table.item(row, 2)
             if details_item:
                 clipboard = QApplication.clipboard()
-                clipboard.setText(details_item.text()) 
+                
+                # MODIFICATION: Copy the *full* details from UserRole, not the truncated text
+                entry_data = details_item.data(Qt.UserRole)
+                if entry_data and isinstance(entry_data, dict):
+                    # Re-build the full details text from original data
+                    details = entry_data.get('details', {})
+                    if isinstance(details, dict):
+                        details_text = "\n".join(f"{k}: {v}" for k, v in details.items())
+                    else:
+                        details_text = str(details)
+                    clipboard.setText(details_text)
+                else:
+                    # Fallback to the visible text if something went wrong
+                    clipboard.setText(details_item.text())

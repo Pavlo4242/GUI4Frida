@@ -1,16 +1,18 @@
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QPushButton,
                            QLabel, QProgressBar, QFrame, QMessageBox, QFileDialog,
-                           QTextEdit, QApplication) # Added QApplication
+                           QTextEdit, QApplication, QLineEdit) # MODIFICATION: Added QLineEdit
 from PyQt5.QtCore import Qt, pyqtSignal
 import qtawesome as qta
-import os # Added os import
+import os 
 
 class InjectionPanel(QWidget):
     # Signals remain the same
     injection_started = pyqtSignal(str, int)  # script, pid
-    # This signal wasn't really used by MainWindow, keep for consistency or future use
     injection_completed = pyqtSignal(bool, str)
     injection_stopped = pyqtSignal()
+    
+    # MODIFICATION: New signal for posting REPL messages
+    message_posted = pyqtSignal(str)
 
     def __init__(self):
         super().__init__()
@@ -22,8 +24,8 @@ class InjectionPanel(QWidget):
 
     def setup_ui(self):
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(5, 0, 5, 5) # Adjusted margins
-        layout.setSpacing(8) # Added spacing
+        layout.setContentsMargins(5, 0, 5, 5) 
+        layout.setSpacing(8) 
 
         # Status panel
         status_frame = QFrame()
@@ -31,16 +33,16 @@ class InjectionPanel(QWidget):
             QFrame {
                 background-color: #2f3136;
                 border-radius: 8px;
-                padding: 8px 12px; /* Adjusted padding */
+                padding: 8px 12px;
             }
         """)
         status_layout = QHBoxLayout(status_frame)
-        status_layout.setContentsMargins(0,0,0,0) # No internal margins for HBox
+        status_layout.setContentsMargins(0,0,0,0) 
 
         self.status_icon = QLabel()
-        self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#99aab5').pixmap(14, 14)) # Slightly smaller icon
+        self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#99aab5').pixmap(14, 14)) 
         self.status_label = QLabel("No process selected")
-        self.status_label.setStyleSheet("color: #99aab5; margin-left: 5px;") # Add margin
+        self.status_label.setStyleSheet("color: #99aab5; margin-left: 5px;") 
 
         status_layout.addWidget(self.status_icon)
         status_layout.addWidget(self.status_label)
@@ -48,7 +50,7 @@ class InjectionPanel(QWidget):
 
         # Action buttons layout
         button_layout = QHBoxLayout()
-        button_layout.setSpacing(6) # Spacing between buttons
+        button_layout.setSpacing(6) 
 
         # Load Script Button
         self.load_btn = QPushButton(qta.icon('fa5s.folder-open', color='white'), " Load")
@@ -60,11 +62,11 @@ class InjectionPanel(QWidget):
         self.clear_btn = QPushButton(qta.icon('fa5s.trash-alt', color='white'), " Clear")
         self.clear_btn.clicked.connect(self.clear_script)
         self.clear_btn.setToolTip("Clear the script editor")
-        self.clear_btn.setStyleSheet("padding: 5px 10px; background-color: #4f545c; border: none; border-radius: 4px; color: white;") # Greyish button
+        self.clear_btn.setStyleSheet("padding: 5px 10px; background-color: #4f545c; border: none; border-radius: 4px; color: white;") 
 
         # Inject Button (Modified name, Execute -> Inject)
-        self.inject_btn = QPushButton(qta.icon('fa5s.syringe', color='white'), " Inject") # Changed icon too
-        self.inject_btn.clicked.connect(self.execute_script) # Function remains execute_script
+        self.inject_btn = QPushButton(qta.icon('fa5s.syringe', color='white'), " Inject") 
+        self.inject_btn.clicked.connect(self.execute_script) 
         self.inject_btn.setToolTip("Inject the current script into the selected process")
         self.inject_btn.setEnabled(False) # Disable initially
         self.inject_btn.setStyleSheet("""
@@ -86,35 +88,57 @@ class InjectionPanel(QWidget):
 
         button_layout.addWidget(self.load_btn)
         button_layout.addWidget(self.clear_btn)
-        button_layout.addStretch() # Add stretch before inject/stop
+        button_layout.addStretch() 
         button_layout.addWidget(self.inject_btn)
         button_layout.addWidget(self.stop_btn)
 
         # Progress bar
         self.progress_bar = QProgressBar()
         self.progress_bar.setTextVisible(False)
-        self.progress_bar.setFixedHeight(6) # Make it thinner
+        self.progress_bar.setFixedHeight(6) 
         self.progress_bar.setStyleSheet("""
             QProgressBar {
                 border: none;
                 background-color: #2f3136;
-                border-radius: 3px; /* Match height */
+                border-radius: 3px;
                 text-align: center;
             }
             QProgressBar::chunk {
-                background-color: #7289da; /* Blue chunk */
+                background-color: #7289da;
                 border-radius: 3px;
             }
         """)
         self.progress_bar.hide()
+        
+        # MODIFICATION: Add REPL input layout
+        repl_layout = QHBoxLayout()
+        repl_layout.setSpacing(6)
+        
+        self.command_input = QLineEdit()
+        self.command_input.setPlaceholderText("Send message to script (e.g., 'COMMAND_NAME') and press Enter...")
+        self.command_input.setStyleSheet("padding: 5px;")
+        self.command_input.returnPressed.connect(self.post_message_to_script)
+        
+        self.send_btn = QPushButton(qta.icon('fa5s.paper-plane', color='white'), " Send")
+        self.send_btn.clicked.connect(self.post_message_to_script)
+        self.send_btn.setStyleSheet("padding: 5px 10px; background-color: #5865f2; border: none; border-radius: 4px; color: white;")
+        
+        repl_layout.addWidget(self.command_input)
+        repl_layout.addWidget(self.send_btn)
+        
+        # MODIFICATION: REPL starts disabled
+        self.command_input.setEnabled(False)
+        self.send_btn.setEnabled(False)
+
 
         # Add widgets to main layout
         layout.addWidget(status_frame)
-        # Note: The actual script editor (from ScriptEditorPanel) is part of MainWindow's layout
         layout.addLayout(button_layout)
+        # MODIFICATION: Add the new REPL layout
+        layout.addLayout(repl_layout)
         layout.addWidget(self.progress_bar)
 
-    def set_script_editor_widget(self, editor_widget: QTextEdit): # Added type hint
+    def set_script_editor_widget(self, editor_widget: QTextEdit): 
         """Sets the reference to the QTextEdit widget from ScriptEditorPanel."""
         self.script_editor_widget = editor_widget
         print("[InjectionPanel] Script editor widget reference set.")
@@ -134,8 +158,6 @@ class InjectionPanel(QWidget):
             QMessageBox.critical(self, "Internal Error", "Script editor reference not set.")
             return
 
-        # Use os.path.expanduser('~') as a potential starting directory
-        #start_dir = os.path.expanduser('~')
         start_dir = os.getcwd()
         file_name, _ = QFileDialog.getOpenFileName(
             self,
@@ -165,7 +187,7 @@ class InjectionPanel(QWidget):
              return
 
         script_content = self.script_editor_widget.toPlainText()
-        if not script_content.strip(): # Check if script is just whitespace
+        if not script_content.strip(): 
             QMessageBox.warning(self, "Input Error", "Script is empty! Please load or enter a script.")
             return
 
@@ -176,7 +198,7 @@ class InjectionPanel(QWidget):
         print(f"[InjectionPanel] Attempting to inject script into PID: {self.current_pid} on device: {self.current_device_id}")
 
         # Update UI to indicate injection attempt
-        self.status_icon.setPixmap(qta.icon('fa5s.spinner', color='#faa61a', animation=qta.Spin(self.status_icon)).pixmap(14, 14)) # Spinning Yellow
+        self.status_icon.setPixmap(qta.icon('fa5s.spinner', color='#faa61a', animation=qta.Spin(self.status_icon)).pixmap(14, 14)) 
         self.status_label.setText(f"Injecting into PID: {self.current_pid}...")
         self._set_buttons_state(injecting=True)
         self.progress_bar.show()
@@ -194,30 +216,38 @@ class InjectionPanel(QWidget):
     def stop_injection(self):
         """Emits signal to stop the current script."""
         if not self.current_pid or not self.current_device_id:
-             # Should ideally not happen if button state is managed correctly, but check anyway
              print("[InjectionPanel] Stop clicked but no active PID/Device known.")
-             self._set_buttons_state(process_selected=False) # Reset buttons if state is inconsistent
+             self._set_buttons_state(process_selected=False) 
              return
 
         print(f"[InjectionPanel] Attempting to stop script for PID: {self.current_pid} on device: {self.current_device_id}")
         self.status_label.setText(f"Stopping script in PID: {self.current_pid}...")
-        self.status_icon.setPixmap(qta.icon('fa5s.spinner', color='#faa61a', animation=qta.Spin(self.status_icon)).pixmap(14, 14)) # Spinning Yellow
-        self._set_buttons_state(stopping=True) # Disable stop, keep others disabled
+        self.status_icon.setPixmap(qta.icon('fa5s.spinner', color='#faa61a', animation=qta.Spin(self.status_icon)).pixmap(14, 14)) 
+        self._set_buttons_state(stopping=True) 
         self.progress_bar.show()
         self.progress_bar.setRange(0, 0)
 
-        self.injection_stopped.emit() # Signal MainWindow to detach/unload
+        self.injection_stopped.emit() 
+        
+    # MODIFICATION: New function to handle REPL input
+    def post_message_to_script(self):
+        """Gets text from command input and emits message_posted signal."""
+        text = self.command_input.text()
+        if not text.strip():
+            return # Do nothing if input is empty
+            
+        if self.send_btn.isEnabled():
+            self.message_posted.emit(text)
+            self.command_input.clear()
 
-    #@pyqtSlot(str, int) # Add decorator for clarity
     def set_process(self, device_id, pid):
         """Updates the selected process and device ID. Called by MainWindow."""
-        # Check if pid is None or invalid before trying int()
         if pid is None:
             print("[InjectionPanel] set_process called with PID=None. Resetting state.")
             self.current_pid = None
-            self.current_device_id = device_id # Still keep device ID if provided
+            self.current_device_id = device_id 
             self.status_label.setText("No process selected" if device_id else "No device or process selected")
-            self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#99aab5').pixmap(14, 14)) # Grey
+            self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#99aab5').pixmap(14, 14)) 
             self._set_buttons_state(process_selected=False)
             return
 
@@ -228,8 +258,8 @@ class InjectionPanel(QWidget):
 
             self.current_pid = pid_int
             self.current_device_id = device_id
-            self.status_label.setText(f"Selected PID: {self.current_pid}") # Keep it concise
-            self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#43b581').pixmap(14, 14)) # Green
+            self.status_label.setText(f"Selected PID: {self.current_pid}") 
+            self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#43b581').pixmap(14, 14)) 
             self._set_buttons_state(process_selected=True)
             print(f"[InjectionPanel] Process set: PID={self.current_pid}, Device={self.current_device_id}")
 
@@ -238,14 +268,14 @@ class InjectionPanel(QWidget):
             self.current_pid = None
             self.current_device_id = device_id
             self.status_label.setText(f"Invalid PID")
-            self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#f04747').pixmap(14, 14)) # Red
+            self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#f04747').pixmap(14, 14)) 
             self._set_buttons_state(process_selected=False)
 
     # --- Methods called by MainWindow for feedback ---
     def injection_succeeded(self):
         """Updates UI when injection is confirmed successful."""
         print(f"[InjectionPanel] Injection succeeded for PID {self.current_pid}")
-        self.status_icon.setPixmap(qta.icon('fa5s.check-circle', color='#43b581').pixmap(14, 14)) # Green Check
+        self.status_icon.setPixmap(qta.icon('fa5s.check-circle', color='#43b581').pixmap(14, 14)) 
         self.status_label.setText(f"Script running in PID: {self.current_pid}")
         self._set_buttons_state(script_running=True)
         self.progress_bar.hide()
@@ -254,51 +284,52 @@ class InjectionPanel(QWidget):
     def injection_failed(self, error_message="Unknown error"):
         """Updates UI when injection fails."""
         print(f"[InjectionPanel] Injection failed for PID {self.current_pid}: {error_message}")
-        self.status_icon.setPixmap(qta.icon('fa5s.times-circle', color='#f04747').pixmap(14, 14)) # Red X
+        self.status_icon.setPixmap(qta.icon('fa5s.times-circle', color='#f04747').pixmap(14, 14)) 
         status_text = f"Injection failed"
         if self.current_pid:
             status_text += f": PID {self.current_pid}"
         self.status_label.setText(status_text)
-        # Re-enable inject button only if a valid process is still technically selected
         self._set_buttons_state(process_selected=bool(self.current_pid))
         self.progress_bar.hide()
         self.progress_bar.setRange(0, 1)
-        # MainWindow shows the popup, no need for one here
 
     def injection_stopped_update(self):
         """Updates UI after stop signal processing is complete (called by MainWindow)."""
         print(f"[InjectionPanel] Injection stopped confirmation received for PID {self.current_pid}")
-        # Reset state, assuming process might still be selected
         self._set_buttons_state(process_selected=bool(self.current_pid))
         self.progress_bar.hide()
         self.progress_bar.setRange(0, 1)
-        # Update status based on whether a process is still selected
         if self.current_pid:
-             self.status_label.setText(f"Selected PID: {self.current_pid}") # Back to selected state
-             self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#43b581').pixmap(14, 14)) # Green
+             self.status_label.setText(f"Selected PID: {self.current_pid}") 
+             self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#43b581').pixmap(14, 14)) 
         else:
-             self.status_label.setText("No process selected") # Or if process died
-             self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#99aab5').pixmap(14, 14)) # Grey
+             self.status_label.setText("No process selected") 
+             self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#99aab5').pixmap(14, 14)) 
 
     def injection_stopped_externally(self):
         """Called by MainWindow if script stops or detaches unexpectedly."""
         pid_context = f"PID {self.current_pid}" if self.current_pid else "process"
         print(f"[InjectionPanel] Script detached/stopped externally for {pid_context}")
         self.status_label.setText(f"Script detached from {pid_context}")
-        self.status_icon.setPixmap(qta.icon('fa5s.exclamation-circle', color='#faa61a').pixmap(14, 14)) # Yellow Warning
-        # Reset buttons to non-running state, allow injection if process still selected
+        self.status_icon.setPixmap(qta.icon('fa5s.exclamation-circle', color='#faa61a').pixmap(14, 14)) 
         self._set_buttons_state(process_selected=bool(self.current_pid))
         self.progress_bar.hide()
         self.progress_bar.setRange(0, 1)
 
+    # MODIFICATION: Updated to control the new REPL widgets
     def _set_buttons_state(self, process_selected=False, injecting=False, script_running=False, stopping=False):
         """Centralized method to manage button enabled/disabled states."""
         can_inject = process_selected and not injecting and not script_running and not stopping
         can_stop = script_running and not stopping
-        # Allow load/clear unless actively injecting or stopping
         can_load_clear = not injecting and not stopping
+        # MODIFICATION: Can only send messages when a script is running
+        can_send_message = script_running and not stopping
 
         self.inject_btn.setEnabled(can_inject)
         self.stop_btn.setEnabled(can_stop)
         self.load_btn.setEnabled(can_load_clear)
         self.clear_btn.setEnabled(can_load_clear)
+        
+        # MODIFICATION: Enable/disable REPL
+        self.command_input.setEnabled(can_send_message)
+        self.send_btn.setEnabled(can_send_message)
