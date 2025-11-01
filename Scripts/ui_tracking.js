@@ -1,4 +1,4 @@
-      console.log("[*] Installing UI tracking hooks...");
+     console.log("[*] Installing UI tracking hooks...");
         
         // Hook View.OnClickListener
         var View = Java.use("android.view.View");

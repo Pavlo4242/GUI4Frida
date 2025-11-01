@@ -1,4 +1,4 @@
-      console.log("[*] Installing deobfuscation helper...");
+     console.log("[*] Installing deobfuscation helper...");
         
         var methodCallGraph = {};
         var methodPurposes = {};

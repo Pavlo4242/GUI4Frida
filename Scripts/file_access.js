@@ -1,4 +1,4 @@
-      console.log("[*] Installing file access monitors...");
+     console.log("[*] Installing file access monitors...");
         
         var File = Java.use("java.io.File");
         var FileInputStream = Java.use("java.io.FileInputStream");

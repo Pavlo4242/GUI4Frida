@@ -1,4 +1,4 @@
-      console.log("[*] Installing method tracer...");
+     console.log("[*] Installing method tracer...");
         
         // Configure which classes to trace
         var TARGET_CLASSES = [

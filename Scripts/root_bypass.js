@@ -1,4 +1,4 @@
-      console.log("[*] Installing root detection bypass...");
+     console.log("[*] Installing root detection bypass...");
         
         // Hook Runtime.exec for su checks
         var Runtime = Java.use("java.lang.Runtime");

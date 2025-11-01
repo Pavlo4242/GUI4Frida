@@ -1,4 +1,4 @@
-      console.log("[*] Installing emulator detection bypasses...");
+     console.log("[*] Installing emulator detection bypasses...");
         
         // Hook File.exists()
         var File = Java.use("java.io.File");

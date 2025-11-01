@@ -1,4 +1,4 @@
-      console.log("[*] Installing SSL unpinning...");
+     console.log("[*] Installing SSL unpinning...");
         
         // OkHttp CertificatePinner
         try {

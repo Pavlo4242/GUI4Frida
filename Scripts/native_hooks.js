@@ -1,4 +1,4 @@
-      console.log("[*] Installing native hooks...");
+     console.log("[*] Installing native hooks...");
         
         // Hook fopen
         var fopen = Module.findExportByName(null, "fopen");

@@ -1,4 +1,4 @@
- spyemulator.js - put in the same directory as your hook file */
+spyemulator.js - put in the same directory as your hook file */
 Java.perform(function () {
     /* === 1??  Utility to wrap any method with logging ---------------------------- */
     function logMethod(clazz, methodName, signature, prelog, postlog) {

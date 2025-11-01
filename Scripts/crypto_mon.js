@@ -1,4 +1,4 @@
-      console.log("[*] Installing crypto monitors...");
+     console.log("[*] Installing crypto monitors...");
         
         // Hook Cipher
         var Cipher = Java.use("javax.crypto.Cipher");

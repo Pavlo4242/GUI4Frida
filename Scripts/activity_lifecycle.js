@@ -1,4 +1,4 @@
-      console.log("[*] Installing Activity lifecycle monitors...");
+     console.log("[*] Installing Activity lifecycle monitors...");
         
         var Activity = Java.use("android.app.Activity");
         

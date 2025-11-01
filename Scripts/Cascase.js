@@ -1,4 +1,4 @@
-/**
+**
  * Safe Frida script to trace Grindr cascade profile display
  * 
  * Usage:

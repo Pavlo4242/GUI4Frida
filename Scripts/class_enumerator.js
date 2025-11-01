@@ -1,4 +1,4 @@
-      console.log("[*] Enumerating classes...");
+     console.log("[*] Enumerating classes...");
         
         Java.perform(function() {
             Java.enumerateLoadedClasses({

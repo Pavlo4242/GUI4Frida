@@ -1,4 +1,4 @@
-      console.log("[*] Searching for strings...");
+     console.log("[*] Searching for strings...");
         
         var TARGET_STRINGS = [
             "emulator", "simulator", "goldfish", "qemu",

@@ -1,4 +1,4 @@
-      console.log("[*] Installing network monitors...");
+     console.log("[*] Installing network monitors...");
         
         // Hook OkHttp
         try {

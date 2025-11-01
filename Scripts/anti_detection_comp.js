@@ -1,4 +1,4 @@
-      console.log("[*] Installing comprehensive anti-detection...");
+     console.log("[*] Installing comprehensive anti-detection...");
         
         // Block Activity.finish() from detection code
         var Activity = Java.use("android.app.Activity");

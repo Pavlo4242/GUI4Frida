@@ -1,20 +1,19 @@
-from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QComboBox,
-                           QPushButton, QLabel, QFrame, QLineEdit, QMessageBox,
-                           QApplication, QDialog, QListWidget, QListWidgetItem,
-                           QDialogButtonBox, QFileDialog, QTextEdit, QCheckBox,
-                           QFormLayout, QGroupBox)
-from PyQt5.QtWidgets import (QPushButton, QListWidget, QHBoxLayout, QVBoxLayout,
-                             QLabel, QDialog, QDialogButtonBox, QFileDialog,
-                             QTextEdit, QCheckBox, QFormLayout, QGroupBox)                           
-from PyQt5.QtCore import pyqtSignal, Qt
-from PyQt5.QtGui import QFont
-
 import frida
 import subprocess
 import qtawesome as qta
 import sys
 from pathlib import Path
 import os
+import time # ADDED: For unique file naming in temporary scripts
+
+# Import all necessary Qt modules, ensure QTextEdit and QApplication are present
+from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QComboBox,
+                           QPushButton, QLabel, QFrame, QLineEdit, QMessageBox,
+                           QApplication, QDialog, QListWidget, QListWidgetItem,
+                           QDialogButtonBox, QFileDialog, QTextEdit, QCheckBox, # QTextEdit added
+                           QFormLayout, QGroupBox)
+from PyQt5.QtCore import pyqtSignal, Qt
+from PyQt5.QtGui import QFont
 
 # Add project root to Python path
 sys.path.append(str(Path(__file__).parent.parent.parent))
@@ -32,12 +31,79 @@ class DeviceSelector(QWidget):
         self.applications = []
         self.script_files = []
         self.frida_spawn_options = ""
+        self._temp_files = [] # MODIFIED: List to track temporary script files
         self.setup_ui()
+
+    # --- New Helper Methods for Paste Functionality ---
+
+    def _get_temp_dir(self):
+        """Gets the dedicated temp directory for spawned scripts."""
+        temp_dir = os.path.join(os.path.expanduser('~'), '.frida_gui', 'spawn_scripts')
+        os.makedirs(temp_dir, exist_ok=True)
+        return temp_dir
+
+    def _save_temp_script(self, content):
+        """Saves content to a temporary file and returns the path."""
+        temp_dir = self._get_temp_dir()
+        # Create a unique filename based on timestamp
+        unique_id = int(time.time() * 1000)
+        file_name = f"pasted_script_{unique_id}.js"
+        file_path = os.path.join(temp_dir, file_name)
+        
+        try:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            self._temp_files.append(file_path) # Add to tracking list
+            print(f"[DeviceSelector] Saved temp script: {file_path}")
+            return file_path
+        except Exception as e:
+            QMessageBox.critical(self, "Save Error", f"Failed to save temporary script: {e}")
+            return None
+
+    def show_paste_dialog(self, script_list_widget, update_ok_button_func):
+        """Displays a dialog to paste and save script content as a temporary file."""
+        dlg = QDialog(self)
+        dlg.setWindowTitle("Paste and Save Script")
+        dlg.resize(600, 400)
+        layout = QVBoxLayout(dlg)
+
+        editor = QTextEdit()
+        # Get clipboard content
+        clipboard = QApplication.clipboard()
+        editor.setPlainText(clipboard.text())
+        editor.setFont(QFont('Consolas', 10))
+
+        layout.addWidget(QLabel("Paste your **Frida script content** below:"))
+        layout.addWidget(editor)
+
+        btn_box = QDialogButtonBox(QDialogButtonBox.Save | QDialogButtonBox.Cancel)
+        btn_box.button(QDialogButtonBox.Save).clicked.connect(lambda: self._handle_paste_save(editor.toPlainText(), script_list_widget, update_ok_button_func, dlg))
+        btn_box.rejected.connect(dlg.reject)
+        layout.addWidget(btn_box)
+
+        dlg.exec_()
+        
+    def _handle_paste_save(self, content, script_list_widget, update_ok_button_func, dialog):
+        if not content.strip():
+            QMessageBox.warning(dialog, "Empty Script", "Cannot save an empty script.")
+            return
+
+        temp_path = self._save_temp_script(content)
+        if temp_path:
+            # Add to list widget with a special prefix
+            item = QListWidgetItem(f"[PASTED] {os.path.basename(temp_path)}")
+            item.setData(Qt.UserRole, temp_path)
+            item.setToolTip(temp_path)
+            script_list_widget.addItem(item)
+            update_ok_button_func()
+            dialog.accept() # Close the dialog
+
+    # --- Existing Methods (Setup, Refresh, Filter, etc.) ---
 
     def setup_ui(self):
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
-
+        # ... (existing setup_ui content - no changes needed here)
         frame = QFrame()
         frame.setStyleSheet("""
             QFrame {
@@ -257,7 +323,7 @@ class DeviceSelector(QWidget):
                 QMessageBox.warning(self, "No Apps", "Could not find any user applications to spawn.")
                 return
 
-        # --- Application selector dialog ---
+        # --- Application selector dialog (unchanged) ---
         dialog = QDialog(self)
         dialog.setWindowTitle("Select Application to Spawn")
         layout = QVBoxLayout(dialog)
@@ -306,11 +372,18 @@ class DeviceSelector(QWidget):
 
         # Top: Buttons
         btn_layout = QHBoxLayout()
-        add_btn = QPushButton(qta.icon('fa5s.plus'), " Add Script")
+        
+        # MODIFIED: New Paste button
+        paste_btn = QPushButton(qta.icon('fa5s.clipboard', color='white'), " Paste & Save") 
+        paste_btn.setToolTip("Paste script from clipboard and save as a temporary file for injection")
+        
+        add_btn = QPushButton(qta.icon('fa5s.plus'), " Add Script File...") # Renamed for clarity
         remove_btn = QPushButton(qta.icon('fa5s.trash'), " Remove")
         up_btn = QPushButton(qta.icon('fa5s.arrow-up'), "")
         down_btn = QPushButton(qta.icon('fa5s.arrow-down'), "")
 
+        # Update button layout structure
+        btn_layout.addWidget(paste_btn) # ADDED
         btn_layout.addWidget(add_btn)
         btn_layout.addWidget(remove_btn)
         btn_layout.addWidget(up_btn)
@@ -368,6 +441,7 @@ class DeviceSelector(QWidget):
                 script_list.setCurrentRow(row + 1)
 
         # Connect signals
+        paste_btn.clicked.connect(lambda: self.show_paste_dialog(script_list, update_ok_button)) # ADDED CONNECTION
         add_btn.clicked.connect(add_script)
         remove_btn.clicked.connect(remove_script)
         up_btn.clicked.connect(move_up)
@@ -375,6 +449,15 @@ class DeviceSelector(QWidget):
         script_list.itemSelectionChanged.connect(
             lambda: remove_btn.setEnabled(bool(script_list.selectedItems()))
         )
+        
+        # Populate script list if self.script_files is already set (e.g., re-opening dialog)
+        for path in self.script_files:
+            item_text = f"[PASTED] {os.path.basename(path)}" if path in self._temp_files else os.path.basename(path)
+            item = QListWidgetItem(item_text)
+            item.setData(Qt.UserRole, path)
+            item.setToolTip(path)
+            script_list.addItem(item)
+        update_ok_button()
 
         # Layout
         dlg_layout.addLayout(btn_layout)
@@ -524,3 +607,13 @@ class DeviceSelector(QWidget):
         self.process_list = []
         self.applications = []
         self.frida_spawn_options = ""
+
+        # MODIFIED: Cleanup temporary files
+        print("[DeviceSelector] Cleaning up temporary spawn scripts...")
+        for file_path in getattr(self, '_temp_files', []):
+            try:
+                os.remove(file_path)
+                print(f"  Removed: {file_path}")
+            except Exception as e:
+                print(f"  Failed to remove {file_path}: {e}")
+        self._temp_files = []
