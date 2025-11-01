@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QTextEdit, QHBoxLayout, QLabel, QPushButton, QFrame
 from datetime import datetime
-import qtawesome as qta # MODIFICATION: Added qtawesome import
+import qtawesome as qta 
 
 class OutputPanel(QWidget):
     def __init__(self):
@@ -23,7 +23,7 @@ class OutputPanel(QWidget):
         self.title_label = QLabel(self._title)
         self.title_label.setStyleSheet("font-size: 13px; font-weight: bold; color: #dcddde;")
 
-        # MODIFICATION: Clear Button (one button serves the container's output)
+        # MODIFICATION: Clear Button
         self.clear_btn = QPushButton(qta.icon('fa5s.trash-alt', color='#f04747'), " Clear")
         self.clear_btn.clicked.connect(self.clear_output)
         self.clear_btn.setFlat(True)
@@ -49,7 +49,6 @@ class OutputPanel(QWidget):
         self._title = title
         self.title_label.setText(title)
 
-    # ... (append_output and clear_output methods are unchanged)
     def append_output(self, text):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.output_area.append(f"[{timestamp}] {text}")
