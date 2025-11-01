@@ -29,6 +29,37 @@ import sys
 SETTINGS_DIR = os.path.join(os.path.expanduser('~'), '.frida_gui')
 FAVORITES_FILE = os.path.join(SETTINGS_DIR, 'favorites.json')
 
+class StopScriptWorker(QObject):
+    finished = pyqtSignal(bool, str) # process_ended, pid_context
+
+    def __init__(self, script, session, pid_context, process_ended=False, parent=None):
+        super().__init__(parent)
+        self.script = script
+        self.session = session
+        self.pid_context = pid_context
+        self.process_ended = process_ended
+
+    def run(self):
+        print(f"[StopScriptWorker] Starting blocking unload/detach for PID: {self.pid_context}")
+        
+        # Perform the blocking calls safely in the thread
+        if self.script:
+            try:
+                self.script.unload()
+                print("[StopScriptWorker] Script unloaded successfully.")
+            except Exception as e:
+                print(f"[StopScriptWorker] Error unloading: {e}")
+        
+        if self.session and not self.session.is_detached:
+            try:
+                self.session.detach()
+                print("[StopScriptWorker] Session detached successfully.")
+            except Exception as e:
+                print(f"[StopScriptWorker] Error detaching: {e}")
+                
+        self.finished.emit(self.process_ended, self.pid_context)
+
+
 class FridaInjectorMainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -231,15 +262,18 @@ class FridaInjectorMainWindow(QMainWindow):
              self.script_editor = ScriptEditorPanel()
              self.injection_panel = InjectionPanel()
              
-             # MODIFICATION: Rename OutputPanel to be script_output_panel
+             # MODIFICATION: Set title for Script Output Panel
              self.script_output_panel = OutputPanel()
-             # MODIFICATION: Change placeholder text to be more descriptive
+             self.script_output_panel.set_title("Script Output (console.log / send)") 
+             # MODIFICATION: Change placeholder text
              self.script_output_panel.output_area.setPlaceholderText("Script output (from send() and console.log()) will appear here...")
 
-             # MODIFICATION: Create a new panel for application logs
-             self.log_panel = OutputPanel() # Re-using the same class is fine
+             # MODIFICATION: Create and set title for Application Logs Panel
+             self.log_panel = OutputPanel()
+             self.log_panel.set_title("Application Logs / Status") 
              self.log_panel.output_area.setPlaceholderText("Application logs (e.g., 'Attached', 'Script loaded', 'Error') will appear here...")
-             
+
+
         except NameError as ne:
              print(f"Error instantiating injection widgets: {ne}. Check imports.")
              QMessageBox.critical(self, "Init Error", f"Failed to create injection UI component: {ne}")
@@ -523,6 +557,7 @@ class FridaInjectorMainWindow(QMainWindow):
                 session = device.attach(attach_target)
                 # MODIFICATION: Retarget log message
                 self.log_panel.append_output(f"[+] Attached to PID: {attach_target}")
+                
 
             elif is_spawn_mode:
                 # SPAWN workflow for starting new application instances.
@@ -653,40 +688,64 @@ class FridaInjectorMainWindow(QMainWindow):
          """Stop the current injection and clean up state."""
          pid_context = self.current_pid if self.current_pid else "N/A"
          if getattr(self, '_stopping', False): return
+         
+         if not self.current_script and not self.current_session:
+              self._finish_cleanup(pid_context, process_ended)
+              return
+
          self._stopping = True
          print(f"[StopInject] Initiated. PID: {pid_context}, Process Ended: {process_ended}")
  
-         # Perform the potentially blocking Frida calls in a short delay
-         def _perform_blocking_cleanup():
-             try:
-                 if self.current_script:
-                     try: self.current_script.unload()
-                     except Exception as e: print(f"[StopInject] Error unloading: {e}")
-                 if self.current_session and not self.current_session.is_detached:
-                     try: self.current_session.detach()
-                     except Exception as e: print(f"[StopInject] Error detaching: {e}")
-             finally:
-                 self._finish_cleanup(pid_context, process_ended)
- 
-         # Use QTimer to briefly yield control back to the event loop before blocking
-         QTimer.singleShot(10, _perform_blocking_cleanup)
- 
-    # MODIFICATION: This function is modified to log to the correct panel
-    def _finish_cleanup(self, pid_context, process_ended):
-         # This method contains the non-blocking cleanup logic
-         was_running = self.current_session is not None
+         # 1. Create thread and worker
+         self.stop_thread = QThread()
+         self.stop_worker = StopScriptWorker(
+             self.current_script, 
+             self.current_session, 
+             pid_context, 
+             process_ended
+         )
+         
+         # 2. Move worker to thread
+         self.stop_worker.moveToThread(self.stop_thread)
+         
+         # 3. Connect signals for cleanup chain
+         self.stop_thread.started.connect(self.stop_worker.run)
+         # Cleanup method runs on main thread when worker finishes
+         self.stop_worker.finished.connect(self._finish_cleanup_from_worker)
+         
+         # 4. Clean up worker/thread (Crucial for stability)
+         self.stop_worker.finished.connect(self.stop_thread.quit)
+         self.stop_worker.finished.connect(self.stop_worker.deleteLater)
+         self.stop_thread.finished.connect(self.stop_thread.deleteLater)
+         
+         # Clear main state variables now to avoid race conditions
          self.current_script = None
          self.current_session = None
-         # Reset both attach and spawn targets on stop.
+
+         # 5. Start thread
+         self.stop_thread.start()
+
+    # MODIFICATION: New slot to handle worker's completion signal
+    @pyqtSlot(bool, str) 
+    def _finish_cleanup_from_worker(self, process_ended, pid_context):
+        self._finish_cleanup(pid_context, process_ended)
+
+
+    def _finish_cleanup(self, pid_context, process_ended):
+         # This method is called by _finish_cleanup_from_worker on the main thread
+         was_running = pid_context != "N/A"
+         # self.current_script and self.current_session are already None
          self.spawn_target = None
  
          if process_ended:
-             # MODIFICATION: Retarget log message
-             self.log_panel.append_output(f"[*] Target process {pid_context} ended.")
+             # FIX: Ensure log targets are correct
+             if hasattr(self, 'log_panel'):
+                 self.log_panel.append_output(f"[*] Target process {pid_context} ended.")
              self.current_pid = None
          elif was_running:
-             # MODIFICATION: Retarget log message
-             self.log_panel.append_output("[*] Script injection stopped.")
+             # FIX: Ensure log targets are correct
+             if hasattr(self, 'log_panel'):
+                 self.log_panel.append_output("[*] Script injection stopped.")
  
          if hasattr(self, 'injection_panel'):
              self.injection_panel.injection_stopped_update()
@@ -721,14 +780,12 @@ class FridaInjectorMainWindow(QMainWindow):
         """Posts a message from the REPL input to the running script."""
         if self.current_script and self.current_session and not self.current_session.is_detached:
             try:
-                # Post a message with type 'input'
-                self.current_script.post({'type': 'input', 'payload': message})
-                # Log to script output to show what was sent
-                self.script_output_panel.append_output(f"[APP -> SCRIPT] {message}")
+                # ... post code ...
+                self.script_output_panel.append_output(f"[APP -> SCRIPT] {message}") # CORRECT: Output to SCRIPT panel
             except Exception as e:
-                self.log_panel.append_output(f"[APP ERROR] Failed to post message: {e}")
+                self.log_panel.append_output(f"[APP ERROR] Failed to post message: {e}") # CORRECT: Error to LOG panel
         else:
-            self.log_panel.append_output("[APP ERROR] Cannot send message: no active script session.")
+            self.log_panel.append_output("[APP ERROR] Cannot send message: no active script session.") # CORRECT: Error to LOG panel
 
     def refresh_favorites(self):
         layout = getattr(self, 'favorites_grid_layout', None)

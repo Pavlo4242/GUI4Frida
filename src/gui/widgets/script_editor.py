@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QTextEdit
-# Removed unused imports: QFont, Qt
+
 
 class ScriptEditorPanel(QWidget):
     def __init__(self):
@@ -17,11 +17,25 @@ class ScriptEditorPanel(QWidget):
         self.editor.setStyleSheet("font-size: 11pt;") # Example: Set font size via stylesheet
 
         # Set default script template
-        self.editor.setPlainText('''Java.perform(function() {
-    console.log("Script loaded!");
+    self.editor.setPlainText('''Java.perform(function() {
+    console.log("Script loaded! Frida REPL is ready (type in the Send field below).");
+    
+    // REPL Handler (Responds to messages sent from the host GUI)
+    // The host sends: {'type': 'input', 'payload': 'YOUR_COMMAND'}
+    recv('input', function(message) {
+        console.log("[REPL_HOST] Executing:", message.payload);
+        try {
+            // WARNING: Executing arbitrary JS from host is dangerous
+            var result = eval(message.payload); 
+            // Send back the result (optional, but good for feedback)
+            send({type: "REPL_RESPONSE", message: "Result: " + result});
+        } catch(e) {
+            send({type: "REPL_ERROR", message: "Error in eval: " + e.message});
+        }
+    });
 });''')
 
-        layout.addWidget(self.editor)
+    layout.addWidget(self.editor)
 
     def get_script(self):
         return self.editor.toPlainText()

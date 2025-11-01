@@ -109,6 +109,14 @@ class InjectionPanel(QWidget):
             }
         """)
         self.progress_bar.hide()
+
+        self.clear_status_btn = QPushButton("Clear Status")
+        self.clear_status_btn.clicked.connect(self.status_output.clear)
+        layout.addWidget(self.clear_status_btn)
+
+        self.clear_logs_btn = QPushButton("Clear Logs")
+        self.clear_logs_btn.clicked.connect(self.log_output.clear)
+        layout.addWidget(self.clear_logs_btn)
         
         # MODIFICATION: Add REPL input layout
         repl_layout = QHBoxLayout()
