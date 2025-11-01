@@ -743,6 +743,176 @@ class FridaInjectorMainWindow(QMainWindow):
             QTimer.singleShot(100, lambda: self.device_selector.select_process(pid))
         else: print("Error: device_selector not found")
 
+    def refresh_favorites(self):
+        layout = getattr(self, 'favorites_grid_layout', None)
+        if not layout: return
+        while layout.count(): 
+            item = layout.takeAt(0)
+            widget = item.widget()
+            if widget: widget.deleteLater()
+        all_favorites = []
+        
+        if hasattr(self, 'codeshare_browser') and hasattr(self.codeshare_browser, 'favorites'):
+            try:
+                # Use requests to fetch codeshare data (Blocking call, consider moving to thread for large fetches)
+                response = requests.get(self.codeshare_browser.api_url, timeout=10)
+                response.raise_for_status()
+                codeshare_scripts = response.json()
+                cs_favs = self.codeshare_browser.favorites
+            
+                if isinstance(cs_favs, (list, set)):
+                    # Filter codeshare scripts by favorites list
+                    all_favorites.extend(s for s in codeshare_scripts if s.get('id') in cs_favs)
+            except Exception as e: 
+                print(f"Error getting CodeShare favs: {e}")
+                
+        # Add custom uploaded scripts (assuming they are stored in self.favorites)
+        all_favorites.extend(s for s in self.favorites if isinstance(s, dict) and s.get('id','').startswith('custom/'))
+        all_favorites.sort(key=lambda x: x.get('title', '').lower())
+ 
+        if all_favorites:
+            for idx, script_info in enumerate(all_favorites):
+                row, col = divmod(idx, 3)
+                card = self.create_favorite_card(script_info)
+                if card: layout.addWidget(card, row, col)
+        else:
+            msg = QLabel("No favorites found.")
+            msg.setAlignment(Qt.AlignCenter)
+            msg.setStyleSheet("color: #b9bbbe; padding: 20px;")
+            layout.addWidget(msg, 0, 0, 1, 3)
+            
+        layout.setRowStretch(layout.rowCount(), 1)
+        layout.setColumnStretch(layout.columnCount(), 1)
+
+    def filter_favorites(self, text):
+        search_text = text.lower()
+        layout = getattr(self, 'favorites_grid_layout', None)
+        if not layout: return
+        no_fav_label = None
+        has_visible_card = False
+      
+        for i in range(layout.count()):
+            widget = layout.itemAt(i).widget()
+            if widget and isinstance(widget, QFrame):
+                labels = widget.findChildren(QLabel)
+                title_label = labels[0] if labels else None
+                desc_label = labels[2] if len(labels) > 2 else None
+ 
+                if title_label and desc_label:
+                     title_matches = search_text in title_label.text().lower()
+                     desc_matches = search_text in desc_label.text().lower()
+                     is_visible = not search_text or title_matches or desc_matches
+    
+                     widget.setVisible(is_visible)
+                     if is_visible: has_visible_card = True
+            elif widget and isinstance(widget, QLabel): 
+                no_fav_label = widget
+        if no_fav_label: 
+            no_fav_label.setVisible(not has_visible_card and not search_text)
+
+    def upload_script(self):
+        start_dir = os.getcwd()
+        file_path, _ = QFileDialog.getOpenFileName(self, "Upload Script", start_dir, "JavaScript Files (*.js);;All Files (*.*)")
+        if file_path:
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f: 
+                    script_content = f.read()
+                script_name = os.path.basename(file_path)
+                script_info = {
+                    'id': f"custom/{script_name}",
+                    'title': script_name,
+                    'author': 'Custom Script',
+                    'description': 'Uploaded custom script',
+                    'likes': 0,
+                    'seen': 0,
+                    'content': script_content
+                }
+                self.add_to_favorites(script_info)
+            except Exception as e: 
+                QMessageBox.critical(self, "Error", f"Failed to upload script: {str(e)}")
+
+    def add_to_favorites(self, script_info):
+        if not any(isinstance(s, dict) and s.get('id') == script_info.get('id') for s in self.favorites):
+            self.favorites.append(script_info)
+            self.save_favorites()
+        card = self.create_favorite_card(script_info)
+        layout = getattr(self, 'favorites_grid_layout', None)
+        if card and layout: 
+            count = layout.count()
+            row, col = divmod(count, 3)
+            layout.addWidget(card, row, col)
+
+    def create_favorite_card(self, script_info):
+        card = QFrame()
+        card.setStyleSheet("QFrame { background-color: #2f3136; border-radius: 8px; padding: 10px; } QFrame:hover { background-color: #40444b; }")
+        layout = QVBoxLayout(card)
+        title = QLabel(script_info.get('title', 'N/A'))
+        title.setStyleSheet("font-size: 14px; font-weight: bold; color: white;")
+        author = QLabel(f"by {script_info.get('author', 'N/A')}")
+        author.setStyleSheet("color: #b9bbbe;")
+        desc_text = script_info.get('description', '')
+        desc = QLabel(desc_text[:100] + ('...' if len(desc_text) > 100 else ''))
+        desc.setWordWrap(True)
+        desc.setStyleSheet("color: #b9bbbe;")
+        buttons = QHBoxLayout()
+        view_btn = QPushButton("View")
+        view_btn.clicked.connect(lambda checked, si=script_info: self.view_favorite(si))
+        inject_btn = QPushButton("Inject")
+        inject_btn.clicked.connect(lambda checked, si=script_info: self.open_script_in_injector(si.get('content', '')))
+        remove_btn = QPushButton("Remove")
+        remove_btn.clicked.connect(lambda checked, si=script_info, c=card: self.remove_from_favorites(si, c))
+        buttons.addWidget(view_btn)
+        buttons.addWidget(inject_btn)
+        buttons.addWidget(remove_btn)
+        buttons.addStretch()
+        layout.addWidget(title)
+        layout.addWidget(author)
+        layout.addWidget(desc)
+        layout.addLayout(buttons)
+        return card
+
+    def view_favorite(self, script_info):
+        dialog = QDialog(self)
+        dialog.setWindowTitle(f"View Script - {script_info.get('title', 'N/A')}")
+        dialog.resize(800, 600)
+        layout = QVBoxLayout(dialog)
+        content = QTextEdit()
+        content.setReadOnly(True)
+        try: content.setFont(QFont('Consolas', 11))
+        except: pass
+        content.setText(script_info.get('content', 'Script content not available'))
+        buttons = QHBoxLayout()
+        copy_btn = QPushButton(" Copy")
+        copy_btn.clicked.connect(lambda: self.copy_to_clipboard(content.toPlainText()))
+        inject_btn = QPushButton("Inject")
+        inject_btn.clicked.connect(lambda: self.open_script_in_injector(content.toPlainText()))
+        buttons.addWidget(copy_btn)
+        buttons.addWidget(inject_btn)
+        buttons.addStretch()
+        layout.addWidget(content)
+        layout.addLayout(buttons)
+        dialog.exec_()
+
+    def remove_from_favorites(self, script_info, card):
+        script_id = script_info.get('id')
+        if not script_id: return
+        reply = QMessageBox.question(self, "Remove Favorite", f"Remove {script_info.get('title', 'N/A')} from favorites?", QMessageBox.Yes | QMessageBox.No)
+        if reply == QMessageBox.Yes:
+            card.setParent(None)
+            if script_id.startswith('custom/'):
+                self.favorites = [s for s in self.favorites if not (isinstance(s, dict) and s.get('id') == script_id)]
+                self.save_favorites()
+            elif hasattr(self, 'codeshare_browser') and hasattr(self.codeshare_browser, 'favorites'):
+                 try: 
+                     self.codeshare_browser.favorites.remove(script_id)
+                     self.codeshare_browser.save_favorites()
+                 except: pass
+            self.refresh_favorites()
+
+    def copy_to_clipboard(self, text):
+        QApplication.clipboard().setText(text)
+        QMessageBox.information(self, "Success", "Copied to clipboard!")
+
     @pyqtSlot(str)
     def open_script_in_injector(self, code):
         print("[MainWindow] Opening script in injector editor.")
