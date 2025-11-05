@@ -9,10 +9,14 @@ from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QComboBox,
                            QPushButton, QLabel, QFrame, QLineEdit, QMessageBox,
                            QApplication, QDialog, QListWidget, QListWidgetItem,
                            QDialogButtonBox, QFileDialog, QTextEdit, QCheckBox,
-                           QFormLayout, QGroupBox)
-from PyQt5.QtCore import pyqtSignal, Qt
+                           # MODIFICATION: Added QInputDialog for renaming and QSizePolicy
+                           QFormLayout, QGroupBox, QInputDialog, QSizePolicy)
+# MODIFICATION: Added QTimer for delayed selection
+from PyQt5.QtCore import pyqtSignal, Qt, QTimer
 from PyQt5.QtGui import QFont
 from core.android_helper import AndroidHelper
+# MODIFICATION: Added deque for history
+from collections import deque
 
 
 class DeviceSelector(QWidget):
@@ -26,10 +30,16 @@ class DeviceSelector(QWidget):
         self.applications = []
         self.script_files = []
         self.frida_spawn_options = ""
-        self._temp_files = [] # MODIFIED: List to track temporary script files
+        self._temp_files = [] 
+        # MODIFICATION: Add default script dir for saving/loading
+        self.default_script_dir = os.path.join(os.getcwd(), 'frida_data', 'scripts')
+        os.makedirs(self.default_script_dir, exist_ok=True) # Ensure it exists
+        # MODIFICATION: Add history for recent processes
+        self.recent_processes_history = deque(maxlen=5)
+        # MODIFICATION: Store a reference to the spawn script list for renaming
+        self.spawn_script_list = None
         self.setup_ui()
 
-    # --- New Helper Methods for Paste Functionality ---
 
     def _get_temp_dir(self):
         """Gets the dedicated temp directory for spawned scripts."""
@@ -78,28 +88,9 @@ class DeviceSelector(QWidget):
 
         dlg.exec_()
         
-    def _handle_paste_save(self, content, script_list_widget, update_ok_button_func, dialog):
-        """Handles saving pasted content and updating the script list."""
-        if not content.strip():
-            QMessageBox.warning(dialog, "Empty Script", "Cannot save an empty script.")
-            return
-
-        temp_path = self._save_temp_script(content)
-        if temp_path:
-            # Add to list widget with a special prefix
-            item = QListWidgetItem(f"[PASTED] {os.path.basename(temp_path)}")
-            item.setData(Qt.UserRole, temp_path)
-            item.setToolTip(temp_path)
-            script_list_widget.addItem(item)
-            update_ok_button_func()
-            dialog.accept() # Close the dialog
-
-    # --- Existing Methods (Setup, Refresh, Filter, etc.) ---
-
     def setup_ui(self):
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
-        # ... (existing setup_ui content - no changes needed here)
         frame = QFrame()
         frame.setStyleSheet("""
             QFrame {
@@ -172,9 +163,41 @@ class DeviceSelector(QWidget):
         process_spawn_layout.addWidget(self.frida_opts_btn)
 
         frame_layout.addLayout(process_spawn_layout)
+        
+        # MODIFICATION: Add Recent Processes List
+        recent_label = QLabel("Recent Targets:")
+        recent_label.setStyleSheet("font-size: 11px; color: #96989d; margin-top: 5px;")
+        frame_layout.addWidget(recent_label)
+        
+        self.recent_processes_list = QListWidget()
+        self.recent_processes_list.setFixedHeight(100) # Keep it constrained
+        self.recent_processes_list.setStyleSheet("""
+            QListWidget {
+                background-color: #36393f;
+                border: 1px solid #202225;
+                border-radius: 4px;
+                padding: 4px;
+            }
+            QListWidget::item {
+                padding: 5px;
+                border-radius: 4px;
+                color: #dcddde;
+            }
+            QListWidget::item:hover {
+                background-color: #40444b;
+            }
+            QListWidget::item:selected {
+                background-color: #5865f2;
+                color: white;
+            }
+        """)
+        self.recent_processes_list.itemClicked.connect(self._on_recent_process_clicked)
+        frame_layout.addWidget(self.recent_processes_list)
+        
         layout.addWidget(frame)
 
         self.refresh_devices()
+
 
     def refresh_devices(self):
         self.device_combo.clear()
@@ -305,6 +328,9 @@ class DeviceSelector(QWidget):
             pid = int(pid)
             if device_id and pid > 0:
                 self.process_selected.emit(device_id, pid)
+                # MODIFICATION: Add to recent list on attach
+                name = self.process_combo.currentText().split(' (PID:')[0].strip()
+                self._add_to_recent_processes(device_id, pid, name)
         except Exception as e:
             print(f"Error in process selection: {e}")
 
@@ -369,17 +395,15 @@ class DeviceSelector(QWidget):
         # Top: Buttons
         btn_layout = QHBoxLayout()
         
-        # MODIFIED: New Paste button
         paste_btn = QPushButton(qta.icon('fa5s.clipboard', color='white'), " Paste & Save") 
         paste_btn.setToolTip("Paste script from clipboard and save as a temporary file for injection")
         
-        add_btn = QPushButton(qta.icon('fa5s.plus'), " Add Script File...") # Renamed for clarity
+        add_btn = QPushButton(qta.icon('fa5s.plus'), " Add Script File...") 
         remove_btn = QPushButton(qta.icon('fa5s.trash'), " Remove")
         up_btn = QPushButton(qta.icon('fa5s.arrow-up'), "")
         down_btn = QPushButton(qta.icon('fa5s.arrow-down'), "")
 
-        # Update button layout structure
-        btn_layout.addWidget(paste_btn) # ADDED
+        btn_layout.addWidget(paste_btn) 
         btn_layout.addWidget(add_btn)
         btn_layout.addWidget(remove_btn)
         btn_layout.addWidget(up_btn)
@@ -387,9 +411,14 @@ class DeviceSelector(QWidget):
         btn_layout.addStretch()
 
         # Script list
-        script_list = QListWidget()
-        script_list.setDragDropMode(QListWidget.InternalMove)
-        script_list.setSelectionMode(QListWidget.SingleSelection)
+        # MODIFICATION: Use self.spawn_script_list to allow access from rename slots
+        self.spawn_script_list = QListWidget()
+        self.spawn_script_list.setDragDropMode(QListWidget.InternalMove)
+        self.spawn_script_list.setSelectionMode(QListWidget.SingleSelection)
+        # MODIFICATION: Connect signals for renaming
+        self.spawn_script_list.itemDoubleClicked.connect(self._handle_script_item_double_clicked)
+        # We will use QInputDialog, so itemChanged is not the right signal.
+
 
         # Bottom: OK/Cancel
         btn_box2 = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
@@ -401,49 +430,52 @@ class DeviceSelector(QWidget):
 
         # --- Functions ---
         def update_ok_button():
-            ok_btn.setEnabled(script_list.count() > 0)
+            ok_btn.setEnabled(self.spawn_script_list.count() > 0)
 
         def add_script():
+            # MODIFICATION: Start file dialog in default script directory
+            start_dir = self.default_script_dir
+            
             paths, _ = QFileDialog.getOpenFileNames(
-                script_dialog, "Select Frida Scripts", "",
+                script_dialog, "Select Frida Scripts", start_dir,
                 "JavaScript Files (*.js);;All Files (*.*)"
             )
             for path in paths:
                 # Avoid duplicates
-                if path not in [script_list.item(i).data(Qt.UserRole) for i in range(script_list.count())]:
+                if path not in [self.spawn_script_list.item(i).data(Qt.UserRole) for i in range(self.spawn_script_list.count())]:
                     item = QListWidgetItem(os.path.basename(path))
                     item.setData(Qt.UserRole, path)
                     item.setToolTip(path)
-                    script_list.addItem(item)
+                    self.spawn_script_list.addItem(item)
             update_ok_button()
 
         def remove_script():
-            for item in script_list.selectedItems():
-                script_list.takeItem(script_list.row(item))
+            for item in self.spawn_script_list.selectedItems():
+                self.spawn_script_list.takeItem(self.spawn_script_list.row(item))
             update_ok_button()
 
         def move_up():
-            row = script_list.currentRow()
+            row = self.spawn_script_list.currentRow()
             if row > 0:
-                item = script_list.takeItem(row)
-                script_list.insertItem(row - 1, item)
-                script_list.setCurrentRow(row - 1)
+                item = self.spawn_script_list.takeItem(row)
+                self.spawn_script_list.insertItem(row - 1, item)
+                self.spawn_script_list.setCurrentRow(row - 1)
 
         def move_down():
-            row = script_list.currentRow()
-            if row < script_list.count() - 1:
-                item = script_list.takeItem(row)
-                script_list.insertItem(row + 1, item)
-                script_list.setCurrentRow(row + 1)
+            row = self.spawn_script_list.currentRow()
+            if row < self.spawn_script_list.count() - 1:
+                item = self.spawn_script_list.takeItem(row)
+                self.spawn_script_list.insertItem(row + 1, item)
+                self.spawn_script_list.setCurrentRow(row + 1)
 
         # Connect signals
-        paste_btn.clicked.connect(lambda: self.show_paste_dialog(script_list, update_ok_button)) # ADDED CONNECTION
+        paste_btn.clicked.connect(lambda: self.show_paste_dialog(self.spawn_script_list, update_ok_button)) 
         add_btn.clicked.connect(add_script)
         remove_btn.clicked.connect(remove_script)
         up_btn.clicked.connect(move_up)
         down_btn.clicked.connect(move_down)
-        script_list.itemSelectionChanged.connect(
-            lambda: remove_btn.setEnabled(bool(script_list.selectedItems()))
+        self.spawn_script_list.itemSelectionChanged.connect(
+            lambda: remove_btn.setEnabled(bool(self.spawn_script_list.selectedItems()))
         )
         
         # Populate script list if self.script_files is already set (e.g., re-opening dialog)
@@ -452,28 +484,32 @@ class DeviceSelector(QWidget):
             item = QListWidgetItem(item_text)
             item.setData(Qt.UserRole, path)
             item.setToolTip(path)
-            script_list.addItem(item)
+            self.spawn_script_list.addItem(item)
         update_ok_button()
 
         # Layout
         dlg_layout.addLayout(btn_layout)
         dlg_layout.addWidget(QLabel("Scripts will run in order (top to bottom):"))
-        dlg_layout.addWidget(script_list)
+        dlg_layout.addWidget(self.spawn_script_list)
         dlg_layout.addWidget(btn_box2)
 
         if script_dialog.exec_() != QDialog.Accepted:
             print("[DeviceSelector] Script selection cancelled.")
             return
 
-        if script_list.count() == 0:
+        if self.spawn_script_list.count() == 0:
             QMessageBox.warning(self, "No Scripts", "Please add at least one script.")
             return
 
         # Extract ordered script paths
         self.script_files = [
-            script_list.item(i).data(Qt.UserRole)
-            for i in range(script_list.count())
+            self.spawn_script_list.item(i).data(Qt.UserRole)
+            for i in range(self.spawn_script_list.count())
         ]
+        
+        # MODIFICATION: Add to recent list on spawn
+        app_name = selected.text().split(' (')[0].strip()
+        self._add_to_recent_processes(self.current_device, 0, app_name) # PID 0 signifies spawn
 
         spawn_opts = getattr(self, "frida_spawn_options", "")
         self.application_selected_for_spawn.emit(
@@ -595,6 +631,128 @@ class DeviceSelector(QWidget):
             if item_data and int(item_data) == int(pid):
                 self.process_combo.setCurrentIndex(i)
                 break
+
+    # MODIFICATION: New method to handle starting a rename
+    def _handle_script_item_double_clicked(self, item):
+        """Allows renaming a script file on double-click."""
+        if not self.spawn_script_list:
+            return
+            
+        # Only allow renaming if it's not a [PASTED] temp file
+        if item.text().startswith("[PASTED]"):
+            QMessageBox.information(self, "Rename Not Allowed", "Cannot rename a temporary [PASTED] script.")
+            return
+
+        old_name_full = os.path.basename(item.text())
+        old_name, ext = os.path.splitext(old_name_full)
+
+        new_name, ok = QInputDialog.getText(self, "Rename Script", 
+                                            "Enter new script name (no .js):", 
+                                            QLineEdit.Normal, old_name)
+        
+        if ok and new_name and new_name != old_name:
+            self._handle_script_item_renamed(item, new_name)
+
+    # MODIFICATION: New method to handle saving the renamed script
+    def _handle_script_item_renamed(self, item, new_name_base):
+        """Silently saves the script to the default script directory after renaming."""
+        old_path = item.data(Qt.UserRole)
+        
+        new_name = new_name_base.strip()
+        if not new_name.endswith('.js'):
+            new_name += '.js'
+        
+        try:
+            new_path = os.path.join(self.default_script_dir, new_name)
+            
+            if old_path == new_path:
+                item.setText(new_name)
+                return # No change
+                
+            # Read old content
+            with open(old_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Write new content
+            with open(new_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+                
+            # Update item's data to point to new file
+            item.setText(new_name)
+            item.setData(Qt.UserRole, new_path)
+            item.setToolTip(new_path)
+            
+            print(f"[DeviceSelector] Renamed/copied script saved to: {new_path}")
+            
+            # We no longer remove the old script, this acts as "Save As"
+            # If the old file was also in the default script dir, remove it
+            # old_dir = os.path.dirname(old_path)
+            # if old_dir == self.default_script_dir and old_path != new_path:
+            #     os.remove(old_path)
+                
+        except Exception as e:
+            QMessageBox.critical(self, "Rename Error", f"Could not save renamed script: {e}")
+            # Revert text
+            item.setText(os.path.basename(old_path))
+
+    # MODIFICATION: New method to add to recent processes
+    def _add_to_recent_processes(self, device_id, pid, name):
+        """Adds a process to the recent history deque and updates the UI list."""
+        try:
+            entry = {"device_id": device_id, "pid": int(pid), "name": name}
+        except (ValueError, TypeError):
+            return # Invalid data
+
+        # Remove duplicates before adding
+        new_history = deque(maxlen=5)
+        is_duplicate = False
+        for e in self.recent_processes_history:
+            if e["device_id"] == entry["device_id"] and e["name"] == entry["name"] and e["pid"] == entry["pid"]:
+                 is_duplicate = True
+            if e != entry:
+                new_history.append(e)
+        
+        new_history.appendleft(entry)
+        self.recent_processes_history = new_history
+        
+        self._update_recent_processes_list()
+
+    # MODIFICATION: New method to update the recent processes UI list
+    def _update_recent_processes_list(self):
+        """Clears and repopulates the recent processes QListWidget."""
+        self.recent_processes_list.clear()
+        
+        # Use a set to avoid showing the same name/pid combo twice if it's in history multiple times
+        seen = set()
+        for entry in self.recent_processes_history:
+            entry_key = (entry['device_id'], entry['name'], entry['pid'])
+            if entry_key in seen:
+                continue
+            seen.add(entry_key)
+
+            pid_str = f"PID: {entry['pid']}" if entry['pid'] > 0 else "SPAWN"
+            item = QListWidgetItem(f"{entry['name']} ({pid_str})")
+            item.setData(Qt.UserRole, entry)
+            item.setToolTip(f"Click to select {entry['name']} on {entry['device_id']}")
+            self.recent_processes_list.addItem(item)
+            
+    # MODIFICATION: New method to handle clicking on a recent process
+    def _on_recent_process_clicked(self, item):
+        """Selects a device and process from the recent list."""
+        entry = item.data(Qt.UserRole)
+        if not entry:
+            return
+            
+        self.select_device(entry['device_id'])
+        
+        if entry['pid'] > 0:
+            # We need to wait for the device change to propagate and processes to refresh
+            # A timer is a simple way to do this.
+            QTimer.singleShot(250, lambda: self.select_process(entry['pid']))
+        else:
+            # It's a spawn target, just select the device
+            self.process_combo.setCurrentIndex(-1) # Clear process selection
+
 
     def cleanup(self):
         """Clean up state and remove temporary files."""
