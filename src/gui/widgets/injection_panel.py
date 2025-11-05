@@ -108,38 +108,28 @@ class InjectionPanel(QWidget):
                 border-radius: 3px;
             }
         """)
-        self.progress_bar.hide()
 
-        self.clear_status_btn = QPushButton("Clear Status")
-        self.clear_status_btn.clicked.connect(self.status_output.clear)
-        layout.addWidget(self.clear_status_btn)
-
-        self.clear_logs_btn = QPushButton("Clear Logs")
-        self.clear_logs_btn.clicked.connect(self.log_output.clear)
-        layout.addWidget(self.clear_logs_btn)
-        
-        # MODIFICATION: Add REPL input layout
         repl_layout = QHBoxLayout()
         repl_layout.setSpacing(6)
-        
+         
         self.command_input = QLineEdit()
         self.command_input.setPlaceholderText("Send message to script (e.g., 'COMMAND_NAME') and press Enter...")
         self.command_input.setStyleSheet("padding: 5px;")
         self.command_input.returnPressed.connect(self.post_message_to_script)
-        
+         
         self.send_btn = QPushButton(qta.icon('fa5s.paper-plane', color='white'), " Send")
         self.send_btn.clicked.connect(self.post_message_to_script)
         self.send_btn.setStyleSheet("padding: 5px 10px; background-color: #5865f2; border: none; border-radius: 4px; color: white;")
-        
+         
         repl_layout.addWidget(self.command_input)
         repl_layout.addWidget(self.send_btn)
         
         # MODIFICATION: REPL starts disabled
         self.command_input.setEnabled(False)
         self.send_btn.setEnabled(False)
-
-
-        # Add widgets to main layout
+ 
+ 
+         # Add widgets to main layout
         layout.addWidget(status_frame)
         layout.addLayout(button_layout)
         # MODIFICATION: Add the new REPL layout

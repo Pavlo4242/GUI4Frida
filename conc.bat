@@ -1,6 +1,6 @@
 @echo off
 set "source_dir=D:\ANDROID\FridaGUI"  REM Replace with your directory path
-set "output_file=14401.txt"  REM Replace with desired output name
+set "output_file=101.txt"  REM Replace with desired output name
 
 if not exist "%source_dir%" (
     echo Source directory does not exist!

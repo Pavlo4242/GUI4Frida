@@ -116,7 +116,7 @@ class FridaInjectorMainWindow(QMainWindow):
         layout.setStretch(0, 1)
         layout.setStretch(1, 4)
         
-        return sidebar
+        
 
 
     def create_sidebar(self):
@@ -217,7 +217,7 @@ class FridaInjectorMainWindow(QMainWindow):
                 if first_page_id in self.nav_buttons:
                     self.nav_buttons[first_page_id].setChecked(True)
 
-
+    @pyqtSlot(str)
     def switch_page(self, page_id):
         if page_id not in self.pages or not self.pages[page_id]:
             print(f"Error: Cannot switch to non-existent page '{page_id}'.")
@@ -247,7 +247,6 @@ class FridaInjectorMainWindow(QMainWindow):
         layout.addWidget(header); layout.addWidget(actions); layout.addStretch()
         return page
 
-    # MODIFICATION: This function is heavily modified to create the new layout
     def create_injection_page(self):
         page = QWidget()
         layout = QVBoxLayout(page)
@@ -319,7 +318,7 @@ class FridaInjectorMainWindow(QMainWindow):
             return None
         return page
 
-    @pyqtSlot(str, int, int)
+    @pyqtSlot(str, int)
     def _update_current_selection(self, device_id, pid):
         # This slot handles the selection of a currently running process.
         pid_int = None
@@ -644,7 +643,7 @@ class FridaInjectorMainWindow(QMainWindow):
 
     def stop_injection(self, process_ended=False):
         """Stop the current injection and clean up state."""
-        pid_context = self.current_pid if self.current_pid else "N/A"
+        pid_context = str(self.current_pid) if self.current_pid else "N/A"
         if getattr(self, '_stopping', False): return
         
         if not self.current_script and not self.current_session:
@@ -703,35 +702,6 @@ class FridaInjectorMainWindow(QMainWindow):
         self._update_current_selection(self.current_device, self.current_pid)
         self._stopping = False
 
-        
-    # MODIFICATION: New slot to handle worker's completion signal
-    @pyqtSlot(bool, str) 
-    def _finish_cleanup_from_worker(self, process_ended, pid_context):
-        self._finish_cleanup(pid_context, process_ended)
-
-
-    def _finish_cleanup(self, pid_context, process_ended):
-        # This method is called by _finish_cleanup_from_worker on the main thread
-        was_running = pid_context != "N/A"
-        # self.current_script and self.current_session are already None
-        self.spawn_target = None
-
-        if process_ended:
-            # FIX: Ensure log targets are correct
-            if hasattr(self, 'log_panel'):
-                self.log_panel.append_output(f"[*] Target process {pid_context} ended.")
-            self.current_pid = None
-        elif was_running:
-            # FIX: Ensure log targets are correct
-            if hasattr(self, 'log_panel'):
-                self.log_panel.append_output("[*] Script injection stopped.")
-
-        if hasattr(self, 'injection_panel'):
-            self.injection_panel.injection_stopped_update()
-
-        self._update_current_selection(self.current_device, self.current_pid)
-        self._stopping = False
-
     def on_process_selected(self, device_id, pid):
         pass
 
@@ -743,46 +713,94 @@ class FridaInjectorMainWindow(QMainWindow):
             QTimer.singleShot(100, lambda: self.device_selector.select_process(pid))
         else: print("Error: device_selector not found")
 
-    def refresh_favorites(self):
-        layout = getattr(self, 'favorites_grid_layout', None)
-        if not layout: return
-        while layout.count(): 
-            item = layout.takeAt(0)
-            widget = item.widget()
-            if widget: widget.deleteLater()
-        all_favorites = []
-        
-        if hasattr(self, 'codeshare_browser') and hasattr(self.codeshare_browser, 'favorites'):
+    @pyqtSlot(str)
+    def open_script_in_injector(self, code):
+        print("[MainWindow] Opening script in injector editor.")
+        self.switch_page('inject')
+        if hasattr(self, 'script_editor'):
+            self.script_editor.set_script(code)
+            editor_widget = self.script_editor.get_editor_widget()
+            if editor_widget: editor_widget.setFocus()
+        else: print("Error: script_editor panel not found")
+
+    # MODIFICATION: New slot to handle messages from the InjectionPanel's REPL
+    @pyqtSlot(str)
+    def post_message_to_script(self, message):
+        """Posts a message from the REPL input to the running script."""
+        if self.current_script and self.current_session and not self.current_session.is_detached:
             try:
-                # Use requests to fetch codeshare data (Blocking call, consider moving to thread for large fetches)
-                response = requests.get(self.codeshare_browser.api_url, timeout=10)
-                response.raise_for_status()
-                codeshare_scripts = response.json()
-                cs_favs = self.codeshare_browser.favorites
-            
-                if isinstance(cs_favs, (list, set)):
-                    # Filter codeshare scripts by favorites list
-                    all_favorites.extend(s for s in codeshare_scripts if s.get('id') in cs_favs)
-            except Exception as e: 
-                print(f"Error getting CodeShare favs: {e}")
-                
-        # Add custom uploaded scripts (assuming they are stored in self.favorites)
-        all_favorites.extend(s for s in self.favorites if isinstance(s, dict) and s.get('id','').startswith('custom/'))
-        all_favorites.sort(key=lambda x: x.get('title', '').lower())
- 
-        if all_favorites:
-            for idx, script_info in enumerate(all_favorites):
-                row, col = divmod(idx, 3)
-                card = self.create_favorite_card(script_info)
-                if card: layout.addWidget(card, row, col)
+                # Post a message with type 'input'
+                self.current_script.post({'type': 'input', 'payload': message})
+                # Log to script output to show what was sent
+                self.script_output_panel.append_output(f"[APP -> SCRIPT] {message}")
+            except Exception as e:
+                self.log_panel.append_output(f"[APP ERROR] Failed to post message: {e}")
         else:
-            msg = QLabel("No favorites found.")
-            msg.setAlignment(Qt.AlignCenter)
-            msg.setStyleSheet("color: #b9bbbe; padding: 20px;")
-            layout.addWidget(msg, 0, 0, 1, 3)
+            self.log_panel.append_output("[APP ERROR] Cannot send message: no active script session.")
+
+    def fetch_scripts(self):
+        """Fetch scripts from API"""
+        try:
+            response = requests.get(self.api_url, timeout=15) # Added timeout
+            response.raise_for_status() # Raise exception for bad status codes
+            scripts = response.json()
             
-        layout.setRowStretch(layout.rowCount(), 1)
-        layout.setColumnStretch(layout.columnCount(), 1)
+            # Sort scripts
+            sort_option = self.sort_combo.currentText()
+            if sort_option == '★ Most Popular':
+                scripts.sort(key=lambda x: x.get('likes', 0), reverse=True)
+            elif sort_option == '👁 Most Viewed':
+                scripts.sort(key=lambda x: x.get('seen', 0), reverse=True)
+            
+            return scripts
+        except requests.exceptions.RequestException as e:
+            print(f"Error fetching scripts (RequestException): {e}")
+            QMessageBox.warning(self, "Network Error", f"Failed to fetch CodeShare scripts: {e}. Check internet connection.")
+            return []
+        except Exception as e:
+            print(f"Error fetching scripts: {e}")
+            return []
+
+    def refresh_favorites(self):
+        """Refresh the favorites grid"""
+        # Clear existing favorites grid
+        for i in reversed(range(self.favorites_grid_layout.count())): 
+            widget = self.favorites_grid_layout.itemAt(i).widget()
+            if widget:
+                widget.setParent(None)
+            
+        # Get favorite scripts
+        try:
+            # Get all scripts
+            all_scripts = self.fetch_scripts()
+            
+            # Filter to only favorited scripts
+            favorite_scripts = [s for s in all_scripts if s['id'] in self.favorites]
+            
+            if favorite_scripts:
+                # Add scripts to grid
+                for idx, script_info in enumerate(favorite_scripts):
+                    row = idx // 3
+                    col = idx % 3
+                    card = self.create_script_card(script_info)
+                    self.favorites_grid_layout.addWidget(card, row, col)
+            else:
+                # Show message if no favorites
+                msg = QLabel("No favorite scripts yet.\nBrowse scripts and click the ★ to add favorites!")
+                msg.setAlignment(Qt.AlignCenter)
+                msg.setStyleSheet("""
+                    color: #b9bbbe;
+                    font-size: 14px;
+                    padding: 20px;
+                """)
+                self.favorites_grid_layout.addWidget(msg, 0, 0, 1, 3)
+                
+        except Exception as e:
+            # This catch is mainly for errors *after* fetch_scripts, or if fetch_scripts fails entirely
+            print(f"Error refreshing favorites: {e}")
+            error_msg = QLabel(f"Error loading favorites: {str(e)}")
+            error_msg.setStyleSheet("color: #ff4444;")
+            self.favorites_grid_layout.addWidget(error_msg, 0, 0, 1, 3)
 
     def filter_favorites(self, text):
         search_text = text.lower()
@@ -913,51 +931,10 @@ class FridaInjectorMainWindow(QMainWindow):
         QApplication.clipboard().setText(text)
         QMessageBox.information(self, "Success", "Copied to clipboard!")
 
-    @pyqtSlot(str)
-    def open_script_in_injector(self, code):
-        print("[MainWindow] Opening script in injector editor.")
-        self.switch_page('inject')
-        if hasattr(self, 'script_editor'):
-            self.script_editor.set_script(code)
-            editor_widget = self.script_editor.get_editor_widget()
-            if editor_widget: editor_widget.setFocus()
-        else: print("Error: script_editor panel not found")
-
-    # MODIFICATION: New slot to handle messages from the InjectionPanel's REPL
-    @pyqtSlot(str)
-    def post_message_to_script(self, message):
-        """Posts a message from the REPL input to the running script."""
-        if self.current_script and self.current_session and not self.current_session.is_detached:
-            try:
-                # Post a message with type 'input'
-                self.current_script.post({'type': 'input', 'payload': message})
-                # Log to script output to show what was sent
-                self.script_output_panel.append_output(f"[APP -> SCRIPT] {message}")
-            except Exception as e:
-                self.log_panel.append_output(f"[APP ERROR] Failed to post message: {e}")
-        else:
-            self.log_panel.append_output("[APP ERROR] Cannot send message: no active script session.")
-
-    @pyqtSlot(bool, str) 
-    def _finish_cleanup_from_worker(self, process_ended, pid_context):
-        self._finish_cleanup(pid_context, process_ended)
-
-    def _finish_cleanup(self, pid_context, process_ended):
-        # This method is called on the main thread after script stop/detach is complete
-        was_running = pid_context != "N/A"
-        self.spawn_target = None
-
-        if process_ended:
-            self.log_panel.append_output(f"[*] Target process {pid_context} ended.")
-            self.current_pid = None
-        elif was_running:
-            self.log_panel.append_output("[*] Script injection stopped.")
-
-        if hasattr(self, 'injection_panel'):
-            self.injection_panel.injection_stopped_update()
-
-        self._update_current_selection(self.current_device, self.current_pid)
-        self._stopping = False
+    def cleanup(self):
+        """Cleanup resources before closing."""
+        if hasattr(self, 'device_selector') and hasattr(self.device_selector, 'cleanup'):
+            self.device_selector.cleanup()
 
     def closeEvent(self, event):
         """Handle window close event."""
