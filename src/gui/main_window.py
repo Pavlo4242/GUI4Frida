@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
                            QPushButton, QStackedWidget, QLabel, QListWidget, QTableWidget,
                            QGroupBox, QCheckBox, QSpinBox, QMessageBox, QScrollArea,
                            QGridLayout, QLineEdit, QTextEdit, QFrame, QDialog, QFileDialog,
-                           QSplitter, QApplication)
+                           QSplitter, QApplication, QSizePolicy)
 from PyQt5.QtCore import Qt, QSize, pyqtSlot, QTimer, QThread, QObject, pyqtSignal
 from PyQt5.QtGui import QFont
 import qtawesome as qta
@@ -128,8 +128,8 @@ class FridaInjectorMainWindow(QMainWindow):
             QWidget#sidebar {
                 background-color: #2f3136;
                 border-right: 1px solid #202225;
-                /* MODIFICATION: Made sidebar wider and removed max-width */
-                min-width: 220px;
+                min-width: 180px;
+                max-width: 180px;
             }
             QPushButton {
                 text-align: left; padding: 6px 8px; border: none;
@@ -160,7 +160,6 @@ class FridaInjectorMainWindow(QMainWindow):
             self.nav_buttons[id_] = btn
             layout.addWidget(btn)
 
-        # MODIFICATION: Moved Recent Actions group before the stretch
         self.scripts_group = QGroupBox("Recent Actions")
         self.scripts_group.setObjectName("RecentActionsGroup")
         self.scripts_group.setStyleSheet("""
@@ -193,21 +192,18 @@ class FridaInjectorMainWindow(QMainWindow):
         scripts_layout = QVBoxLayout(self.scripts_group) 
         scripts_layout.setContentsMargins(5, 10, 5, 5)
         scripts_layout.setSpacing(1)
-        # MODIFICATION: Set size policy to allow vertical growth
-        self.scripts_group.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
 
+        layout.addStretch()
         layout.addWidget(self.scripts_group)
-        layout.addStretch() # MODIFICATION: Stretch is now after recent actions
-
         status_layout = QHBoxLayout(); status_layout.setContentsMargins(8, 4, 8, 4)
         self.status_icon = QLabel(); self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#43b581').pixmap(8, 8))
         self.status_text = QLabel("Ready"); self.status_text.setStyleSheet("color: #b9bbbe; font-size: 12px;")
         status_layout.addWidget(self.status_icon); status_layout.addWidget(self.status_text)
         layout.addLayout(status_layout)
         return sidebar
-
-        def refresh_sidebar_recalls(self):
-             """Refreshes the dynamic content of the sidebar's Recent Actions group."""
+        
+    def refresh_sidebar_recalls(self):
+        """Refreshes the dynamic content of the sidebar's Recent Actions group."""
         if not hasattr(self, 'scripts_group'): return
 
         scripts_layout = self.scripts_group.layout()
@@ -448,7 +444,6 @@ class FridaInjectorMainWindow(QMainWindow):
             if hasattr(self.injection_panel, 'save_name_input'):
                 self.injection_panel.save_name_input.clear()
             
-            # MODIFICATION: Refresh sidebar immediately after saving
             self.refresh_sidebar_recalls()
 
         except Exception as e:
@@ -657,7 +652,6 @@ class FridaInjectorMainWindow(QMainWindow):
         layout.addStretch()
         return page
 
-    @pyqtSlot(str, int)
     def handle_injection_request(self, script_content, pid):
         """Unified injection handler for both attaching to a running process and spawning a new one."""
         device = None
@@ -707,7 +701,7 @@ class FridaInjectorMainWindow(QMainWindow):
             
             self.current_session = session
             
-            def on_detached(reason, crash): # -- Unchanged
+            def on_detached(reason, crash):
                 if self.current_session is not None:
                     print(f"[Inject] Session detached! Reason: {reason}")
                     self.log_panel.append_output(f"[!] Session detached: {reason}" + (" (App Crashed)" if crash else "")) 
@@ -721,7 +715,7 @@ class FridaInjectorMainWindow(QMainWindow):
             script = session.create_script(script_content)
             self.current_scripts = [script]
             
-            def on_message(message, data): # -- Unchanged
+            def on_message(message, data):
                 try:
                     msg_type = message.get('type') if isinstance(message, dict) else 'unknown'
                     
@@ -770,8 +764,6 @@ class FridaInjectorMainWindow(QMainWindow):
                 'script': script_content,
                 'pid': self.current_pid, 'device': self.current_device, 'status': 'success'
             })
-            # MODIFICATION: Refresh sidebar after successful injection
-            self.refresh_sidebar_recalls()
 
         except Exception as e:
             error_msg = f"{str(e)}"

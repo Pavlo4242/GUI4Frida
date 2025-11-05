@@ -65,8 +65,7 @@ class DeviceSelector(QWidget):
             QMessageBox.critical(self, "Save Error", f"Failed to save temporary script: {e}")
             return None
 
-    def show_paste_dialog(self, script_list_widget, update_ok_button_func):
-        """Displays a dialog to paste and save script content as a temporary file."""
+    def show_paste_dialog(self, script_list_widget, update_ok_button_func): # -- Unchanged
         dlg = QDialog(self)
         dlg.setWindowTitle("Paste and Save Script (Temp)")
         dlg.resize(600, 400)
@@ -87,6 +86,23 @@ class DeviceSelector(QWidget):
         layout.addWidget(btn_box)
 
         dlg.exec_()
+        
+    # MODIFICATION: Added the missing _handle_paste_save method
+    def _handle_paste_save(self, content, script_list_widget, update_ok_button_func, dialog):
+        """Handles saving pasted content and updating the script list."""
+        if not content.strip():
+            QMessageBox.warning(dialog, "Empty Script", "Cannot save an empty script.")
+            return
+
+        temp_path = self._save_temp_script(content)
+        if temp_path:
+            # Add to list widget with a special prefix
+            item = QListWidgetItem(f"[PASTED] {os.path.basename(temp_path)}")
+            item.setData(Qt.UserRole, temp_path)
+            item.setToolTip(temp_path)
+            script_list_widget.addItem(item)
+            update_ok_button_func()
+            dialog.accept() # Close the dialog
         
     def setup_ui(self):
         layout = QVBoxLayout(self)
