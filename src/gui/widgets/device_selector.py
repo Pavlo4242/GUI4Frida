@@ -4,19 +4,14 @@ import qtawesome as qta
 import sys
 from pathlib import Path
 import os
-import time # ADDED: For unique file naming in temporary scripts
-
-# Import all necessary Qt modules, ensure QTextEdit and QApplication are present
+import time
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QComboBox,
                            QPushButton, QLabel, QFrame, QLineEdit, QMessageBox,
                            QApplication, QDialog, QListWidget, QListWidgetItem,
-                           QDialogButtonBox, QFileDialog, QTextEdit, QCheckBox, # QTextEdit added
+                           QDialogButtonBox, QFileDialog, QTextEdit, QCheckBox,
                            QFormLayout, QGroupBox)
 from PyQt5.QtCore import pyqtSignal, Qt
 from PyQt5.QtGui import QFont
-
-# Add project root to Python path
-sys.path.append(str(Path(__file__).parent.parent.parent))
 from core.android_helper import AndroidHelper
 
 
@@ -38,7 +33,7 @@ class DeviceSelector(QWidget):
 
     def _get_temp_dir(self):
         """Gets the dedicated temp directory for spawned scripts."""
-        temp_dir = os.path.join(os.path.expanduser('~'), '.frida_gui', 'spawn_scripts')
+        temp_dir = os.path.join(os.getcwd(), 'frida_data', 'spawn_scripts')
         os.makedirs(temp_dir, exist_ok=True)
         return temp_dir
 
@@ -63,7 +58,7 @@ class DeviceSelector(QWidget):
     def show_paste_dialog(self, script_list_widget, update_ok_button_func):
         """Displays a dialog to paste and save script content as a temporary file."""
         dlg = QDialog(self)
-        dlg.setWindowTitle("Paste and Save Script")
+        dlg.setWindowTitle("Paste and Save Script (Temp)")
         dlg.resize(600, 400)
         layout = QVBoxLayout(dlg)
 
@@ -73,7 +68,7 @@ class DeviceSelector(QWidget):
         editor.setPlainText(clipboard.text())
         editor.setFont(QFont('Consolas', 10))
 
-        layout.addWidget(QLabel("Paste your **Frida script content** below:"))
+        layout.addWidget(QLabel("Paste your **Frida script content** below (saves to temp location):"))
         layout.addWidget(editor)
 
         btn_box = QDialogButtonBox(QDialogButtonBox.Save | QDialogButtonBox.Cancel)
@@ -84,6 +79,7 @@ class DeviceSelector(QWidget):
         dlg.exec_()
         
     def _handle_paste_save(self, content, script_list_widget, update_ok_button_func, dialog):
+        """Handles saving pasted content and updating the script list."""
         if not content.strip():
             QMessageBox.warning(dialog, "Empty Script", "Cannot save an empty script.")
             return
@@ -519,7 +515,7 @@ class DeviceSelector(QWidget):
         known_text = QTextEdit()
         known_text.setReadOnly(True)
         known_text.setMinimumHeight(180)
-        known_text.setFont(QFont("Consolas", 9))
+        known_text.setFont(QFont("Consolas", 11))
 
         if not hasattr(self, "_frida_help_cache"):
             try:
@@ -601,6 +597,7 @@ class DeviceSelector(QWidget):
                 break
 
     def cleanup(self):
+        """Clean up state and remove temporary files."""
         self.process_combo.clear()
         self.device_combo.clear()
         self.current_device = None
@@ -612,8 +609,10 @@ class DeviceSelector(QWidget):
         print("[DeviceSelector] Cleaning up temporary spawn scripts...")
         for file_path in getattr(self, '_temp_files', []):
             try:
-                os.remove(file_path)
-                print(f"  Removed: {file_path}")
+                # Only attempt to remove files created by this instance in its session
+                if os.path.exists(file_path):
+                    os.remove(file_path)
+                    print(f"  Removed: {file_path}")
             except Exception as e:
                 print(f"  Failed to remove {file_path}: {e}")
         self._temp_files = []

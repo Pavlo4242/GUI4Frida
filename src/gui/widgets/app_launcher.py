@@ -15,8 +15,8 @@ class AppLauncher(QWidget):
     
     def __init__(self):
         super().__init__()
-        self.favorites_file = os.path.join(os.path.expanduser('~'), '.frida_gui', 'favorites.json')
-        self.scripts_dir = os.path.join(os.path.expanduser('~'), '.frida_gui', 'scripts')
+        self.favorites_file = os.path.join(os.getcwd(), 'frida_data', 'favorites.json')
+        self.scripts_dir = os.path.join(os.getcwd(), 'frida_data', 'scripts')
         self.load_favorites()
         self.setup_ui()
         

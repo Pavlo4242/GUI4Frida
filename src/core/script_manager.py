@@ -12,7 +12,7 @@ class ScriptManager(QObject):
     
     def __init__(self):
         super().__init__()
-        self.scripts_dir = os.path.join(os.path.expanduser('~'), '.frida_gui', 'scripts')
+        self.scripts_dir = os.path.join(os.getcwd(), 'frida_data', 'scripts')
         self.key = Fernet.generate_key()
         self.cipher_suite = Fernet(self.key)
         self._ensure_dirs()

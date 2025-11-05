@@ -6,7 +6,7 @@ import weakref
 
 class HistoryManager:
     def __init__(self):
-        self.history_file = os.path.join(os.path.expanduser('~'), '.frida_gui', 'history.json')
+        self.history_file = os.path.join(os.getcwd(), 'frida_data', 'history.json')
         self._history = deque(maxlen=1000)  # Limit history size
         self.load_history()
         

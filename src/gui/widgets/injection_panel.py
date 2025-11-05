@@ -1,25 +1,24 @@
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QPushButton,
                            QLabel, QProgressBar, QFrame, QMessageBox, QFileDialog,
-                           QTextEdit, QApplication, QLineEdit) # MODIFICATION: Added QLineEdit
+                           QTextEdit, QApplication, QLineEdit)
 from PyQt5.QtCore import Qt, pyqtSignal
 import qtawesome as qta
 import os 
 
 class InjectionPanel(QWidget):
-    # Signals remain the same
     injection_started = pyqtSignal(str, int)  # script, pid
     injection_completed = pyqtSignal(bool, str)
     injection_stopped = pyqtSignal()
     
-    # MODIFICATION: New signal for posting REPL messages
     message_posted = pyqtSignal(str)
+
+    script_save_requested = pyqtSignal(str, str)
 
     def __init__(self):
         super().__init__()
         self.current_pid = None
         self.current_device_id = None
-        # Reference to the actual QTextEdit from ScriptEditorPanel, set by MainWindow
-        self.script_editor_widget = None # THIS WILL HOLD THE REFERENCE
+        self.script_editor_widget = None
         self.setup_ui()
 
     def setup_ui(self):
@@ -27,7 +26,6 @@ class InjectionPanel(QWidget):
         layout.setContentsMargins(5, 0, 5, 5) 
         layout.setSpacing(8) 
 
-        # Status panel
         status_frame = QFrame()
         status_frame.setStyleSheet("""
             QFrame {
@@ -48,38 +46,53 @@ class InjectionPanel(QWidget):
         status_layout.addWidget(self.status_label)
         status_layout.addStretch()
 
-        # Action buttons layout
+        save_layout = QHBoxLayout()
+        save_layout.setSpacing(6)
+        
+        self.save_name_input = QLineEdit()
+        self.save_name_input.setObjectName('save_name_input')
+        self.save_name_input.setPlaceholderText("New script name (e.g., 'my_hook')")
+        self.save_name_input.setStyleSheet("padding: 5px;")
+        
+        js_label = QLabel(".js")
+        js_label.setStyleSheet("font-weight: bold; color: #99aab5;")
+        
+        self.save_btn = QPushButton(qta.icon('fa5s.save', color='white'), " Save Script")
+        self.save_btn.setStyleSheet("padding: 5px 10px; background-color: #7289da; border: none; border-radius: 4px; color: white;")
+        self.save_btn.clicked.connect(self._save_script_clicked)
+        
+        save_layout.addWidget(self.save_name_input)
+        save_layout.addWidget(js_label)
+        save_layout.addWidget(self.save_btn)
+        save_layout.addStretch()
+
         button_layout = QHBoxLayout()
         button_layout.setSpacing(6) 
 
-        # Load Script Button
         self.load_btn = QPushButton(qta.icon('fa5s.folder-open', color='white'), " Load")
         self.load_btn.clicked.connect(self.load_script_file)
         self.load_btn.setToolTip("Load script from .js file")
         self.load_btn.setStyleSheet("padding: 5px 10px; background-color: #5865f2; border: none; border-radius: 4px; color: white;")
 
-        # Clear Button (Added)
         self.clear_btn = QPushButton(qta.icon('fa5s.trash-alt', color='white'), " Clear")
         self.clear_btn.clicked.connect(self.clear_script)
         self.clear_btn.setToolTip("Clear the script editor")
         self.clear_btn.setStyleSheet("padding: 5px 10px; background-color: #4f545c; border: none; border-radius: 4px; color: white;") 
 
-        # Inject Button (Modified name, Execute -> Inject)
         self.inject_btn = QPushButton(qta.icon('fa5s.syringe', color='white'), " Inject") 
         self.inject_btn.clicked.connect(self.execute_script) 
         self.inject_btn.setToolTip("Inject the current script into the selected process")
-        self.inject_btn.setEnabled(False) # Disable initially
+        self.inject_btn.setEnabled(False)
         self.inject_btn.setStyleSheet("""
             QPushButton { background-color: #43b581; color: white; padding: 5px 10px; border: none; border-radius: 4px; font-weight: bold; }
             QPushButton:hover { background-color: #3ca374; }
             QPushButton:disabled { background-color: #2f3136; color: #72767d; }
         """)
 
-        # Stop Button
         self.stop_btn = QPushButton(qta.icon('fa5s.stop', color='white'), " Stop")
         self.stop_btn.clicked.connect(self.stop_injection)
         self.stop_btn.setToolTip("Stop the currently injected script")
-        self.stop_btn.setEnabled(False) # Disable initially
+        self.stop_btn.setEnabled(False)
         self.stop_btn.setStyleSheet("""
             QPushButton { background-color: #f04747; color: white; padding: 5px 10px; border: none; border-radius: 4px; font-weight: bold; }
             QPushButton:hover { background-color: #d84040; }
@@ -92,7 +105,6 @@ class InjectionPanel(QWidget):
         button_layout.addWidget(self.inject_btn)
         button_layout.addWidget(self.stop_btn)
 
-        # Progress bar
         self.progress_bar = QProgressBar()
         self.progress_bar.setTextVisible(False)
         self.progress_bar.setFixedHeight(6) 
@@ -124,17 +136,34 @@ class InjectionPanel(QWidget):
         repl_layout.addWidget(self.command_input)
         repl_layout.addWidget(self.send_btn)
         
-        # MODIFICATION: REPL starts disabled
         self.command_input.setEnabled(False)
         self.send_btn.setEnabled(False)
  
  
-         # Add widgets to main layout
         layout.addWidget(status_frame)
+        layout.addLayout(save_layout)
         layout.addLayout(button_layout)
-        # MODIFICATION: Add the new REPL layout
         layout.addLayout(repl_layout)
         layout.addWidget(self.progress_bar)
+    
+    def _save_script_clicked(self):
+        """Emits signal to save the current script content to a permanent file."""
+        if not self.script_editor_widget:
+            QMessageBox.critical(self, "Internal Error", "Script editor reference not set.")
+            return
+
+        script_content = self.script_editor_widget.toPlainText()
+        script_name = self.save_name_input.text().strip()
+        
+        if not script_name:
+            QMessageBox.warning(self, "Input Error", "Please enter a name for the script.")
+            return
+
+        if not script_content.strip():
+            QMessageBox.warning(self, "Input Error", "Script content is empty. Cannot save.")
+            return
+            
+        self.script_save_requested.emit(script_name, script_content)
 
     def set_script_editor_widget(self, editor_widget: QTextEdit): 
         """Sets the reference to the QTextEdit widget from ScriptEditorPanel."""
@@ -166,12 +195,11 @@ class InjectionPanel(QWidget):
 
         if file_name:
             try:
-                # Use UTF-8 encoding for broader compatibility
                 with open(file_name, 'r', encoding='utf-8') as f:
                     script_content = f.read()
                 self.script_editor_widget.setPlainText(script_content)
                 self.status_label.setText(f"Loaded: {os.path.basename(file_name)}")
-                self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#99aab5').pixmap(14, 14)) # Grey
+                self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#99aab5').pixmap(14, 14))
                 print(f"[InjectionPanel] Loaded script: {file_name}")
             except Exception as e:
                 error_msg = f"Failed to load script: {str(e)}"
@@ -195,21 +223,18 @@ class InjectionPanel(QWidget):
 
         print(f"[InjectionPanel] Attempting to inject script into PID: {self.current_pid} on device: {self.current_device_id}")
 
-        # Update UI to indicate injection attempt
         self.status_icon.setPixmap(qta.icon('fa5s.spinner', color='#faa61a', animation=qta.Spin(self.status_icon)).pixmap(14, 14)) 
         self.status_label.setText(f"Injecting into PID: {self.current_pid}...")
         self._set_buttons_state(injecting=True)
         self.progress_bar.show()
-        self.progress_bar.setRange(0, 0) # Indeterminate
+        self.progress_bar.setRange(0, 0)
 
         try:
-            # Emit the signal for MainWindow to handle the actual Frida logic
             self.injection_started.emit(script_content, self.current_pid)
         except Exception as e:
-            # Handle potential errors during signal emission itself (less likely)
             error_msg = f"Internal error starting injection process: {str(e)}"
             print(f"[InjectionPanel] {error_msg}")
-            self.injection_failed(error_msg) # Update UI to failed state
+            self.injection_failed(error_msg)
 
     def stop_injection(self):
         """Emits signal to stop the current script."""
@@ -227,12 +252,11 @@ class InjectionPanel(QWidget):
 
         self.injection_stopped.emit() 
         
-    # MODIFICATION: New function to handle REPL input
     def post_message_to_script(self):
         """Gets text from command input and emits message_posted signal."""
         text = self.command_input.text()
         if not text.strip():
-            return # Do nothing if input is empty
+            return
             
         if self.send_btn.isEnabled():
             self.message_posted.emit(text)
@@ -269,7 +293,6 @@ class InjectionPanel(QWidget):
             self.status_icon.setPixmap(qta.icon('fa5s.circle', color='#f04747').pixmap(14, 14)) 
             self._set_buttons_state(process_selected=False)
 
-    # --- Methods called by MainWindow for feedback ---
     def injection_succeeded(self):
         """Updates UI when injection is confirmed successful."""
         print(f"[InjectionPanel] Injection succeeded for PID {self.current_pid}")
@@ -287,6 +310,7 @@ class InjectionPanel(QWidget):
         if self.current_pid:
             status_text += f": PID {self.current_pid}"
         self.status_label.setText(status_text)
+        # FIX: The call to _set_buttons_state must pass a boolean for process_selected
         self._set_buttons_state(process_selected=bool(self.current_pid))
         self.progress_bar.hide()
         self.progress_bar.setRange(0, 1)
@@ -314,19 +338,21 @@ class InjectionPanel(QWidget):
         self.progress_bar.hide()
         self.progress_bar.setRange(0, 1)
 
-    # MODIFICATION: Updated to control the new REPL widgets
     def _set_buttons_state(self, process_selected=False, injecting=False, script_running=False, stopping=False):
         """Centralized method to manage button enabled/disabled states."""
         can_inject = process_selected and not injecting and not script_running and not stopping
         can_stop = script_running and not stopping
-        can_load_clear = not injecting and not stopping
+        # FIX: The boolean expression result is cast to bool for PyQt's strict setEnabled.
+        can_load_clear_save = bool(not injecting and not stopping) 
         # MODIFICATION: Can only send messages when a script is running
         can_send_message = script_running and not stopping
 
         self.inject_btn.setEnabled(can_inject)
         self.stop_btn.setEnabled(can_stop)
-        self.load_btn.setEnabled(can_load_clear)
-        self.clear_btn.setEnabled(can_load_clear)
+        self.load_btn.setEnabled(can_load_clear_save)
+        self.clear_btn.setEnabled(can_load_clear_save)
+        self.save_btn.setEnabled(can_load_clear_save) # MODIFICATION: Set save button state
+        self.save_name_input.setEnabled(can_load_clear_save) # MODIFICATION: Set save input state
         
         # MODIFICATION: Enable/disable REPL
         self.command_input.setEnabled(can_send_message)

@@ -12,7 +12,7 @@ class ScriptEditorPanel(QWidget):
         self.editor = QTextEdit()
         self.editor.setPlaceholderText("Enter your Frida script here...")
         self.editor.setFontFamily("Consolas")
-        self.editor.setStyleSheet("font-size: 11pt;")
+        self.editor.setStyleSheet("font-size: 15pt;")
 
         # FIX: The self.editor.setPlainText call is now correctly inside a method.
         # This default script includes the functional REPL handler.

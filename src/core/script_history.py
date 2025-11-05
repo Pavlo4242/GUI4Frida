@@ -4,7 +4,7 @@ from datetime import datetime
 
 class ScriptHistory:
     def __init__(self):
-        self.base_dir = os.path.join(os.path.expanduser('~'), '.frida_gui')
+        self.base_dir = os.path.join(os.getcwd(), 'frida_data')
         self.history_file = os.path.join(self.base_dir, 'script_history.json')
         self.favorites_file = os.path.join(self.base_dir, 'favorites.json')
         self.ensure_dirs()

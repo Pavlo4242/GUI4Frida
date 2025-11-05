@@ -67,7 +67,7 @@ class AndroidHelper:
             print(f"Downloading frida-server for {arch}...")
             response = requests.get(server_url, stream=True)
             response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)
-            server_path = os.path.join(os.path.expanduser('~'), '.frida_gui', f'frida-server-{arch}')
+            server_path = os.path.join(os.getcwd(), 'frida_data', f'frida-server-{arch}')
             
             # Create directory if it doesn't exist
             os.makedirs(os.path.dirname(server_path), exist_ok=True)
