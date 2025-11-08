@@ -192,8 +192,8 @@ class FridaMainWindow(QMainWindow):
         
         # Favorites (use CodeShare's favorites tab)
         # We could create a dedicated favorites view or reuse CodeShare
-        self.pages['favorites'] = self.create_favorites_placeholder()
-        self.stack.addWidget(self.pages['favorites'])
+      #  self.pages['favorites'] = self.create_favorites_placeholder()
+       # self.stack.addWidget(self.pages['favorites'])
         
         # History
         self.pages['history'] = HistoryView(self.controller.history_manager)
@@ -208,20 +208,20 @@ class FridaMainWindow(QMainWindow):
         self.pages['settings'] = SettingsView(self.controller.settings_model)
         self.stack.addWidget(self.pages['settings'])
         
-    def create_favorites_placeholder(self):
-        """Create favorites placeholder page"""
-        widget = QWidget()
-        layout = QVBoxLayout(widget)
+    #def create_favorites_placeholder(self):
+     #   """Create favorites placeholder page"""
+     #   widget = QWidget()
+     #   layout = QVBoxLayout(widget)
         
-        label = QLabel("Favorites management coming soon!")
-        label.setAlignment(Qt.AlignCenter)
-        label.setStyleSheet("color: #96989d; font-size: 16px;")
+        #label = QLabel("Favorites management coming soon!")
+        #label.setAlignment(Qt.AlignCenter)
+        #label.setStyleSheet("color: #96989d; font-size: 16px;")
         
-        layout.addStretch()
-        layout.addWidget(label)
-        layout.addStretch()
-        
-        return widget
+        #layout.addStretch()
+        #layout.addWidget(label)
+        #layout.addStretch()
+      #  
+       # return widget
         
     def connect_signals(self):
         """Connect controller signals to UI updates"""
