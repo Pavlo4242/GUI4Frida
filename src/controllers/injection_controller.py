@@ -160,7 +160,7 @@ class InjectionController(QObject):
         scripts = self.script_model._current_scripts
         session = self.script_model._current_session
 
-        # MODIFICATION: Add more robust validation
+        # MODIFICATION: Improved validation and error reporting
         if not scripts:
             self.script_model.add_output("[ERROR] No active scripts")
             return
@@ -169,13 +169,21 @@ class InjectionController(QObject):
             self.script_model.add_output("[ERROR] No active session")
             return
             
+        # MODIFICATION: Check if session is detached before checking scripts
         if session.is_detached:
             self.script_model.add_output("[ERROR] Session is detached")
             return
 
         try:
-            scripts[-1].post({'type': 'input', 'payload': message})
+            # MODIFICATION: Use the last script in the list (most recently loaded)
+            active_script = scripts[-1]
+            
+            # MODIFICATION: Log the outgoing message format for debugging
+            payload = {'type': 'input', 'payload': message}
+            active_script.post(payload)
+            
             self.script_model.add_output(f"[HOST -> SCRIPT] {message}")
+            
         except Exception as e:
             self.script_model.add_output(f"[ERROR] Failed to post message: {e}")
                 

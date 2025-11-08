@@ -254,17 +254,18 @@ class InjectionPanel(QWidget):
         
     def post_message_to_script(self):
         """Gets text from command input and emits message_posted signal."""
-        text = self.command_input.text()
-        if not text.strip():
+        text = self.command_input.text().strip()  # MODIFICATION: Added strip()
+        if not text:
             return
             
+        # MODIFICATION: Check if script is actually running before sending
         if not self.send_btn.isEnabled():
             print("[InjectionPanel] Cannot send message - no active script")
+            self.command_input.clear()
             return
             
-        if self.send_btn.isEnabled():
-            self.message_posted.emit(text)
-            self.command_input.clear()
+        self.message_posted.emit(text)
+        self.command_input.clear()
 
     def set_process(self, device_id, pid):
         """Updates the selected process and device ID. Called by MainWindow."""
