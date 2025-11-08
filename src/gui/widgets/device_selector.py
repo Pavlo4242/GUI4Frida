@@ -165,6 +165,7 @@ class DeviceSelector(QWidget):
         self.spawn_app_btn.setToolTip("Select an installed application to spawn")
         self.spawn_app_btn.clicked.connect(self.show_spawn_dialog)
         self.spawn_app_btn.setEnabled(False)
+        refresh_proc_btn.clicked.connect(self.refresh_processes)
 
         self.frida_opts_btn = QPushButton(qta.icon('fa5s.cog'), " Frida Options")
         self.frida_opts_btn.setToolTip("Configure Frida spawn command line options")
@@ -361,178 +362,171 @@ class DeviceSelector(QWidget):
                 QMessageBox.warning(self, "No Apps", "Could not find any user applications to spawn.")
                 return
 
-        # --- Application selector dialog (unchanged) ---
-        dialog = QDialog(self)
-        dialog.setWindowTitle("Select Application to Spawn")
-        layout = QVBoxLayout(dialog)
+    # MODIFICATION: Application selector dialog MUST come before script dialog
+    dialog = QDialog(self)
+    dialog.setWindowTitle("Select Application to Spawn")
+    layout = QVBoxLayout(dialog)
 
-        filter_edit = QLineEdit()
-        filter_edit.setPlaceholderText("Filter applications...")
-        list_widget = QListWidget()
-        list_widget.setStyleSheet("QListWidget::item { padding: 5px; }")
+    filter_edit = QLineEdit()
+    filter_edit.setPlaceholderText("Filter applications...")
+    list_widget = QListWidget()
+    list_widget.setStyleSheet("QListWidget::item { padding: 5px; }")
 
-        def populate_list(text=""):
-            list_widget.clear()
-            fl = text.lower()
-            for app in self.applications:
-                if fl in app['name'].lower() or fl in app['identifier'].lower():
-                    item = QListWidgetItem(f"{app['name']} ({app['identifier']})")
-                    item.setData(Qt.UserRole, app['identifier'])
-                    list_widget.addItem(item)
+    def populate_list(text=""):
+        list_widget.clear()
+        fl = text.lower()
+        for app in self.applications:
+            if fl in app['name'].lower() or fl in app['identifier'].lower():
+                item = QListWidgetItem(f"{app['name']} ({app['identifier']})")
+                item.setData(Qt.UserRole, app['identifier'])
+                list_widget.addItem(item)
 
-        filter_edit.textChanged.connect(populate_list)
-        populate_list()
-        list_widget.itemDoubleClicked.connect(dialog.accept)
+    filter_edit.textChanged.connect(populate_list)
+    populate_list()
+    list_widget.itemDoubleClicked.connect(dialog.accept)
 
-        btn_box = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
-        btn_box.accepted.connect(dialog.accept)
-        btn_box.rejected.connect(dialog.reject)
+    btn_box = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+    btn_box.accepted.connect(dialog.accept)
+    btn_box.rejected.connect(dialog.reject)
 
-        layout.addWidget(QLabel("Select an application:"))
-        layout.addWidget(filter_edit)
-        layout.addWidget(list_widget)
-        layout.addWidget(btn_box)
+    layout.addWidget(QLabel("Select an application:"))
+    layout.addWidget(filter_edit)
+    layout.addWidget(list_widget)
+    layout.addWidget(btn_box)
 
-        if dialog.exec_() != QDialog.Accepted:
-            return
+    if dialog.exec_() != QDialog.Accepted:
+        return
 
-        selected = list_widget.currentItem()
-        if not selected:
-            return
-        app_identifier = selected.data(Qt.UserRole)
-        print(f"[DeviceSelector] Spawning app selected: {app_identifier}")
+    selected = list_widget.currentItem()
+    if not selected:
+        return
+    app_identifier = selected.data(Qt.UserRole)
+    print(f"[DeviceSelector] Spawning app selected: {app_identifier}")
 
-        # --- Script input dialog ---
-        script_dialog = QDialog(self)
-        script_dialog.setWindowTitle(f"Scripts for {app_identifier}")
-        script_dialog.setMinimumSize(700, 500)
-        dlg_layout = QVBoxLayout(script_dialog)
+    # --- Script input dialog ---
+    script_dialog = QDialog(self)
+    script_dialog.setWindowTitle(f"Scripts for {app_identifier}")
+    script_dialog.setMinimumSize(700, 500)
+    dlg_layout = QVBoxLayout(script_dialog)
 
-        # Top: Buttons
-        btn_layout = QHBoxLayout()
+    # Top: Buttons
+    btn_layout = QHBoxLayout()
+    
+    paste_btn = QPushButton(qta.icon('fa5s.clipboard', color='white'), " Paste & Save") 
+    paste_btn.setToolTip("Paste script from clipboard and save as a temporary file for injection")
+    
+    add_btn = QPushButton(qta.icon('fa5s.plus'), " Add Script File...") 
+    remove_btn = QPushButton(qta.icon('fa5s.trash'), " Remove")
+    up_btn = QPushButton(qta.icon('fa5s.arrow-up'), "")
+    down_btn = QPushButton(qta.icon('fa5s.arrow-down'), "")
+
+    btn_layout.addWidget(paste_btn) 
+    btn_layout.addWidget(add_btn)
+    btn_layout.addWidget(remove_btn)
+    btn_layout.addWidget(up_btn)
+    btn_layout.addWidget(down_btn)
+    btn_layout.addStretch()
+
+    # MODIFICATION: Initialize spawn_script_list properly
+    self.spawn_script_list = QListWidget()
+    self.spawn_script_list.setDragDropMode(QListWidget.InternalMove)
+    self.spawn_script_list.setSelectionMode(QListWidget.SingleSelection)
+    self.spawn_script_list.itemDoubleClicked.connect(self._handle_script_item_double_clicked)
+
+    # Bottom: OK/Cancel
+    btn_box2 = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+    btn_box2.accepted.connect(script_dialog.accept)
+    btn_box2.rejected.connect(script_dialog.reject)
+
+    ok_btn = btn_box2.button(QDialogButtonBox.Ok)
+    ok_btn.setEnabled(False)
+
+    # --- Functions ---
+    def update_ok_button():
+        ok_btn.setEnabled(self.spawn_script_list.count() > 0)
+
+    def add_script():
+        start_dir = self.default_script_dir
         
-        paste_btn = QPushButton(qta.icon('fa5s.clipboard', color='white'), " Paste & Save") 
-        paste_btn.setToolTip("Paste script from clipboard and save as a temporary file for injection")
-        
-        add_btn = QPushButton(qta.icon('fa5s.plus'), " Add Script File...") 
-        remove_btn = QPushButton(qta.icon('fa5s.trash'), " Remove")
-        up_btn = QPushButton(qta.icon('fa5s.arrow-up'), "")
-        down_btn = QPushButton(qta.icon('fa5s.arrow-down'), "")
-
-        btn_layout.addWidget(paste_btn) 
-        btn_layout.addWidget(add_btn)
-        btn_layout.addWidget(remove_btn)
-        btn_layout.addWidget(up_btn)
-        btn_layout.addWidget(down_btn)
-        btn_layout.addStretch()
-
-        # Script list
-        # MODIFICATION: Use self.spawn_script_list to allow access from rename slots
-        self.spawn_script_list = QListWidget()
-        self.spawn_script_list.setDragDropMode(QListWidget.InternalMove)
-        self.spawn_script_list.setSelectionMode(QListWidget.SingleSelection)
-        # MODIFICATION: Connect signals for renaming
-        self.spawn_script_list.itemDoubleClicked.connect(self._handle_script_item_double_clicked)
-        # We will use QInputDialog, so itemChanged is not the right signal.
-
-
-        # Bottom: OK/Cancel
-        btn_box2 = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
-        btn_box2.accepted.connect(script_dialog.accept)
-        btn_box2.rejected.connect(script_dialog.reject)
-
-        ok_btn = btn_box2.button(QDialogButtonBox.Ok)
-        ok_btn.setEnabled(False)
-
-        # --- Functions ---
-        def update_ok_button():
-            ok_btn.setEnabled(self.spawn_script_list.count() > 0)
-
-        def add_script():
-            # MODIFICATION: Start file dialog in default script directory
-            start_dir = self.default_script_dir
-            
-            paths, _ = QFileDialog.getOpenFileNames(
-                script_dialog, "Select Frida Scripts", start_dir,
-                "JavaScript Files (*.js);;All Files (*.*)"
-            )
-            for path in paths:
-                # Avoid duplicates
-                if path not in [self.spawn_script_list.item(i).data(Qt.UserRole) for i in range(self.spawn_script_list.count())]:
-                    item = QListWidgetItem(os.path.basename(path))
-                    item.setData(Qt.UserRole, path)
-                    item.setToolTip(path)
-                    self.spawn_script_list.addItem(item)
-            update_ok_button()
-
-        def remove_script():
-            for item in self.spawn_script_list.selectedItems():
-                self.spawn_script_list.takeItem(self.spawn_script_list.row(item))
-            update_ok_button()
-
-        def move_up():
-            row = self.spawn_script_list.currentRow()
-            if row > 0:
-                item = self.spawn_script_list.takeItem(row)
-                self.spawn_script_list.insertItem(row - 1, item)
-                self.spawn_script_list.setCurrentRow(row - 1)
-
-        def move_down():
-            row = self.spawn_script_list.currentRow()
-            if row < self.spawn_script_list.count() - 1:
-                item = self.spawn_script_list.takeItem(row)
-                self.spawn_script_list.insertItem(row + 1, item)
-                self.spawn_script_list.setCurrentRow(row + 1)
-
-        # Connect signals
-        paste_btn.clicked.connect(lambda: self.show_paste_dialog(self.spawn_script_list, update_ok_button)) 
-        add_btn.clicked.connect(add_script)
-        remove_btn.clicked.connect(remove_script)
-        up_btn.clicked.connect(move_up)
-        down_btn.clicked.connect(move_down)
-        self.spawn_script_list.itemSelectionChanged.connect(
-            lambda: remove_btn.setEnabled(bool(self.spawn_script_list.selectedItems()))
+        paths, _ = QFileDialog.getOpenFileNames(
+            script_dialog, "Select Frida Scripts", start_dir,
+            "JavaScript Files (*.js);;All Files (*.*)"
         )
-        
-        # Populate script list if self.script_files is already set (e.g., re-opening dialog)
-        for path in self.script_files:
-            item_text = f"[PASTED] {os.path.basename(path)}" if path in self._temp_files else os.path.basename(path)
-            item = QListWidgetItem(item_text)
-            item.setData(Qt.UserRole, path)
-            item.setToolTip(path)
-            self.spawn_script_list.addItem(item)
+        for path in paths:
+            if path not in [self.spawn_script_list.item(i).data(Qt.UserRole) for i in range(self.spawn_script_list.count())]:
+                item = QListWidgetItem(os.path.basename(path))
+                item.setData(Qt.UserRole, path)
+                item.setToolTip(path)
+                self.spawn_script_list.addItem(item)
         update_ok_button()
 
-        # Layout
-        dlg_layout.addLayout(btn_layout)
-        dlg_layout.addWidget(QLabel("Scripts will run in order (top to bottom):"))
-        dlg_layout.addWidget(self.spawn_script_list)
-        dlg_layout.addWidget(btn_box2)
+    def remove_script():
+        for item in self.spawn_script_list.selectedItems():
+            self.spawn_script_list.takeItem(self.spawn_script_list.row(item))
+        update_ok_button()
 
-        if script_dialog.exec_() != QDialog.Accepted:
-            print("[DeviceSelector] Script selection cancelled.")
-            return
+    def move_up():
+        row = self.spawn_script_list.currentRow()
+        if row > 0:
+            item = self.spawn_script_list.takeItem(row)
+            self.spawn_script_list.insertItem(row - 1, item)
+            self.spawn_script_list.setCurrentRow(row - 1)
 
-        if self.spawn_script_list.count() == 0:
-            QMessageBox.warning(self, "No Scripts", "Please add at least one script.")
-            return
+    def move_down():
+        row = self.spawn_script_list.currentRow()
+        if row < self.spawn_script_list.count() - 1:
+            item = self.spawn_script_list.takeItem(row)
+            self.spawn_script_list.insertItem(row + 1, item)
+            self.spawn_script_list.setCurrentRow(row + 1)
 
-        # Extract ordered script paths
-        self.script_files = [
-            self.spawn_script_list.item(i).data(Qt.UserRole)
-            for i in range(self.spawn_script_list.count())
-        ]
-        
-        # MODIFICATION: Add to recent list on spawn
-        app_name = selected.text().split(' (')[0].strip()
-        self._add_to_recent_processes(self.current_device, 0, app_name) # PID 0 signifies spawn
+    # Connect signals
+    paste_btn.clicked.connect(lambda: self.show_paste_dialog(self.spawn_script_list, update_ok_button)) 
+    add_btn.clicked.connect(add_script)
+    remove_btn.clicked.connect(remove_script)
+    up_btn.clicked.connect(move_up)
+    down_btn.clicked.connect(move_down)
+    self.spawn_script_list.itemSelectionChanged.connect(
+        lambda: remove_btn.setEnabled(bool(self.spawn_script_list.selectedItems()))
+    )
+    
+    # Populate script list if self.script_files is already set
+    for path in self.script_files:
+        item_text = f"[PASTED] {os.path.basename(path)}" if path in self._temp_files else os.path.basename(path)
+        item = QListWidgetItem(item_text)
+        item.setData(Qt.UserRole, path)
+        item.setToolTip(path)
+        self.spawn_script_list.addItem(item)
+    update_ok_button()
 
-        spawn_opts = getattr(self, "frida_spawn_options", "")
-        self.application_selected_for_spawn.emit(
-            self.current_device, app_identifier, self.script_files, spawn_opts
-        )
-        print("[DeviceSelector] Script accepted and signal emitted.")
+    # Layout
+    dlg_layout.addLayout(btn_layout)
+    dlg_layout.addWidget(QLabel("Scripts will run in order (top to bottom):"))
+    dlg_layout.addWidget(self.spawn_script_list)
+    dlg_layout.addWidget(btn_box2)
 
+    if script_dialog.exec_() != QDialog.Accepted:
+        print("[DeviceSelector] Script selection cancelled.")
+        return
+
+    if self.spawn_script_list.count() == 0:
+        QMessageBox.warning(self, "No Scripts", "Please add at least one script.")
+        return
+
+    # Extract ordered script paths
+    self.script_files = [
+        self.spawn_script_list.item(i).data(Qt.UserRole)
+        for i in range(self.spawn_script_list.count())
+    ]
+    
+    # MODIFICATION: Add to recent list on spawn
+    app_name = selected.text().split(' (')[0].strip()
+    self._add_to_recent_processes(self.current_device, 0, app_name)
+
+    spawn_opts = getattr(self, "frida_spawn_options", "")
+    self.application_selected_for_spawn.emit(
+        self.current_device, app_identifier, self.script_files, spawn_opts
+    )
+    print("[DeviceSelector] Script accepted and signal emitted.")
     def show_frida_options_dialog(self):
         dlg = QDialog(self)
         dlg.setWindowTitle("Frida Spawn Options")
