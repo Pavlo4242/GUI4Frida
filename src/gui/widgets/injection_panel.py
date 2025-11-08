@@ -258,6 +258,10 @@ class InjectionPanel(QWidget):
         if not text.strip():
             return
             
+        if not self.send_btn.isEnabled():
+            print("[InjectionPanel] Cannot send message - no active script")
+            return
+            
         if self.send_btn.isEnabled():
             self.message_posted.emit(text)
             self.command_input.clear()

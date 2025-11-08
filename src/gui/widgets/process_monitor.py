@@ -222,9 +222,12 @@ class ProcessMonitor(QWidget):
             print(f"Error enumerating devices: {e}")
 
     def on_device_changed(self, index):
-        if index >= 0:
+        # Check the widget's current index directly, as the 'index'
+        # argument is causing a TypeError (str vs int).
+        if self.device_combo.currentIndex() >= 0:
             self.current_device = self.device_combo.currentData()
             self.refresh_processes()
+            
 
     def show_context_menu(self, position):
         menu = QMenu()

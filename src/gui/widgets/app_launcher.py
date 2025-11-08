@@ -238,11 +238,6 @@ class AppLauncher(QWidget):
         except Exception as e:
             print(f"Error launching app: {str(e)}")
             
-    def add_to_favorites(self, name, package):
-        self.favorites[name] = package
-        self.save_favorites()
-        self.update_favorites_table()
-        
     def remove_from_favorites(self, name):
         if name in self.favorites:
             del self.favorites[name]
@@ -264,29 +259,6 @@ class AppLauncher(QWidget):
         with open(self.favorites_file, 'w') as f:
             json.dump(self.favorites, f)
             
-    def update_favorites_table(self):
-        self.favorites_table.setRowCount(0)
-        for name, package in self.favorites.items():
-            row = self.favorites_table.rowCount()
-            self.favorites_table.insertRow(row)
-            
-            name_item = QTableWidgetItem(name)
-            package_item = QTableWidgetItem(package)
-            
-            launch_btn = QPushButton("Launch")
-            launch_btn.clicked.connect(lambda checked, p=package: self.launch_app(p))
-            
-            self.favorites_table.setItem(row, 0, name_item)
-            self.favorites_table.setItem(row, 1, package_item)
-            self.favorites_table.setCellWidget(row, 2, launch_btn)
-            
-    def show_context_menu(self, position):
-        menu = QMenu()
-        remove_action = QAction("Remove from Favorites", self)
-        remove_action.triggered.connect(lambda: self.remove_selected_favorite())
-        menu.addAction(remove_action)
-        menu.exec_(self.favorites_table.mapToGlobal(position))
-        
     def remove_selected_favorite(self):
         current_row = self.favorites_table.currentRow()
         if current_row >= 0:
@@ -303,4 +275,4 @@ class AppLauncher(QWidget):
     def launch_recent(self):
         package_name = self.recent_combo.currentText()
         if package_name:
-            self.launch_app(package_name) 
+            self.launch_app(package_name)

@@ -202,6 +202,11 @@ class FridaMainWindow(QMainWindow):
         
         # Process Monitor
         self.pages['monitor'] = ProcessMonitor(main_window=self)
+        if hasattr(self.controller.device_model, 'device_selected'):
+            self.controller.device_model.device_selected.connect(
+                self.pages['monitor'].on_device_changed
+        )
+    
         self.stack.addWidget(self.pages['monitor'])
         
         # Settings

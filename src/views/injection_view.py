@@ -6,6 +6,7 @@ from PyQt5.QtCore import Qt, pyqtSignal, QTimer
 from PyQt5.QtGui import QFont, QTextCursor
 import qtawesome as qta
 from datetime import datetime
+import os  # <-- ADDED THIS IMPORT
 
 
 class CompactDeviceSelector(QWidget):

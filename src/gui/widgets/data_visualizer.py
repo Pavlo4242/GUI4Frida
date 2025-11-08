@@ -1,7 +1,9 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout
 from PyQt5.QtChart import QChart, QChartView, QLineSeries
 from PyQt5.QtCore import Qt, QTimer
+from PyQt5.QtGui import QPainter  # <-- ADDED THIS IMPORT
 import json
+import time  # <-- ADDED THIS IMPORT
 
 class DataVisualizer(QWidget):
     def __init__(self):
@@ -41,4 +43,4 @@ class DataVisualizer(QWidget):
         # Update chart with new data
         self.series.clear()
         for i, call in enumerate(self.api_calls[-50:]):  # Show last 50 calls
-            self.series.append(i, len(call['data'])) 
+            self.series.append(i, len(call['data']))

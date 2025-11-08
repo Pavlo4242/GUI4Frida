@@ -159,16 +159,26 @@ class InjectionController(QObject):
         """Post message to running script"""
         scripts = self.script_model._current_scripts
         session = self.script_model._current_session
-        
-        if scripts and session and not session.is_detached:
-            try:
-                scripts[-1].post({'type': 'input', 'payload': message})
-                self.script_model.add_output(f"[HOST -> SCRIPT] {message}")
-            except Exception as e:
-                self.script_model.add_output(f"[ERROR] Failed to post message: {e}")
-        else:
-            self.script_model.add_output("[ERROR] No active script session")
+
+        # MODIFICATION: Add more robust validation
+        if not scripts:
+            self.script_model.add_output("[ERROR] No active scripts")
+            return
             
+        if not session:
+            self.script_model.add_output("[ERROR] No active session")
+            return
+            
+        if session.is_detached:
+            self.script_model.add_output("[ERROR] Session is detached")
+            return
+
+        try:
+            scripts[-1].post({'type': 'input', 'payload': message})
+            self.script_model.add_output(f"[HOST -> SCRIPT] {message}")
+        except Exception as e:
+            self.script_model.add_output(f"[ERROR] Failed to post message: {e}")
+                
     def _handle_script_message(self, message, data):
         """Handle messages from injected script"""
         try:

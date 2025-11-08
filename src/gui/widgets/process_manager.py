@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QPushButton, 
                            QLabel, QLineEdit, QTableWidget, QTableWidgetItem,
                            QMenu, QAction, QComboBox, QCheckBox, QFrame,
-                           QTableWidgetSelectionRange, QHeaderView)
+                           QTableWidgetSelectionRange, QHeaderView, QSpinBox) # <-- ADDED QSpinBox
 from PyQt5.QtCore import Qt, pyqtSignal, QTimer
 from PyQt5.QtGui import QColor, QFont
 import qtawesome as qta
@@ -304,4 +304,4 @@ class ProcessManager(QWidget):
         selected = self.process_table.selectedItems()
         if selected:
             pid = int(self.process_table.item(selected[0].row(), 0).text())
-            self.process_selected.emit(pid) 
+            self.process_selected.emit(pid)
