@@ -1,0 +1,112 @@
+[
+  {
+    "timestamp": "2025-11-09T04:43:27.196542",
+    "type": "script_injection",
+    "details": {
+      "script": "     console.log(\"[*] Enumerating classes...\");\n        \n        Java.perform(function() {\n         ...",
+      "pid": 0,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-09T04:42:45.428512",
+    "type": "script_injection",
+    "details": {
+      "script": "     console.log(\"[*] Enumerating classes...\");\n        \n        Java.perform(function() {\n         ...",
+      "pid": 0,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-09T04:41:14.758672",
+    "type": "script_injection",
+    "details": {
+      "script": "     console.log(\"[*] Enumerating classes...\");\n        \n        Java.perform(function() {\n         ...",
+      "pid": 0,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "script(line 87): SyntaxError: unexpected end of string"
+    }
+  },
+  {
+    "timestamp": "2025-11-09T04:39:45.517690",
+    "type": "script_injection",
+    "details": {
+      "script": "     console.log(\"[*] Enumerating classes...\");\n        \n        Java.perform(function() {\n         ...",
+      "pid": 0,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "script(line 95): SyntaxError: unexpected end of string"
+    }
+  },
+  {
+    "timestamp": "2025-11-09T04:38:30.300647",
+    "type": "script_injection",
+    "details": {
+      "script": "     console.log(\"[*] Enumerating classes...\");\n        \n        Java.perform(function() {\n         ...",
+      "pid": 0,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "script(line 23): SyntaxError: unexpected token in expression: ']'"
+    }
+  },
+  {
+    "timestamp": "2025-11-09T04:36:31.720387",
+    "type": "script_injection",
+    "details": {
+      "script": "     console.log(\"[*] Enumerating classes...\");\n        \n        Java.perform(function() {\n         ...",
+      "pid": 0,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "script(line 23): SyntaxError: unexpected token in expression: ']'"
+    }
+  },
+  {
+    "timestamp": "2025-11-09T04:14:53.471863",
+    "type": "script_injection",
+    "details": {
+      "script": "     console.log(\"[*] Enumerating classes...\");\n        \n        Java.perform(function() {\n         ...",
+      "pid": 0,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-09T04:14:11.609079",
+    "type": "script_injection",
+    "details": {
+      "script": "     console.log(\"[*] Enumerating classes...\");\n        \n        Java.perform(function() {\n         ...",
+      "pid": 0,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-09T04:13:11.202633",
+    "type": "script_injection",
+    "details": {
+      "script": "     console.log(\"[*] Enumerating classes...\");\n        \n        Java.perform(function() {\n         ...",
+      "pid": 0,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-09T04:12:21.672662",
+    "type": "script_injection",
+    "details": {
+      "script": "     console.log(\"[*] Enumerating classes...\");\n        \n        Java.perform(function() {\n         ...",
+      "pid": 0,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  }
+]

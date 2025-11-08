@@ -1,11 +1,13 @@
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QSplitter,
                            QFrame, QLabel, QPushButton, QComboBox, QLineEdit,
-                           QTextEdit, QListWidget, QListWidgetItem, QGroupBox,
-                           QApplication, QFileDialog, QMessageBox)
+                           QTextEdit, QListWidget, QListWidgetItem, QGroupBox, QDialogButtonBox, QFileDialog, QTextEdit, QCheckBox,
+                           QApplication, QFileDialog, QMessageBox, QLabel, QProgressBar, QMessageBox, QGroupBox, QDialog, QTabWidget, QMenu, QFrame, QTableWidget, QHeaderView, QFileDialog, QScrollArea, QGridLayout, QTextEdit)
 from PyQt5.QtCore import Qt, pyqtSignal, QTimer
 from PyQt5.QtGui import QFont, QTextCursor
 import qtawesome as qta
 from datetime import datetime
+import frida
+import time
 import os  # <-- ADDED THIS IMPORT
 
 
@@ -15,6 +17,7 @@ class CompactDeviceSelector(QWidget):
     device_changed = pyqtSignal(str)  # device_id
     process_changed = pyqtSignal(int, str)  # pid, name
     refresh_requested = pyqtSignal()
+    spawn_requested = pyqtSignal()
     
     def __init__(self):
         super().__init__()
@@ -83,6 +86,7 @@ class CompactDeviceSelector(QWidget):
         self.spawn_btn = QPushButton(qta.icon('fa5s.rocket', color='white'), "Spawn")
         self.spawn_btn.setToolTip("Spawn new app")
         self.spawn_btn.setEnabled(False)
+        self.spawn_btn.clicked.connect(self.spawn_requested.emit)
         
         process_row.addWidget(process_label)
         process_row.addWidget(self.process_combo, 1)
@@ -552,6 +556,9 @@ class InjectionView(QWidget):
     def __init__(self, controller):
         super().__init__()
         self.controller = controller
+        self._temp_files = []
+        self.default_script_dir = os.path.join(os.getcwd(), 'frida_data', 'scripts')
+        os.makedirs(self.default_script_dir, exist_ok=True)
         self.setup_ui()
         self.connect_signals()
         
@@ -616,6 +623,7 @@ class InjectionView(QWidget):
         self.device_selector.refresh_requested.connect(
             self.controller.device_model.refresh_devices
         )
+        self.device_selector.spawn_requested.connect(self._show_spawn_dialog)
         
         # Process selection
         self.device_selector.process_changed.connect(
@@ -667,7 +675,227 @@ class InjectionView(QWidget):
         self.controller.injection_controller.injection_failed.connect(
             self._on_injection_failed
         )
+
+    def _get_temp_dir(self):
+        """Gets the dedicated temp directory for spawned scripts."""
+        temp_dir = os.path.join(os.getcwd(), 'frida_data', 'spawn_scripts')
+        os.makedirs(temp_dir, exist_ok=True)
+        return temp_dir
+
+    def _save_temp_script(self, content):
+        """Saves content to a temporary file and returns the path."""
+        temp_dir = self._get_temp_dir()
+        unique_id = int(time.time() * 1000)
+        file_name = f"pasted_script_{unique_id}.js"
+        file_path = os.path.join(temp_dir, file_name)
         
+        try:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            self._temp_files.append(file_path) # Add to tracking list
+            return file_path
+        except Exception as e:
+            QMessageBox.critical(self, "Save Error", f"Failed to save temporary script: {e}")
+            return None
+
+    def _show_paste_dialog(self, script_list_widget, update_ok_button_func):
+        dlg = QDialog(self)
+        dlg.setWindowTitle("Paste and Save Script (Temp)")
+        dlg.resize(600, 400)
+        layout = QVBoxLayout(dlg)
+
+        editor = QTextEdit()
+        clipboard = QApplication.clipboard()
+        editor.setPlainText(clipboard.text())
+        editor.setFont(QFont('Consolas', 10))
+
+        layout.addWidget(QLabel("Paste your Frida script content below (saves to temp location):"))
+        layout.addWidget(editor)
+
+        btn_box = QDialogButtonBox(QDialogButtonBox.Save | QDialogButtonBox.Cancel)
+        
+        def _handle_paste_save():
+            content = editor.toPlainText()
+            if not content.strip():
+                QMessageBox.warning(dlg, "Empty Script", "Cannot save an empty script.")
+                return
+
+            temp_path = self._save_temp_script(content)
+            if temp_path:
+                item = QListWidgetItem(f"[PASTED] {os.path.basename(temp_path)}")
+                item.setData(Qt.UserRole, temp_path)
+                item.setToolTip(temp_path)
+                script_list_widget.addItem(item)
+                update_ok_button_func()
+                dlg.accept()
+
+        btn_box.button(QDialogButtonBox.Save).clicked.connect(_handle_paste_save)
+        btn_box.rejected.connect(dlg.reject)
+        layout.addWidget(btn_box)
+        dlg.exec_()
+        
+    def _show_spawn_dialog(self):
+        """Show dialogs to select app and scripts for spawning."""
+        
+        current_device_id = self.controller.device_model.current_device_id
+        if not current_device_id:
+            QMessageBox.warning(self, "No Device", "Please select a device first.")
+            return
+
+        try:
+            device = frida.get_device(current_device_id)
+            if device.type != 'usb':
+                QMessageBox.warning(self, "Not Supported", "Spawning is only supported for USB devices.")
+                return
+            raw_apps = device.enumerate_applications()
+            applications = []
+            for app in raw_apps:
+                if app.identifier and '.' in app.identifier:
+                    applications.append({'name': app.name, 'identifier': app.identifier})
+            applications.sort(key=lambda x: x['name'].lower())
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Could not list applications: {e}")
+            return
+
+        if not applications:
+            QMessageBox.warning(self, "No Apps", "Could not find any user applications to spawn.")
+            return
+
+        # --- Application selector dialog ---
+        app_dialog = QDialog(self)
+        app_dialog.setWindowTitle("Select Application to Spawn")
+        app_layout = QVBoxLayout(app_dialog)
+
+        filter_edit = QLineEdit()
+        filter_edit.setPlaceholderText("Filter applications...")
+        list_widget = QListWidget()
+        list_widget.setStyleSheet("QListWidget::item { padding: 5px; }")
+
+        def populate_list(text=""):
+            list_widget.clear()
+            fl = text.lower()
+            for app in applications:
+                if fl in app['name'].lower() or fl in app['identifier'].lower():
+                    item = QListWidgetItem(f"{app['name']} ({app['identifier']})")
+                    item.setData(Qt.UserRole, app['identifier'])
+                    list_widget.addItem(item)
+
+        filter_edit.textChanged.connect(populate_list)
+        populate_list()
+        list_widget.itemDoubleClicked.connect(app_dialog.accept)
+
+        app_btn_box = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        app_btn_box.accepted.connect(app_dialog.accept)
+        app_btn_box.rejected.connect(app_dialog.reject)
+
+        app_layout.addWidget(QLabel("Select an application:"))
+        app_layout.addWidget(filter_edit)
+        app_layout.addWidget(list_widget)
+        app_layout.addWidget(app_btn_box)
+
+        if app_dialog.exec_() != QDialog.Accepted:
+            return
+        selected_app_item = list_widget.currentItem()
+        if not selected_app_item:
+            return
+        app_identifier = selected_app_item.data(Qt.UserRole)
+        app_name = selected_app_item.text().split(' (')[0]
+
+        # --- Script input dialog ---
+        script_dialog = QDialog(self)
+        script_dialog.setWindowTitle(f"Add Scripts for {app_name}")
+        script_dialog.setMinimumSize(700, 500)
+        dlg_layout = QVBoxLayout(script_dialog)
+
+        btn_layout = QHBoxLayout()
+        paste_btn = QPushButton(qta.icon('fa5s.clipboard', color='white'), " Paste & Save")
+        add_btn = QPushButton(qta.icon('fa5s.plus'), " Add Script File...")
+        remove_btn = QPushButton(qta.icon('fa5s.trash'), " Remove")
+        up_btn = QPushButton(qta.icon('fa5s.arrow-up'), "")
+        down_btn = QPushButton(qta.icon('fa5s.arrow-down'), "")
+        btn_layout.addWidget(paste_btn)
+        btn_layout.addWidget(add_btn)
+        btn_layout.addWidget(remove_btn)
+        btn_layout.addWidget(up_btn)
+        btn_layout.addWidget(down_btn)
+        btn_layout.addStretch()
+
+        spawn_script_list = QListWidget()
+        spawn_script_list.setDragDropMode(QListWidget.InternalMove)
+        spawn_script_list.setSelectionMode(QListWidget.SingleSelection)
+
+        script_btn_box = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        script_btn_box.accepted.connect(script_dialog.accept)
+        script_btn_box.rejected.connect(script_dialog.reject)
+        ok_btn = script_btn_box.button(QDialogButtonBox.Ok)
+        ok_btn.setText("Spawn")
+        ok_btn.setEnabled(False)
+
+        def update_ok_button():
+            ok_btn.setEnabled(spawn_script_list.count() > 0)
+
+        def add_script():
+            paths, _ = QFileDialog.getOpenFileNames(
+                script_dialog, "Select Frida Scripts", self.default_script_dir,
+                "JavaScript Files (*.js);;All Files (*.*)"
+            )
+            for path in paths:
+                if path not in [spawn_script_list.item(i).data(Qt.UserRole) for i in range(spawn_script_list.count())]:
+                    item = QListWidgetItem(os.path.basename(path))
+                    item.setData(Qt.UserRole, path)
+                    item.setToolTip(path)
+                    spawn_script_list.addItem(item)
+            update_ok_button()
+
+        def remove_script():
+            for item in spawn_script_list.selectedItems():
+                spawn_script_list.takeItem(spawn_script_list.row(item))
+            update_ok_button()
+
+        def move_up():
+            row = spawn_script_list.currentRow()
+            if row > 0:
+                item = spawn_script_list.takeItem(row)
+                spawn_script_list.insertItem(row - 1, item)
+                spawn_script_list.setCurrentRow(row - 1)
+
+        def move_down():
+            row = spawn_script_list.currentRow()
+            if row < spawn_script_list.count() - 1:
+                item = spawn_script_list.takeItem(row)
+                spawn_script_list.insertItem(row + 1, item)
+                spawn_script_list.setCurrentRow(row + 1)
+
+        paste_btn.clicked.connect(lambda: self._show_paste_dialog(spawn_script_list, update_ok_button))
+        add_btn.clicked.connect(add_script)
+        remove_btn.clicked.connect(remove_script)
+        up_btn.clicked.connect(move_up)
+        down_btn.clicked.connect(move_down)
+        spawn_script_list.itemSelectionChanged.connect(
+            lambda: remove_btn.setEnabled(bool(spawn_script_list.selectedItems()))
+        )
+
+        dlg_layout.addLayout(btn_layout)
+        dlg_layout.addWidget(QLabel("Scripts will run in order (top to bottom):"))
+        dlg_layout.addWidget(spawn_script_list)
+        dlg_layout.addWidget(script_btn_box)
+
+        if script_dialog.exec_() != QDialog.Accepted:
+            return
+
+        if spawn_script_list.count() == 0:
+            QMessageBox.warning(self, "No Scripts", "Please add at least one script to spawn with.")
+            return
+
+        script_files = [
+            spawn_script_list.item(i).data(Qt.UserRole)
+            for i in range(spawn_script_list.count())
+        ]
+
+        # --- Call the controller to perform the spawn ---
+        self.controller.process_model.select_process(current_device_id, 0, app_name)
+        self.controller.injection_controller.spawn_application(app_identifier, script_files)
+    
     def _on_inject(self):
         """Handle inject button"""
         script = self.script_editor.toPlainText()

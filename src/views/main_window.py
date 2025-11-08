@@ -5,6 +5,9 @@ from PyQt5.QtCore import Qt, QSize, pyqtSlot, QTimer, QPropertyAnimation, QEasin
 from PyQt5.QtGui import QFont
 import qtawesome as qta
 from controllers.main_controller import MainController
+
+
+
 from views.injection_view import InjectionView
 from views.settings_view import SettingsView
 from views.history_view import HistoryView
@@ -229,7 +232,19 @@ class FridaMainWindow(QMainWindow):
        # return widget
         
     def connect_signals(self):
+
         """Connect controller signals to UI updates"""
+        if hasattr(self, 'device_selector') and 'inject' in self.pages:
+            from gui.widgets.device_selector import DeviceSelector
+            # Find the device selector widget in the injection view
+            injection_view = self.pages['inject']
+            if hasattr(injection_view, 'findChildren'):
+                device_selectors = injection_view.findChildren(DeviceSelector)
+                if device_selectors:
+                    device_selector = device_selectors[0]
+                    device_selector.process_selected.connect(
+                        self._on_process_selected_from_selector
+                    )
         # Device model signals
         self.controller.device_model.error_occurred.connect(
             lambda msg: QMessageBox.critical(self, "Device Error", msg)
@@ -249,7 +264,20 @@ class FridaMainWindow(QMainWindow):
         self.controller.injection_controller.injection_failed.connect(
             self._on_injection_failed
         )
-        
+
+    def _on_process_selected_from_selector(self, device_id, pid):
+        """Handle process selection from device selector widget"""
+        if 'inject' in self.pages:
+            # Find injection panel and update it
+            injection_page = self.pages['inject']
+            if hasattr(injection_page, 'findChildren'):
+                from gui.widgets.injection_panel import InjectionPanel
+                injection_panels = injection_page.findChildren(InjectionPanel)
+                if injection_panels:
+                    injection_panel = injection_panels[0]
+                    injection_panel.set_process(device_id, pid)
+                    print(f"[MainWindow] Updated injection panel with PID {pid}")
+
     def switch_page(self, page_id):
         """Switch to specified page"""
         if page_id not in self.pages:

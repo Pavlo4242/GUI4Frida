@@ -1,5 +1,6 @@
 from PyQt5.QtCore import QObject, pyqtSignal, QThread
 import frida
+import os
 from core.android_helper import AndroidHelper
 
 
@@ -47,6 +48,74 @@ class InjectionController(QObject):
         self._stopping = False
         self.stop_thread = None
         self.stop_worker = None
+
+    def spawn_application(self, app_identifier, script_paths):
+        """Spawn an application and inject scripts"""
+        device_id = self.device_model.current_device_id
+        if not device_id:
+            self.injection_failed.emit("No device selected for spawning")
+            return
+
+        try:
+            # 1. Update state
+            self.script_model.set_injection_state('injecting')
+            
+            # 2. Combine script files
+            combined_script_content = ""
+            for path in script_paths:
+                if not os.path.exists(path):
+                    raise Exception(f"Script file not found: {path}")
+                with open(path, 'r', encoding='utf-8') as f:
+                    combined_script_content += f.read() + "\n\n"
+            
+            # 3. Get device
+            device = frida.get_device(device_id)
+            
+            # 4. Check Frida server
+            if device.type == 'usb' and not AndroidHelper.is_frida_running(device_id):
+                raise Exception(f"Frida server not running on {device_id}")
+            
+            # 5. Spawn the application
+            print(f"[InjectionController] Spawning {app_identifier}...")
+            pid = device.spawn(app_identifier)
+            
+            # 6. Attach to the new process
+            print(f"[InjectionController] Attaching to spawned PID {pid}...")
+            session = device.attach(pid)
+            
+            # 7. Setup handlers (same as inject_script)
+            def on_detached(reason, crash):
+                print(f"[InjectionController] Session detached: {reason}")
+                self.script_model.add_output(f"[!] Session detached: {reason}" + (" (crashed)" if crash else ""))
+                self.stop_injection()
+            session.on('detached', on_detached)
+            
+            def on_message(message, data):
+                self._handle_script_message(message, data)
+            
+            # 8. Create and load script
+            print("[InjectionController] Creating script for spawned process...")
+            script = session.create_script(combined_script_content)
+            script.on('message', on_message)
+            print("[InjectionController] Loading script...")
+            script.load()
+            
+            # 9. Store session and update state
+            self.script_model.set_session(session, [script])
+            self.script_model.set_injection_state('running')
+            self.injection_succeeded.emit()
+            
+            # 10. Resume the application
+            print("[InjectionController] Resuming application...")
+            device.resume(pid)
+            
+            print("[InjectionController] Spawn and injection successful")
+
+        except Exception as e:
+            error_msg = str(e)
+            print(f"[InjectionController] Spawn/Injection failed: {error_msg}")
+            self.script_model.set_injection_state('idle')
+            self.injection_failed.emit(error_msg)
         
     def inject_script(self):
         """Inject current script into selected process"""
