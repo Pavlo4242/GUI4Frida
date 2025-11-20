@@ -1,0 +1,3 @@
+[submodule "Frida-Script-Runner"]
+	path = Frida-Script-Runner
+	url = https://github.com/z3n70/Frida-Script-Runner.git
