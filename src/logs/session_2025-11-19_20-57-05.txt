@@ -1,0 +1,9 @@
+2025-11-19 20:57:55,912 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 20:57:57,098 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:00:21,005 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 21:00:21,005 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:00:21,423 | INFO | [InjectionController] Spawn/Injection failed: Frida server not running on 127.0.0.1:58526
+2025-11-19 21:00:21,423 | INFO | [MainController] Injection state: idle
+2025-11-19 21:00:21,423 | INFO | [MainController] Injection failed: Frida server not running on 127.0.0.1:58526
+2025-11-19 21:00:54,625 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:00:58,038 | INFO | [MainController] Device selected: 127.0.0.1:58526

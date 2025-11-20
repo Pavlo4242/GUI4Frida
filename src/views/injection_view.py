@@ -427,7 +427,7 @@ class InjectionControlPanel(QWidget):
         
         self.inject_btn = QPushButton(qta.icon('fa5s.syringe', color='white'), " Inject")
         self.inject_btn.clicked.connect(self.inject_clicked.emit)
-        self.inject_btn.setEnabled(False)
+        self.inject_btn.setEnabled(True)
         self.inject_btn.setStyleSheet("""
             QPushButton {
                 background-color: #43b581;
@@ -538,7 +538,7 @@ class InjectionControlPanel(QWidget):
     def set_state(self, state):
         """Update button states based on injection state"""
         # state: idle, injecting, running, stopping
-        self.inject_btn.setEnabled(state == 'idle')
+        self.inject_btn.setEnabled(state == 'idle' or state == 'stopped')
         self.stop_btn.setEnabled(state == 'running')
         self.message_input.setEnabled(state == 'running')
         self.send_btn.setEnabled(state == 'running')

@@ -1,0 +1,3 @@
+2025-11-19 18:12:17,367 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 18:12:17,632 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 18:12:36,433 | INFO | Fetching script from: https://codeshare.frida.re/@fdciabdul/frida-multiple-bypass

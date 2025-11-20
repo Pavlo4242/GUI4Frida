@@ -1,0 +1,166 @@
+2025-11-19 17:33:35,513 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 17:33:35,779 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 17:33:49,444 | INFO | Fetching script from: https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida
+2025-11-19 17:33:59,276 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 17:33:59,286 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 17:34:03,171 | INFO | [MainController] Process selected: PID 709 on 127.0.0.1:58526
+2025-11-19 17:34:08,857 | INFO | [MainController] Process selected: PID 728 on 127.0.0.1:58526
+2025-11-19 17:34:08,965 | INFO | [MainController] Process selected: PID 255 on 127.0.0.1:58526
+2025-11-19 17:34:09,190 | INFO | [MainController] Process selected: PID 271 on 127.0.0.1:58526
+2025-11-19 17:34:09,363 | INFO | [MainController] Process selected: PID 32090 on 127.0.0.1:58526
+2025-11-19 17:34:24,160 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 17:34:24,160 | INFO | [MainController] Injection state: injecting
+2025-11-19 17:34:24,191 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 17:34:24,354 | INFO | [InjectionController] Attaching to spawned PID 3465...
+2025-11-19 17:34:24,612 | INFO | [InjectionController] Creating script for spawned process...
+2025-11-19 17:34:24,614 | INFO | [InjectionController] Loading script...
+2025-11-19 17:34:24,616 | INFO | [MainController] Injection state: running
+2025-11-19 17:34:24,616 | INFO | [MainController] Injection succeeded
+2025-11-19 17:34:24,617 | INFO | [InjectionController] Resuming application...
+2025-11-19 17:34:24,618 | INFO | [InjectionController] Spawn and injection successful
+2025-11-19 17:34:24,764 | INFO | [.] Cert Pinning Bypass/Re-Pinning
+2025-11-19 17:34:24,765 | INFO | [+] Loading our CA...
+2025-11-19 17:34:24,769 | INFO | [o] Error: java.io.FileNotFoundException: /data/local/tmp/cert-der.crt: open failed: ENOENT (No such file or directory)
+2025-11-19 17:36:17,559 | INFO | Fetching script from: https://codeshare.frida.re/@akabe1/frida-multiple-unpinning
+2025-11-19 17:36:23,567 | INFO | [MainController] Injection state: stopping
+2025-11-19 17:36:23,574 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 17:36:23,575 | INFO | [MainController] Injection state: stopped
+2025-11-19 17:36:33,965 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 17:36:33,965 | INFO | [MainController] Injection state: injecting
+2025-11-19 17:36:33,994 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 17:36:34,108 | INFO | [InjectionController] Attaching to spawned PID 4854...
+2025-11-19 17:36:34,378 | INFO | [InjectionController] Creating script for spawned process...
+2025-11-19 17:36:34,382 | INFO | [InjectionController] Loading script...
+2025-11-19 17:36:34,383 | INFO | [MainController] Injection state: running
+2025-11-19 17:36:34,384 | INFO | [MainController] Injection succeeded
+2025-11-19 17:36:34,384 | INFO | [InjectionController] Resuming application...
+2025-11-19 17:36:34,385 | INFO | [InjectionController] Spawn and injection successful
+2025-11-19 17:36:34,453 | INFO | ======
+2025-11-19 17:36:34,453 | INFO | [#] Android Bypass for various Certificate Pinning methods [#]
+2025-11-19 17:36:34,454 | INFO | ======
+2025-11-19 17:36:34,482 | INFO | [-] OkHTTPv3 {2} pinner not found
+2025-11-19 17:36:34,482 | INFO | [-] OkHTTPv3 {4} pinner not found
+2025-11-19 17:36:34,483 | INFO | [-] Trustkit {1} pinner not found
+2025-11-19 17:36:34,483 | INFO | [-] Trustkit {2} pinner not found
+2025-11-19 17:36:34,483 | INFO | [-] Trustkit {3} pinner not found
+2025-11-19 17:36:34,485 | INFO | [-] Appcelerator PinningTrustManager pinner not found
+2025-11-19 17:36:34,486 | INFO | [-] Fabric PinningTrustManager pinner not found
+2025-11-19 17:36:34,487 | INFO | [-] OpenSSLSocketImpl Conscrypt {1} pinner not found
+2025-11-19 17:36:34,488 | INFO | [-] OpenSSLSocketImpl Conscrypt {2} pinner not found
+2025-11-19 17:36:34,488 | INFO | [-] OpenSSLEngineSocketImpl Conscrypt pinner not found
+2025-11-19 17:36:34,488 | INFO | [-] OpenSSLSocketImpl Apache Harmony pinner not found
+2025-11-19 17:36:34,490 | INFO | [-] PhoneGap sslCertificateChecker pinner not found
+2025-11-19 17:36:34,490 | INFO | [-] IBM MobileFirst pinTrustedCertificatePublicKey {1} pinner not found
+2025-11-19 17:36:34,490 | INFO | [-] IBM MobileFirst pinTrustedCertificatePublicKey {2} pinner not found
+2025-11-19 17:36:34,491 | INFO | [-] IBM WorkLight HostNameVerifierWithCertificatePinning {1} pinner not found
+2025-11-19 17:36:34,492 | INFO | [-] IBM WorkLight HostNameVerifierWithCertificatePinning {2} pinner not found
+2025-11-19 17:36:34,493 | INFO | [-] IBM WorkLight HostNameVerifierWithCertificatePinning {3} pinner not found
+2025-11-19 17:36:34,493 | INFO | [-] IBM WorkLight HostNameVerifierWithCertificatePinning {4} pinner not found
+2025-11-19 17:36:34,495 | INFO | [-] Conscrypt CertPinManager (Legacy) pinner not found
+2025-11-19 17:36:34,496 | INFO | [-] CWAC-Netsecurity CertPinManager pinner not found
+2025-11-19 17:36:34,496 | INFO | [-] Worklight Androidgap WLCertificatePinningPlugin pinner not found
+2025-11-19 17:36:34,497 | INFO | [-] Netty FingerprintTrustManagerFactory pinner not found
+2025-11-19 17:36:34,498 | INFO | [-] Squareup CertificatePinner {1} pinner not found
+2025-11-19 17:36:34,498 | INFO | [-] Squareup CertificatePinner {2} pinner not found
+2025-11-19 17:36:34,499 | INFO | [-] Squareup OkHostnameVerifier check not found
+2025-11-19 17:36:34,499 | INFO | [-] Squareup OkHostnameVerifier check not found
+2025-11-19 17:36:34,501 | INFO | [-] Android WebViewClient {3} check not found
+2025-11-19 17:36:34,502 | INFO | [-] Apache Cordova WebViewClient check not found
+2025-11-19 17:36:34,503 | INFO | [-] Boye AbstractVerifier check not found
+2025-11-19 17:36:34,505 | INFO | [-] Chromium Cronet pinner not found
+2025-11-19 17:36:34,505 | INFO | [-] Flutter HttpCertificatePinning pinner not found
+2025-11-19 17:36:34,506 | INFO | [-] Flutter SslPinningPlugin pinner not found
+2025-11-19 17:36:34,506 | INFO | [34m[!] Found the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)"[0m
+2025-11-19 17:36:34,522 | INFO | [+] Bypassing Trustmanager (Android < 7) pinner
+2025-11-19 17:36:34,523 | INFO | [+] Bypassing Trustmanager (Android < 7) pinner
+2025-11-19 17:36:34,588 | INFO | [+] Bypassing Trustmanager (Android < 7) pinner
+2025-11-19 17:36:34,715 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: matrix.redditspace.com[0m
+2025-11-19 17:36:34,751 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: w3-reporting.reddit.com[0m
+2025-11-19 17:36:34,751 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: www.reddit.com[0m
+2025-11-19 17:36:34,824 | INFO | [+] Bypassing Trustmanager (Android < 7) pinner
+2025-11-19 17:36:35,245 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: gql-fed.reddit.com[0m
+2025-11-19 17:36:35,258 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: gql-fed.reddit.com[0m
+2025-11-19 17:36:35,260 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: gql-fed.reddit.com[0m
+2025-11-19 17:36:35,260 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: gql-fed.reddit.com[0m
+2025-11-19 17:36:35,266 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: gql-fed.reddit.com[0m
+2025-11-19 17:36:35,267 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: gql-fed.reddit.com[0m
+2025-11-19 17:36:35,276 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: gql-fed.reddit.com[0m
+2025-11-19 17:36:35,283 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: gql-fed.reddit.com[0m
+2025-11-19 17:36:35,316 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: gql-fed.reddit.com[0m
+2025-11-19 17:36:35,615 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: e.reddit.com[0m
+2025-11-19 17:36:36,665 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: api2.branch.io[0m
+2025-11-19 17:36:36,982 | INFO | [+] Bypassing TrustManagerImpl (Android > 7) checkTrustedRecursive {2} check: null cdn.branch.io
+2025-11-19 17:36:37,006 | INFO | [+] Bypassing TrustManagerImpl (Android > 7) checkTrustedRecursive {2} check: null styles.redditmedia.com
+2025-11-19 17:36:37,011 | INFO | [+] Bypassing TrustManagerImpl (Android > 7) checkTrustedRecursive {2} check: null preview.redd.it
+2025-11-19 17:36:37,705 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: gql-realtime.reddit.com[0m
+2025-11-19 17:36:47,624 | INFO | [+] Bypassing TrustManagerImpl (Android > 7) checkTrustedRecursive {2} check: null www.recaptcha.net
+2025-11-19 17:37:00,265 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: www.reddit.com[0m
+2025-11-19 17:37:05,205 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: gql-fed.reddit.com[0m
+2025-11-19 17:37:12,465 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: www.reddit.com[0m
+2025-11-19 17:37:27,228 | INFO | [+] Bypassing TrustManagerImpl (Android > 7) checkTrustedRecursive {2} check: null firebaselogging-pa.googleapis.com
+2025-11-19 17:38:02,533 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: e.reddit.com[0m
+2025-11-19 17:38:05,405 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: e.reddit.com[0m
+2025-11-19 17:39:17,325 | INFO | [MainController] Process selected: PID 259 on 127.0.0.1:58526
+2025-11-19 17:39:17,606 | INFO | [MainController] Process selected: PID 3030 on 127.0.0.1:58526
+2025-11-19 17:39:17,694 | INFO | [MainController] Process selected: PID 3030 on 127.0.0.1:58526
+2025-11-19 17:39:17,806 | INFO | [MainController] Process selected: PID 3030 on 127.0.0.1:58526
+2025-11-19 17:40:08,435 | INFO | [34m[+] Bypassing the unusual/obfuscated pinner "okhttp3.CertificatePinner.check$okhttp(java.lang.String, Fl0.a)" check for: e.reddit.com[0m
+2025-11-19 17:43:35,409 | INFO | [MainController] Injection state: stopping
+2025-11-19 17:43:35,416 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 17:43:35,417 | INFO | [MainController] Injection state: stopped
+2025-11-19 17:43:36,105 | INFO | [MainController] Injection state: injecting
+2025-11-19 17:43:36,136 | INFO | [InjectionController] Attaching to PID 3030...
+2025-11-19 17:43:36,137 | INFO | [InjectionController] Injection failed: process not found
+2025-11-19 17:43:36,138 | INFO | [MainController] Injection state: idle
+2025-11-19 17:43:36,138 | INFO | [MainController] Injection failed: process not found
+2025-11-19 17:44:16,352 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 17:44:16,352 | INFO | [MainController] Injection state: injecting
+2025-11-19 17:44:16,383 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 17:44:16,523 | INFO | [InjectionController] Attaching to spawned PID 8556...
+2025-11-19 17:44:16,795 | INFO | [InjectionController] Creating script for spawned process...
+2025-11-19 17:44:16,798 | INFO | [InjectionController] Loading script...
+2025-11-19 17:44:16,800 | INFO | [*] Starting comprehensive SSL/HSTS bypass script
+2025-11-19 17:44:16,849 | INFO | [-] TrustManager bypass failed: Error: checkTrusted(): has more than one overload, use .overload(<signature>) to choose from:
+	.overload('[Ljava.security.cert.X509Certificate;', 'java.lang.String', 'javax.net.ssl.SSLSession', 'javax.net.ssl.SSLParameters', 'boolean')
+	.overload('[Ljava.security.cert.X509Certificate;', '[B', '[B', 'java.lang.String', 'java.lang.String', 'boolean')
+2025-11-19 17:44:16,849 | INFO | [-] OkHttp bypass failed: Error: java.lang.ClassNotFoundException: okhttp3.CertificatePinner
+2025-11-19 17:44:16,850 | INFO | [*] Using legacy TrustManager bypass
+2025-11-19 17:44:16,850 | INFO | [*] All bypass hooks loaded. Launch app and check proxy traffic.
+2025-11-19 17:44:16,851 | INFO | [MainController] Injection state: running
+2025-11-19 17:44:16,851 | INFO | [MainController] Injection succeeded
+2025-11-19 17:44:16,852 | INFO | [InjectionController] Resuming application...
+2025-11-19 17:44:16,853 | INFO | [InjectionController] Spawn and injection successful
+2025-11-19 17:44:16,985 | INFO | [+] Bypassing root check: /system/xbin/su
+2025-11-19 17:44:16,988 | INFO | [+] Bypassing root check: /system/xbin/su
+2025-11-19 17:44:16,989 | INFO | [+] Bypassing debug detection
+2025-11-19 17:44:16,992 | INFO | [+] Bypassing root check: /system/xbin/su
+2025-11-19 17:44:16,992 | INFO | [+] Bypassing root check: /system/xbin/su
+2025-11-19 17:44:16,992 | INFO | [+] Bypassing debug detection
+2025-11-19 17:45:55,546 | INFO | [InjectionController] Session detached: process-terminated
+2025-11-19 17:45:55,546 | INFO | [MainController] Injection state: stopping
+2025-11-19 17:45:55,548 | INFO | [StopScriptWorker] Error unloading script: script is destroyed
+2025-11-19 17:45:55,551 | INFO | [MainController] Injection state: stopped
+2025-11-19 17:46:19,932 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 17:46:19,932 | INFO | [MainController] Injection state: injecting
+2025-11-19 17:46:19,962 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 17:46:20,020 | INFO | [InjectionController] Attaching to spawned PID 10380...
+2025-11-19 17:46:20,290 | INFO | [InjectionController] Creating script for spawned process...
+2025-11-19 17:46:20,293 | INFO | [InjectionController] Loading script...
+2025-11-19 17:46:20,294 | INFO | [*] Starting comprehensive SSL/HSTS bypass script
+2025-11-19 17:46:20,344 | INFO | [-] TrustManager bypass failed: Error: checkTrusted(): has more than one overload, use .overload(<signature>) to choose from:
+	.overload('[Ljava.security.cert.X509Certificate;', 'java.lang.String', 'javax.net.ssl.SSLSession', 'javax.net.ssl.SSLParameters', 'boolean')
+	.overload('[Ljava.security.cert.X509Certificate;', '[B', '[B', 'java.lang.String', 'java.lang.String', 'boolean')
+2025-11-19 17:46:20,344 | INFO | [-] OkHttp bypass failed: Error: java.lang.ClassNotFoundException: okhttp3.CertificatePinner
+2025-11-19 17:46:20,345 | INFO | [*] Using legacy TrustManager bypass
+2025-11-19 17:46:20,346 | INFO | [*] All bypass hooks loaded. Launch app and check proxy traffic.
+2025-11-19 17:46:20,346 | INFO | [MainController] Injection state: running
+2025-11-19 17:46:20,346 | INFO | [MainController] Injection succeeded
+2025-11-19 17:46:20,347 | INFO | [InjectionController] Resuming application...
+2025-11-19 17:46:20,348 | INFO | [InjectionController] Spawn and injection successful
+2025-11-19 17:46:20,448 | INFO | [+] Bypassing root check: /system/xbin/su
+2025-11-19 17:46:20,448 | INFO | [+] Bypassing root check: /system/xbin/su
+2025-11-19 17:46:20,449 | INFO | [+] Bypassing debug detection
+2025-11-19 17:46:20,451 | INFO | [+] Bypassing root check: /system/xbin/su
+2025-11-19 17:46:20,451 | INFO | [+] Bypassing root check: /system/xbin/su
+2025-11-19 17:46:20,452 | INFO | [+] Bypassing debug detection
+2025-11-19 18:11:51,095 | INFO | [InjectionController] Session detached: process-terminated

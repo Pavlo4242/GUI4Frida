@@ -1,5 +1,1435 @@
 [
   {
+    "timestamp": "2025-11-20T01:46:22.713473",
+    "type": "script_injection",
+    "details": {
+      "script": "setTimeout(function () {\n    console.log(\"\\nGADGET STARTED \u2013 waiting for registration (no Java API n...",
+      "pid": 10644,
+      "device": "R94XC0N5S9E",
+      "status": "failed",
+      "error": "script(line 9): SyntaxError: expecting ';'"
+    }
+  },
+  {
+    "timestamp": "2025-11-20T01:46:13.810406",
+    "type": "script_injection",
+    "details": {
+      "script": "setTimeout(function () {\n    console.log(\"\\nGADGET STARTED \u2013 waiting for registration (no Java API n...",
+      "pid": 10644,
+      "device": "R94XC0N5S9E",
+      "status": "failed",
+      "error": "script(line 9): SyntaxError: expecting ';'"
+    }
+  },
+  {
+    "timestamp": "2025-11-20T01:45:57.177692",
+    "type": "script_injection",
+    "details": {
+      "script": "setTimeout(function () {\n    console.log(\"\\nGADGET STARTED \u2013 waiting for registration (no Java API n...",
+      "pid": 10644,
+      "device": "R94XC0N5S9E",
+      "status": "failed",
+      "error": "script(line 9): SyntaxError: expecting ';'"
+    }
+  },
+  {
+    "timestamp": "2025-11-20T01:45:27.096287",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"Hooking Reddit registration...\");\n    \n    try {\n        ...",
+      "pid": 10644,
+      "process_name": "Reddit",
+      "device": "R94XC0N5S9E",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-20T01:45:03.087040",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"Hooking Reddit registration...\");\n    \n    try {\n        ...",
+      "pid": 10644,
+      "process_name": "Reddit",
+      "device": "R94XC0N5S9E",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-20T01:44:42.566298",
+    "type": "script_injection",
+    "details": {
+      "script": "java.perform(function() {\n    console.log(\"Bypassing SSL pinning...\");\n    \n    // Bypass OkHttp Cer...",
+      "pid": 10644,
+      "process_name": "Reddit",
+      "device": "R94XC0N5S9E",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-20T01:43:50.778250",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"Bypassing SSL pinning...\");\n    \n    // Bypass OkHttp Cer...",
+      "pid": 10644,
+      "process_name": "Reddit",
+      "device": "R94XC0N5S9E",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-20T01:43:10.633313",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function () {\n    console.log(\"\\nFRIDA-GADGET ACTIVE \u2013 2025.45+ Reddit full intercept\\n...",
+      "pid": 10644,
+      "device": "R94XC0N5S9E",
+      "status": "failed",
+      "error": "script(line 41): SyntaxError: unexpected end of string"
+    }
+  },
+  {
+    "timestamp": "2025-11-20T01:42:37.179085",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function () {\n    console.log(\"\\nFRIDA-GADGET ACTIVE \u2013 2025.45+ Reddit full intercept\\n...",
+      "pid": 10644,
+      "device": "R94XC0N5S9E",
+      "status": "failed",
+      "error": "script(line 59): SyntaxError: unexpected token in expression: ''"
+    }
+  },
+  {
+    "timestamp": "2025-11-20T01:42:18.896584",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function () {\n    console.log(\"\\nFRIDA-GADGET ACTIVE \u2013 2025.45+ Reddit full intercept\\n...",
+      "pid": 10644,
+      "device": "R94XC0N5S9E",
+      "status": "failed",
+      "error": "script(line 59): SyntaxError: unexpected token in expression: ''"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T21:55:40.349570",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function () {\n    console.log(\"\\n[Reddit 2025 Complete Bypass] Script loaded \u2013 waiting ...",
+      "pid": 359,
+      "process_name": "adbd",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T21:55:07.689748",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function () {\n    console.log(\"\\n[Reddit 2025 Complete Bypass] Script loaded \u2013 waiting ...",
+      "pid": 359,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "script(line 40): SyntaxError: unexpected end of string"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T21:54:20.221562",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function () {\n    console.log(\"\\n[Reddit 2025.45+ Complete Bypass] Loaded \u2013 waiting for...",
+      "pid": 359,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "script(line 18): SyntaxError: unexpected end of string"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T21:54:15.009547",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function () {\n    console.log(\"\\n[Reddit 2025.45+ Complete Bypass] Loaded \u2013 waiting for...",
+      "pid": 359,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "script(line 18): SyntaxError: unexpected end of string"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T21:53:49.535335",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function () {\n    console.log(\"\\n[Reddit 2025.45+ Complete Bypass] Loaded \u2013 waiting for...",
+      "pid": 359,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "script(line 18): SyntaxError: unexpected end of string"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T21:53:39.183649",
+    "type": "script_injection",
+    "details": {
+      "script": "### reddit-2025-complete-bypass.js\nJava.perform(function () {\n    console.log(\"\\n[Reddit 2025.45+ Co...",
+      "pid": 359,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "script(line 1): SyntaxError: invalid first character of private name"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T21:45:07.464673",
+    "type": "script_injection",
+    "details": {
+      "script": "setTimeout(function() {\n    console.log(\"\\n\\n[RECAPTCHA-WAITER] You are now on the password screen!\"...",
+      "pid": 359,
+      "process_name": "adbd",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T21:40:55.364686",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function () {\n    const DEBUG = true;\n    function log(m) { if (DEBUG) console.log(\"[re...",
+      "pid": 359,
+      "process_name": "adbd",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T21:38:43.577850",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function () {\n    const DEBUG = true;\n    function log(m) { if (DEBUG) console.log(\"[re...",
+      "pid": 359,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "script(line 17): SyntaxError: expecting ';'"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T21:37:04.489881",
+    "type": "script_injection",
+    "details": {
+      "script": "...",
+      "pid": 0,
+      "process_name": "Reddit",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T13:48:43.249212",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function () {\n    console.log(\"\\n[*] Hooks loaded. Please open the Grindr app and navig...",
+      "pid": 18186,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T10:44:50.711382",
+    "type": "script_injection",
+    "details": {
+      "script": "// discover_grid_layout.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Discovering grid layout conf...",
+      "pid": 20451,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T10:43:32.116435",
+    "type": "script_injection",
+    "details": {
+      "script": "// discover_image_config.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Discovering image view conf...",
+      "pid": 20451,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T10:42:52.506210",
+    "type": "script_injection",
+    "details": {
+      "script": "// quick_image_discovery.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Quick image discovery...\");...",
+      "pid": 20451,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T10:42:03.652996",
+    "type": "script_injection",
+    "details": {
+      "script": "// quick_grid_discovery.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Quick grid layout discovery....",
+      "pid": 20451,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T10:41:38.625277",
+    "type": "script_injection",
+    "details": {
+      "script": "// quick_grid_discovery.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Quick grid layout discovery....",
+      "pid": 20451,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T10:40:54.846050",
+    "type": "script_injection",
+    "details": {
+      "script": "// quick_online_status.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Quick online status discovery...",
+      "pid": 20451,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T10:40:38.799338",
+    "type": "script_injection",
+    "details": {
+      "script": "// quick_online_status.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Quick online status discovery...",
+      "pid": 20451,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T10:40:11.063153",
+    "type": "script_injection",
+    "details": {
+      "script": "// quick_online_status.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Quick online status discovery...",
+      "pid": 16991,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "the connection is closed"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T10:39:19.877659",
+    "type": "script_injection",
+    "details": {
+      "script": "// discover_online_status.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Discovering online status ...",
+      "pid": 16991,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "timeout was reached"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T10:01:52.427635",
+    "type": "script_injection",
+    "details": {
+      "script": "// quick_field_discovery.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Quick field discovery for c...",
+      "pid": 4789,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T10:01:16.910984",
+    "type": "script_injection",
+    "details": {
+      "script": "// find_profile_in_viewmodel.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Finding profile data in...",
+      "pid": 4789,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T10:00:07.314597",
+    "type": "script_injection",
+    "details": {
+      "script": "// connect_click_to_profile.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd17 Connecting click handler...",
+      "pid": 4789,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T09:56:29.547057",
+    "type": "script_injection",
+    "details": {
+      "script": "// discover_click_handler_fields.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Discovering fields ...",
+      "pid": 4789,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T09:55:48.035958",
+    "type": "script_injection",
+    "details": {
+      "script": "// analyze_click_handler_instances.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Analyzing click h...",
+      "pid": 4789,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T09:55:02.359152",
+    "type": "script_injection",
+    "details": {
+      "script": "// click_handler_comprehensive_log.js\nJava.perform(function() {\n    console.log(\"\ud83d\udcdd Comprehensive cli...",
+      "pid": 4789,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T09:54:32.659993",
+    "type": "script_injection",
+    "details": {
+      "script": "// find_correct_field_name.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Finding the correct profi...",
+      "pid": 4789,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T09:48:17.835383",
+    "type": "script_injection",
+    "details": {
+      "script": "// find_correct_field_name.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Finding the correct profi...",
+      "pid": 4789,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T09:47:01.654115",
+    "type": "script_injection",
+    "details": {
+      "script": "// discover_click_handler_fields.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Discovering fields ...",
+      "pid": 4789,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T09:46:25.589473",
+    "type": "script_injection",
+    "details": {
+      "script": "// discover_click_handler_fields.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Discovering fields ...",
+      "pid": 4789,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "Frida server not running on 127.0.0.1:58526"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T01:25:57.942320",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_STRING = \"cascadeClickEvent/position=\";\n    console.log(`...",
+      "pid": 0,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "Missing device, process, or script content"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T01:24:17.587807",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Script loaded. Ready to find the new ProfileFragment ...",
+      "pid": 0,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T01:21:52.186921",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Script loaded. Ready to find the new ProfileFragment ...",
+      "pid": 260,
+      "process_name": "android.hardware.graphics.allocator@4.0-service.windows",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T01:21:26.301709",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Script loaded. Ready to find the new ProfileFragment ...",
+      "pid": 260,
+      "process_name": "android.hardware.graphics.allocator@4.0-service.windows",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T01:21:16.842055",
+    "type": "script_injection",
+    "details": {
+      "script": "/ Filename: find_profile_fragment.js\n\nJava.perform(function() {\n    console.log(\"[*] Script loaded. ...",
+      "pid": 260,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "script(line 1): SyntaxError: unexpected line terminator in regexp"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T01:19:49.393504",
+    "type": "script_injection",
+    "details": {
+      "script": "// Filename: find_profile_fragment_v2.js\n\nJava.perform(function() {\n    console.log(\"[*] Script load...",
+      "pid": 260,
+      "process_name": "android.hardware.graphics.allocator@4.0-service.windows",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T01:17:26.657572",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v9 (Reflection API) loaded.\");\n ...",
+      "pid": 13362,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T01:14:40.422565",
+    "type": "script_injection",
+    "details": {
+      "script": "// find_favorites_and_recyclerview.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Finding Favorites...",
+      "pid": 11851,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "the connection is closed"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T01:14:28.861132",
+    "type": "script_injection",
+    "details": {
+      "script": "// find_favorites_and_recyclerview.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd0d Finding Favorites...",
+      "pid": 11851,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "timeout was reached"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T01:03:18.054168",
+    "type": "script_injection",
+    "details": {
+      "script": "// timeline_capture.js\nJava.perform(function() {\n    console.log(\"\u23f1\ufe0f Timeline-based click capture st...",
+      "pid": 9591,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:37:37.883518",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"\ud83d\ude80 Hooking navigation transitions from browse to profile.....",
+      "pid": 32635,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:34:41.584175",
+    "type": "script_injection",
+    "details": {
+      "script": "// cascade_inner_classes.js\nJava.perform(function() {\n    console.log(\"\ud83d\udd75\ufe0f Hooking all CascadeFragmen...",
+      "pid": 32635,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:34:05.872857",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"\ud83d\udd0d Deep analysis of CascadeFragment...\");\n    \n    // Hook...",
+      "pid": 32635,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:33:15.835088",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"\ud83c\udfaf Hooking CascadeFragment profile clicks...\");\n    \n    /...",
+      "pid": 32635,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:32:17.492152",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"\ud83d\ude80 Monitoring activity transitions...\");\n    \n    var Acti...",
+      "pid": 32635,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:29:53.671762",
+    "type": "script_injection",
+    "details": {
+      "script": "// brute_force_invoke.js\nJava.perform(function() {\n    console.log(\"\ud83d\udca3 Bruteforce searching for invok...",
+      "pid": 31975,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:29:42.784023",
+    "type": "script_injection",
+    "details": {
+      "script": "// brute_force_invoke.js\nJava.perform(function() {\n    console.log(\"\ud83d\udca3 Bruteforce searching for invok...",
+      "pid": 22692,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "the connection is closed"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:29:26.084738",
+    "type": "script_injection",
+    "details": {
+      "script": "// brute_force_invoke.js\nJava.perform(function() {\n    console.log(\"\ud83d\udca3 Bruteforce searching for invok...",
+      "pid": 22692,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "script(line 16): SyntaxError: unexpected token in expression: ')'"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:28:44.591387",
+    "type": "script_injection",
+    "details": {
+      "script": "// brute_force_invoke.js\nJava.perform(function() {\n    console.log(\"\ud83d\udca3 Bruteforce searching for invok...",
+      "pid": 22692,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "script(line 19): SyntaxError: unexpected token in expression: 'try'"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:25:47.122852",
+    "type": "script_injection",
+    "details": {
+      "script": "// brute_force_invoke.js\nJava.perform(function() {\n    console.log(\"\ud83d\udca3 Bruteforce searching for invok...",
+      "pid": 22692,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "timeout was reached"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:24:11.749992",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"\ud83c\udfa3 Hooking everything in browse package...\");\n    \n    // ...",
+      "pid": 22692,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:23:40.866741",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"\ud83c\udfa3 Hooking everything in browse package...\");\n    \n    // ...",
+      "pid": 22692,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:18:05.268569",
+    "type": "script_injection",
+    "details": {
+      "script": "// profile_navigation_finder.js\nJava.perform(function() {\n    console.log(\"\ud83c\udfaf Starting profile naviga...",
+      "pid": 22692,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:02:26.874323",
+    "type": "script_injection",
+    "details": {
+      "script": "// method_tracer.js\nJava.perform(function() {\n    // Trace all methods in profileV2 package\n    Java...",
+      "pid": 22692,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-19T00:00:51.778070",
+    "type": "script_injection",
+    "details": {
+      "script": "// discover_fragments.js\nJava.perform(function() {\n    // Hook ClassLoader to detect when fragments ...",
+      "pid": 22692,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:59:02.446633",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    // Try hooking likely Fragment candidates\n    var fragmentCandidates =...",
+      "pid": 22692,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:50:22.827224",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Script loaded. Ready to find the new ProfileFragment ...",
+      "pid": 22692,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:48:13.848818",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_PACKAGE = \"com.grindrapp.android.ui\";\n    const TRACE_DUR...",
+      "pid": 22692,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:44:37.521471",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_PACKAGE = \"com.grindrapp.android.ui\";\n    const TRACE_DUR...",
+      "pid": 19230,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:44:21.988959",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_PACKAGE = \"com.grindrapp.android.ui.Prof*\";\n    const TRA...",
+      "pid": 19230,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:22:42.713105",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_PACKAGE = \"com.grindrapp.android.ui\";\n    const TRACE_DUR...",
+      "pid": 16471,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:21:02.970185",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_PACKAGE = \"com.grindrapp.android.ui.home\";\n    const TRAC...",
+      "pid": 16471,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:20:13.710204",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_PACKAGE = \"com.grindrapp.android.ui.home.HomeActivity\";\n ...",
+      "pid": 16471,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:20:03.816335",
+    "type": "script_injection",
+    "details": {
+      "script": "STACKTRACE\nJava.perform(function() {\n    const TARGET_PACKAGE = \"com.grindrapp.android.ui.home.HomeA...",
+      "pid": 16471,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:17:40.927295",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v3 (Corrected Hook Order) loaded...",
+      "pid": 16471,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:17:03.842585",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v2 (Crash-Proof) loaded.\");\n    ...",
+      "pid": 16471,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:15:20.365356",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v9 (Reflection API) loaded.\");\n ...",
+      "pid": 16471,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:14:56.581432",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Script loaded. Ready to find the new ProfileFragment ...",
+      "pid": 260,
+      "process_name": "android.hardware.graphics.allocator@4.0-service.windows",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:14:23.593726",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Script loaded. Ready to find the new ProfileFragment ...",
+      "pid": 260,
+      "process_name": "android.hardware.graphics.allocator@4.0-service.windows",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T23:13:08.574544",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_PACKAGE = \"com.grindrapp.android\";\n    const TRACE_DURATI...",
+      "pid": 14905,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:59:47.474794",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v8 (Type Casting) loaded.\");\n\n  ...",
+      "pid": 8511,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:57:56.314622",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v7 (Typo Fix) loaded.\");\n\n    //...",
+      "pid": 8511,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:55:34.606472",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v6 (WeakReference) loaded.\");\n  ...",
+      "pid": 8511,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:54:27.981395",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v6 (WeakReference) loaded.\");\n  ...",
+      "pid": 8511,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:48:39.372233",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v6 (WeakReference) loaded.\");\n  ...",
+      "pid": 8511,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:41:01.907054",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v6 (WeakReference) loaded.\");\n  ...",
+      "pid": 8511,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:40:39.881271",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v6 (WeakReference) loaded.\");\n  ...",
+      "pid": 8511,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:39:09.329233",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v6 (WeakReference) loaded.\");\n  ...",
+      "pid": 6369,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:38:17.374177",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v6 (WeakReference) loaded.\");\n  ...",
+      "pid": 6369,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:37:21.646679",
+    "type": "script_injection",
+    "details": {
+      "script": "...",
+      "pid": 0,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:26:22.203117",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix (v5.1 - Final) loaded.\");\n    co...",
+      "pid": 1480,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:25:11.778725",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_STRING = \"cascadeClickEvent/position=\";\n    console.log(`...",
+      "pid": 0,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:24:50.164916",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_STRING = \"cascadeClickEvent/position=\";\n    console.log(`...",
+      "pid": 31654,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "timeout was reached"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:08:50.829046",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_STRING = \"cascadeClickEvent/position=\";\n    console.log(`...",
+      "pid": 26333,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "timeout was reached"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:08:17.225282",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_STRING = \"cascadeClickEvent/position=\";\n    console.log(`...",
+      "pid": 260,
+      "process_name": "android.hardware.graphics.allocator@4.0-service.windows",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:08:02.233138",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_STRING = \"cascadeClickEvent/position=\";\n    console.log(`...",
+      "pid": 26964,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "the connection is closed"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:07:48.919463",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_STRING = \"cascadeClickEvent/position=\";\n    console.log(`...",
+      "pid": 26964,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "timeout was reached"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:07:16.978731",
+    "type": "script_injection",
+    "details": {
+      "script": "...",
+      "pid": 26964,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "Missing device, process, or script content"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:07:08.831471",
+    "type": "script_injection",
+    "details": {
+      "script": "...",
+      "pid": 26964,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "Missing device, process, or script content"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T22:06:29.563099",
+    "type": "script_injection",
+    "details": {
+      "script": "...",
+      "pid": 0,
+      "process_name": "Grindr One",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T21:39:37.046038",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v3 (Corrected Hook Order) loaded...",
+      "pid": 16065,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T21:39:28.789941",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v3 (Corrected Hook Order) loaded...",
+      "pid": 16065,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T21:39:06.813036",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v3 (Corrected Hook Order) loaded...",
+      "pid": 16065,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T21:38:58.137290",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v3 (Corrected Hook Order) loaded...",
+      "pid": 260,
+      "process_name": "android.hardware.graphics.allocator@4.0-service.windows",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T21:37:57.474955",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v3 (Corrected Hook Order) loaded...",
+      "pid": 16065,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T21:34:23.685858",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v3 (Corrected Hook Order) loaded...",
+      "pid": 16065,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T21:30:01.085126",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_PACKAGE = \"com.grindrapp.android.ui.browse\";\n    const TR...",
+      "pid": 14845,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T21:29:30.479347",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_PACKAGE = \"com.grindrapp.android.ui.browse\";\n    const TR...",
+      "pid": 0,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T21:29:11.472317",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_PACKAGE = \"com.grindrapp.android.ui.browse\";\n    const TR...",
+      "pid": 13678,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "unable to inject library into process without libc"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T21:28:55.100116",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_PACKAGE = \"com.grindrapp.android.ui.browse\";\n    const TR...",
+      "pid": 13678,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T21:05:33.274077",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v3 (Corrected Hook Order) loaded...",
+      "pid": 5127,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T21:03:55.122669",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v3 (Corrected Hook Order) loaded...",
+      "pid": 5127,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T21:01:04.094197",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix v2 (Crash-Proof) loaded.\");\n    ...",
+      "pid": 5127,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T21:00:22.388666",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix script loaded.\");\n    console.lo...",
+      "pid": 0,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T20:52:28.111712",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix script loaded.\");\n    console.lo...",
+      "pid": 2246,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T20:52:08.330382",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix script loaded.\");\n    console.lo...",
+      "pid": 0,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T20:51:32.160703",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix script loaded.\");\n    console.lo...",
+      "pid": 32751,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T20:51:03.614822",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix script loaded.\");\n    console.lo...",
+      "pid": 0,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T20:50:29.149639",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Grindr Master UI Fix script loaded.\");\n    console.lo...",
+      "pid": 29955,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T20:44:15.920470",
+    "type": "script_injection",
+    "details": {
+      "script": "...",
+      "pid": 0,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T19:59:11.300085",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_PACKAGE = \"com.grindrapp.android\";\n    const TRACE_DURATI...",
+      "pid": 25414,
+      "process_name": "Grindr Two",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T19:55:18.842288",
+    "type": "script_injection",
+    "details": {
+      "script": "// Filename: find_favorites_refresh_method.js\nJava.perform(function() {\n    console.log(\"[*] Attachi...",
+      "pid": 25414,
+      "process_name": "Grindr Two",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T19:55:03.242919",
+    "type": "script_injection",
+    "details": {
+      "script": "// Filename: find_favorites_refresh_method.js\nJava.perform(function() {\n    console.log(\"[*] Attachi...",
+      "pid": 16453,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T19:53:36.381560",
+    "type": "script_injection",
+    "details": {
+      "script": "// Filename: find_favorites_refresh_method.js\nJava.perform(function() {\n    console.log(\"[*] Attachi...",
+      "pid": 25414,
+      "process_name": "Grindr Two",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T19:53:01.580214",
+    "type": "script_injection",
+    "details": {
+      "script": "// Filename: find_favorites_refresh_method.js\nJava.perform(function() {\n    console.log(\"[*] Attachi...",
+      "pid": 28416,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T19:52:52.417736",
+    "type": "script_injection",
+    "details": {
+      "script": "// Filename: find_favorites_refresh_method.js\nJava.perform(function() {\n    console.log(\"[*] Attachi...",
+      "pid": 25164,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "process not found"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T18:35:02.179714",
+    "type": "script_injection",
+    "details": {
+      "script": "// Filename: find_cascade_recyclerview_id.js\nJava.perform(function() {\n    console.log(\"[*] Attachin...",
+      "pid": 25414,
+      "process_name": "Grindr Two",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T18:21:31.719310",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Script loaded. Ready to verify the click handler.\");\n...",
+      "pid": 25414,
+      "process_name": "Grindr Two",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T18:21:20.947438",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    console.log(\"[*] Script loaded. Ready to verify the click handler.\");\n...",
+      "pid": 25164,
+      "device": "127.0.0.1:58526",
+      "status": "failed",
+      "error": "unable to inject library into process without libc"
+    }
+  },
+  {
+    "timestamp": "2025-11-18T18:10:01.782037",
+    "type": "script_injection",
+    "details": {
+      "script": "Java.perform(function() {\n    const TARGET_PACKAGE = \"com.grindrapp.android.ui.browse\";\n    const TR...",
+      "pid": 25164,
+      "process_name": "Grindr",
+      "device": "127.0.0.1:58526",
+      "status": "success"
+    }
+  },
+  {
     "timestamp": "2025-11-09T04:43:27.196542",
     "type": "script_injection",
     "details": {

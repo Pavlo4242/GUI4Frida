@@ -1,0 +1,687 @@
+2025-11-19 03:31:19,281 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 03:31:19,559 | INFO | [MainController] Process selected: PID 347 on 127.0.0.1:58526
+2025-11-19 03:31:34,503 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 03:31:34,517 | INFO | [MainController] Process selected: PID 347 on 127.0.0.1:58526
+2025-11-19 03:31:36,244 | INFO | [MainController] Process selected: PID 259 on 127.0.0.1:58526
+2025-11-19 03:31:36,377 | INFO | [MainController] Process selected: PID 260 on 127.0.0.1:58526
+2025-11-19 03:31:38,669 | INFO | [MainController] Process selected: PID 7241 on 127.0.0.1:58526
+2025-11-19 03:31:41,831 | INFO | [MainController] Injection state: injecting
+2025-11-19 03:31:41,876 | INFO | [InjectionController] Attaching to PID 7241...
+2025-11-19 03:31:42,171 | INFO | [InjectionController] Creating script...
+2025-11-19 03:31:42,173 | INFO | [InjectionController] Loading script...
+2025-11-19 03:31:42,175 | INFO | [MainController] Injection state: running
+2025-11-19 03:31:42,176 | INFO | [MainController] Injection succeeded
+2025-11-19 03:31:42,176 | INFO | [InjectionController] Script injected successfully
+2025-11-19 03:31:51,299 | INFO | [MainController] Injection state: stopping
+2025-11-19 03:31:51,304 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 03:31:51,306 | INFO | [MainController] Injection state: stopped
+2025-11-19 03:31:51,975 | INFO | [MainController] Injection state: injecting
+2025-11-19 03:31:52,017 | INFO | [InjectionController] Attaching to PID 7241...
+2025-11-19 03:31:52,318 | INFO | [InjectionController] Creating script...
+2025-11-19 03:31:52,321 | INFO | [InjectionController] Loading script...
+2025-11-19 03:31:52,350 | INFO | [*] Found 18 databases
+2025-11-19 03:31:52,350 | INFO | 
+[*] Database: grindr_assignments.db-wal
+2025-11-19 03:31:52,350 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/grindr_assignments.db-wal
+2025-11-19 03:31:52,353 | INFO |   Error processing DB: Error: android.database.sqlite.SQLiteDatabaseCorruptException: file is not a database (code 26 SQLITE_NOTADB): , while compiling: SELECT type, name, tbl_name, sql FROM sqlite_master WHERE type IN ('trigger', 'table', 'view', 'index')
+2025-11-19 03:31:52,354 | INFO | 
+[*] Database: extend.db-wal
+2025-11-19 03:31:52,354 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/extend.db-wal
+2025-11-19 03:31:52,354 | INFO |   Error processing DB: Error: android.database.sqlite.SQLiteDatabaseCorruptException: file is not a database (code 26 SQLITE_NOTADB): , while compiling: SELECT type, name, tbl_name, sql FROM sqlite_master WHERE type IN ('trigger', 'table', 'view', 'index')
+2025-11-19 03:31:52,354 | INFO | 
+[*] Database: extend.db-shm
+2025-11-19 03:31:52,355 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/extend.db-shm
+2025-11-19 03:31:52,355 | INFO |   Error processing DB: Error: android.database.sqlite.SQLiteDatabaseCorruptException: file is not a database (code 26 SQLITE_NOTADB): , while compiling: SELECT type, name, tbl_name, sql FROM sqlite_master WHERE type IN ('trigger', 'table', 'view', 'index')
+2025-11-19 03:31:52,355 | INFO | 
+[*] Database: com.google.android.datatransport.events-journal
+2025-11-19 03:31:52,356 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/com.google.android.datatransport.events-journal
+2025-11-19 03:31:52,356 | INFO |   Structures:
+2025-11-19 03:31:52,357 | INFO | 
+[*] Database: grindrplus.db
+2025-11-19 03:31:52,357 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/grindrplus.db
+2025-11-19 03:31:52,357 | INFO |   Structures:
+2025-11-19 03:31:52,358 | INFO |     - table: android_metadata on android_metadata
+2025-11-19 03:31:52,358 | INFO |       SQL: CREATE TABLE android_metadata (locale TEXT)
+2025-11-19 03:31:52,359 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,359 | INFO |     - table: AlbumEntity on AlbumEntity
+2025-11-19 03:31:52,359 | INFO |       SQL: CREATE TABLE `AlbumEntity` (`id` INTEGER NOT NULL, `albumName` TEXT, `createdAt` TEXT NOT NULL, `profileId` INTEGER NOT NULL, `updatedAt` TEXT NOT NULL, PRIMARY KEY(`id`))
+2025-11-19 03:31:52,359 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,359 | INFO |     - index: index_AlbumEntity_profileId on AlbumEntity
+2025-11-19 03:31:52,360 | INFO |       SQL: CREATE INDEX `index_AlbumEntity_profileId` ON `AlbumEntity` (`profileId`)
+2025-11-19 03:31:52,360 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,360 | INFO |     - table: AlbumContentEntity on AlbumContentEntity
+2025-11-19 03:31:52,360 | INFO |       SQL: CREATE TABLE `AlbumContentEntity` (`id` INTEGER NOT NULL, `albumId` INTEGER NOT NULL, `contentType` TEXT, `coverUrl` TEXT, `thumbUrl` TEXT, `url` TEXT, PRIMARY KEY(`id`), FOREIGN KEY(`albumId`) REFERENCES `AlbumEntity`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )
+2025-11-19 03:31:52,360 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,360 | INFO |     - index: index_AlbumContentEntity_albumId on AlbumContentEntity
+2025-11-19 03:31:52,361 | INFO |       SQL: CREATE INDEX `index_AlbumContentEntity_albumId` ON `AlbumContentEntity` (`albumId`)
+2025-11-19 03:31:52,361 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,361 | INFO |     - table: TeleportLocationEntity on TeleportLocationEntity
+2025-11-19 03:31:52,361 | INFO |       SQL: CREATE TABLE `TeleportLocationEntity` (`name` TEXT NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, PRIMARY KEY(`name`))
+2025-11-19 03:31:52,361 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,361 | INFO |     - index: sqlite_autoindex_TeleportLocationEntity_1 on TeleportLocationEntity
+2025-11-19 03:31:52,362 | INFO |       SQL: null
+2025-11-19 03:31:52,362 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,362 | INFO |     - table: SavedPhraseEntity on SavedPhraseEntity
+2025-11-19 03:31:52,362 | INFO |       SQL: CREATE TABLE `SavedPhraseEntity` (`phraseId` INTEGER NOT NULL, `text` TEXT NOT NULL, `frequency` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`phraseId`))
+2025-11-19 03:31:52,362 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,362 | INFO |     - table: profile_views on profile_views
+2025-11-19 03:31:52,363 | INFO |       SQL: CREATE TABLE `profile_views` (`profileId` TEXT NOT NULL, `viewedAt` INTEGER NOT NULL, `displayName` TEXT, `distance` REAL, `mediaHash` TEXT, `source` TEXT NOT NULL, PRIMARY KEY(`profileId`))
+2025-11-19 03:31:52,363 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,363 | INFO |     - index: sqlite_autoindex_profile_views_1 on profile_views
+2025-11-19 03:31:52,363 | INFO |       SQL: null
+2025-11-19 03:31:52,363 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,363 | INFO |     - table: ProfilePhotoEntity on ProfilePhotoEntity
+2025-11-19 03:31:52,364 | INFO |       SQL: CREATE TABLE `ProfilePhotoEntity` (`profileId` TEXT NOT NULL, `mediaHash` TEXT NOT NULL, PRIMARY KEY(`profileId`, `mediaHash`))
+2025-11-19 03:31:52,364 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,364 | INFO |     - index: sqlite_autoindex_ProfilePhotoEntity_1 on ProfilePhotoEntity
+2025-11-19 03:31:52,364 | INFO |       SQL: null
+2025-11-19 03:31:52,364 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,365 | INFO |     - table: profiles on profiles
+2025-11-19 03:31:52,365 | INFO |       SQL: CREATE TABLE `profiles` (`profileId` TEXT NOT NULL, `displayName` TEXT NOT NULL, `lastSeen` INTEGER NOT NULL, PRIMARY KEY(`profileId`))
+2025-11-19 03:31:52,365 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,365 | INFO |     - index: sqlite_autoindex_profiles_1 on profiles
+2025-11-19 03:31:52,365 | INFO |       SQL: null
+2025-11-19 03:31:52,365 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,365 | INFO |     - table: logs on logs
+2025-11-19 03:31:52,366 | INFO |       SQL: CREATE TABLE `logs` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `timestamp` INTEGER NOT NULL, `log_type` TEXT NOT NULL, `url` TEXT, `method` TEXT, `request_headers` TEXT, `request_body` TEXT, `response_code` INTEGER, `response_headers` TEXT, `response_body` TEXT, `profile_id` TEXT, `auth_token` TEXT, `xmpp_token` TEXT, `device_info` TEXT, `user_agent` TEXT)
+2025-11-19 03:31:52,366 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,366 | INFO |     - table: sqlite_sequence on sqlite_sequence
+2025-11-19 03:31:52,366 | INFO |       SQL: CREATE TABLE sqlite_sequence(name,seq)
+2025-11-19 03:31:52,366 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,366 | INFO |     - table: room_master_table on room_master_table
+2025-11-19 03:31:52,367 | INFO |       SQL: CREATE TABLE room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)
+2025-11-19 03:31:52,367 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,367 | INFO |     - table: archived_messages on archived_messages
+2025-11-19 03:31:52,367 | INFO |       SQL: CREATE TABLE archived_messages (
+            message_id TEXT PRIMARY KEY,
+            sender TEXT NOT NULL,
+            recipient TEXT,
+            body TEXT NOT NULL,
+            timestamp INTEGER NOT NULL,
+            conversation_id TEXT NOT NULL,
+            archived_at INTEGER DEFAULT (strftime('%s','now')),
+            deletion_detected INTEGER DEFAULT 0
+        )
+2025-11-19 03:31:52,367 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,368 | INFO |     - index: sqlite_autoindex_archived_messages_1 on archived_messages
+2025-11-19 03:31:52,368 | INFO |       SQL: null
+2025-11-19 03:31:52,368 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,368 | INFO |     - table: archived_profiles on archived_profiles
+2025-11-19 03:31:52,368 | INFO |       SQL: CREATE TABLE archived_profiles (
+            profile_id TEXT PRIMARY KEY,
+            display_name TEXT,
+            age INTEGER,
+            distance REAL,
+            about_me TEXT,
+            profile_tags TEXT,
+            last_updated INTEGER NOT NULL,
+            archived_at INTEGER DEFAULT (strftime('%s','now')),
+            deletion_detected INTEGER DEFAULT 0
+        )
+2025-11-19 03:31:52,368 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,369 | INFO |     - index: sqlite_autoindex_archived_profiles_1 on archived_profiles
+2025-11-19 03:31:52,369 | INFO |       SQL: null
+2025-11-19 03:31:52,369 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,369 | INFO |     - table: archived_profile_photos on archived_profile_photos
+2025-11-19 03:31:52,369 | INFO |       SQL: CREATE TABLE archived_profile_photos (
+            media_hash TEXT PRIMARY KEY,
+            profile_id TEXT NOT NULL,
+            order_ INTEGER NOT NULL,
+            archived_at INTEGER DEFAULT (strftime('%s','now')),
+            deletion_detected INTEGER DEFAULT 0
+        )
+2025-11-19 03:31:52,370 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,370 | INFO |     - index: sqlite_autoindex_archived_profile_photos_1 on archived_profile_photos
+2025-11-19 03:31:52,371 | INFO |       SQL: null
+2025-11-19 03:31:52,371 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,371 | INFO |     - index: idx_archived_messages_conv on archived_messages
+2025-11-19 03:31:52,371 | INFO |       SQL: CREATE INDEX idx_archived_messages_conv ON archived_messages(conversation_id)
+2025-11-19 03:31:52,371 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,371 | INFO |     - index: idx_archived_messages_time on archived_messages
+2025-11-19 03:31:52,371 | INFO |       SQL: CREATE INDEX idx_archived_messages_time ON archived_messages(archived_at)
+2025-11-19 03:31:52,371 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,372 | INFO |     - index: idx_archived_profiles_name on archived_profiles
+2025-11-19 03:31:52,372 | INFO |       SQL: CREATE INDEX idx_archived_profiles_name ON archived_profiles(display_name)
+2025-11-19 03:31:52,372 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,372 | INFO | 
+[*] Database: extend.db
+2025-11-19 03:31:52,372 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/extend.db
+2025-11-19 03:31:52,373 | INFO |   Structures:
+2025-11-19 03:31:52,373 | INFO |     - table: android_metadata on android_metadata
+2025-11-19 03:31:52,373 | INFO |       SQL: CREATE TABLE android_metadata (locale TEXT)
+2025-11-19 03:31:52,373 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,373 | INFO |     - table: client_log on client_log
+2025-11-19 03:31:52,374 | INFO |       SQL: CREATE TABLE `client_log` (`profile_id` TEXT NOT NULL, `name` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `params` TEXT NOT NULL, `created_at` INTEGER NOT NULL, `log_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)
+2025-11-19 03:31:52,374 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,374 | INFO |     - table: sqlite_sequence on sqlite_sequence
+2025-11-19 03:31:52,374 | INFO |       SQL: CREATE TABLE sqlite_sequence(name,seq)
+2025-11-19 03:31:52,374 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,374 | INFO |     - table: sent_gaymoji on sent_gaymoji
+2025-11-19 03:31:52,375 | INFO |       SQL: CREATE TABLE `sent_gaymoji` (`id` TEXT NOT NULL, `category` TEXT NOT NULL, `name` TEXT NOT NULL, `tag` TEXT, `advertiser` TEXT, `href` TEXT, `expiredTime` INTEGER NOT NULL, `profileId` TEXT NOT NULL, `sentTime` INTEGER NOT NULL, PRIMARY KEY(`profileId`, `id`))
+2025-11-19 03:31:52,375 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,375 | INFO |     - index: sqlite_autoindex_sent_gaymoji_1 on sent_gaymoji
+2025-11-19 03:31:52,375 | INFO |       SQL: null
+2025-11-19 03:31:52,375 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,375 | INFO |     - table: sent_giphy on sent_giphy
+2025-11-19 03:31:52,376 | INFO |       SQL: CREATE TABLE `sent_giphy` (`id` TEXT NOT NULL, `giphyItemJson` TEXT NOT NULL, `profileId` TEXT NOT NULL, `sentTime` INTEGER NOT NULL, PRIMARY KEY(`profileId`, `id`))
+2025-11-19 03:31:52,376 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,376 | INFO |     - index: sqlite_autoindex_sent_giphy_1 on sent_giphy
+2025-11-19 03:31:52,376 | INFO |       SQL: null
+2025-11-19 03:31:52,376 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,377 | INFO |     - table: gender on gender
+2025-11-19 03:31:52,377 | INFO |       SQL: CREATE TABLE `gender` (`genderId` INTEGER NOT NULL, `gender` TEXT NOT NULL, `displayGroup` INTEGER NOT NULL, `sortProfile` INTEGER, `sortFilter` INTEGER, `excludeOnProfileSelection` TEXT, `genderPlural` TEXT, `excludeOnFilterSelection` TEXT, PRIMARY KEY(`genderId`))
+2025-11-19 03:31:52,377 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,377 | INFO |     - table: pronoun on pronoun
+2025-11-19 03:31:52,377 | INFO |       SQL: CREATE TABLE `pronoun` (`pronounId` INTEGER NOT NULL, `pronoun` TEXT NOT NULL, PRIMARY KEY(`pronounId`))
+2025-11-19 03:31:52,377 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,377 | INFO |     - table: room_master_table on room_master_table
+2025-11-19 03:31:52,378 | INFO |       SQL: CREATE TABLE room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)
+2025-11-19 03:31:52,378 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,378 | INFO | 
+[*] Database: grindrplus.db-wal
+2025-11-19 03:31:52,378 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/grindrplus.db-wal
+2025-11-19 03:31:52,378 | INFO |   Error processing DB: Error: android.database.sqlite.SQLiteDatabaseCorruptException: file is not a database (code 26 SQLITE_NOTADB): , while compiling: SELECT type, name, tbl_name, sql FROM sqlite_master WHERE type IN ('trigger', 'table', 'view', 'index')
+2025-11-19 03:31:52,378 | INFO | 
+[*] Database: com.google.android.datatransport.events
+2025-11-19 03:31:52,379 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/com.google.android.datatransport.events
+2025-11-19 03:31:52,379 | INFO |   Structures:
+2025-11-19 03:31:52,379 | INFO |     - table: android_metadata on android_metadata
+2025-11-19 03:31:52,379 | INFO |       SQL: CREATE TABLE android_metadata (locale TEXT)
+2025-11-19 03:31:52,379 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,379 | INFO |     - table: events on events
+2025-11-19 03:31:52,380 | INFO |       SQL: CREATE TABLE events (_id INTEGER PRIMARY KEY, context_id INTEGER NOT NULL, transport_name TEXT NOT NULL, timestamp_ms INTEGER NOT NULL, uptime_ms INTEGER NOT NULL, payload BLOB NOT NULL, code INTEGER, num_attempts INTEGER NOT NULL, payload_encoding TEXT, inline BOOLEAN NOT NULL DEFAULT 1, product_id INTEGER, pseudonymous_id TEXT, experiment_ids_clear_blob BLOB, experiment_ids_encrypted_blob BLOB,FOREIGN KEY (context_id) REFERENCES transport_contexts(_id) ON DELETE CASCADE)
+2025-11-19 03:31:52,380 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,380 | INFO |     - table: event_metadata on event_metadata
+2025-11-19 03:31:52,380 | INFO |       SQL: CREATE TABLE event_metadata (_id INTEGER PRIMARY KEY, event_id INTEGER NOT NULL, name TEXT NOT NULL, value TEXT NOT NULL,FOREIGN KEY (event_id) REFERENCES events(_id) ON DELETE CASCADE)
+2025-11-19 03:31:52,380 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,381 | INFO |     - table: transport_contexts on transport_contexts
+2025-11-19 03:31:52,381 | INFO |       SQL: CREATE TABLE transport_contexts (_id INTEGER PRIMARY KEY, backend_name TEXT NOT NULL, priority INTEGER NOT NULL, next_request_ms INTEGER NOT NULL, extras BLOB)
+2025-11-19 03:31:52,381 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,381 | INFO |     - index: events_backend_id on events
+2025-11-19 03:31:52,381 | INFO |       SQL: CREATE INDEX events_backend_id on events(context_id)
+2025-11-19 03:31:52,381 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,382 | INFO |     - index: contexts_backend_priority_extras on transport_contexts
+2025-11-19 03:31:52,382 | INFO |       SQL: CREATE UNIQUE INDEX contexts_backend_priority_extras on transport_contexts(backend_name, priority, extras)
+2025-11-19 03:31:52,382 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,382 | INFO |     - table: event_payloads on event_payloads
+2025-11-19 03:31:52,382 | INFO |       SQL: CREATE TABLE event_payloads (sequence_num INTEGER NOT NULL, event_id INTEGER NOT NULL, bytes BLOB NOT NULL,FOREIGN KEY (event_id) REFERENCES events(_id) ON DELETE CASCADE,PRIMARY KEY (sequence_num, event_id))
+2025-11-19 03:31:52,382 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,382 | INFO |     - index: sqlite_autoindex_event_payloads_1 on event_payloads
+2025-11-19 03:31:52,383 | INFO |       SQL: null
+2025-11-19 03:31:52,383 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,383 | INFO |     - table: log_event_dropped on log_event_dropped
+2025-11-19 03:31:52,383 | INFO |       SQL: CREATE TABLE log_event_dropped (log_source VARCHAR(45) NOT NULL,reason INTEGER NOT NULL,events_dropped_count BIGINT NOT NULL,PRIMARY KEY(log_source, reason))
+2025-11-19 03:31:52,383 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,383 | INFO |     - index: sqlite_autoindex_log_event_dropped_1 on log_event_dropped
+2025-11-19 03:31:52,384 | INFO |       SQL: null
+2025-11-19 03:31:52,384 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,384 | INFO |     - table: global_log_event_state on global_log_event_state
+2025-11-19 03:31:52,384 | INFO |       SQL: CREATE TABLE global_log_event_state (last_metrics_upload_ms BIGINT PRIMARY KEY)
+2025-11-19 03:31:52,384 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,384 | INFO |     - index: sqlite_autoindex_global_log_event_state_1 on global_log_event_state
+2025-11-19 03:31:52,385 | INFO |       SQL: null
+2025-11-19 03:31:52,385 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,385 | INFO | 
+[*] Database: grindr_user_1.db
+2025-11-19 03:31:52,385 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/grindr_user_1.db
+2025-11-19 03:31:52,385 | INFO |   Structures:
+2025-11-19 03:31:52,386 | INFO |     - table: android_metadata on android_metadata
+2025-11-19 03:31:52,386 | INFO |       SQL: CREATE TABLE android_metadata (locale TEXT)
+2025-11-19 03:31:52,386 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,386 | INFO |     - table: ads on ads
+2025-11-19 03:31:52,386 | INFO |       SQL: CREATE TABLE `ads` (`ads_id` TEXT NOT NULL, `is_seen` INTEGER NOT NULL, `time_stamp` INTEGER NOT NULL, `content_id` TEXT, PRIMARY KEY(`ads_id`))
+2025-11-19 03:31:52,387 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,387 | INFO |     - index: sqlite_autoindex_ads_1 on ads
+2025-11-19 03:31:52,387 | INFO |       SQL: null
+2025-11-19 03:31:52,387 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,387 | INFO |     - table: album_content on album_content
+2025-11-19 03:31:52,387 | INFO |       SQL: CREATE TABLE `album_content` (`content_id` INTEGER NOT NULL, `album_id` INTEGER NOT NULL, `position` INTEGER NOT NULL, `cover_url` TEXT, `content_type` TEXT, `url` TEXT, `status_id` INTEGER NOT NULL, `thumb_url` TEXT, `is_processing` INTEGER NOT NULL, `rejection_id` TEXT, `remaining_views` INTEGER NOT NULL, PRIMARY KEY(`content_id`), FOREIGN KEY(`album_id`) REFERENCES `albums`(`album_id`) ON UPDATE CASCADE ON DELETE CASCADE )
+2025-11-19 03:31:52,388 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,388 | INFO |     - index: album_content_idx1 on album_content
+2025-11-19 03:31:52,388 | INFO |       SQL: CREATE INDEX `album_content_idx1` ON `album_content` (`album_id`, `position`)
+2025-11-19 03:31:52,388 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,388 | INFO |     - table: albums on albums
+2025-11-19 03:31:52,388 | INFO |       SQL: CREATE TABLE `albums` (`album_id` INTEGER NOT NULL, `owner_profile_id` INTEGER NOT NULL, `album_name` TEXT, `cover_url` TEXT NOT NULL, `has_photo` INTEGER NOT NULL, `has_unseen_content` INTEGER NOT NULL, `has_video` INTEGER NOT NULL, `is_viewable` INTEGER NOT NULL, `is_shareable` INTEGER NOT NULL, `album_number` INTEGER, `total_albums_shared` INTEGER, `shared_count` INTEGER NOT NULL, `expiration` INTEGER NOT NULL, `created` INTEGER NOT NULL, `updated` INTEGER NOT NULL, PRIMARY KEY(`album_id`))
+2025-11-19 03:31:52,389 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,389 | INFO |     - table: album_my_shares on album_my_shares
+2025-11-19 03:31:52,389 | INFO |       SQL: CREATE TABLE `album_my_shares` (`album_id` INTEGER NOT NULL, `profile_id` INTEGER NOT NULL, PRIMARY KEY(`album_id`, `profile_id`))
+2025-11-19 03:31:52,389 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,389 | INFO |     - index: sqlite_autoindex_album_my_shares_1 on album_my_shares
+2025-11-19 03:31:52,389 | INFO |       SQL: null
+2025-11-19 03:31:52,389 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,390 | INFO |     - table: analytics_event on analytics_event
+2025-11-19 03:31:52,390 | INFO |       SQL: CREATE TABLE `analytics_event` (`name` TEXT NOT NULL, `attributes` TEXT, `grindr_only_attributes` TEXT, `sources` TEXT NOT NULL, `timestamp` INTEGER NOT NULL DEFAULT 0, `event_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)
+2025-11-19 03:31:52,390 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,390 | INFO |     - table: sqlite_sequence on sqlite_sequence
+2025-11-19 03:31:52,390 | INFO |       SQL: CREATE TABLE sqlite_sequence(name,seq)
+2025-11-19 03:31:52,390 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,391 | INFO |     - table: blocks on blocks
+2025-11-19 03:31:52,391 | INFO |       SQL: CREATE TABLE `blocks` (`profileId` TEXT NOT NULL, `order_` INTEGER, PRIMARY KEY(`profileId`))
+2025-11-19 03:31:52,391 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,391 | INFO |     - index: sqlite_autoindex_blocks_1 on blocks
+2025-11-19 03:31:52,391 | INFO |       SQL: null
+2025-11-19 03:31:52,392 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,392 | INFO |     - table: boost_session on boost_session
+2025-11-19 03:31:52,392 | INFO |       SQL: CREATE TABLE `boost_session` (`boost_session_id` TEXT NOT NULL, `profile_id` TEXT NOT NULL, `start_time` INTEGER NOT NULL, `end_time` INTEGER NOT NULL, `chats_count` INTEGER NOT NULL, `taps_count` INTEGER NOT NULL, `views_count` INTEGER NOT NULL, `boost_product_type` TEXT, `minimum_age` INTEGER, `maximum_age` INTEGER, `position_preferences` TEXT, `geohash` TEXT, PRIMARY KEY(`boost_session_id`))
+2025-11-19 03:31:52,392 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,392 | INFO |     - index: sqlite_autoindex_boost_session_1 on boost_session
+2025-11-19 03:31:52,392 | INFO |       SQL: null
+2025-11-19 03:31:52,393 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,393 | INFO |     - table: chat_messages on chat_messages
+2025-11-19 03:31:52,393 | INFO |       SQL: CREATE TABLE `chat_messages` (`message_id` TEXT NOT NULL, `sender` TEXT NOT NULL, `recipient` TEXT, `body` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `type` TEXT NOT NULL, `unread` INTEGER NOT NULL, `unsent` INTEGER NOT NULL DEFAULT FALSE, `conversation_id` TEXT NOT NULL, `status` INTEGER NOT NULL, `ref_id` TEXT, `dynamic` INTEGER NOT NULL, `reply_to_message_id` TEXT, `reply_to_sender_id` INTEGER, `reply_to_type` TEXT, `reply_to_body` TEXT, `is_local` INTEGER NOT NULL, `wingman_rating` TEXT, `wingman_feedback_sent` INTEGER, `source_override` TEXT DEFAULT NULL, `mediaUrl` TEXT, `album` TEXT, `translation` TEXT, PRIMARY KEY(`message_id`), FOREIGN KEY(`conversation_id`) REFERENCES `chat_conversations`(`conversation_id`) ON UPDATE CASCADE ON DELETE CASCADE )
+2025-11-19 03:31:52,393 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,393 | INFO |     - index: sqlite_autoindex_chat_messages_1 on chat_messages
+2025-11-19 03:31:52,393 | INFO |       SQL: null
+2025-11-19 03:31:52,394 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,394 | INFO |     - index: chat_messages_idx1 on chat_messages
+2025-11-19 03:31:52,394 | INFO |       SQL: CREATE UNIQUE INDEX `chat_messages_idx1` ON `chat_messages` (`ref_id`)
+2025-11-19 03:31:52,394 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,394 | INFO |     - index: chat_messages_idx2 on chat_messages
+2025-11-19 03:31:52,394 | INFO |       SQL: CREATE INDEX `chat_messages_idx2` ON `chat_messages` (`conversation_id`, `type`, `timestamp`)
+2025-11-19 03:31:52,395 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,395 | INFO |     - index: chat_messages_idx3 on chat_messages
+2025-11-19 03:31:52,395 | INFO |       SQL: CREATE INDEX `chat_messages_idx3` ON `chat_messages` (`message_id`)
+2025-11-19 03:31:52,395 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,396 | INFO |     - index: chat_messages_idx4 on chat_messages
+2025-11-19 03:31:52,396 | INFO |       SQL: CREATE INDEX `chat_messages_idx4` ON `chat_messages` (`conversation_id`, `dynamic`)
+2025-11-19 03:31:52,396 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,396 | INFO |     - index: chat_messages_idx5 on chat_messages
+2025-11-19 03:31:52,396 | INFO |       SQL: CREATE INDEX `chat_messages_idx5` ON `chat_messages` (`conversation_id`)
+2025-11-19 03:31:52,396 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,396 | INFO |     - table: chat_message_fts on chat_message_fts
+2025-11-19 03:31:52,396 | INFO |       SQL: CREATE VIRTUAL TABLE `chat_message_fts` USING FTS4(`message_id` TEXT NOT NULL, `body` TEXT NOT NULL, notindexed=`message_id`)
+2025-11-19 03:31:52,397 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,397 | INFO |     - table: chat_message_fts_content on chat_message_fts_content
+2025-11-19 03:31:52,397 | INFO |       SQL: CREATE TABLE 'chat_message_fts_content'(docid INTEGER PRIMARY KEY, 'c0message_id', 'c1body')
+2025-11-19 03:31:52,397 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,397 | INFO |     - table: chat_message_fts_segments on chat_message_fts_segments
+2025-11-19 03:31:52,397 | INFO |       SQL: CREATE TABLE 'chat_message_fts_segments'(blockid INTEGER PRIMARY KEY, block BLOB)
+2025-11-19 03:31:52,398 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,398 | INFO |     - table: chat_message_fts_segdir on chat_message_fts_segdir
+2025-11-19 03:31:52,398 | INFO |       SQL: CREATE TABLE 'chat_message_fts_segdir'(level INTEGER,idx INTEGER,start_block INTEGER,leaves_end_block INTEGER,end_block INTEGER,root BLOB,PRIMARY KEY(level, idx))
+2025-11-19 03:31:52,398 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,398 | INFO |     - index: sqlite_autoindex_chat_message_fts_segdir_1 on chat_message_fts_segdir
+2025-11-19 03:31:52,399 | INFO |       SQL: null
+2025-11-19 03:31:52,399 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,399 | INFO |     - table: chat_message_fts_docsize on chat_message_fts_docsize
+2025-11-19 03:31:52,399 | INFO |       SQL: CREATE TABLE 'chat_message_fts_docsize'(docid INTEGER PRIMARY KEY, size BLOB)
+2025-11-19 03:31:52,399 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,400 | INFO |     - table: chat_message_fts_stat on chat_message_fts_stat
+2025-11-19 03:31:52,400 | INFO |       SQL: CREATE TABLE 'chat_message_fts_stat'(id INTEGER PRIMARY KEY, value BLOB)
+2025-11-19 03:31:52,400 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,400 | INFO |     - table: chat_reactions on chat_reactions
+2025-11-19 03:31:52,400 | INFO |       SQL: CREATE TABLE `chat_reactions` (`target_message_id` TEXT NOT NULL, `conversation_id` TEXT NOT NULL, `profile_id` TEXT NOT NULL, `reaction_type` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`target_message_id`, `profile_id`), FOREIGN KEY(`conversation_id`) REFERENCES `chat_conversations`(`conversation_id`) ON UPDATE CASCADE ON DELETE CASCADE )
+2025-11-19 03:31:52,400 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,401 | INFO |     - index: sqlite_autoindex_chat_reactions_1 on chat_reactions
+2025-11-19 03:31:52,401 | INFO |       SQL: null
+2025-11-19 03:31:52,401 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,401 | INFO |     - index: chat_reactions_idx1 on chat_reactions
+2025-11-19 03:31:52,401 | INFO |       SQL: CREATE INDEX `chat_reactions_idx1` ON `chat_reactions` (`conversation_id`)
+2025-11-19 03:31:52,402 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,402 | INFO |     - table: chat_translations on chat_translations
+2025-11-19 03:31:52,402 | INFO |       SQL: CREATE TABLE `chat_translations` (`message_id` TEXT NOT NULL, `conversation_id` TEXT NOT NULL, `text` TEXT NOT NULL, `expiration` INTEGER NOT NULL, PRIMARY KEY(`message_id`))
+2025-11-19 03:31:52,402 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,402 | INFO |     - index: sqlite_autoindex_chat_translations_1 on chat_translations
+2025-11-19 03:31:52,402 | INFO |       SQL: null
+2025-11-19 03:31:52,403 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,403 | INFO |     - index: chat_translations_idx1 on chat_translations
+2025-11-19 03:31:52,403 | INFO |       SQL: CREATE UNIQUE INDEX `chat_translations_idx1` ON `chat_translations` (`conversation_id`, `message_id`)
+2025-11-19 03:31:52,403 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,403 | INFO |     - index: chat_translations_idx2 on chat_translations
+2025-11-19 03:31:52,404 | INFO |       SQL: CREATE INDEX `chat_translations_idx2` ON `chat_translations` (`expiration`)
+2025-11-19 03:31:52,404 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,404 | INFO |     - table: chat_conversations on chat_conversations
+2025-11-19 03:31:52,404 | INFO |       SQL: CREATE TABLE `chat_conversations` (`conversation_id` TEXT NOT NULL, `name` TEXT NOT NULL DEFAULT '', `type` INTEGER NOT NULL DEFAULT 0, `isPartial` INTEGER NOT NULL DEFAULT 0, `unread` INTEGER NOT NULL, `new_message` INTEGER NOT NULL, `last_message_id` TEXT, `last_message_timestamp` INTEGER NOT NULL, `pin` INTEGER NOT NULL, `mute` INTEGER NOT NULL, `translatable` INTEGER NOT NULL, `is_customer_online` INTEGER NOT NULL, `created` INTEGER NOT NULL, `updated` INTEGER NOT NULL, `is_local` INTEGER NOT NULL, `last_activity_timestamp` INTEGER NOT NULL, `right_now_status` TEXT NOT NULL DEFAULT 'NOT_ACTIVE', `has_unread_throb` INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(`conversation_id`))
+2025-11-19 03:31:52,404 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,404 | INFO |     - index: sqlite_autoindex_chat_conversations_1 on chat_conversations
+2025-11-19 03:31:52,405 | INFO |       SQL: null
+2025-11-19 03:31:52,405 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,405 | INFO |     - index: chat_conversations_idx1 on chat_conversations
+2025-11-19 03:31:52,405 | INFO |       SQL: CREATE INDEX `chat_conversations_idx1` ON `chat_conversations` (`conversation_id`, `type`, `last_message_timestamp`)
+2025-11-19 03:31:52,405 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,405 | INFO |     - index: chat_conversations_idx2 on chat_conversations
+2025-11-19 03:31:52,406 | INFO |       SQL: CREATE INDEX `chat_conversations_idx2` ON `chat_conversations` (`conversation_id`, `pin`, `last_message_timestamp`)
+2025-11-19 03:31:52,406 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,406 | INFO |     - index: chat_conversations_idx3 on chat_conversations
+2025-11-19 03:31:52,406 | INFO |       SQL: CREATE INDEX `chat_conversations_idx3` ON `chat_conversations` (`conversation_id`, `mute`)
+2025-11-19 03:31:52,406 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,406 | INFO |     - index: chat_conversations_idx4 on chat_conversations
+2025-11-19 03:31:52,407 | INFO |       SQL: CREATE INDEX `chat_conversations_idx4` ON `chat_conversations` (`type`, `type`, `unread`)
+2025-11-19 03:31:52,407 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,407 | INFO |     - index: chat_conversations_idx5 on chat_conversations
+2025-11-19 03:31:52,407 | INFO |       SQL: CREATE INDEX `chat_conversations_idx5` ON `chat_conversations` (`new_message`)
+2025-11-19 03:31:52,407 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,407 | INFO |     - index: chat_conversations_idx6 on chat_conversations
+2025-11-19 03:31:52,407 | INFO |       SQL: CREATE INDEX `chat_conversations_idx6` ON `chat_conversations` (`type`, `last_message_id`)
+2025-11-19 03:31:52,408 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,408 | INFO |     - index: chat_conversations_idx7 on chat_conversations
+2025-11-19 03:31:52,408 | INFO |       SQL: CREATE INDEX `chat_conversations_idx7` ON `chat_conversations` (`pin`)
+2025-11-19 03:31:52,408 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,408 | INFO |     - index: chat_conversations_idx8 on chat_conversations
+2025-11-19 03:31:52,408 | INFO |       SQL: CREATE INDEX `chat_conversations_idx8` ON `chat_conversations` (`mute`, `type`)
+2025-11-19 03:31:52,409 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,409 | INFO |     - table: chat_conversation_metadata on chat_conversation_metadata
+2025-11-19 03:31:52,409 | INFO |       SQL: CREATE TABLE `chat_conversation_metadata` (`conversation_id` TEXT NOT NULL, `is_translatable` INTEGER NOT NULL DEFAULT 0, `has_shared_albums` INTEGER NOT NULL DEFAULT 0, `has_wingman_summary` INTEGER NOT NULL DEFAULT 0, `is_in_a_list` INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(`conversation_id`), FOREIGN KEY(`conversation_id`) REFERENCES `chat_conversations`(`conversation_id`) ON UPDATE CASCADE ON DELETE CASCADE )
+2025-11-19 03:31:52,409 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,409 | INFO |     - index: sqlite_autoindex_chat_conversation_metadata_1 on chat_conversation_metadata
+2025-11-19 03:31:52,409 | INFO |       SQL: null
+2025-11-19 03:31:52,410 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,410 | INFO |     - table: chat_conversation_participants on chat_conversation_participants
+2025-11-19 03:31:52,410 | INFO |       SQL: CREATE TABLE `chat_conversation_participants` (`conversation_id` TEXT NOT NULL, `profile_id` INTEGER NOT NULL, `primary_media_hash` TEXT, `last_online` INTEGER NOT NULL, `onlineUntil` INTEGER, `isInAList` INTEGER NOT NULL DEFAULT FALSE, `hasDatingPotential` INTEGER NOT NULL DEFAULT FALSE, PRIMARY KEY(`conversation_id`, `profile_id`), FOREIGN KEY(`conversation_id`) REFERENCES `chat_conversations`(`conversation_id`) ON UPDATE CASCADE ON DELETE CASCADE )
+2025-11-19 03:31:52,410 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,410 | INFO |     - index: sqlite_autoindex_chat_conversation_participants_1 on chat_conversation_participants
+2025-11-19 03:31:52,411 | INFO |       SQL: null
+2025-11-19 03:31:52,411 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,411 | INFO |     - table: chat_conversation_previews on chat_conversation_previews
+2025-11-19 03:31:52,412 | INFO |       SQL: CREATE TABLE `chat_conversation_previews` (`conversation_id` TEXT NOT NULL, `message_id` TEXT NOT NULL, `sender` TEXT NOT NULL, `type` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `status` INTEGER NOT NULL, `text` TEXT, `duration` INTEGER, `created` INTEGER NOT NULL, `updated` INTEGER NOT NULL, PRIMARY KEY(`conversation_id`), FOREIGN KEY(`conversation_id`) REFERENCES `chat_conversations`(`conversation_id`) ON UPDATE CASCADE ON DELETE CASCADE )
+2025-11-19 03:31:52,412 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,412 | INFO |     - index: sqlite_autoindex_chat_conversation_previews_1 on chat_conversation_previews
+2025-11-19 03:31:52,412 | INFO |       SQL: null
+2025-11-19 03:31:52,412 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,412 | INFO |     - index: chat_conversation_previews_idx1 on chat_conversation_previews
+2025-11-19 03:31:52,412 | INFO |       SQL: CREATE INDEX `chat_conversation_previews_idx1` ON `chat_conversation_previews` (`conversation_id`, `timestamp`)
+2025-11-19 03:31:52,412 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,413 | INFO |     - index: chat_conversation_previews_idx2 on chat_conversation_previews
+2025-11-19 03:31:52,413 | INFO |       SQL: CREATE INDEX `chat_conversation_previews_idx2` ON `chat_conversation_previews` (`message_id`)
+2025-11-19 03:31:52,413 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,413 | INFO |     - table: chat_delivery_status on chat_delivery_status
+2025-11-19 03:31:52,413 | INFO |       SQL: CREATE TABLE `chat_delivery_status` (`message_id` TEXT NOT NULL, `retry_count` INTEGER NOT NULL, `retry_timestamp` INTEGER NOT NULL, `play_sound` INTEGER NOT NULL, `created` INTEGER NOT NULL, PRIMARY KEY(`message_id`), FOREIGN KEY(`message_id`) REFERENCES `chat_messages`(`message_id`) ON UPDATE CASCADE ON DELETE CASCADE )
+2025-11-19 03:31:52,413 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,414 | INFO |     - index: sqlite_autoindex_chat_delivery_status_1 on chat_delivery_status
+2025-11-19 03:31:52,414 | INFO |       SQL: null
+2025-11-19 03:31:52,414 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,414 | INFO |     - table: favorite_lite on favorite_lite
+2025-11-19 03:31:52,414 | INFO |       SQL: CREATE TABLE `favorite_lite` (`order` INTEGER NOT NULL, `profile_id` TEXT NOT NULL, `distance` REAL, `last_seen` INTEGER NOT NULL, `online_until` INTEGER, `has_album` INTEGER NOT NULL DEFAULT 0, `display_name` TEXT NOT NULL DEFAULT '', `photo_hash` TEXT NOT NULL DEFAULT '', `right_now` TEXT NOT NULL DEFAULT 'NOT_ACTIVE', PRIMARY KEY(`profile_id`))
+2025-11-19 03:31:52,414 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,415 | INFO |     - index: sqlite_autoindex_favorite_lite_1 on favorite_lite
+2025-11-19 03:31:52,415 | INFO |       SQL: null
+2025-11-19 03:31:52,415 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,415 | INFO |     - table: favorite_profile on favorite_profile
+2025-11-19 03:31:52,415 | INFO |       SQL: CREATE TABLE `favorite_profile` (`id` TEXT NOT NULL, PRIMARY KEY(`id`))
+2025-11-19 03:31:52,415 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,416 | INFO |     - index: sqlite_autoindex_favorite_profile_1 on favorite_profile
+2025-11-19 03:31:52,416 | INFO |       SQL: null
+2025-11-19 03:31:52,416 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,416 | INFO |     - table: chat_inbox_filters on chat_inbox_filters
+2025-11-19 03:31:52,416 | INFO |       SQL: CREATE TABLE `chat_inbox_filters` (`filter_id` INTEGER NOT NULL, `conversation_id` TEXT NOT NULL, `created` INTEGER NOT NULL, `updated` INTEGER NOT NULL, PRIMARY KEY(`filter_id`, `conversation_id`))
+2025-11-19 03:31:52,417 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,417 | INFO |     - index: sqlite_autoindex_chat_inbox_filters_1 on chat_inbox_filters
+2025-11-19 03:31:52,417 | INFO |       SQL: null
+2025-11-19 03:31:52,417 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,417 | INFO |     - table: insertable_profile on insertable_profile
+2025-11-19 03:31:52,417 | INFO |       SQL: CREATE TABLE `insertable_profile` (`id` TEXT NOT NULL, `is_viewable` INTEGER NOT NULL, `profile_order` INTEGER NOT NULL, PRIMARY KEY(`id`))
+2025-11-19 03:31:52,418 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,418 | INFO |     - index: sqlite_autoindex_insertable_profile_1 on insertable_profile
+2025-11-19 03:31:52,418 | INFO |       SQL: null
+2025-11-19 03:31:52,418 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,418 | INFO |     - table: LocationEntity on LocationEntity
+2025-11-19 03:31:52,418 | INFO |       SQL: CREATE TABLE `LocationEntity` (`latitude` REAL NOT NULL, `longitude` REAL NOT NULL, PRIMARY KEY(`latitude`, `longitude`))
+2025-11-19 03:31:52,419 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,419 | INFO |     - index: sqlite_autoindex_LocationEntity_1 on LocationEntity
+2025-11-19 03:31:52,419 | INFO |       SQL: null
+2025-11-19 03:31:52,419 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,419 | INFO |     - table: media_items on media_items
+2025-11-19 03:31:52,420 | INFO |       SQL: CREATE TABLE `media_items` (`id` INTEGER NOT NULL, `content_type` TEXT NOT NULL, `url` TEXT NOT NULL, `created` INTEGER NOT NULL, `updated` INTEGER NOT NULL DEFAULT 0, `takenOnGrindr` INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(`id`))
+2025-11-19 03:31:52,420 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,420 | INFO |     - index: media_items_idx1 on media_items
+2025-11-19 03:31:52,420 | INFO |       SQL: CREATE INDEX `media_items_idx1` ON `media_items` (`content_type`)
+2025-11-19 03:31:52,420 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,421 | INFO |     - table: nearby_profile on nearby_profile
+2025-11-19 03:31:52,421 | INFO |       SQL: CREATE TABLE `nearby_profile` (`id` TEXT NOT NULL, PRIMARY KEY(`id`))
+2025-11-19 03:31:52,421 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,421 | INFO |     - index: sqlite_autoindex_nearby_profile_1 on nearby_profile
+2025-11-19 03:31:52,421 | INFO |       SQL: null
+2025-11-19 03:31:52,422 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,422 | INFO |     - table: phrase on phrase
+2025-11-19 03:31:52,422 | INFO |       SQL: CREATE TABLE `phrase` (`phraseId` TEXT NOT NULL, `phraseText` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `frequency` INTEGER NOT NULL, PRIMARY KEY(`phraseId`))
+2025-11-19 03:31:52,422 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,422 | INFO |     - index: sqlite_autoindex_phrase_1 on phrase
+2025-11-19 03:31:52,423 | INFO |       SQL: null
+2025-11-19 03:31:52,423 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,423 | INFO |     - table: profile on profile
+2025-11-19 03:31:52,423 | INFO |       SQL: CREATE TABLE `profile` (`profile_id` TEXT NOT NULL, `created` INTEGER NOT NULL, `last_updated_time` INTEGER NOT NULL, `seen` INTEGER NOT NULL, `is_secret_admirer` INTEGER NOT NULL, `is_favorite` INTEGER NOT NULL, `is_viewed_me_fresh_face` INTEGER NOT NULL, `display_name` TEXT, `media_hash` TEXT, `age` INTEGER NOT NULL, `show_distance` INTEGER NOT NULL, `approximate_distance` INTEGER NOT NULL, `show_age` INTEGER NOT NULL, `distance` REAL, `is_new` INTEGER NOT NULL, `about_me` TEXT, `profile_tags` TEXT NOT NULL, `ethnicity` INTEGER NOT NULL, `looking_for` TEXT NOT NULL, `relationship_status` INTEGER NOT NULL, `grindr_tribes` TEXT NOT NULL, `gender_category` INTEGER NOT NULL, `pronouns_category` INTEGER NOT NULL, `gender_display` TEXT, `pronouns_display` TEXT, `body_type` INTEGER NOT NULL, `sexual_position` INTEGER NOT NULL, `hiv_status` INTEGER NOT NULL, `last_tested_date` INTEGER NOT NULL, `weight` REAL NOT NULL, `height` REAL NOT NULL, `twitter_id` TEXT, `facebook_id` TEXT, `instagram_id` TEXT, `verified_instagram_id` TEXT, `local_updated_time` INTEGER NOT NULL, `last_viewed` INTEGER, `accept_nsfw_pics` INTEGER NOT NULL, `meet_at` TEXT NOT NULL, `mark_delete` INTEGER NOT NULL, `last_message_timestamp` INTEGER NOT NULL, `genders` TEXT NOT NULL, `pronouns` TEXT NOT NULL, `vaccines` TEXT NOT NULL, `sexual_health` TEXT NOT NULL, `is_boosting` INTEGER NOT NULL, `found_via` TEXT, `is_roaming` INTEGER NOT NULL, `has_unread_throb` INTEGER, `last_throb_timestamp` INTEGER, `right_now_status` TEXT NOT NULL, `right_now_post_text` TEXT DEFAULT NULL, `right_now_post_distance` INTEGER DEFAULT NULL, `right_now_thumbnail_url` TEXT DEFAULT NULL, `right_now_full_image_url` TEXT DEFAULT NULL, `right_now_post_created_time` INTEGER DEFAULT NULL, `arrival_days` INTEGER, `unread_count` INTEGER NOT NULL DEFAULT 0, `show_unlock_reward` INTEGER, `isBlockable` INTEGER NOT NULL DEFAULT false, `viewedCountTotal` INTEGER NOT NULL DEFAULT 0, `viewedCountMax` INTEGER NOT NULL DEFAULT 0, `onlineUntil` INTEGER, `visiting` INTEGER DEFAULT false, `is_in_a_list` INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(`profile_id`))
+2025-11-19 03:31:52,423 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,424 | INFO |     - index: sqlite_autoindex_profile_1 on profile
+2025-11-19 03:31:52,424 | INFO |       SQL: null
+2025-11-19 03:31:52,424 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,424 | INFO |     - index: index_profile_created on profile
+2025-11-19 03:31:52,424 | INFO |       SQL: CREATE INDEX `index_profile_created` ON `profile` (`created`)
+2025-11-19 03:31:52,424 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,424 | INFO |     - table: profile_note on profile_note
+2025-11-19 03:31:52,425 | INFO |       SQL: CREATE TABLE `profile_note` (`profile_id` TEXT NOT NULL, `note` TEXT NOT NULL, `phone_number` TEXT, PRIMARY KEY(`profile_id`))
+2025-11-19 03:31:52,425 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,425 | INFO |     - index: sqlite_autoindex_profile_note_1 on profile_note
+2025-11-19 03:31:52,425 | INFO |       SQL: null
+2025-11-19 03:31:52,425 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,425 | INFO |     - table: profile_photo on profile_photo
+2025-11-19 03:31:52,426 | INFO |       SQL: CREATE TABLE `profile_photo` (`media_hash` TEXT NOT NULL, `state_` INTEGER NOT NULL, `reason_` TEXT, `order_` INTEGER NOT NULL, `profile_id` TEXT NOT NULL, `taken_on_grindr` INTEGER NOT NULL DEFAULT 0, `created_at` INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(`media_hash`), FOREIGN KEY(`profile_id`) REFERENCES `profile`(`profile_id`) ON UPDATE NO ACTION ON DELETE CASCADE )
+2025-11-19 03:31:52,426 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,426 | INFO |     - index: sqlite_autoindex_profile_photo_1 on profile_photo
+2025-11-19 03:31:52,426 | INFO |       SQL: null
+2025-11-19 03:31:52,426 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,426 | INFO |     - index: index_profile_photo_profile_id on profile_photo
+2025-11-19 03:31:52,427 | INFO |       SQL: CREATE INDEX `index_profile_photo_profile_id` ON `profile_photo` (`profile_id`)
+2025-11-19 03:31:52,427 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,427 | INFO |     - table: report_attachable_message on report_attachable_message
+2025-11-19 03:31:52,427 | INFO |       SQL: CREATE TABLE `report_attachable_message` (`message_id` TEXT NOT NULL, `type` TEXT NOT NULL, `body` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `target_profile_id` TEXT, `source_profile_id` TEXT NOT NULL, PRIMARY KEY(`message_id`))
+2025-11-19 03:31:52,427 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,428 | INFO |     - index: sqlite_autoindex_report_attachable_message_1 on report_attachable_message
+2025-11-19 03:31:52,428 | INFO |       SQL: null
+2025-11-19 03:31:52,428 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,428 | INFO |     - table: report_attachable_profile on report_attachable_profile
+2025-11-19 03:31:52,428 | INFO |       SQL: CREATE TABLE `report_attachable_profile` (`profile_id` TEXT NOT NULL, `display_name` TEXT, `media_hash` TEXT, PRIMARY KEY(`profile_id`))
+2025-11-19 03:31:52,429 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,429 | INFO |     - index: sqlite_autoindex_report_attachable_profile_1 on report_attachable_profile
+2025-11-19 03:31:52,429 | INFO |       SQL: null
+2025-11-19 03:31:52,429 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,429 | INFO |     - table: right_now_active_user_posts on right_now_active_user_posts
+2025-11-19 03:31:52,429 | INFO |       SQL: CREATE TABLE `right_now_active_user_posts` (`id` INTEGER NOT NULL, `profileId` INTEGER NOT NULL, `postStatus` TEXT NOT NULL DEFAULT 'EXPIRED', `text` TEXT, `moderatedText` TEXT, `moderatedTextId` INTEGER, `moderationStatus` TEXT, `moderationTextRejectionReasons` TEXT, `isHosting` INTEGER NOT NULL, `postTime` INTEGER NOT NULL, `expirationTime` INTEGER NOT NULL DEFAULT 0, `shareLocation` TEXT DEFAULT 'NONE', `locationRadius` INTEGER, `latitude` REAL, `longitude` REAL, PRIMARY KEY(`id`))
+2025-11-19 03:31:52,429 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,430 | INFO |     - index: right_now_active_user_posts_idx1 on right_now_active_user_posts
+2025-11-19 03:31:52,430 | INFO |       SQL: CREATE INDEX `right_now_active_user_posts_idx1` ON `right_now_active_user_posts` (`profileId`)
+2025-11-19 03:31:52,430 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,430 | INFO |     - table: right_now_feed_user_posts on right_now_feed_user_posts
+2025-11-19 03:31:52,430 | INFO |       SQL: CREATE TABLE `right_now_feed_user_posts` (`id` INTEGER NOT NULL, `sortIndex` INTEGER NOT NULL DEFAULT 0, `profileId` INTEGER NOT NULL, `displayName` TEXT, `postedTime` INTEGER NOT NULL, `expirationTime` INTEGER NOT NULL, `isHosting` INTEGER NOT NULL, `latitude` REAL, `longitude` REAL, `profileMediaHash` TEXT, `onlineUntil` INTEGER, `text` TEXT, `distanceMeters` INTEGER, `mpuScore` REAL, `upsellType` TEXT DEFAULT NULL, PRIMARY KEY(`id`))
+2025-11-19 03:31:52,431 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,431 | INFO |     - index: right_now_feed_user_posts_idx1 on right_now_feed_user_posts
+2025-11-19 03:31:52,431 | INFO |       SQL: CREATE INDEX `right_now_feed_user_posts_idx1` ON `right_now_feed_user_posts` (`profileId`)
+2025-11-19 03:31:52,431 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,431 | INFO |     - index: right_now_feed_user_posts_idx2 on right_now_feed_user_posts
+2025-11-19 03:31:52,431 | INFO |       SQL: CREATE INDEX `right_now_feed_user_posts_idx2` ON `right_now_feed_user_posts` (`sortIndex`)
+2025-11-19 03:31:52,432 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,432 | INFO |     - table: right_now_feed_curated_posts on right_now_feed_curated_posts
+2025-11-19 03:31:52,432 | INFO |       SQL: CREATE TABLE `right_now_feed_curated_posts` (`type` TEXT NOT NULL, `sortIndex` INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(`type`))
+2025-11-19 03:31:52,432 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,432 | INFO |     - index: sqlite_autoindex_right_now_feed_curated_posts_1 on right_now_feed_curated_posts
+2025-11-19 03:31:52,432 | INFO |       SQL: null
+2025-11-19 03:31:52,433 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,433 | INFO |     - table: right_now_feed_insertable on right_now_feed_insertable
+2025-11-19 03:31:52,433 | INFO |       SQL: CREATE TABLE `right_now_feed_insertable` (`type` TEXT NOT NULL, `sortIndex` INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(`type`))
+2025-11-19 03:31:52,433 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,433 | INFO |     - index: sqlite_autoindex_right_now_feed_insertable_1 on right_now_feed_insertable
+2025-11-19 03:31:52,433 | INFO |       SQL: null
+2025-11-19 03:31:52,433 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,434 | INFO |     - table: right_now_feed_media_items on right_now_feed_media_items
+2025-11-19 03:31:52,434 | INFO |       SQL: CREATE TABLE `right_now_feed_media_items` (`id` INTEGER NOT NULL, `postId` INTEGER NOT NULL, `type` TEXT NOT NULL, `thumbnailUrl` TEXT NOT NULL, `fullImageUrl` TEXT NOT NULL, `contentType` TEXT NOT NULL, `state` TEXT, `reason` TEXT, PRIMARY KEY(`id`))
+2025-11-19 03:31:52,434 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,434 | INFO |     - index: right_now_feed_media_items_idx1 on right_now_feed_media_items
+2025-11-19 03:31:52,434 | INFO |       SQL: CREATE INDEX `right_now_feed_media_items_idx1` ON `right_now_feed_media_items` (`postId`)
+2025-11-19 03:31:52,434 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,434 | INFO |     - table: search_inbox_query on search_inbox_query
+2025-11-19 03:31:52,434 | INFO |       SQL: CREATE TABLE `search_inbox_query` (`query_term` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`query_term`))
+2025-11-19 03:31:52,434 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,435 | INFO |     - index: sqlite_autoindex_search_inbox_query_1 on search_inbox_query
+2025-11-19 03:31:52,435 | INFO |       SQL: null
+2025-11-19 03:31:52,435 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,435 | INFO |     - table: search_inbox_query_fts on search_inbox_query_fts
+2025-11-19 03:31:52,435 | INFO |       SQL: CREATE VIRTUAL TABLE `search_inbox_query_fts` USING FTS4(`query_term` TEXT NOT NULL, content=`search_inbox_query`)
+2025-11-19 03:31:52,435 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,435 | INFO |     - table: search_inbox_query_fts_segments on search_inbox_query_fts_segments
+2025-11-19 03:31:52,435 | INFO |       SQL: CREATE TABLE 'search_inbox_query_fts_segments'(blockid INTEGER PRIMARY KEY, block BLOB)
+2025-11-19 03:31:52,436 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,436 | INFO |     - table: search_inbox_query_fts_segdir on search_inbox_query_fts_segdir
+2025-11-19 03:31:52,436 | INFO |       SQL: CREATE TABLE 'search_inbox_query_fts_segdir'(level INTEGER,idx INTEGER,start_block INTEGER,leaves_end_block INTEGER,end_block INTEGER,root BLOB,PRIMARY KEY(level, idx))
+2025-11-19 03:31:52,436 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,436 | INFO |     - index: sqlite_autoindex_search_inbox_query_fts_segdir_1 on search_inbox_query_fts_segdir
+2025-11-19 03:31:52,436 | INFO |       SQL: null
+2025-11-19 03:31:52,437 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,437 | INFO |     - table: search_inbox_query_fts_docsize on search_inbox_query_fts_docsize
+2025-11-19 03:31:52,437 | INFO |       SQL: CREATE TABLE 'search_inbox_query_fts_docsize'(docid INTEGER PRIMARY KEY, size BLOB)
+2025-11-19 03:31:52,437 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,437 | INFO |     - table: search_inbox_query_fts_stat on search_inbox_query_fts_stat
+2025-11-19 03:31:52,437 | INFO |       SQL: CREATE TABLE 'search_inbox_query_fts_stat'(id INTEGER PRIMARY KEY, value BLOB)
+2025-11-19 03:31:52,437 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,437 | INFO |     - trigger: room_fts_content_sync_search_inbox_query_fts_BEFORE_UPDATE on search_inbox_query
+2025-11-19 03:31:52,438 | INFO |       SQL: CREATE TRIGGER room_fts_content_sync_search_inbox_query_fts_BEFORE_UPDATE BEFORE UPDATE ON `search_inbox_query` BEGIN DELETE FROM `search_inbox_query_fts` WHERE `docid`=OLD.`rowid`; END
+2025-11-19 03:31:52,438 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,438 | INFO |     - trigger: room_fts_content_sync_search_inbox_query_fts_BEFORE_DELETE on search_inbox_query
+2025-11-19 03:31:52,438 | INFO |       SQL: CREATE TRIGGER room_fts_content_sync_search_inbox_query_fts_BEFORE_DELETE BEFORE DELETE ON `search_inbox_query` BEGIN DELETE FROM `search_inbox_query_fts` WHERE `docid`=OLD.`rowid`; END
+2025-11-19 03:31:52,438 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,438 | INFO |     - trigger: room_fts_content_sync_search_inbox_query_fts_AFTER_UPDATE on search_inbox_query
+2025-11-19 03:31:52,438 | INFO |       SQL: CREATE TRIGGER room_fts_content_sync_search_inbox_query_fts_AFTER_UPDATE AFTER UPDATE ON `search_inbox_query` BEGIN INSERT INTO `search_inbox_query_fts`(`docid`, `query_term`) VALUES (NEW.`rowid`, NEW.`query_term`); END
+2025-11-19 03:31:52,438 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,439 | INFO |     - trigger: room_fts_content_sync_search_inbox_query_fts_AFTER_INSERT on search_inbox_query
+2025-11-19 03:31:52,439 | INFO |       SQL: CREATE TRIGGER room_fts_content_sync_search_inbox_query_fts_AFTER_INSERT AFTER INSERT ON `search_inbox_query` BEGIN INSERT INTO `search_inbox_query_fts`(`docid`, `query_term`) VALUES (NEW.`rowid`, NEW.`query_term`); END
+2025-11-19 03:31:52,439 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,439 | INFO |     - table: server_driven_cascade_result on server_driven_cascade_result
+2025-11-19 03:31:52,439 | INFO |       SQL: CREATE TABLE `server_driven_cascade_result` (`page_number` INTEGER NOT NULL, `page_results` TEXT NOT NULL, PRIMARY KEY(`page_number`))
+2025-11-19 03:31:52,439 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,439 | INFO |     - table: tagsearch_profile on tagsearch_profile
+2025-11-19 03:31:52,439 | INFO |       SQL: CREATE TABLE `tagsearch_profile` (`id` TEXT NOT NULL, PRIMARY KEY(`id`))
+2025-11-19 03:31:52,439 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,440 | INFO |     - index: sqlite_autoindex_tagsearch_profile_1 on tagsearch_profile
+2025-11-19 03:31:52,440 | INFO |       SQL: null
+2025-11-19 03:31:52,440 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,440 | INFO |     - table: taps_inbox on taps_inbox
+2025-11-19 03:31:52,440 | INFO |       SQL: CREATE TABLE `taps_inbox` (`profile_id` INTEGER NOT NULL, `display_name` TEXT, `profile_image_media_hash` TEXT, `distance` REAL, `is_favorite` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, `tap_type` INTEGER NOT NULL, `last_online` INTEGER NOT NULL, `isViewable` INTEGER NOT NULL DEFAULT 0, `onlineUntil` INTEGER, PRIMARY KEY(`profile_id`))
+2025-11-19 03:31:52,440 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,440 | INFO |     - index: taps_inbox_idx1 on taps_inbox
+2025-11-19 03:31:52,441 | INFO |       SQL: CREATE INDEX `taps_inbox_idx1` ON `taps_inbox` (`timestamp`)
+2025-11-19 03:31:52,441 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,441 | INFO |     - table: taps_sent on taps_sent
+2025-11-19 03:31:52,441 | INFO |       SQL: CREATE TABLE `taps_sent` (`recipient_id` INTEGER NOT NULL, `tap_type` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`recipient_id`))
+2025-11-19 03:31:52,441 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,441 | INFO |     - index: taps_sent_idx1 on taps_sent
+2025-11-19 03:31:52,441 | INFO |       SQL: CREATE INDEX `taps_sent_idx1` ON `taps_sent` (`recipient_id`, `timestamp`)
+2025-11-19 03:31:52,441 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,441 | INFO |     - table: travel_plans on travel_plans
+2025-11-19 03:31:52,442 | INFO |       SQL: CREATE TABLE `travel_plans` (`id` INTEGER NOT NULL, `profile_id` INTEGER NOT NULL, `geohash` TEXT NOT NULL, `start_date` INTEGER NOT NULL, `end_date` INTEGER NOT NULL, `show_on_profile` INTEGER NOT NULL, `notes` TEXT NOT NULL, `location_name` TEXT NOT NULL, PRIMARY KEY(`id`))
+2025-11-19 03:31:52,442 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,442 | INFO |     - index: travel_plans_idx1 on travel_plans
+2025-11-19 03:31:52,442 | INFO |       SQL: CREATE INDEX `travel_plans_idx1` ON `travel_plans` (`profile_id`, `start_date`)
+2025-11-19 03:31:52,442 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,442 | INFO |     - table: viewed_me_profile on viewed_me_profile
+2025-11-19 03:31:52,442 | INFO |       SQL: CREATE TABLE `viewed_me_profile` (`id` TEXT NOT NULL, PRIMARY KEY(`id`))
+2025-11-19 03:31:52,442 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,443 | INFO |     - index: sqlite_autoindex_viewed_me_profile_1 on viewed_me_profile
+2025-11-19 03:31:52,443 | INFO |       SQL: null
+2025-11-19 03:31:52,443 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,443 | INFO |     - table: wingman_summary_contact_detail on wingman_summary_contact_detail
+2025-11-19 03:31:52,443 | INFO |       SQL: CREATE TABLE `wingman_summary_contact_detail` (`id` TEXT NOT NULL, `conversation_id` TEXT NOT NULL, `label` TEXT NOT NULL, `value` TEXT NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`conversation_id`) REFERENCES `chat_conversation_metadata`(`conversation_id`) ON UPDATE CASCADE ON DELETE CASCADE )
+2025-11-19 03:31:52,443 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,443 | INFO |     - index: sqlite_autoindex_wingman_summary_contact_detail_1 on wingman_summary_contact_detail
+2025-11-19 03:31:52,444 | INFO |       SQL: null
+2025-11-19 03:31:52,444 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,444 | INFO |     - index: index_wingman_summary_contact_detail_conversation_id on wingman_summary_contact_detail
+2025-11-19 03:31:52,444 | INFO |       SQL: CREATE INDEX `index_wingman_summary_contact_detail_conversation_id` ON `wingman_summary_contact_detail` (`conversation_id`)
+2025-11-19 03:31:52,444 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,444 | INFO |     - table: wingman_summary_entry on wingman_summary_entry
+2025-11-19 03:31:52,444 | INFO |       SQL: CREATE TABLE `wingman_summary_entry` (`id` TEXT NOT NULL, `conversation_id` TEXT NOT NULL, `value` TEXT NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`conversation_id`) REFERENCES `chat_conversation_metadata`(`conversation_id`) ON UPDATE CASCADE ON DELETE CASCADE )
+2025-11-19 03:31:52,445 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,445 | INFO |     - index: sqlite_autoindex_wingman_summary_entry_1 on wingman_summary_entry
+2025-11-19 03:31:52,445 | INFO |       SQL: null
+2025-11-19 03:31:52,445 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,445 | INFO |     - index: index_wingman_summary_entry_conversation_id on wingman_summary_entry
+2025-11-19 03:31:52,445 | INFO |       SQL: CREATE INDEX `index_wingman_summary_entry_conversation_id` ON `wingman_summary_entry` (`conversation_id`)
+2025-11-19 03:31:52,445 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,445 | INFO |     - table: world_cities on world_cities
+2025-11-19 03:31:52,445 | INFO |       SQL: CREATE TABLE `world_cities` (`cityName` TEXT NOT NULL DEFAULT 'Unknown', `country` TEXT NOT NULL DEFAULT 'Unknown', `lat` REAL NOT NULL DEFAULT 0.0, `lon` REAL NOT NULL DEFAULT 0.0, `score` INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(`cityName`, `country`))
+2025-11-19 03:31:52,446 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,446 | INFO |     - index: sqlite_autoindex_world_cities_1 on world_cities
+2025-11-19 03:31:52,446 | INFO |       SQL: null
+2025-11-19 03:31:52,446 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,446 | INFO |     - table: room_master_table on room_master_table
+2025-11-19 03:31:52,446 | INFO |       SQL: CREATE TABLE room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)
+2025-11-19 03:31:52,446 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,446 | INFO |     - trigger: grindr_content_sync_chat_message_AFTER_DELETE on chat_messages
+2025-11-19 03:31:52,446 | INFO |       SQL: CREATE TRIGGER grindr_content_sync_chat_message_AFTER_DELETE AFTER DELETE ON `chat_messages` FOR EACH ROW BEGIN DELETE FROM `chat_message_fts` WHERE `message_id`=OLD.`message_id`; END
+2025-11-19 03:31:52,447 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,447 | INFO | 
+[*] Database: public_grindr_assignments.db-wal
+2025-11-19 03:31:52,447 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/public_grindr_assignments.db-wal
+2025-11-19 03:31:52,447 | INFO |   Error processing DB: Error: android.database.sqlite.SQLiteDatabaseCorruptException: file is not a database (code 26 SQLITE_NOTADB): , while compiling: SELECT type, name, tbl_name, sql FROM sqlite_master WHERE type IN ('trigger', 'table', 'view', 'index')
+2025-11-19 03:31:52,447 | INFO | 
+[*] Database: grindrplus.db-shm
+2025-11-19 03:31:52,447 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/grindrplus.db-shm
+2025-11-19 03:31:52,447 | INFO |   Error processing DB: Error: android.database.sqlite.SQLiteDatabaseCorruptException: file is not a database (code 26 SQLITE_NOTADB): , while compiling: SELECT type, name, tbl_name, sql FROM sqlite_master WHERE type IN ('trigger', 'table', 'view', 'index')
+2025-11-19 03:31:52,447 | INFO | 
+[*] Database: cesdb-journal
+2025-11-19 03:31:52,448 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/cesdb-journal
+2025-11-19 03:31:52,448 | INFO |   Structures:
+2025-11-19 03:31:52,448 | INFO | 
+[*] Database: cesdb
+2025-11-19 03:31:52,448 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/cesdb
+2025-11-19 03:31:52,448 | INFO |   Structures:
+2025-11-19 03:31:52,448 | INFO |     - table: android_metadata on android_metadata
+2025-11-19 03:31:52,448 | INFO |       SQL: CREATE TABLE android_metadata (locale TEXT)
+2025-11-19 03:31:52,448 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,449 | INFO |     - table: ce on ce
+2025-11-19 03:31:52,449 | INFO |       SQL: CREATE TABLE ce (id INTEGER PRIMARY KEY,ts BIGINT NOT NULL,ss TEXT NOT NULL)
+2025-11-19 03:31:52,449 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,449 | INFO | 
+[*] Database: public_grindr_assignments.db
+2025-11-19 03:31:52,449 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/public_grindr_assignments.db
+2025-11-19 03:31:52,449 | INFO |   Structures:
+2025-11-19 03:31:52,449 | INFO |     - table: android_metadata on android_metadata
+2025-11-19 03:31:52,449 | INFO |       SQL: CREATE TABLE android_metadata (locale TEXT)
+2025-11-19 03:31:52,449 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,450 | INFO |     - table: public_assignments on public_assignments
+2025-11-19 03:31:52,450 | INFO |       SQL: CREATE TABLE `public_assignments` (`key` TEXT NOT NULL, `value` TEXT NOT NULL, `payload` TEXT, PRIMARY KEY(`key`))
+2025-11-19 03:31:52,450 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,450 | INFO |     - index: sqlite_autoindex_public_assignments_1 on public_assignments
+2025-11-19 03:31:52,450 | INFO |       SQL: null
+2025-11-19 03:31:52,450 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,450 | INFO |     - table: room_master_table on room_master_table
+2025-11-19 03:31:52,450 | INFO |       SQL: CREATE TABLE room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)
+2025-11-19 03:31:52,451 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,451 | INFO | 
+[*] Database: grindr_assignments.db-shm
+2025-11-19 03:31:52,451 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/grindr_assignments.db-shm
+2025-11-19 03:31:52,451 | INFO |   Error processing DB: Error: android.database.sqlite.SQLiteDatabaseCorruptException: file is not a database (code 26 SQLITE_NOTADB): , while compiling: SELECT type, name, tbl_name, sql FROM sqlite_master WHERE type IN ('trigger', 'table', 'view', 'index')
+2025-11-19 03:31:52,451 | INFO | 
+[*] Database: grindr_assignments.db
+2025-11-19 03:31:52,451 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/grindr_assignments.db
+2025-11-19 03:31:52,451 | INFO |   Structures:
+2025-11-19 03:31:52,451 | INFO |     - table: android_metadata on android_metadata
+2025-11-19 03:31:52,452 | INFO |       SQL: CREATE TABLE android_metadata (locale TEXT)
+2025-11-19 03:31:52,452 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,452 | INFO |     - table: assignments on assignments
+2025-11-19 03:31:52,452 | INFO |       SQL: CREATE TABLE `assignments` (`key` TEXT NOT NULL, `value` TEXT NOT NULL, `payload` TEXT, PRIMARY KEY(`key`))
+2025-11-19 03:31:52,452 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,452 | INFO |     - index: sqlite_autoindex_assignments_1 on assignments
+2025-11-19 03:31:52,452 | INFO |       SQL: null
+2025-11-19 03:31:52,452 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,453 | INFO |     - table: exposures on exposures
+2025-11-19 03:31:52,453 | INFO |       SQL: CREATE TABLE `exposures` (`key` TEXT NOT NULL, `geo_hash` TEXT, PRIMARY KEY(`key`))
+2025-11-19 03:31:52,453 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,453 | INFO |     - index: sqlite_autoindex_exposures_1 on exposures
+2025-11-19 03:31:52,453 | INFO |       SQL: null
+2025-11-19 03:31:52,453 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,453 | INFO |     - table: room_master_table on room_master_table
+2025-11-19 03:31:52,454 | INFO |       SQL: CREATE TABLE room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)
+2025-11-19 03:31:52,454 | INFO |       ----------------------------------------
+2025-11-19 03:31:52,454 | INFO | 
+[*] Database: grindr_user_1.db-journal
+2025-11-19 03:31:52,454 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/grindr_user_1.db-journal
+2025-11-19 03:31:52,454 | INFO |   Structures:
+2025-11-19 03:31:52,454 | INFO | 
+[*] Database: public_grindr_assignments.db-shm
+2025-11-19 03:31:52,454 | INFO |   Path: /data/user/0/com.grindrapp.android/databases/public_grindr_assignments.db-shm
+2025-11-19 03:31:52,454 | INFO |   Error processing DB: Error: android.database.sqlite.SQLiteDatabaseCorruptException: file is not a database (code 26 SQLITE_NOTADB): , while compiling: SELECT type, name, tbl_name, sql FROM sqlite_master WHERE type IN ('trigger', 'table', 'view', 'index')
+2025-11-19 03:31:52,455 | INFO | [MainController] Injection state: running
+2025-11-19 03:31:52,455 | INFO | [MainController] Injection succeeded
+2025-11-19 03:31:52,455 | INFO | [InjectionController] Script injected successfully
+2025-11-19 04:03:44,209 | INFO | [InjectionController] Session detached: process-terminated
+2025-11-19 04:03:44,210 | INFO | [MainController] Injection state: stopping
+2025-11-19 04:03:44,212 | INFO | [StopScriptWorker] Error unloading script: script is destroyed
+2025-11-19 04:03:44,217 | INFO | [MainController] Injection state: stopped

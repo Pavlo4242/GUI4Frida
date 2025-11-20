@@ -1,0 +1,58 @@
+2025-11-20 01:51:03,938 | INFO | [MainController] Device selected: R94XC0N5S9E
+2025-11-20 01:51:06,683 | INFO | [MainController] Process selected: PID 3206 on R94XC0N5S9E
+2025-11-20 01:54:03,362 | INFO | [MainController] Device selected: R94XC0N5S9E
+2025-11-20 01:54:03,505 | INFO | [MainController] Process selected: PID 3206 on R94XC0N5S9E
+2025-11-20 01:54:05,197 | INFO | [MainController] Process selected: PID 873 on R94XC0N5S9E
+2025-11-20 01:54:06,394 | INFO | [MainController] Process selected: PID 9441 on R94XC0N5S9E
+2025-11-20 01:54:06,516 | INFO | [MainController] Process selected: PID 9441 on R94XC0N5S9E
+2025-11-20 01:54:06,826 | INFO | [MainController] Process selected: PID 15599 on R94XC0N5S9E
+2025-11-20 01:54:13,015 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:54:13,928 | INFO | [InjectionController] Attaching to PID 15599...
+2025-11-20 01:54:13,944 | INFO | [InjectionController] Creating script...
+2025-11-20 01:54:13,979 | INFO | [InjectionController] Injection failed: script(line 1): SyntaxError: invalid first character of private name
+2025-11-20 01:54:13,979 | INFO | [MainController] Injection state: idle
+2025-11-20 01:54:13,980 | INFO | [MainController] Injection failed: script(line 1): SyntaxError: invalid first character of private name
+2025-11-20 01:54:25,104 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:54:25,942 | INFO | [InjectionController] Attaching to PID 15599...
+2025-11-20 01:54:25,945 | INFO | [InjectionController] Creating script...
+2025-11-20 01:54:25,956 | INFO | [InjectionController] Loading script...
+2025-11-20 01:54:25,963 | INFO | [*] Starting comprehensive SSL/HSTS bypass script
+2025-11-20 01:54:25,964 | INFO | [-] Root/debug bypass failed: ReferenceError: 'Java' is not defined
+2025-11-20 01:54:25,964 | INFO | [-] TrustManager bypass failed: ReferenceError: 'Java' is not defined
+2025-11-20 01:54:25,965 | INFO | [-] OkHttp bypass failed: ReferenceError: 'Java' is not defined
+2025-11-20 01:54:25,966 | INFO | [-] HttpsURLConnection bypass failed: ReferenceError: 'Java' is not defined
+2025-11-20 01:54:25,967 | INFO | [-] WebView HSTS bypass failed: ReferenceError: 'Java' is not defined
+2025-11-20 01:54:25,968 | INFO | [MainController] Injection state: running
+2025-11-20 01:54:25,969 | INFO | [MainController] Injection succeeded
+2025-11-20 01:54:25,969 | INFO | [InjectionController] Script injected successfully
+2025-11-20 01:56:24,099 | INFO | [MainController] Injection state: stopping
+2025-11-20 01:56:24,133 | INFO | [InjectionController] Session detached: application-requested
+2025-11-20 01:56:24,134 | INFO | [MainController] Injection state: stopped
+2025-11-20 01:56:28,464 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:56:29,337 | INFO | [InjectionController] Attaching to PID 15599...
+2025-11-20 01:56:29,344 | INFO | [InjectionController] Creating script...
+2025-11-20 01:56:29,362 | INFO | [InjectionController] Loading script...
+2025-11-20 01:56:29,371 | INFO | [MainController] Injection state: running
+2025-11-20 01:56:29,371 | INFO | [MainController] Injection succeeded
+2025-11-20 01:56:29,372 | INFO | [InjectionController] Script injected successfully
+2025-11-20 01:58:25,025 | INFO | [MainController] Injection state: stopping
+2025-11-20 01:58:25,111 | INFO | [InjectionController] Session detached: application-requested
+2025-11-20 01:58:25,112 | INFO | [MainController] Injection state: stopped
+2025-11-20 01:58:31,090 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:58:31,978 | INFO | [InjectionController] Attaching to PID 15599...
+2025-11-20 01:58:31,985 | INFO | [InjectionController] Creating script...
+2025-11-20 01:58:31,999 | INFO | [InjectionController] Loading script...
+2025-11-20 01:58:32,009 | INFO | [MainController] Injection state: running
+2025-11-20 01:58:32,009 | INFO | [MainController] Injection succeeded
+2025-11-20 01:58:32,010 | INFO | [InjectionController] Script injected successfully
+2025-11-20 01:58:43,022 | INFO | [MainController] Injection state: stopping
+2025-11-20 01:58:43,044 | INFO | [InjectionController] Session detached: application-requested
+2025-11-20 01:58:43,044 | INFO | [MainController] Injection state: stopped
+2025-11-20 01:58:44,094 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:58:44,953 | INFO | [InjectionController] Attaching to PID 15599...
+2025-11-20 01:58:44,960 | INFO | [InjectionController] Creating script...
+2025-11-20 01:58:44,975 | INFO | [InjectionController] Loading script...
+2025-11-20 01:58:44,988 | INFO | [MainController] Injection state: running
+2025-11-20 01:58:44,989 | INFO | [MainController] Injection succeeded
+2025-11-20 01:58:44,989 | INFO | [InjectionController] Script injected successfully
+2025-11-20 01:58:51,377 | INFO | Fetching script from: https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida

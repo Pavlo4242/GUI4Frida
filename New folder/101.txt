@@ -1,0 +1,174 @@
+ 
+--- File: D:\ANDROID\FridaGUI\New folder\charfix.ps1 --- 
+﻿Get-ChildItem -Recurse -Filter *.js | ForEach-Object {
+    $t = Get-Content $_.FullName -Raw               # read entire file as one string
+
+    # 1ï¸âƒ£  Replace enâ€‘dash, emâ€‘dash, nonâ€‘breaking hyphen  -> plain '-'
+    $t = $t -replace 'â€“', '-' `
+              -replace 'â€”', '-' `
+              -replace 'â€‘', '-' `
+    
+    # 2ï¸âƒ£  Replace curly quotation marks  -> straight quotes
+    $t = $t -replace '"', '"' `
+              -replace 'â€', '"' `
+              -replace 'â€˜', "'" `
+              -replace 'â€™', "'"
+
+    Set-Content $_.FullName $t -Encoding utf8        # write back as UTFâ€‘8
+    Write-Host "âœ“  $_.FullName"
+}
+
+
+ 
+--- File: D:\ANDROID\FridaGUI\New folder\fixascii.ps1 --- 
+﻿Get-ChildItem -Recurse -Filter "*.js" | ForEach-Object {
+    $filePath = $_.FullName
+    Write-Host "Cleaning: $filePath"
+    
+    try {
+        # Read as bytes to handle any encoding
+        $bytes = [System.IO.File]::ReadAllBytes($filePath)
+        
+        # Convert to UTF-8 without BOM
+        $encoding = [System.Text.Encoding]::UTF8
+        $content = $encoding.GetString($bytes)
+        
+        # Remove BOM if present
+        if ($content.StartsWith([char]0xFEFF)) {
+            $content = $content.Substring(1)
+        }
+        
+        # Remove all non-ASCII characters except basic punctuation
+        $cleanContent = ""
+        foreach ($char in $content.ToCharArray()) {
+            if ([int]$char -le 127 -or $char -eq "`n" -or $char -eq "`r" -or $char -eq "`t") {
+                $cleanContent += $char
+            } else {
+                # Replace problematic chars with safe equivalents
+                switch ([int]$char) {
+                    0x2192 { $cleanContent += "->" }  # â†’
+                    0x2190 { $cleanContent += "<-" }  # â†  
+                    0x26A0 { $cleanContent += "!!" }  # âš 
+                    0x2013 { $cleanContent += "-" }   # â€“
+                    0x2014 { $cleanContent += "-" }   # â€”
+                    0x201C { $cleanContent += '"' }   # "
+                    0x201D { $cleanContent += '"' }   # â€
+                    0x2018 { $cleanContent += "'" }   # â€˜
+                    0x2019 { $cleanContent += "'" }   # â€™
+                    default { 
+                        Write-Host "  Replaced char: U+$([convert]::ToString([int]$char, 16))" -ForegroundColor Yellow
+                        $cleanContent += "?" 
+                    }
+                }
+            }
+        }
+        
+        # Save with UTF-8 without BOM
+        $utf8NoBom = New-Object System.Text.UTF8Encoding $false
+        [System.IO.File]::WriteAllText($filePath, $cleanContent, $utf8NoBom)
+        
+        Write-Host "  Cleaned: $filePath" -ForegroundColor Green
+    }
+    catch {
+        Write-Host "  Failed: $filePath" -ForegroundColor Red
+    }
+}
+
+Write-Host "All files cleaned and converted to ASCII-safe UTF-8" -ForegroundColor Green
+
+ 
+--- File: D:\ANDROID\FridaGUI\New folder\FU2.ps1 --- 
+﻿Get-ChildItem -Recurse -Filter "*.js" | ForEach-Object {
+    $filePath = $_.FullName
+    Write-Host "Processing: $filePath"
+    
+    try {
+        # Detect encoding and read file
+        $encoding = [System.Text.Encoding]::UTF8
+        $content = [System.IO.File]::ReadAllText($filePath, $encoding)
+        
+        # Remove BOM if present (multiple BOM types)
+        $bomChars = @([char]0xFEFF, [char]0xFFFE)
+        foreach ($bom in $bomChars) {
+            if ($content.StartsWith($bom)) {
+                $content = $content.Substring(1)
+                Write-Host "  Removed BOM from: $filePath" -ForegroundColor Yellow
+                break
+            }
+        }
+        
+        # Character replacements
+        $content = $content -replace '[\u2011\u2012\u2013\u2014\u2015]', '-'  # All dash types
+        $content = $content -replace '[\u201C\u201D]', '"'                     # Smart double quotes
+        $content = $content -replace '[\u2018\u2019]', "'"                     # Smart single quotes
+        
+        # Write back without BOM
+        [System.IO.File]::WriteAllText($filePath, $content, [System.Text.UTF8Encoding]::new($false))
+        
+        Write-Host "  Success: $filePath" -ForegroundColor Green
+    }
+    catch {
+        Write-Host "  Error: $filePath - $($_.Exception.Message)" -ForegroundColor Red
+    }
+}
+
+Write-Host ""
+Write-Host "--- ALL FILES PROCESSED ---" -ForegroundColor Green
+
+ 
+--- File: D:\ANDROID\FridaGUI\New folder\fuck.ps1 --- 
+﻿Get-ChildItem -Recurse -Filter *.js | ForEach-Object {
+    $filePath = $_.FullName
+    Write-Host "Processing: $filePath"
+    
+    # Read the file content
+    $content = Get-Content $filePath -Raw
+
+    # Perform the replacements
+    $content = $content -replace 'â€“', '-'
+    $content = $content -replace 'â€”', '-'
+    $content = $content -replace 'â€‘', '-'
+    $content = $content -replace '"', '"'
+    $content = $content -replace 'â€', '"'
+    $content = $content -replace 'â€˜', "'"
+    $content = $content -replace 'â€™', "'"
+
+    # Write the content back to the file using UTF-8
+    Set-Content -Path $filePath -Value $content -Encoding utf8
+}
+
+Write-Host "--- SCRIPT COMPLETE ---"
+
+ 
+--- File: D:\ANDROID\FridaGUI\New folder\fuckyou.ps1 --- 
+﻿Get-ChildItem -Recurse -Filter "*.js" | ForEach-Object {
+    $filePath = $_.FullName
+    Write-Host "Processing: $filePath"
+    
+    try {
+        # Read the file's text content with proper encoding
+        $content = Get-Content -Path $filePath -Raw -Encoding UTF8
+        
+        # Replace various dash characters with standard hyphen
+        $content = $content -replace [char]0x2013, '-'   # en-dash
+        $content = $content -replace [char]0x2014, '-'   # em-dash  
+        $content = $content -replace [char]0x2011, '-'   # non-breaking hyphen
+        
+        # Replace smart quotes with straight quotes using hex values
+        $content = $content -replace [char]0x201C, '"'   # left double quote
+        $content = $content -replace [char]0x201D, '"'   # right double quote
+        $content = $content -replace [char]0x2018, "'"   # left single quote
+        $content = $content -replace [char]0x2019, "'"   # right single quote
+        
+        # Write the cleaned content back to the file
+        Set-Content -Path $filePath -Value $content -Encoding UTF8 -NoNewline
+    }
+    catch {
+        Write-Host "Error processing $filePath : $_" -ForegroundColor Red
+    }
+}
+
+Write-Host ""
+Write-Host "--- SCRIPT COMPLETE ---" -ForegroundColor Green
+
+ 

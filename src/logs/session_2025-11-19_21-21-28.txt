@@ -1,0 +1,29 @@
+2025-11-19 21:21:31,396 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:21:31,664 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:21:33,393 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:21:33,403 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:21:51,351 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 21:21:51,351 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:21:51,766 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 21:21:51,773 | INFO | [InjectionController] Spawn/Injection failed: remote_write PTRACE_POKEDATA head failed: 5
+2025-11-19 21:21:51,774 | INFO | [MainController] Injection state: idle
+2025-11-19 21:21:51,774 | INFO | [MainController] Injection failed: remote_write PTRACE_POKEDATA head failed: 5
+2025-11-19 21:22:16,752 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 21:22:16,752 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:22:17,200 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 21:22:17,207 | INFO | [InjectionController] Spawn/Injection failed: remote_write PTRACE_POKEDATA head failed: 5
+2025-11-19 21:22:17,207 | INFO | [MainController] Injection state: idle
+2025-11-19 21:22:17,208 | INFO | [MainController] Injection failed: remote_write PTRACE_POKEDATA head failed: 5
+2025-11-19 21:22:36,944 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 21:22:36,944 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:22:37,370 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 21:22:37,377 | INFO | [InjectionController] Spawn/Injection failed: remote_write PTRACE_POKEDATA head failed: 5
+2025-11-19 21:22:37,377 | INFO | [MainController] Injection state: idle
+2025-11-19 21:22:37,378 | INFO | [MainController] Injection failed: remote_write PTRACE_POKEDATA head failed: 5
+2025-11-19 21:23:23,682 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 21:23:23,682 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:23:24,097 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 21:23:24,104 | INFO | [InjectionController] Spawn/Injection failed: remote_write PTRACE_POKEDATA head failed: 5
+2025-11-19 21:23:24,105 | INFO | [MainController] Injection state: idle
+2025-11-19 21:23:24,105 | INFO | [MainController] Injection failed: remote_write PTRACE_POKEDATA head failed: 5
+2025-11-19 21:23:54,898 | INFO | Fetching script from: https://codeshare.frida.re/@fdciabdul/frida-multiple-bypass

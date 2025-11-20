@@ -235,7 +235,7 @@ class FridaMainWindow(QMainWindow):
 
         """Connect controller signals to UI updates"""
         if hasattr(self, 'device_selector') and 'inject' in self.pages:
-            from gui.widgets.device_selector import DeviceSelector
+            from views.widgets.device_selector import CompactDeviceSelector
             # Find the device selector widget in the injection view
             injection_view = self.pages['inject']
             if hasattr(injection_view, 'findChildren'):
@@ -271,7 +271,7 @@ class FridaMainWindow(QMainWindow):
             # Find injection panel and update it
             injection_page = self.pages['inject']
             if hasattr(injection_page, 'findChildren'):
-                from gui.widgets.injection_panel import InjectionPanel
+                from views.widgets.injection_panel import InjectionPanel
                 injection_panels = injection_page.findChildren(InjectionPanel)
                 if injection_panels:
                     injection_panel = injection_panels[0]

@@ -8,9 +8,9 @@
   "update_interval": 3000,
   "show_memory_usage": false,
   "log_to_file": false,
-  "sidebar_collapsed": false,
+  "sidebar_collapsed": true,
   "recent_targets_count": 5,
   "auto_clear_output": true,
-  "last_device_id": "127.0.0.1:58526",
-  "last_process_pid": 263
+  "last_device_id": "R94XC0N5S9E",
+  "last_process_pid": 3206
 }

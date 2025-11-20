@@ -1,0 +1,2 @@
+2025-11-20 03:43:03,653 | INFO | [MainController] Device selected: R94XC0N5S9E
+2025-11-20 03:43:08,820 | INFO | [MainController] Process selected: PID 3206 on R94XC0N5S9E

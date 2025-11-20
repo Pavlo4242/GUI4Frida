@@ -1,0 +1,5 @@
+2025-11-20 02:01:36,888 | INFO | [MainController] Device selected: R94XC0N5S9E
+2025-11-20 02:01:40,338 | INFO | [MainController] Process selected: PID 3206 on R94XC0N5S9E
+2025-11-20 02:02:49,951 | INFO | [MainController] Process selected: PID 0 on R94XC0N5S9E
+2025-11-20 02:02:49,951 | INFO | [MainController] Injection state: injecting
+2025-11-20 02:02:50,857 | INFO | [InjectionController] Spawning com.reddit.frontpage...

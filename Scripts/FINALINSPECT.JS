@@ -1,4 +1,4 @@
-```javascript
+vascript
 /*
  * Frida Script: Final Hybrid Inspector (Built on a Known-Working Base)
  *

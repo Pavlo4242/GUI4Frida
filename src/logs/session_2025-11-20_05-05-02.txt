@@ -1,0 +1,58 @@
+2025-11-20 05:05:05,875 | INFO | [MainController] Device selected: R94XC0N5S9E
+2025-11-20 05:05:09,228 | INFO | [MainController] Process selected: PID 3206 on R94XC0N5S9E
+2025-11-20 05:05:12,678 | INFO | [MainController] Device selected: R94XC0N5S9E
+2025-11-20 05:05:12,812 | INFO | [MainController] Process selected: PID 3206 on R94XC0N5S9E
+2025-11-20 05:05:15,203 | INFO | [MainController] Process selected: PID 9441 on R94XC0N5S9E
+2025-11-20 05:05:15,722 | INFO | [MainController] Process selected: PID 9441 on R94XC0N5S9E
+2025-11-20 05:05:16,714 | INFO | [MainController] Process selected: PID 907 on R94XC0N5S9E
+2025-11-20 05:05:27,770 | INFO | [MainController] Process selected: PID 20889 on R94XC0N5S9E
+2025-11-20 05:05:46,300 | INFO | [MainController] Injection state: injecting
+2025-11-20 05:05:47,202 | INFO | [InjectionController] Attaching to PID 20889...
+2025-11-20 05:05:47,219 | INFO | [InjectionController] Creating script...
+2025-11-20 05:05:47,265 | INFO | [InjectionController] Loading script...
+2025-11-20 05:05:47,276 | INFO | [MainController] Injection state: running
+2025-11-20 05:05:47,277 | INFO | [MainController] Injection succeeded
+2025-11-20 05:05:47,279 | INFO | [InjectionController] Script injected successfully
+2025-11-20 05:07:19,903 | INFO | [MainController] Injection state: stopping
+2025-11-20 05:07:19,928 | INFO | [InjectionController] Session detached: application-requested
+2025-11-20 05:07:19,929 | INFO | [MainController] Injection state: stopped
+2025-11-20 05:07:22,813 | INFO | [MainController] Injection state: injecting
+2025-11-20 05:07:23,716 | INFO | [InjectionController] Attaching to PID 20889...
+2025-11-20 05:07:23,724 | INFO | [InjectionController] Creating script...
+2025-11-20 05:07:23,739 | INFO | [InjectionController] Loading script...
+2025-11-20 05:07:23,752 | INFO | [MainController] Injection state: running
+2025-11-20 05:07:23,752 | INFO | [MainController] Injection succeeded
+2025-11-20 05:07:23,753 | INFO | [InjectionController] Script injected successfully
+2025-11-20 05:12:36,488 | INFO | [MainController] Injection state: stopping
+2025-11-20 05:12:36,522 | INFO | [InjectionController] Session detached: application-requested
+2025-11-20 05:12:36,523 | INFO | [MainController] Injection state: stopped
+2025-11-20 05:12:39,600 | INFO | [MainController] Injection state: injecting
+2025-11-20 05:12:40,480 | INFO | [InjectionController] Attaching to PID 20889...
+2025-11-20 05:12:40,487 | INFO | [InjectionController] Creating script...
+2025-11-20 05:12:40,501 | INFO | [InjectionController] Injection failed: script(line 10): SyntaxError: expecting ';'
+2025-11-20 05:12:40,502 | INFO | [MainController] Injection state: idle
+2025-11-20 05:12:40,502 | INFO | [MainController] Injection failed: script(line 10): SyntaxError: expecting ';'
+2025-11-20 05:13:26,124 | INFO | [MainController] Injection state: injecting
+2025-11-20 05:13:27,005 | INFO | [InjectionController] Attaching to PID 20889...
+2025-11-20 05:13:27,012 | INFO | [InjectionController] Creating script...
+2025-11-20 05:13:27,028 | INFO | [InjectionController] Loading script...
+2025-11-20 05:13:27,040 | INFO | [MainController] Injection state: running
+2025-11-20 05:13:27,041 | INFO | [MainController] Injection succeeded
+2025-11-20 05:13:27,041 | INFO | [InjectionController] Script injected successfully
+2025-11-20 05:14:22,700 | INFO | [MainController] Injection state: stopping
+2025-11-20 05:14:22,744 | INFO | [InjectionController] Session detached: application-requested
+2025-11-20 05:14:22,746 | INFO | [MainController] Injection state: stopped
+2025-11-20 05:14:27,575 | INFO | [MainController] Injection state: injecting
+2025-11-20 05:14:28,432 | INFO | [InjectionController] Attaching to PID 20889...
+2025-11-20 05:14:28,439 | INFO | [InjectionController] Creating script...
+2025-11-20 05:14:28,453 | INFO | [InjectionController] Loading script...
+2025-11-20 05:14:28,464 | INFO | [MainController] Injection state: running
+2025-11-20 05:14:28,465 | INFO | [MainController] Injection succeeded
+2025-11-20 05:14:28,465 | INFO | [InjectionController] Script injected successfully
+2025-11-20 05:17:40,124 | INFO | [InjectionController] Session detached: connection-terminated
+2025-11-20 05:17:40,125 | INFO | [MainController] Injection state: stopping
+2025-11-20 05:17:40,127 | INFO | [StopScriptWorker] Error unloading script: script is destroyed
+2025-11-20 05:17:40,135 | INFO | [MainController] Injection state: stopped
+2025-11-20 05:18:19,922 | INFO | [MainController] Process selected: PID 0 on R94XC0N5S9E
+2025-11-20 05:18:19,922 | INFO | [MainController] Injection state: injecting
+2025-11-20 05:18:20,861 | INFO | [InjectionController] Spawning com.reddit.frontpage...

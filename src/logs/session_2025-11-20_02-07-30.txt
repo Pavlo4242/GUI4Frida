@@ -1,0 +1,12 @@
+2025-11-20 02:07:33,414 | INFO | [MainController] Device selected: R94XC0N5S9E
+2025-11-20 02:07:36,935 | INFO | [MainController] Process selected: PID 3206 on R94XC0N5S9E
+2025-11-20 02:08:20,604 | INFO | [MainController] Process selected: PID 0 on R94XC0N5S9E
+2025-11-20 02:08:20,605 | INFO | [MainController] Injection state: injecting
+2025-11-20 02:08:21,497 | INFO | [InjectionController] Spawn/Injection failed: Frida server not running on R94XC0N5S9E
+2025-11-20 02:08:21,497 | INFO | [MainController] Injection state: idle
+2025-11-20 02:08:21,497 | INFO | [MainController] Injection failed: Frida server not running on R94XC0N5S9E
+2025-11-20 02:08:59,498 | INFO | [MainController] Process selected: PID 0 on R94XC0N5S9E
+2025-11-20 02:08:59,499 | INFO | [MainController] Injection state: injecting
+2025-11-20 02:09:00,373 | INFO | [InjectionController] Spawn/Injection failed: Frida server not running on R94XC0N5S9E
+2025-11-20 02:09:00,373 | INFO | [MainController] Injection state: idle
+2025-11-20 02:09:00,374 | INFO | [MainController] Injection failed: Frida server not running on R94XC0N5S9E

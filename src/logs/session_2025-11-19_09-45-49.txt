@@ -1,0 +1,1421 @@
+2025-11-19 09:45:52,270 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 09:45:53,471 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 09:46:17,835 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 09:46:18,113 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 09:46:20,347 | INFO | [MainController] Process selected: PID 259 on 127.0.0.1:58526
+2025-11-19 09:46:20,521 | INFO | [MainController] Process selected: PID 260 on 127.0.0.1:58526
+2025-11-19 09:46:23,661 | INFO | [MainController] Process selected: PID 4789 on 127.0.0.1:58526
+2025-11-19 09:46:25,117 | INFO | [MainController] Injection state: injecting
+2025-11-19 09:46:25,588 | INFO | [InjectionController] Injection failed: Frida server not running on 127.0.0.1:58526
+2025-11-19 09:46:25,588 | INFO | [MainController] Injection state: idle
+2025-11-19 09:46:25,589 | INFO | [MainController] Injection failed: Frida server not running on 127.0.0.1:58526
+2025-11-19 09:46:55,330 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 09:46:55,604 | INFO | [MainController] Process selected: PID 260 on 127.0.0.1:58526
+2025-11-19 09:46:59,097 | INFO | [MainController] Process selected: PID 4789 on 127.0.0.1:58526
+2025-11-19 09:47:00,289 | INFO | [MainController] Injection state: injecting
+2025-11-19 09:47:00,335 | INFO | [InjectionController] Attaching to PID 4789...
+2025-11-19 09:47:00,632 | INFO | [InjectionController] Creating script...
+2025-11-19 09:47:00,634 | INFO | [InjectionController] Loading script...
+2025-11-19 09:47:00,664 | INFO | 🔍 Discovering fields in click handler classes...
+2025-11-19 09:47:00,665 | INFO | 
+🎯 com.grindrapp.android.ui.browse.h$a
+2025-11-19 09:47:00,665 | INFO |    Fields (2):
+2025-11-19 09:47:00,666 | INFO |    - j (int)
+2025-11-19 09:47:00,668 | INFO |    - k (com.grindrapp.android.ui.browse.CascadeFragment)
+2025-11-19 09:47:00,668 | INFO | 
+🎯 com.grindrapp.android.ui.browse.CascadeFragment$g
+2025-11-19 09:47:00,669 | INFO |    Fields (2):
+2025-11-19 09:47:00,669 | INFO |    - a (com.grindrapp.android.args.ExploreCascadeArgs)
+2025-11-19 09:47:00,669 | INFO |    - b (com.grindrapp.android.ui.browse.CascadeFragment)
+2025-11-19 09:47:00,670 | INFO | 
+🎯 com.grindrapp.android.ui.browse.n$k$a
+2025-11-19 09:47:00,670 | INFO |    Fields (11):
+2025-11-19 09:47:00,671 | INFO |    - j (int)
+2025-11-19 09:47:00,671 | INFO |    - k (com.grindrapp.android.ui.browse.n)
+2025-11-19 09:47:00,672 | INFO |    - l (boolean)
+2025-11-19 09:47:00,672 | INFO |    - m (com.grindrapp.android.storage.filters.CascadeFiltersRepoState)
+2025-11-19 09:47:00,672 | INFO |    - n (com.grindrapp.android.ui.browse.n$b)
+2025-11-19 09:47:00,673 | INFO |    - o (com.grindrapp.android.storage.filters.CascadeRequestFilters)
+2025-11-19 09:47:00,673 | INFO |    - p (com.grindrapp.android.args.ExploreCascadeArgs)
+2025-11-19 09:47:00,674 | INFO |    - q (com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeCacheState)
+2025-11-19 09:47:00,674 | INFO |    - r (boolean)
+2025-11-19 09:47:00,675 | INFO |    - s (boolean)
+2025-11-19 09:47:00,675 | INFO |    - t (boolean)
+2025-11-19 09:47:00,676 | INFO | 
+🔎 Searching for profile data classes...
+2025-11-19 09:47:01,159 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment$c
+2025-11-19 09:47:01,160 | INFO |    Fields:
+2025-11-19 09:47:01,160 | INFO |    - b (com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment$c)
+2025-11-19 09:47:01,160 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment$d
+2025-11-19 09:47:01,161 | INFO |    Fields:
+2025-11-19 09:47:01,161 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment$f
+2025-11-19 09:47:01,161 | INFO |    Fields:
+2025-11-19 09:47:01,161 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem$PartialProfile
+2025-11-19 09:47:01,162 | INFO |    Fields:
+2025-11-19 09:47:01,162 | INFO |    - data (com.grindrapp.android.api.serverdrivencascade.PartialProfileItemData)
+2025-11-19 09:47:01,162 | INFO |    - $stable (int)
+2025-11-19 09:47:01,192 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem$HiddenProfile
+2025-11-19 09:47:01,192 | INFO |    Fields:
+2025-11-19 09:47:01,192 | INFO |    - data (com.grindrapp.android.api.serverdrivencascade.ProfileItemData)
+2025-11-19 09:47:01,192 | INFO |    - $stable (int)
+2025-11-19 09:47:01,197 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_ProfileJsonAdapter
+2025-11-19 09:47:01,198 | INFO |    Fields:
+2025-11-19 09:47:01,198 | INFO |    - options (com.squareup.moshi.JsonReader$Options)
+2025-11-19 09:47:01,198 | INFO |    - profileItemDataAdapter (com.squareup.moshi.JsonAdapter)
+2025-11-19 09:47:01,199 | INFO |    - $stable (int)
+2025-11-19 09:47:01,203 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.CascadeProfile
+2025-11-19 09:47:01,203 | INFO |    Fields:
+2025-11-19 09:47:01,205 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.cascadeV2.presentation.model.CascadeProfileCarouselAction$OnDoubleTap
+2025-11-19 09:47:01,205 | INFO |    Fields:
+2025-11-19 09:47:01,205 | INFO |    - model (com.grindrapp.android.cascade.presentation.model.CascadeItemUiModel)
+2025-11-19 09:47:01,206 | INFO |    - $stable (int)
+2025-11-19 09:47:01,218 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem$HiddenProfilesStatus
+2025-11-19 09:47:01,218 | INFO |    Fields:
+2025-11-19 09:47:01,218 | INFO |    - count (int)
+2025-11-19 09:47:01,218 | INFO |    - $stable (int)
+2025-11-19 09:47:01,253 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_HiddenProfileJsonAdapter
+2025-11-19 09:47:01,253 | INFO |    Fields:
+2025-11-19 09:47:01,253 | INFO |    - options (com.squareup.moshi.JsonReader$Options)
+2025-11-19 09:47:01,253 | INFO |    - profileItemDataAdapter (com.squareup.moshi.JsonAdapter)
+2025-11-19 09:47:01,254 | INFO |    - $stable (int)
+2025-11-19 09:47:01,259 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.repository.ProfileRepo$deleteAllCascadeProfiles$1
+2025-11-19 09:47:01,259 | INFO |    Fields:
+2025-11-19 09:47:01,260 | INFO |    - label (int)
+2025-11-19 09:47:01,260 | INFO |    - result (java.lang.Object)
+2025-11-19 09:47:01,260 | INFO |    - this$0 (com.grindrapp.android.persistence.repository.ProfileRepo)
+2025-11-19 09:47:01,279 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem$Profile
+2025-11-19 09:47:01,279 | INFO |    Fields:
+2025-11-19 09:47:01,279 | INFO |    - data (com.grindrapp.android.api.serverdrivencascade.ProfileItemData)
+2025-11-19 09:47:01,279 | INFO |    - $stable (int)
+2025-11-19 09:47:01,280 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.CascadeProfileUiDataKt
+2025-11-19 09:47:01,281 | INFO |    Fields:
+2025-11-19 09:47:01,292 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem$SponsoredProfile
+2025-11-19 09:47:01,292 | INFO |    Fields:
+2025-11-19 09:47:01,292 | INFO |    - data (com.grindrapp.android.api.serverdrivencascade.SponsorProfileAd)
+2025-11-19 09:47:01,293 | INFO |    - $stable (int)
+2025-11-19 09:47:01,302 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.CascadeProfileUiData
+2025-11-19 09:47:01,303 | INFO |    Fields:
+2025-11-19 09:47:01,303 | INFO |    - displayName (java.lang.String)
+2025-11-19 09:47:01,303 | INFO |    - distance (double)
+2025-11-19 09:47:01,304 | INFO |    - distanceDisplayText (java.lang.String)
+2025-11-19 09:47:01,304 | INFO |    - hasChattedInLast24Hours (boolean)
+2025-11-19 09:47:01,304 | INFO |    - hasUnreadThrob (boolean)
+2025-11-19 09:47:01,304 | INFO |    - hasViewedMe (boolean)
+2025-11-19 09:47:01,305 | INFO |    - isBoosting (boolean)
+2025-11-19 09:47:01,305 | INFO |    - isFavorite (boolean)
+2025-11-19 09:47:01,305 | INFO |    - isOnlineNow (boolean)
+2025-11-19 09:47:01,305 | INFO |    - isPopular (boolean)
+2025-11-19 09:47:01,305 | INFO |    - isRoaming (boolean)
+2025-11-19 09:47:01,305 | INFO |    - isVisiting (java.lang.Boolean)
+2025-11-19 09:47:01,306 | INFO |    - lastMessageTimestamp (long)
+2025-11-19 09:47:01,306 | INFO |    - mediaHash (java.lang.String)
+2025-11-19 09:47:01,306 | INFO |    - profileId (java.lang.String)
+2025-11-19 09:47:01,306 | INFO |    - refreshTimestamp (java.lang.Long)
+2025-11-19 09:47:01,306 | INFO |    - rightNowStatusIcon (java.lang.Integer)
+2025-11-19 09:47:01,307 | INFO |    - topPicksStatus (com.grindrapp.android.toppicks.presentation.model.TopPicksProfileStatus)
+2025-11-19 09:47:01,307 | INFO |    - unread (long)
+2025-11-19 09:47:01,307 | INFO |    - $stable (int)
+2025-11-19 09:47:01,307 | INFO |    - Companion (com.grindrapp.android.persistence.model.serverdrivencascade.CascadeProfileUiData$Companion)
+2025-11-19 09:47:01,307 | INFO |    - UNREAD_COUNTER_MAX (int)
+2025-11-19 09:47:01,312 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.repository.ProfileRepo$clearAndAddCascadeProfiles$1
+2025-11-19 09:47:01,313 | INFO |    Fields:
+2025-11-19 09:47:01,313 | INFO |    - L$0 (java.lang.Object)
+2025-11-19 09:47:01,313 | INFO |    - L$1 (java.lang.Object)
+2025-11-19 09:47:01,313 | INFO |    - Z$0 (boolean)
+2025-11-19 09:47:01,313 | INFO |    - label (int)
+2025-11-19 09:47:01,314 | INFO |    - result (java.lang.Object)
+2025-11-19 09:47:01,314 | INFO |    - this$0 (com.grindrapp.android.persistence.repository.ProfileRepo)
+2025-11-19 09:47:01,315 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.ServiceDrivenCascadeCacheSponsoredProfile
+2025-11-19 09:47:01,316 | INFO |    Fields:
+2025-11-19 09:47:01,316 | INFO |    - alternativeProfile (com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeCachedProfile)
+2025-11-19 09:47:01,317 | INFO |    - cascadePlacementName (java.lang.String)
+2025-11-19 09:47:01,317 | INFO |    - $stable (int)
+2025-11-19 09:47:01,325 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.ui.tagsearch.Hilt_ProfileTagCascadeFragment
+2025-11-19 09:47:01,325 | INFO |    Fields:
+2025-11-19 09:47:01,325 | INFO |    - d (android.content.ContextWrapper)
+2025-11-19 09:47:01,326 | INFO |    - e (boolean)
+2025-11-19 09:47:01,326 | INFO |    - f (dagger.hilt.android.internal.managers.FragmentComponentManager)
+2025-11-19 09:47:01,326 | INFO |    - g (java.lang.Object)
+2025-11-19 09:47:01,326 | INFO |    - h (boolean)
+2025-11-19 09:47:01,327 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.cascadeV2.presentation.model.CascadeProfileCarouselAction
+2025-11-19 09:47:01,327 | INFO |    Fields:
+2025-11-19 09:47:01,341 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.CascadeProfileUiData$Companion
+2025-11-19 09:47:01,341 | INFO |    Fields:
+2025-11-19 09:47:01,353 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment
+2025-11-19 09:47:01,353 | INFO |    Fields:
+2025-11-19 09:47:01,354 | INFO |    - A (com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment$e)
+2025-11-19 09:47:01,354 | INFO |    - B (kf.a)
+2025-11-19 09:47:01,355 | INFO |    - C (kotlin.Lazy)
+2025-11-19 09:47:01,355 | INFO |    - D (kotlin.Lazy)
+2025-11-19 09:47:01,355 | INFO |    - E (kotlin.Lazy)
+2025-11-19 09:47:01,355 | INFO |    - F (com.grindrapp.android.persistence.repository.filters.CascadeFiltersRepo)
+2025-11-19 09:47:01,355 | INFO |    - G (K9.E1)
+2025-11-19 09:47:01,356 | INFO |    - H (uc.b)
+2025-11-19 09:47:01,356 | INFO |    - I (com.grindrapp.android.tagsearch.TagTranslationManager)
+2025-11-19 09:47:01,356 | INFO |    - J (com.grindrapp.android.usersession.UserSession)
+2025-11-19 09:47:01,356 | INFO |    - K (xd.e)
+2025-11-19 09:47:01,356 | INFO |    - L (com.grindrapp.android.analytics.GrindrAnalyticsV2)
+2025-11-19 09:47:01,357 | INFO |    - M (Td.a)
+2025-11-19 09:47:01,357 | INFO |    - N (A9.c)
+2025-11-19 09:47:01,357 | INFO |    - O (com.grindrapp.android.manager.SettingsManager)
+2025-11-19 09:47:01,357 | INFO |    - P (com.grindrapp.android.storage.SettingsPref)
+2025-11-19 09:47:01,358 | INFO |    - Q (K5.a)
+2025-11-19 09:47:01,358 | INFO |    - i (K9.G0)
+2025-11-19 09:47:01,358 | INFO |    - j (com.grindrapp.android.featureflags.IsFeatureFlagEnabled)
+2025-11-19 09:47:01,359 | INFO |    - k (Gf.i)
+2025-11-19 09:47:01,359 | INFO |    - l (com.grindrapp.android.utils.DistanceUtils)
+2025-11-19 09:47:01,360 | INFO |    - m (kotlinx.coroutines.CoroutineScope)
+2025-11-19 09:47:01,360 | INFO |    - n (K5.h)
+2025-11-19 09:47:01,360 | INFO |    - o (K5.j)
+2025-11-19 09:47:01,360 | INFO |    - p (kotlinx.coroutines.CoroutineScope)
+2025-11-19 09:47:01,361 | INFO |    - q (com.grindrapp.android.utils.DispatcherFacade)
+2025-11-19 09:47:01,361 | INFO |    - r (j5.i)
+2025-11-19 09:47:01,361 | INFO |    - s (java.util.ArrayList)
+2025-11-19 09:47:01,361 | INFO |    - t (kotlin.Lazy)
+2025-11-19 09:47:01,361 | INFO |    - u (kotlin.Lazy)
+2025-11-19 09:47:01,361 | INFO |    - v (kotlin.Lazy)
+2025-11-19 09:47:01,362 | INFO |    - w (com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate)
+2025-11-19 09:47:01,362 | INFO |    - x (a5.a)
+2025-11-19 09:47:01,362 | INFO |    - y (k8.a)
+2025-11-19 09:47:01,362 | INFO |    - z (kotlin.Lazy)
+2025-11-19 09:47:01,362 | INFO |    - R (com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment$a)
+2025-11-19 09:47:01,363 | INFO |    - S ([Lkotlin.reflect.KProperty;)
+2025-11-19 09:47:01,372 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.repository.ProfileRepo$addCascadeProfiles$2
+2025-11-19 09:47:01,372 | INFO |    Fields:
+2025-11-19 09:47:01,372 | INFO |    - $cascadeProfiles (java.util.List)
+2025-11-19 09:47:01,373 | INFO |    - $profiles (java.util.List)
+2025-11-19 09:47:01,373 | INFO |    - Z$0 (boolean)
+2025-11-19 09:47:01,373 | INFO |    - label (int)
+2025-11-19 09:47:01,373 | INFO |    - this$0 (com.grindrapp.android.persistence.repository.ProfileRepo)
+2025-11-19 09:47:01,436 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_SponsoredProfileJsonAdapter
+2025-11-19 09:47:01,436 | INFO |    Fields:
+2025-11-19 09:47:01,436 | INFO |    - options (com.squareup.moshi.JsonReader$Options)
+2025-11-19 09:47:01,437 | INFO |    - sponsorProfileAdAdapter (com.squareup.moshi.JsonAdapter)
+2025-11-19 09:47:01,437 | INFO |    - $stable (int)
+2025-11-19 09:47:01,452 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_PartialProfileJsonAdapter
+2025-11-19 09:47:01,452 | INFO |    Fields:
+2025-11-19 09:47:01,453 | INFO |    - options (com.squareup.moshi.JsonReader$Options)
+2025-11-19 09:47:01,453 | INFO |    - partialProfileItemDataAdapter (com.squareup.moshi.JsonAdapter)
+2025-11-19 09:47:01,453 | INFO |    - $stable (int)
+2025-11-19 09:47:01,471 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.cascadeV2.presentation.model.CascadeEvent$NavigateToProfile
+2025-11-19 09:47:01,472 | INFO |    Fields:
+2025-11-19 09:47:01,472 | INFO |    - cruiseableProfileIds (java.util.List)
+2025-11-19 09:47:01,472 | INFO |    - profileId (java.lang.String)
+2025-11-19 09:47:01,472 | INFO |    - sessionId (java.lang.String)
+2025-11-19 09:47:01,472 | INFO |    - $stable (int)
+2025-11-19 09:47:01,481 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.cascadeV2.presentation.model.CascadeProfileCarouselAction$OnTap
+2025-11-19 09:47:01,482 | INFO |    Fields:
+2025-11-19 09:47:01,482 | INFO |    - model (com.grindrapp.android.cascade.presentation.model.CascadeItemUiModel)
+2025-11-19 09:47:01,482 | INFO |    - $stable (int)
+2025-11-19 09:47:01,497 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeCachedHiddenProfiles
+2025-11-19 09:47:01,497 | INFO |    Fields:
+2025-11-19 09:47:01,498 | INFO |    - count (int)
+2025-11-19 09:47:01,498 | INFO |    - $stable (int)
+2025-11-19 09:47:01,500 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeCachedHiddenProfile
+2025-11-19 09:47:01,501 | INFO |    Fields:
+2025-11-19 09:47:01,501 | INFO |    - displayName (java.lang.String)
+2025-11-19 09:47:01,502 | INFO |    - photos (java.util.List)
+2025-11-19 09:47:01,502 | INFO |    - profileId (long)
+2025-11-19 09:47:01,502 | INFO |    - $stable (int)
+2025-11-19 09:47:01,506 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.ui.cascade.model.CascadeProfileUnreadInfo
+2025-11-19 09:47:01,506 | INFO |    Fields:
+2025-11-19 09:47:01,507 | INFO |    - hasUnreadThrob (boolean)
+2025-11-19 09:47:01,507 | INFO |    - profileId (java.lang.String)
+2025-11-19 09:47:01,507 | INFO |    - unreadCount (int)
+2025-11-19 09:47:01,508 | INFO |    - $stable (int)
+2025-11-19 09:47:01,509 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeCachedProfile
+2025-11-19 09:47:01,509 | INFO |    Fields:
+2025-11-19 09:47:01,510 | INFO |    - aboutMe (java.lang.String)
+2025-11-19 09:47:01,511 | INFO |    - acceptsNSFWPics (java.lang.Integer)
+2025-11-19 09:47:01,511 | INFO |    - age (java.lang.Integer)
+2025-11-19 09:47:01,511 | INFO |    - approximateDistance (boolean)
+2025-11-19 09:47:01,511 | INFO |    - arrivalDays (java.lang.Integer)
+2025-11-19 09:47:01,511 | INFO |    - bodyType (java.lang.Integer)
+2025-11-19 09:47:01,512 | INFO |    - displayName (java.lang.String)
+2025-11-19 09:47:01,512 | INFO |    - distanceMeters (java.lang.Double)
+2025-11-19 09:47:01,512 | INFO |    - ethnicity (java.lang.Integer)
+2025-11-19 09:47:01,512 | INFO |    - genders (java.util.List)
+2025-11-19 09:47:01,512 | INFO |    - hasChattedInLast24Hrs (boolean)
+2025-11-19 09:47:01,513 | INFO |    - hasUnreadThrob (boolean)
+2025-11-19 09:47:01,513 | INFO |    - heightCm (java.lang.Double)
+2025-11-19 09:47:01,513 | INFO |    - hivStatus (java.lang.Integer)
+2025-11-19 09:47:01,513 | INFO |    - isBoosting (boolean)
+2025-11-19 09:47:01,513 | INFO |    - isFavorite (boolean)
+2025-11-19 09:47:01,514 | INFO |    - isPartialProfile (boolean)
+2025-11-19 09:47:01,514 | INFO |    - isPopular (boolean)
+2025-11-19 09:47:01,514 | INFO |    - isRoaming (boolean)
+2025-11-19 09:47:01,515 | INFO |    - lastMessageTimestamp (long)
+2025-11-19 09:47:01,515 | INFO |    - lastOnline (java.lang.Long)
+2025-11-19 09:47:01,515 | INFO |    - lastTestedDate (java.lang.Long)
+2025-11-19 09:47:01,515 | INFO |    - lastViewed (java.lang.Long)
+2025-11-19 09:47:01,516 | INFO |    - lookingFor (java.util.List)
+2025-11-19 09:47:01,516 | INFO |    - meetAt (java.util.List)
+2025-11-19 09:47:01,516 | INFO |    - onlineUntil (java.lang.Long)
+2025-11-19 09:47:01,516 | INFO |    - photos (java.util.List)
+2025-11-19 09:47:01,516 | INFO |    - profileIdLong (long)
+2025-11-19 09:47:01,517 | INFO |    - pronouns (java.util.List)
+2025-11-19 09:47:01,517 | INFO |    - refreshTimestamp (java.lang.Long)
+2025-11-19 09:47:01,517 | INFO |    - relationshipStatus (java.lang.Integer)
+2025-11-19 09:47:01,517 | INFO |    - rightNowStatus (com.grindrapp.android.rightnow.presentation.model.RightNowStatus)
+2025-11-19 09:47:01,518 | INFO |    - sexualPosition (java.lang.Integer)
+2025-11-19 09:47:01,518 | INFO |    - socialNetworks (java.util.List)
+2025-11-19 09:47:01,518 | INFO |    - tags (java.util.List)
+2025-11-19 09:47:01,518 | INFO |    - topPicksStatus (com.grindrapp.android.toppicks.presentation.model.TopPicksProfileStatus)
+2025-11-19 09:47:01,518 | INFO |    - tribes (java.util.List)
+2025-11-19 09:47:01,519 | INFO |    - unread (long)
+2025-11-19 09:47:01,519 | INFO |    - upsellType (java.lang.String)
+2025-11-19 09:47:01,519 | INFO |    - vaccines (java.util.List)
+2025-11-19 09:47:01,519 | INFO |    - visiting (boolean)
+2025-11-19 09:47:01,519 | INFO |    - weightGrams (java.lang.Double)
+2025-11-19 09:47:01,520 | INFO |    - $stable (int)
+2025-11-19 09:47:01,654 | INFO | [MainController] Injection state: running
+2025-11-19 09:47:01,655 | INFO | [MainController] Injection succeeded
+2025-11-19 09:47:01,655 | INFO | [InjectionController] Script injected successfully
+2025-11-19 09:48:14,311 | INFO | [MainController] Injection state: stopping
+2025-11-19 09:48:14,320 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 09:48:14,321 | INFO | [MainController] Injection state: stopped
+2025-11-19 09:48:17,461 | INFO | [MainController] Injection state: injecting
+2025-11-19 09:48:17,504 | INFO | [InjectionController] Attaching to PID 4789...
+2025-11-19 09:48:17,804 | INFO | [InjectionController] Creating script...
+2025-11-19 09:48:17,806 | INFO | [InjectionController] Loading script...
+2025-11-19 09:48:17,833 | INFO | 🔍 Finding the correct profile data field name...
+2025-11-19 09:48:17,835 | INFO | [MainController] Injection state: running
+2025-11-19 09:48:17,835 | INFO | [MainController] Injection succeeded
+2025-11-19 09:48:17,836 | INFO | [InjectionController] Script injected successfully
+2025-11-19 09:54:31,351 | INFO | [MainController] Injection state: stopping
+2025-11-19 09:54:31,359 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 09:54:31,360 | INFO | [MainController] Injection state: stopped
+2025-11-19 09:54:32,294 | INFO | [MainController] Injection state: injecting
+2025-11-19 09:54:32,333 | INFO | [InjectionController] Attaching to PID 4789...
+2025-11-19 09:54:32,627 | INFO | [InjectionController] Creating script...
+2025-11-19 09:54:32,629 | INFO | [InjectionController] Loading script...
+2025-11-19 09:54:32,657 | INFO | 🔍 Finding the correct profile data field name...
+2025-11-19 09:54:32,658 | INFO | [MainController] Injection state: running
+2025-11-19 09:54:32,659 | INFO | [MainController] Injection succeeded
+2025-11-19 09:54:32,659 | INFO | [InjectionController] Script injected successfully
+2025-11-19 09:55:01,196 | INFO | [MainController] Injection state: stopping
+2025-11-19 09:55:01,204 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 09:55:01,205 | INFO | [MainController] Injection state: stopped
+2025-11-19 09:55:01,976 | INFO | [MainController] Injection state: injecting
+2025-11-19 09:55:02,015 | INFO | [InjectionController] Attaching to PID 4789...
+2025-11-19 09:55:02,326 | INFO | [InjectionController] Creating script...
+2025-11-19 09:55:02,328 | INFO | [InjectionController] Loading script...
+2025-11-19 09:55:02,357 | INFO | 📝 Comprehensive click handler logging...
+2025-11-19 09:55:02,359 | INFO | [MainController] Injection state: running
+2025-11-19 09:55:02,359 | INFO | [MainController] Injection succeeded
+2025-11-19 09:55:02,360 | INFO | [InjectionController] Script injected successfully
+2025-11-19 09:55:46,448 | INFO | [MainController] Injection state: stopping
+2025-11-19 09:55:46,456 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 09:55:46,457 | INFO | [MainController] Injection state: stopped
+2025-11-19 09:55:47,658 | INFO | [MainController] Injection state: injecting
+2025-11-19 09:55:47,696 | INFO | [InjectionController] Attaching to PID 4789...
+2025-11-19 09:55:48,004 | INFO | [InjectionController] Creating script...
+2025-11-19 09:55:48,006 | INFO | [InjectionController] Loading script...
+2025-11-19 09:55:48,033 | INFO | 🔍 Analyzing click handler instances in memory...
+2025-11-19 09:55:48,035 | INFO | [MainController] Injection state: running
+2025-11-19 09:55:48,035 | INFO | [MainController] Injection succeeded
+2025-11-19 09:55:48,036 | INFO | [InjectionController] Script injected successfully
+2025-11-19 09:56:27,433 | INFO | [MainController] Injection state: stopping
+2025-11-19 09:56:27,440 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 09:56:27,441 | INFO | [MainController] Injection state: stopped
+2025-11-19 09:56:28,314 | INFO | [MainController] Injection state: injecting
+2025-11-19 09:56:28,352 | INFO | [InjectionController] Attaching to PID 4789...
+2025-11-19 09:56:28,661 | INFO | [InjectionController] Creating script...
+2025-11-19 09:56:28,663 | INFO | [InjectionController] Loading script...
+2025-11-19 09:56:28,690 | INFO | 🔍 Discovering fields in click handler classes...
+2025-11-19 09:56:28,691 | INFO | 
+🎯 com.grindrapp.android.ui.browse.h$a
+2025-11-19 09:56:28,691 | INFO |    Fields (2):
+2025-11-19 09:56:28,692 | INFO |    - j (int)
+2025-11-19 09:56:28,693 | INFO |    - k (com.grindrapp.android.ui.browse.CascadeFragment)
+2025-11-19 09:56:28,694 | INFO | 
+🎯 com.grindrapp.android.ui.browse.CascadeFragment$g
+2025-11-19 09:56:28,694 | INFO |    Fields (2):
+2025-11-19 09:56:28,694 | INFO |    - a (com.grindrapp.android.args.ExploreCascadeArgs)
+2025-11-19 09:56:28,695 | INFO |    - b (com.grindrapp.android.ui.browse.CascadeFragment)
+2025-11-19 09:56:28,695 | INFO | 
+🎯 com.grindrapp.android.ui.browse.n$k$a
+2025-11-19 09:56:28,696 | INFO |    Fields (11):
+2025-11-19 09:56:28,696 | INFO |    - j (int)
+2025-11-19 09:56:28,696 | INFO |    - k (com.grindrapp.android.ui.browse.n)
+2025-11-19 09:56:28,697 | INFO |    - l (boolean)
+2025-11-19 09:56:28,697 | INFO |    - m (com.grindrapp.android.storage.filters.CascadeFiltersRepoState)
+2025-11-19 09:56:28,697 | INFO |    - n (com.grindrapp.android.ui.browse.n$b)
+2025-11-19 09:56:28,698 | INFO |    - o (com.grindrapp.android.storage.filters.CascadeRequestFilters)
+2025-11-19 09:56:28,698 | INFO |    - p (com.grindrapp.android.args.ExploreCascadeArgs)
+2025-11-19 09:56:28,699 | INFO |    - q (com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeCacheState)
+2025-11-19 09:56:28,699 | INFO |    - r (boolean)
+2025-11-19 09:56:28,699 | INFO |    - s (boolean)
+2025-11-19 09:56:28,700 | INFO |    - t (boolean)
+2025-11-19 09:56:28,700 | INFO | 
+🔎 Searching for profile data classes...
+2025-11-19 09:56:29,083 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment$a
+2025-11-19 09:56:29,084 | INFO |    Fields:
+2025-11-19 09:56:29,084 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment$c
+2025-11-19 09:56:29,084 | INFO |    Fields:
+2025-11-19 09:56:29,084 | INFO |    - b (com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment$c)
+2025-11-19 09:56:29,085 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment$d
+2025-11-19 09:56:29,085 | INFO |    Fields:
+2025-11-19 09:56:29,085 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment$e
+2025-11-19 09:56:29,085 | INFO |    Fields:
+2025-11-19 09:56:29,086 | INFO |    - a (com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment)
+2025-11-19 09:56:29,086 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment$f
+2025-11-19 09:56:29,086 | INFO |    Fields:
+2025-11-19 09:56:29,086 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem$PartialProfile
+2025-11-19 09:56:29,087 | INFO |    Fields:
+2025-11-19 09:56:29,087 | INFO |    - data (com.grindrapp.android.api.serverdrivencascade.PartialProfileItemData)
+2025-11-19 09:56:29,087 | INFO |    - $stable (int)
+2025-11-19 09:56:29,114 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem$HiddenProfile
+2025-11-19 09:56:29,115 | INFO |    Fields:
+2025-11-19 09:56:29,115 | INFO |    - data (com.grindrapp.android.api.serverdrivencascade.ProfileItemData)
+2025-11-19 09:56:29,115 | INFO |    - $stable (int)
+2025-11-19 09:56:29,120 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_ProfileJsonAdapter
+2025-11-19 09:56:29,121 | INFO |    Fields:
+2025-11-19 09:56:29,121 | INFO |    - options (com.squareup.moshi.JsonReader$Options)
+2025-11-19 09:56:29,121 | INFO |    - profileItemDataAdapter (com.squareup.moshi.JsonAdapter)
+2025-11-19 09:56:29,121 | INFO |    - $stable (int)
+2025-11-19 09:56:29,125 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.CascadeProfile
+2025-11-19 09:56:29,125 | INFO |    Fields:
+2025-11-19 09:56:29,126 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.cascadeV2.presentation.model.CascadeProfileCarouselAction$OnDoubleTap
+2025-11-19 09:56:29,127 | INFO |    Fields:
+2025-11-19 09:56:29,127 | INFO |    - model (com.grindrapp.android.cascade.presentation.model.CascadeItemUiModel)
+2025-11-19 09:56:29,127 | INFO |    - $stable (int)
+2025-11-19 09:56:29,138 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem$HiddenProfilesStatus
+2025-11-19 09:56:29,139 | INFO |    Fields:
+2025-11-19 09:56:29,139 | INFO |    - count (int)
+2025-11-19 09:56:29,139 | INFO |    - $stable (int)
+2025-11-19 09:56:29,164 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeProfileUpsellType
+2025-11-19 09:56:29,165 | INFO |    Fields:
+2025-11-19 09:56:29,165 | INFO |    - upsellType (java.lang.String)
+2025-11-19 09:56:29,166 | INFO |    - $ENTRIES (kotlin.enums.EnumEntries)
+2025-11-19 09:56:29,166 | INFO |    - $VALUES ([Lcom.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeProfileUpsellType;)
+2025-11-19 09:56:29,166 | INFO |    - FAVORITES_UNLIMITED (com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeProfileUpsellType)
+2025-11-19 09:56:29,166 | INFO |    - FAVORITES_XTRA (com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeProfileUpsellType)
+2025-11-19 09:56:29,167 | INFO |    - UNLIMITED (com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeProfileUpsellType)
+2025-11-19 09:56:29,167 | INFO |    - XTRA (com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeProfileUpsellType)
+2025-11-19 09:56:29,174 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_HiddenProfileJsonAdapter
+2025-11-19 09:56:29,174 | INFO |    Fields:
+2025-11-19 09:56:29,175 | INFO |    - options (com.squareup.moshi.JsonReader$Options)
+2025-11-19 09:56:29,175 | INFO |    - profileItemDataAdapter (com.squareup.moshi.JsonAdapter)
+2025-11-19 09:56:29,175 | INFO |    - $stable (int)
+2025-11-19 09:56:29,180 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.repository.ProfileRepo$deleteAllCascadeProfiles$1
+2025-11-19 09:56:29,181 | INFO |    Fields:
+2025-11-19 09:56:29,181 | INFO |    - label (int)
+2025-11-19 09:56:29,181 | INFO |    - result (java.lang.Object)
+2025-11-19 09:56:29,182 | INFO |    - this$0 (com.grindrapp.android.persistence.repository.ProfileRepo)
+2025-11-19 09:56:29,200 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem$Profile
+2025-11-19 09:56:29,201 | INFO |    Fields:
+2025-11-19 09:56:29,201 | INFO |    - data (com.grindrapp.android.api.serverdrivencascade.ProfileItemData)
+2025-11-19 09:56:29,201 | INFO |    - $stable (int)
+2025-11-19 09:56:29,202 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.CascadeProfileUiDataKt
+2025-11-19 09:56:29,203 | INFO |    Fields:
+2025-11-19 09:56:29,214 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem$SponsoredProfile
+2025-11-19 09:56:29,214 | INFO |    Fields:
+2025-11-19 09:56:29,214 | INFO |    - data (com.grindrapp.android.api.serverdrivencascade.SponsorProfileAd)
+2025-11-19 09:56:29,214 | INFO |    - $stable (int)
+2025-11-19 09:56:29,224 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.CascadeProfileUiData
+2025-11-19 09:56:29,225 | INFO |    Fields:
+2025-11-19 09:56:29,225 | INFO |    - displayName (java.lang.String)
+2025-11-19 09:56:29,226 | INFO |    - distance (double)
+2025-11-19 09:56:29,226 | INFO |    - distanceDisplayText (java.lang.String)
+2025-11-19 09:56:29,226 | INFO |    - hasChattedInLast24Hours (boolean)
+2025-11-19 09:56:29,226 | INFO |    - hasUnreadThrob (boolean)
+2025-11-19 09:56:29,226 | INFO |    - hasViewedMe (boolean)
+2025-11-19 09:56:29,226 | INFO |    - isBoosting (boolean)
+2025-11-19 09:56:29,227 | INFO |    - isFavorite (boolean)
+2025-11-19 09:56:29,227 | INFO |    - isOnlineNow (boolean)
+2025-11-19 09:56:29,227 | INFO |    - isPopular (boolean)
+2025-11-19 09:56:29,227 | INFO |    - isRoaming (boolean)
+2025-11-19 09:56:29,227 | INFO |    - isVisiting (java.lang.Boolean)
+2025-11-19 09:56:29,227 | INFO |    - lastMessageTimestamp (long)
+2025-11-19 09:56:29,228 | INFO |    - mediaHash (java.lang.String)
+2025-11-19 09:56:29,228 | INFO |    - profileId (java.lang.String)
+2025-11-19 09:56:29,228 | INFO |    - refreshTimestamp (java.lang.Long)
+2025-11-19 09:56:29,228 | INFO |    - rightNowStatusIcon (java.lang.Integer)
+2025-11-19 09:56:29,229 | INFO |    - topPicksStatus (com.grindrapp.android.toppicks.presentation.model.TopPicksProfileStatus)
+2025-11-19 09:56:29,229 | INFO |    - unread (long)
+2025-11-19 09:56:29,229 | INFO |    - $stable (int)
+2025-11-19 09:56:29,229 | INFO |    - Companion (com.grindrapp.android.persistence.model.serverdrivencascade.CascadeProfileUiData$Companion)
+2025-11-19 09:56:29,229 | INFO |    - UNREAD_COUNTER_MAX (int)
+2025-11-19 09:56:29,230 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: [Lcom.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeProfileUpsellType;
+2025-11-19 09:56:29,230 | INFO |    Fields:
+2025-11-19 09:56:29,234 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.repository.ProfileRepo$clearAndAddCascadeProfiles$1
+2025-11-19 09:56:29,235 | INFO |    Fields:
+2025-11-19 09:56:29,235 | INFO |    - L$0 (java.lang.Object)
+2025-11-19 09:56:29,236 | INFO |    - L$1 (java.lang.Object)
+2025-11-19 09:56:29,236 | INFO |    - Z$0 (boolean)
+2025-11-19 09:56:29,236 | INFO |    - label (int)
+2025-11-19 09:56:29,236 | INFO |    - result (java.lang.Object)
+2025-11-19 09:56:29,236 | INFO |    - this$0 (com.grindrapp.android.persistence.repository.ProfileRepo)
+2025-11-19 09:56:29,238 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.ServiceDrivenCascadeCacheSponsoredProfile
+2025-11-19 09:56:29,238 | INFO |    Fields:
+2025-11-19 09:56:29,238 | INFO |    - alternativeProfile (com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeCachedProfile)
+2025-11-19 09:56:29,239 | INFO |    - cascadePlacementName (java.lang.String)
+2025-11-19 09:56:29,239 | INFO |    - $stable (int)
+2025-11-19 09:56:29,247 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.ui.tagsearch.Hilt_ProfileTagCascadeFragment
+2025-11-19 09:56:29,247 | INFO |    Fields:
+2025-11-19 09:56:29,247 | INFO |    - d (android.content.ContextWrapper)
+2025-11-19 09:56:29,248 | INFO |    - e (boolean)
+2025-11-19 09:56:29,248 | INFO |    - f (dagger.hilt.android.internal.managers.FragmentComponentManager)
+2025-11-19 09:56:29,248 | INFO |    - g (java.lang.Object)
+2025-11-19 09:56:29,248 | INFO |    - h (boolean)
+2025-11-19 09:56:29,248 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.cascadeV2.presentation.model.CascadeProfileCarouselAction
+2025-11-19 09:56:29,249 | INFO |    Fields:
+2025-11-19 09:56:29,259 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.CascadeProfileUiData$Companion
+2025-11-19 09:56:29,259 | INFO |    Fields:
+2025-11-19 09:56:29,269 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment
+2025-11-19 09:56:29,269 | INFO |    Fields:
+2025-11-19 09:56:29,270 | INFO |    - A (com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment$e)
+2025-11-19 09:56:29,270 | INFO |    - B (kf.a)
+2025-11-19 09:56:29,271 | INFO |    - C (kotlin.Lazy)
+2025-11-19 09:56:29,271 | INFO |    - D (kotlin.Lazy)
+2025-11-19 09:56:29,271 | INFO |    - E (kotlin.Lazy)
+2025-11-19 09:56:29,271 | INFO |    - F (com.grindrapp.android.persistence.repository.filters.CascadeFiltersRepo)
+2025-11-19 09:56:29,271 | INFO |    - G (K9.E1)
+2025-11-19 09:56:29,271 | INFO |    - H (uc.b)
+2025-11-19 09:56:29,272 | INFO |    - I (com.grindrapp.android.tagsearch.TagTranslationManager)
+2025-11-19 09:56:29,272 | INFO |    - J (com.grindrapp.android.usersession.UserSession)
+2025-11-19 09:56:29,272 | INFO |    - K (xd.e)
+2025-11-19 09:56:29,272 | INFO |    - L (com.grindrapp.android.analytics.GrindrAnalyticsV2)
+2025-11-19 09:56:29,272 | INFO |    - M (Td.a)
+2025-11-19 09:56:29,272 | INFO |    - N (A9.c)
+2025-11-19 09:56:29,273 | INFO |    - O (com.grindrapp.android.manager.SettingsManager)
+2025-11-19 09:56:29,273 | INFO |    - P (com.grindrapp.android.storage.SettingsPref)
+2025-11-19 09:56:29,273 | INFO |    - Q (K5.a)
+2025-11-19 09:56:29,273 | INFO |    - i (K9.G0)
+2025-11-19 09:56:29,273 | INFO |    - j (com.grindrapp.android.featureflags.IsFeatureFlagEnabled)
+2025-11-19 09:56:29,273 | INFO |    - k (Gf.i)
+2025-11-19 09:56:29,274 | INFO |    - l (com.grindrapp.android.utils.DistanceUtils)
+2025-11-19 09:56:29,274 | INFO |    - m (kotlinx.coroutines.CoroutineScope)
+2025-11-19 09:56:29,274 | INFO |    - n (K5.h)
+2025-11-19 09:56:29,274 | INFO |    - o (K5.j)
+2025-11-19 09:56:29,274 | INFO |    - p (kotlinx.coroutines.CoroutineScope)
+2025-11-19 09:56:29,274 | INFO |    - q (com.grindrapp.android.utils.DispatcherFacade)
+2025-11-19 09:56:29,275 | INFO |    - r (j5.i)
+2025-11-19 09:56:29,275 | INFO |    - s (java.util.ArrayList)
+2025-11-19 09:56:29,275 | INFO |    - t (kotlin.Lazy)
+2025-11-19 09:56:29,275 | INFO |    - u (kotlin.Lazy)
+2025-11-19 09:56:29,275 | INFO |    - v (kotlin.Lazy)
+2025-11-19 09:56:29,275 | INFO |    - w (com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate)
+2025-11-19 09:56:29,276 | INFO |    - x (a5.a)
+2025-11-19 09:56:29,276 | INFO |    - y (k8.a)
+2025-11-19 09:56:29,276 | INFO |    - z (kotlin.Lazy)
+2025-11-19 09:56:29,276 | INFO |    - R (com.grindrapp.android.ui.tagsearch.ProfileTagCascadeFragment$a)
+2025-11-19 09:56:29,276 | INFO |    - S ([Lkotlin.reflect.KProperty;)
+2025-11-19 09:56:29,286 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.repository.ProfileRepo$addCascadeProfiles$2
+2025-11-19 09:56:29,286 | INFO |    Fields:
+2025-11-19 09:56:29,287 | INFO |    - $cascadeProfiles (java.util.List)
+2025-11-19 09:56:29,287 | INFO |    - $profiles (java.util.List)
+2025-11-19 09:56:29,287 | INFO |    - Z$0 (boolean)
+2025-11-19 09:56:29,287 | INFO |    - label (int)
+2025-11-19 09:56:29,287 | INFO |    - this$0 (com.grindrapp.android.persistence.repository.ProfileRepo)
+2025-11-19 09:56:29,340 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_SponsoredProfileJsonAdapter
+2025-11-19 09:56:29,340 | INFO |    Fields:
+2025-11-19 09:56:29,340 | INFO |    - options (com.squareup.moshi.JsonReader$Options)
+2025-11-19 09:56:29,341 | INFO |    - sponsorProfileAdAdapter (com.squareup.moshi.JsonAdapter)
+2025-11-19 09:56:29,341 | INFO |    - $stable (int)
+2025-11-19 09:56:29,357 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_PartialProfileJsonAdapter
+2025-11-19 09:56:29,357 | INFO |    Fields:
+2025-11-19 09:56:29,358 | INFO |    - options (com.squareup.moshi.JsonReader$Options)
+2025-11-19 09:56:29,358 | INFO |    - partialProfileItemDataAdapter (com.squareup.moshi.JsonAdapter)
+2025-11-19 09:56:29,358 | INFO |    - $stable (int)
+2025-11-19 09:56:29,372 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.cascadeV2.presentation.model.CascadeEvent$NavigateToProfile
+2025-11-19 09:56:29,372 | INFO |    Fields:
+2025-11-19 09:56:29,372 | INFO |    - cruiseableProfileIds (java.util.List)
+2025-11-19 09:56:29,372 | INFO |    - profileId (java.lang.String)
+2025-11-19 09:56:29,373 | INFO |    - sessionId (java.lang.String)
+2025-11-19 09:56:29,373 | INFO |    - $stable (int)
+2025-11-19 09:56:29,379 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.cascadeV2.presentation.model.CascadeProfileCarouselAction$OnTap
+2025-11-19 09:56:29,379 | INFO |    Fields:
+2025-11-19 09:56:29,379 | INFO |    - model (com.grindrapp.android.cascade.presentation.model.CascadeItemUiModel)
+2025-11-19 09:56:29,380 | INFO |    - $stable (int)
+2025-11-19 09:56:29,394 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeCachedHiddenProfiles
+2025-11-19 09:56:29,395 | INFO |    Fields:
+2025-11-19 09:56:29,395 | INFO |    - count (int)
+2025-11-19 09:56:29,395 | INFO |    - $stable (int)
+2025-11-19 09:56:29,398 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeCachedHiddenProfile
+2025-11-19 09:56:29,398 | INFO |    Fields:
+2025-11-19 09:56:29,399 | INFO |    - displayName (java.lang.String)
+2025-11-19 09:56:29,399 | INFO |    - photos (java.util.List)
+2025-11-19 09:56:29,399 | INFO |    - profileId (long)
+2025-11-19 09:56:29,399 | INFO |    - $stable (int)
+2025-11-19 09:56:29,404 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.ui.cascade.model.CascadeProfileUnreadInfo
+2025-11-19 09:56:29,404 | INFO |    Fields:
+2025-11-19 09:56:29,404 | INFO |    - hasUnreadThrob (boolean)
+2025-11-19 09:56:29,404 | INFO |    - profileId (java.lang.String)
+2025-11-19 09:56:29,404 | INFO |    - unreadCount (int)
+2025-11-19 09:56:29,405 | INFO |    - $stable (int)
+2025-11-19 09:56:29,405 | INFO | 🎯 POTENTIAL PROFILE DATA CLASS: com.grindrapp.android.persistence.model.serverdrivencascade.ServerDrivenCascadeCachedProfile
+2025-11-19 09:56:29,406 | INFO |    Fields:
+2025-11-19 09:56:29,407 | INFO |    - aboutMe (java.lang.String)
+2025-11-19 09:56:29,407 | INFO |    - acceptsNSFWPics (java.lang.Integer)
+2025-11-19 09:56:29,407 | INFO |    - age (java.lang.Integer)
+2025-11-19 09:56:29,407 | INFO |    - approximateDistance (boolean)
+2025-11-19 09:56:29,408 | INFO |    - arrivalDays (java.lang.Integer)
+2025-11-19 09:56:29,408 | INFO |    - bodyType (java.lang.Integer)
+2025-11-19 09:56:29,408 | INFO |    - displayName (java.lang.String)
+2025-11-19 09:56:29,408 | INFO |    - distanceMeters (java.lang.Double)
+2025-11-19 09:56:29,408 | INFO |    - ethnicity (java.lang.Integer)
+2025-11-19 09:56:29,409 | INFO |    - genders (java.util.List)
+2025-11-19 09:56:29,409 | INFO |    - hasChattedInLast24Hrs (boolean)
+2025-11-19 09:56:29,409 | INFO |    - hasUnreadThrob (boolean)
+2025-11-19 09:56:29,409 | INFO |    - heightCm (java.lang.Double)
+2025-11-19 09:56:29,409 | INFO |    - hivStatus (java.lang.Integer)
+2025-11-19 09:56:29,409 | INFO |    - isBoosting (boolean)
+2025-11-19 09:56:29,410 | INFO |    - isFavorite (boolean)
+2025-11-19 09:56:29,410 | INFO |    - isPartialProfile (boolean)
+2025-11-19 09:56:29,410 | INFO |    - isPopular (boolean)
+2025-11-19 09:56:29,410 | INFO |    - isRoaming (boolean)
+2025-11-19 09:56:29,411 | INFO |    - lastMessageTimestamp (long)
+2025-11-19 09:56:29,411 | INFO |    - lastOnline (java.lang.Long)
+2025-11-19 09:56:29,411 | INFO |    - lastTestedDate (java.lang.Long)
+2025-11-19 09:56:29,411 | INFO |    - lastViewed (java.lang.Long)
+2025-11-19 09:56:29,411 | INFO |    - lookingFor (java.util.List)
+2025-11-19 09:56:29,411 | INFO |    - meetAt (java.util.List)
+2025-11-19 09:56:29,412 | INFO |    - onlineUntil (java.lang.Long)
+2025-11-19 09:56:29,412 | INFO |    - photos (java.util.List)
+2025-11-19 09:56:29,412 | INFO |    - profileIdLong (long)
+2025-11-19 09:56:29,412 | INFO |    - pronouns (java.util.List)
+2025-11-19 09:56:29,413 | INFO |    - refreshTimestamp (java.lang.Long)
+2025-11-19 09:56:29,413 | INFO |    - relationshipStatus (java.lang.Integer)
+2025-11-19 09:56:29,413 | INFO |    - rightNowStatus (com.grindrapp.android.rightnow.presentation.model.RightNowStatus)
+2025-11-19 09:56:29,413 | INFO |    - sexualPosition (java.lang.Integer)
+2025-11-19 09:56:29,413 | INFO |    - socialNetworks (java.util.List)
+2025-11-19 09:56:29,413 | INFO |    - tags (java.util.List)
+2025-11-19 09:56:29,414 | INFO |    - topPicksStatus (com.grindrapp.android.toppicks.presentation.model.TopPicksProfileStatus)
+2025-11-19 09:56:29,414 | INFO |    - tribes (java.util.List)
+2025-11-19 09:56:29,414 | INFO |    - unread (long)
+2025-11-19 09:56:29,414 | INFO |    - upsellType (java.lang.String)
+2025-11-19 09:56:29,414 | INFO |    - vaccines (java.util.List)
+2025-11-19 09:56:29,414 | INFO |    - visiting (boolean)
+2025-11-19 09:56:29,415 | INFO |    - weightGrams (java.lang.Double)
+2025-11-19 09:56:29,415 | INFO |    - $stable (int)
+2025-11-19 09:56:29,547 | INFO | [MainController] Injection state: running
+2025-11-19 09:56:29,547 | INFO | [MainController] Injection succeeded
+2025-11-19 09:56:29,548 | INFO | [InjectionController] Script injected successfully
+2025-11-19 10:00:02,775 | INFO | [MainController] Injection state: stopping
+2025-11-19 10:00:02,784 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 10:00:02,785 | INFO | [MainController] Injection state: stopped
+2025-11-19 10:00:06,947 | INFO | [MainController] Injection state: injecting
+2025-11-19 10:00:06,986 | INFO | [InjectionController] Attaching to PID 4789...
+2025-11-19 10:00:07,282 | INFO | [InjectionController] Creating script...
+2025-11-19 10:00:07,284 | INFO | [InjectionController] Loading script...
+2025-11-19 10:00:07,312 | INFO | 🔗 Connecting click handler to profile data...
+2025-11-19 10:00:07,314 | INFO | [MainController] Injection state: running
+2025-11-19 10:00:07,314 | INFO | [MainController] Injection succeeded
+2025-11-19 10:00:07,315 | INFO | [InjectionController] Script injected successfully
+2025-11-19 10:01:13,722 | INFO | [MainController] Injection state: stopping
+2025-11-19 10:01:13,730 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 10:01:13,731 | INFO | [MainController] Injection state: stopped
+2025-11-19 10:01:16,528 | INFO | [MainController] Injection state: injecting
+2025-11-19 10:01:16,566 | INFO | [InjectionController] Attaching to PID 4789...
+2025-11-19 10:01:16,862 | INFO | [InjectionController] Creating script...
+2025-11-19 10:01:16,864 | INFO | [InjectionController] Loading script...
+2025-11-19 10:01:16,890 | INFO | 🔍 Finding profile data in ViewModel...
+2025-11-19 10:01:16,910 | INFO | [MainController] Injection state: running
+2025-11-19 10:01:16,910 | INFO | [MainController] Injection succeeded
+2025-11-19 10:01:16,911 | INFO | [InjectionController] Script injected successfully
+2025-11-19 10:01:51,291 | INFO | [MainController] Injection state: stopping
+2025-11-19 10:01:51,298 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 10:01:51,300 | INFO | [MainController] Injection state: stopped
+2025-11-19 10:01:52,055 | INFO | [MainController] Injection state: injecting
+2025-11-19 10:01:52,092 | INFO | [InjectionController] Attaching to PID 4789...
+2025-11-19 10:01:52,394 | INFO | [InjectionController] Creating script...
+2025-11-19 10:01:52,396 | INFO | [InjectionController] Loading script...
+2025-11-19 10:01:52,423 | INFO | 🔍 Quick field discovery for click handler...
+2025-11-19 10:01:52,424 | INFO | 📋 All fields in h$a:
+2025-11-19 10:01:52,425 | INFO |    - j (int)
+2025-11-19 10:01:52,425 | INFO |    - k (com.grindrapp.android.ui.browse.CascadeFragment)
+2025-11-19 10:01:52,427 | INFO | [MainController] Injection state: running
+2025-11-19 10:01:52,431 | INFO | [MainController] Injection succeeded
+2025-11-19 10:01:52,431 | INFO | [InjectionController] Script injected successfully
+2025-11-19 10:11:30,688 | INFO | [InjectionController] Session detached: process-terminated
+2025-11-19 10:11:30,689 | INFO | [MainController] Injection state: stopping
+2025-11-19 10:11:30,691 | INFO | [StopScriptWorker] Error unloading script: script is destroyed
+2025-11-19 10:11:30,695 | INFO | [MainController] Injection state: stopped
+2025-11-19 10:38:49,769 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 10:38:49,781 | INFO | [MainController] Process selected: PID 260 on 127.0.0.1:58526
+2025-11-19 10:38:52,046 | INFO | [MainController] Process selected: PID 16991 on 127.0.0.1:58526
+2025-11-19 10:38:54,530 | INFO | [MainController] Injection state: injecting
+2025-11-19 10:38:54,568 | INFO | [InjectionController] Attaching to PID 16991...
+2025-11-19 10:38:54,871 | INFO | [InjectionController] Creating script...
+2025-11-19 10:38:54,873 | INFO | [InjectionController] Loading script...
+2025-11-19 10:38:54,902 | INFO | 🔍 Discovering online status fields...
+2025-11-19 10:39:19,877 | INFO | [InjectionController] Injection failed: timeout was reached
+2025-11-19 10:39:19,877 | INFO | [MainController] Injection state: idle
+2025-11-19 10:39:19,877 | INFO | [MainController] Injection failed: timeout was reached
+2025-11-19 10:40:03,260 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 10:40:03,270 | INFO | [MainController] Process selected: PID 260 on 127.0.0.1:58526
+2025-11-19 10:40:05,328 | INFO | [MainController] Process selected: PID 16991 on 127.0.0.1:58526
+2025-11-19 10:40:08,444 | INFO | [MainController] Injection state: injecting
+2025-11-19 10:40:08,481 | INFO | [InjectionController] Attaching to PID 16991...
+2025-11-19 10:40:08,737 | INFO | [InjectionController] Creating script...
+2025-11-19 10:40:08,738 | INFO | [InjectionController] Loading script...
+2025-11-19 10:40:11,062 | INFO | [InjectionController] Injection failed: the connection is closed
+2025-11-19 10:40:11,062 | INFO | [MainController] Injection state: idle
+2025-11-19 10:40:11,063 | INFO | [MainController] Injection failed: the connection is closed
+2025-11-19 10:40:11,308 | INFO | [InjectionController] Session detached: process-terminated
+2025-11-19 10:40:11,310 | INFO | [MainController] Injection state: stopped
+2025-11-19 10:40:15,960 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 10:40:15,972 | INFO | [MainController] Process selected: PID 260 on 127.0.0.1:58526
+2025-11-19 10:40:33,959 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 10:40:33,970 | INFO | [MainController] Process selected: PID 260 on 127.0.0.1:58526
+2025-11-19 10:40:36,473 | INFO | [MainController] Process selected: PID 20451 on 127.0.0.1:58526
+2025-11-19 10:40:38,371 | INFO | [MainController] Injection state: injecting
+2025-11-19 10:40:38,412 | INFO | [InjectionController] Attaching to PID 20451...
+2025-11-19 10:40:38,722 | INFO | [InjectionController] Creating script...
+2025-11-19 10:40:38,724 | INFO | [InjectionController] Loading script...
+2025-11-19 10:40:38,751 | INFO | 🔍 Quick online status discovery...
+2025-11-19 10:40:38,754 | INFO | 🎯 lastMessageTimestamp (long)
+2025-11-19 10:40:38,754 | INFO | 🎯 lastOnline (java.lang.Long)
+2025-11-19 10:40:38,754 | INFO | 🎯 lastTestedDate (java.lang.Long)
+2025-11-19 10:40:38,754 | INFO | 🎯 lastViewed (java.lang.Long)
+2025-11-19 10:40:38,755 | INFO | 🎯 onlineUntil (java.lang.Long)
+2025-11-19 10:40:38,793 | INFO | 
+📱 Live instance fields:
+2025-11-19 10:40:38,795 | INFO |    aboutMe: Lost all chat | TH/EN
+2025-11-19 10:40:38,795 | INFO |    acceptsNSFWPics: null
+2025-11-19 10:40:38,796 | INFO |    age: 22
+2025-11-19 10:40:38,796 | INFO |    approximateDistance: false
+2025-11-19 10:40:38,796 | INFO |    arrivalDays: null
+2025-11-19 10:40:38,796 | INFO |    bodyType: null
+2025-11-19 10:40:38,796 | INFO |    displayName: Tt
+2025-11-19 10:40:38,797 | INFO |    distanceMeters: 494.0
+2025-11-19 10:40:38,797 | INFO |    ethnicity: null
+2025-11-19 10:40:38,797 | INFO |    genders: []
+2025-11-19 10:40:38,799 | INFO | [MainController] Injection state: running
+2025-11-19 10:40:38,800 | INFO | [MainController] Injection succeeded
+2025-11-19 10:40:38,800 | INFO | [InjectionController] Script injected successfully
+2025-11-19 10:40:51,802 | INFO | [MainController] Injection state: stopping
+2025-11-19 10:40:51,811 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 10:40:51,813 | INFO | [MainController] Injection state: stopped
+2025-11-19 10:40:54,444 | INFO | [MainController] Injection state: injecting
+2025-11-19 10:40:54,481 | INFO | [InjectionController] Attaching to PID 20451...
+2025-11-19 10:40:54,780 | INFO | [InjectionController] Creating script...
+2025-11-19 10:40:54,783 | INFO | [InjectionController] Loading script...
+2025-11-19 10:40:54,809 | INFO | 🔍 Quick online status discovery...
+2025-11-19 10:40:54,813 | INFO | 🎯 lastMessageTimestamp (long)
+2025-11-19 10:40:54,813 | INFO | 🎯 lastOnline (java.lang.Long)
+2025-11-19 10:40:54,813 | INFO | 🎯 lastTestedDate (java.lang.Long)
+2025-11-19 10:40:54,813 | INFO | 🎯 lastViewed (java.lang.Long)
+2025-11-19 10:40:54,814 | INFO | 🎯 onlineUntil (java.lang.Long)
+2025-11-19 10:40:54,839 | INFO | 
+📱 Live instance fields:
+2025-11-19 10:40:54,840 | INFO |    aboutMe: ✅️Fun.💪
+2025-11-19 10:40:54,841 | INFO |    acceptsNSFWPics: 2
+2025-11-19 10:40:54,841 | INFO |    age: null
+2025-11-19 10:40:54,841 | INFO |    approximateDistance: false
+2025-11-19 10:40:54,841 | INFO |    arrivalDays: null
+2025-11-19 10:40:54,842 | INFO |    bodyType: 2
+2025-11-19 10:40:54,842 | INFO |    displayName: #✈️.✊️💦
+2025-11-19 10:40:54,842 | INFO |    distanceMeters: null
+2025-11-19 10:40:54,842 | INFO |    ethnicity: 1
+2025-11-19 10:40:54,843 | INFO |    genders: [1]
+2025-11-19 10:40:54,846 | INFO | [MainController] Injection state: running
+2025-11-19 10:40:54,847 | INFO | [MainController] Injection succeeded
+2025-11-19 10:40:54,847 | INFO | [InjectionController] Script injected successfully
+2025-11-19 10:41:37,350 | INFO | [MainController] Injection state: stopping
+2025-11-19 10:41:37,357 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 10:41:37,359 | INFO | [MainController] Injection state: stopped
+2025-11-19 10:41:38,232 | INFO | [MainController] Injection state: injecting
+2025-11-19 10:41:38,271 | INFO | [InjectionController] Attaching to PID 20451...
+2025-11-19 10:41:38,566 | INFO | [InjectionController] Creating script...
+2025-11-19 10:41:38,568 | INFO | [InjectionController] Loading script...
+2025-11-19 10:41:38,595 | INFO | 🔍 Quick grid layout discovery...
+2025-11-19 10:41:38,625 | INFO | 📏 Existing GridLayoutManager: 4 columns
+2025-11-19 10:41:38,625 | INFO | 📏 Existing GridLayoutManager: 3 columns
+2025-11-19 10:41:38,625 | INFO | 📏 Existing GridLayoutManager: 3 columns
+2025-11-19 10:41:38,625 | INFO | [MainController] Injection state: running
+2025-11-19 10:41:38,626 | INFO | [MainController] Injection succeeded
+2025-11-19 10:41:38,626 | INFO | [InjectionController] Script injected successfully
+2025-11-19 10:41:47,490 | INFO | 📐 GridLayoutManager created: 2 columns
+2025-11-19 10:41:47,490 | INFO |    Context: dagger.hilt.android.internal.managers.ViewComponentManager$FragmentContextWrapper
+2025-11-19 10:42:02,370 | INFO | [MainController] Injection state: stopping
+2025-11-19 10:42:02,377 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 10:42:02,378 | INFO | [MainController] Injection state: stopped
+2025-11-19 10:42:03,258 | INFO | [MainController] Injection state: injecting
+2025-11-19 10:42:03,295 | INFO | [InjectionController] Attaching to PID 20451...
+2025-11-19 10:42:03,592 | INFO | [InjectionController] Creating script...
+2025-11-19 10:42:03,594 | INFO | [InjectionController] Loading script...
+2025-11-19 10:42:03,620 | INFO | 🔍 Quick grid layout discovery...
+2025-11-19 10:42:03,651 | INFO | 📏 Existing GridLayoutManager: 4 columns
+2025-11-19 10:42:03,652 | INFO | 📏 Existing GridLayoutManager: 2 columns
+2025-11-19 10:42:03,652 | INFO | 📏 Existing GridLayoutManager: 3 columns
+2025-11-19 10:42:03,652 | INFO | 📏 Existing GridLayoutManager: 3 columns
+2025-11-19 10:42:03,652 | INFO | [MainController] Injection state: running
+2025-11-19 10:42:03,653 | INFO | [MainController] Injection succeeded
+2025-11-19 10:42:03,653 | INFO | [InjectionController] Script injected successfully
+2025-11-19 10:42:12,361 | INFO | 📐 GridLayoutManager created: 2 columns
+2025-11-19 10:42:12,362 | INFO |    Context: dagger.hilt.android.internal.managers.ViewComponentManager$FragmentContextWrapper
+2025-11-19 10:42:51,476 | INFO | [MainController] Injection state: stopping
+2025-11-19 10:42:51,483 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 10:42:51,484 | INFO | [MainController] Injection state: stopped
+2025-11-19 10:42:52,122 | INFO | [MainController] Injection state: injecting
+2025-11-19 10:42:52,159 | INFO | [InjectionController] Attaching to PID 20451...
+2025-11-19 10:42:52,455 | INFO | [InjectionController] Creating script...
+2025-11-19 10:42:52,457 | INFO | [InjectionController] Loading script...
+2025-11-19 10:42:52,484 | INFO | 🔍 Quick image discovery...
+2025-11-19 10:42:52,506 | INFO | [MainController] Injection state: running
+2025-11-19 10:42:52,506 | INFO | [MainController] Injection succeeded
+2025-11-19 10:42:52,507 | INFO | [InjectionController] Script injected successfully
+2025-11-19 10:43:27,931 | INFO | [MainController] Injection state: stopping
+2025-11-19 10:43:27,938 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 10:43:27,939 | INFO | [MainController] Injection state: stopped
+2025-11-19 10:43:31,726 | INFO | [MainController] Injection state: injecting
+2025-11-19 10:43:31,762 | INFO | [InjectionController] Attaching to PID 20451...
+2025-11-19 10:43:32,064 | INFO | [InjectionController] Creating script...
+2025-11-19 10:43:32,067 | INFO | [InjectionController] Loading script...
+2025-11-19 10:43:32,094 | INFO | 🔍 Discovering image view configuration...
+2025-11-19 10:43:32,094 | INFO | 
+🎯 Image View: android.widget.ImageView
+2025-11-19 10:43:32,114 | INFO | 
+🎯 Image View: androidx.appcompat.widget.AppCompatImageView
+2025-11-19 10:43:32,116 | INFO | [MainController] Injection state: running
+2025-11-19 10:43:32,117 | INFO | [MainController] Injection succeeded
+2025-11-19 10:43:32,117 | INFO | [InjectionController] Script injected successfully
+2025-11-19 10:43:36,837 | INFO | 🖼️ setImageResource: 2131232391
+2025-11-19 10:43:36,839 | INFO | 🖼️ setImageResource: 2131232391
+2025-11-19 10:43:36,847 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 17x13
+2025-11-19 10:43:36,851 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 17x13
+2025-11-19 10:43:36,871 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:36,892 | INFO | 🖼️ setImageResource: 2131232391
+2025-11-19 10:43:36,897 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:36,899 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:36,900 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:36,900 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 17x13
+2025-11-19 10:43:36,928 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:36,929 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:36,930 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:36,942 | INFO | 🖼️ setImageResource: 2131231618
+2025-11-19 10:43:36,958 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:36,960 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:36,961 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 14x10
+2025-11-19 10:43:36,963 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:37,023 | INFO | 🖼️ setImageResource: 2131232323
+2025-11-19 10:43:37,024 | INFO | 🖼️ setImageResource: 2131232104
+2025-11-19 10:43:37,129 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageButton - 56x24
+2025-11-19 10:43:37,129 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 10x10
+2025-11-19 10:43:37,201 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageButton - 56x24
+2025-11-19 10:43:37,202 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 10x10
+2025-11-19 10:43:37,270 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageButton - 56x24
+2025-11-19 10:43:37,270 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 10x10
+2025-11-19 10:43:37,347 | INFO | 🖼️ setImageResource: 2131232398
+2025-11-19 10:43:37,347 | INFO | 🖼️ setImageResource: 2131232398
+2025-11-19 10:43:37,355 | INFO | 🖼️ setImageResource: 2131232398
+2025-11-19 10:43:37,382 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,385 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 56x56
+2025-11-19 10:43:37,386 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 56x56
+2025-11-19 10:43:37,394 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,396 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 56x56
+2025-11-19 10:43:37,396 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 56x56
+2025-11-19 10:43:37,407 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,412 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 56x56
+2025-11-19 10:43:37,413 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 56x56
+2025-11-19 10:43:37,466 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,467 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,468 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,468 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,474 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,474 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,475 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,475 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,482 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,482 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,482 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,482 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,496 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:37,500 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:37,503 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:37,506 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:37,512 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:37,514 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:37,516 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:37,517 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,517 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,518 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,518 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,557 | INFO | 🖼️ setImageResource: 2131232398
+2025-11-19 10:43:37,558 | INFO | 🖼️ setImageResource: 2131232398
+2025-11-19 10:43:37,559 | INFO | 🖼️ setImageResource: 2131232398
+2025-11-19 10:43:37,644 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,646 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,647 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 32x20
+2025-11-19 10:43:37,647 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,648 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,649 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,650 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,650 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,651 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,665 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,666 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,667 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,702 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,703 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,704 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,705 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,705 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,706 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,707 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,708 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:37,730 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,731 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,731 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,731 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,731 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,732 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,732 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,732 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:37,734 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,735 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,735 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,735 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,736 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,737 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,737 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:37,737 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:38,053 | INFO | 🖼️ setImageResource: 2131232398
+2025-11-19 10:43:38,126 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:38,133 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:38,155 | INFO | 🖼️ setImageResource: 2131232398
+2025-11-19 10:43:38,161 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:38,162 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:38,162 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:38,178 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:38,178 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:38,179 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:38,192 | INFO | 🖼️ setImageResource: 2131232398
+2025-11-19 10:43:38,243 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:38,245 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:38,245 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:38,245 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:38,245 | INFO | 🖼️ setImageResource: 2131230855
+2025-11-19 10:43:38,250 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:38,250 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:38,251 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:38,251 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:38,251 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:40,672 | INFO | 🖼️ setImageResource: 2131232323
+2025-11-19 10:43:40,737 | INFO | 🖼️ setImageResource: 2131232391
+2025-11-19 10:43:40,738 | INFO | 🖼️ setImageResource: 2131232391
+2025-11-19 10:43:40,743 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 17x13
+2025-11-19 10:43:40,743 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 17x13
+2025-11-19 10:43:40,753 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:40,765 | INFO | 🖼️ setImageResource: 2131232391
+2025-11-19 10:43:40,769 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:40,769 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:40,771 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:40,771 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 17x13
+2025-11-19 10:43:40,787 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:40,787 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:40,788 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:40,797 | INFO | 🖼️ setImageResource: 2131231618
+2025-11-19 10:43:40,804 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:40,805 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:40,805 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 14x10
+2025-11-19 10:43:40,806 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:44,747 | INFO | 🖼️ setImageResource: 2131232323
+2025-11-19 10:43:44,747 | INFO | 🖼️ setImageResource: 2131232104
+2025-11-19 10:43:44,842 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageButton - 56x24
+2025-11-19 10:43:44,842 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 10x10
+2025-11-19 10:43:44,903 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageButton - 56x24
+2025-11-19 10:43:44,903 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 10x10
+2025-11-19 10:43:44,992 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageButton - 56x24
+2025-11-19 10:43:44,992 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 10x10
+2025-11-19 10:43:45,065 | INFO | 🖼️ setImageResource: 2131232398
+2025-11-19 10:43:45,066 | INFO | 🖼️ setImageResource: 2131232398
+2025-11-19 10:43:45,067 | INFO | 🖼️ setImageResource: 2131232398
+2025-11-19 10:43:45,096 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,099 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 56x56
+2025-11-19 10:43:45,099 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 56x56
+2025-11-19 10:43:45,107 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,109 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 56x56
+2025-11-19 10:43:45,110 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 56x56
+2025-11-19 10:43:45,118 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,122 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 56x56
+2025-11-19 10:43:45,122 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 56x56
+2025-11-19 10:43:45,172 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:45,173 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:45,176 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:45,176 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:45,184 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:45,187 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:45,202 | INFO | 🖼️ setImageResource: 2131232398
+2025-11-19 10:43:45,202 | INFO | 🖼️ setImageResource: 2131232398
+2025-11-19 10:43:45,235 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,236 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,237 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,238 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,239 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,281 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,283 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,284 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 32x20
+2025-11-19 10:43:45,285 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,285 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,286 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,286 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,287 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,288 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,288 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,289 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,291 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 16x16
+2025-11-19 10:43:45,305 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:45,306 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:45,306 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:45,306 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:45,306 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:45,307 | INFO | 🖼️ setImageResource: 2131230855
+2025-11-19 10:43:45,308 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:45,308 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:45,309 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:45,309 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:45,309 | INFO | 🖼️ setImageResource: 2131232448
+2025-11-19 10:43:45,309 | INFO | 🖼️ setImageResource: 2131230855
+2025-11-19 10:43:45,316 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:45,318 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:45,320 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:45,321 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:45,321 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:45,322 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:45,322 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:45,322 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:45,322 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:45,325 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:45,327 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:45,329 | INFO | 📏 View layout: com.grindrapp.android.ui.photos.ZoomableImageView - 480x508
+2025-11-19 10:43:45,330 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:45,331 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:45,331 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:45,332 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:45,332 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:45,332 | INFO | 📏 View layout: android.widget.ImageView - 16x16
+2025-11-19 10:43:45,730 | INFO | 🖼️ setImageResource: 2131232323
+2025-11-19 10:43:47,314 | INFO | 🖼️ setImageResource: 2131232391
+2025-11-19 10:43:47,317 | INFO | 🖼️ setImageResource: 2131232391
+2025-11-19 10:43:47,319 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 17x13
+2025-11-19 10:43:47,320 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 17x13
+2025-11-19 10:43:47,329 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:47,341 | INFO | 🖼️ setImageResource: 2131232391
+2025-11-19 10:43:47,344 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:47,345 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:47,346 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:47,347 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 17x13
+2025-11-19 10:43:47,363 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:47,364 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:47,365 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:47,374 | INFO | 🖼️ setImageResource: 2131231618
+2025-11-19 10:43:47,382 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:47,383 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:47,384 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 14x10
+2025-11-19 10:43:47,384 | INFO | 📏 View layout: androidx.appcompat.widget.AppCompatImageView - 158x158
+2025-11-19 10:43:49,971 | INFO | 🖼️ setImageResource: 2131232323
+2025-11-19 10:43:49,971 | INFO | 🖼️ setImageResource: 2131232104
+2025-11-19 10:43:49,987 | INFO | 📏 View layout: androidx.swiperefreshlayout.widget.CircleImageView - 40x40
+2025-11-19 10:43:50,421 | INFO | 🖼️ setImageResource: 2131232323
+2025-11-19 10:44:43,576 | INFO | [MainController] Injection state: stopping
+2025-11-19 10:44:43,582 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 10:44:43,583 | INFO | [MainController] Injection state: stopped
+2025-11-19 10:44:49,430 | INFO | [MainController] Injection state: injecting
+2025-11-19 10:44:49,467 | INFO | [InjectionController] Attaching to PID 20451...
+2025-11-19 10:44:49,767 | INFO | [InjectionController] Creating script...
+2025-11-19 10:44:49,770 | INFO | [InjectionController] Loading script...
+2025-11-19 10:44:49,797 | INFO | 🔍 Discovering grid layout configuration...
+2025-11-19 10:44:50,214 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.PartialProfileItemDataJsonAdapter
+2025-11-19 10:44:50,231 | INFO | 
+🎯 UI Class: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment
+2025-11-19 10:44:50,244 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.FavoritesHeaderDataJsonAdapter
+2025-11-19 10:44:50,245 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.InsertableDataJsonAdapter
+2025-11-19 10:44:50,254 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_ProfileJsonAdapter
+2025-11-19 10:44:50,266 | INFO | 
+🎯 UI Class: com.grindrapp.android.favorites.presentation.ui.Hilt_FavoritesFragment
+2025-11-19 10:44:50,267 | INFO |    - onGetLayoutInflater (1 params)
+2025-11-19 10:44:50,267 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_InsertableJsonAdapter
+2025-11-19 10:44:50,274 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.FavoritesXtraUpsellDataJsonAdapter
+2025-11-19 10:44:50,310 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_HiddenProfileJsonAdapter
+2025-11-19 10:44:50,315 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.InsertableFiltersJsonAdapter
+2025-11-19 10:44:50,324 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.TopPicksItemJsonAdapter
+2025-11-19 10:44:50,330 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_FavoritesHeaderJsonAdapter
+2025-11-19 10:44:50,348 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_AdJsonAdapter
+2025-11-19 10:44:50,355 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_FavoritesXtraUpsellJsonAdapter
+2025-11-19 10:44:50,373 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$A
+2025-11-19 10:44:50,374 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$B
+2025-11-19 10:44:50,374 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$C
+2025-11-19 10:44:50,375 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$D
+2025-11-19 10:44:50,375 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$E
+2025-11-19 10:44:50,376 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$F
+2025-11-19 10:44:50,376 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$G
+2025-11-19 10:44:50,376 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$H
+2025-11-19 10:44:50,377 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$I
+2025-11-19 10:44:50,377 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$J
+2025-11-19 10:44:50,378 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$K
+2025-11-19 10:44:50,379 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$L
+2025-11-19 10:44:50,379 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$M
+2025-11-19 10:44:50,380 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$N
+2025-11-19 10:44:50,381 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$O
+2025-11-19 10:44:50,381 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$P
+2025-11-19 10:44:50,385 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$a
+2025-11-19 10:44:50,385 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$b
+2025-11-19 10:44:50,386 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$d
+2025-11-19 10:44:50,386 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$e
+2025-11-19 10:44:50,387 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$f
+2025-11-19 10:44:50,388 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$g
+2025-11-19 10:44:50,388 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.Hilt_CascadeFragment
+2025-11-19 10:44:50,389 | INFO |    - onGetLayoutInflater (1 params)
+2025-11-19 10:44:50,389 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$h
+2025-11-19 10:44:50,389 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$i
+2025-11-19 10:44:50,390 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$j
+2025-11-19 10:44:50,390 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$k
+2025-11-19 10:44:50,391 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$l
+2025-11-19 10:44:50,392 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$m
+2025-11-19 10:44:50,392 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$n
+2025-11-19 10:44:50,393 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$o
+2025-11-19 10:44:50,393 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$p
+2025-11-19 10:44:50,394 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$q
+2025-11-19 10:44:50,394 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$r
+2025-11-19 10:44:50,395 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$s
+2025-11-19 10:44:50,395 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$t
+2025-11-19 10:44:50,396 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$u
+2025-11-19 10:44:50,397 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$v
+2025-11-19 10:44:50,398 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$w
+2025-11-19 10:44:50,398 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$x
+2025-11-19 10:44:50,398 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.SponsorProfileAdJsonAdapter
+2025-11-19 10:44:50,399 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$y
+2025-11-19 10:44:50,400 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$z
+2025-11-19 10:44:50,410 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.TopPicksDataJsonAdapter
+2025-11-19 10:44:50,412 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.SocialNetwork2JsonAdapter
+2025-11-19 10:44:50,414 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.BrowseExploreMapFragment
+2025-11-19 10:44:50,459 | INFO | 
+🎯 UI Class: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment$a
+2025-11-19 10:44:50,459 | INFO | 
+🎯 UI Class: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment$c
+2025-11-19 10:44:50,460 | INFO | 
+🎯 UI Class: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment$d
+2025-11-19 10:44:50,460 | INFO | 
+🎯 UI Class: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment$e
+2025-11-19 10:44:50,461 | INFO | 
+🎯 UI Class: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment$f
+2025-11-19 10:44:50,461 | INFO | 
+🎯 UI Class: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment$g
+2025-11-19 10:44:50,462 | INFO | 
+🎯 UI Class: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment$h
+2025-11-19 10:44:50,462 | INFO | 
+🎯 UI Class: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment$i
+2025-11-19 10:44:50,463 | INFO | 
+🎯 UI Class: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment$j
+2025-11-19 10:44:50,463 | INFO | 
+🎯 UI Class: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment$k
+2025-11-19 10:44:50,467 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadePageJsonAdapter
+2025-11-19 10:44:50,491 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_SponsoredProfileJsonAdapter
+2025-11-19 10:44:50,500 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_TopPicksJsonAdapter
+2025-11-19 10:44:50,508 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_PartialProfileJsonAdapter
+2025-11-19 10:44:50,514 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.ProfileItemDataJsonAdapter
+2025-11-19 10:44:50,519 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.ServerDrivenCascadeApiItem_ExploreInsertableJsonAdapter
+2025-11-19 10:44:50,520 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment$initRecyclerView$1$1
+2025-11-19 10:44:50,521 | INFO |    - onLayoutCompleted (1 params)
+2025-11-19 10:44:50,552 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.CascadeFragment
+2025-11-19 10:44:50,565 | INFO | 
+🎯 UI Class: com.grindrapp.android.api.serverdrivencascade.AdDataJsonAdapter
+2025-11-19 10:44:50,570 | INFO | 
+🎯 UI Class: com.grindrapp.android.ui.browse.Hilt_BrowseExploreMapFragment
+2025-11-19 10:44:50,570 | INFO |    - onGetLayoutInflater (1 params)
+2025-11-19 10:44:50,597 | INFO | 
+🎯 UI Class: org.chromium.content.browser.input.ImeAdapterImpl
+2025-11-19 10:44:50,600 | INFO | 
+🎯 UI Class: org.chromium.content.browser.input.ImeAdapterImpl$ShowKeyboardResultReceiver
+2025-11-19 10:44:50,711 | INFO | [MainController] Injection state: running
+2025-11-19 10:44:50,712 | INFO | [MainController] Injection succeeded
+2025-11-19 10:44:50,712 | INFO | [InjectionController] Script injected successfully
+2025-11-19 13:37:34,508 | INFO | [InjectionController] Session detached: process-terminated
+2025-11-19 13:37:34,510 | INFO | [MainController] Injection state: stopping
+2025-11-19 13:37:34,512 | INFO | [StopScriptWorker] Error unloading script: script is destroyed
+2025-11-19 13:37:34,516 | INFO | [MainController] Injection state: stopped
+2025-11-19 13:48:37,047 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 13:48:37,058 | INFO | [MainController] Process selected: PID 260 on 127.0.0.1:58526
+2025-11-19 13:48:41,429 | INFO | [MainController] Process selected: PID 18186 on 127.0.0.1:58526
+2025-11-19 13:48:42,861 | INFO | [MainController] Injection state: injecting
+2025-11-19 13:48:42,896 | INFO | [InjectionController] Attaching to PID 18186...
+2025-11-19 13:48:43,195 | INFO | [InjectionController] Creating script...
+2025-11-19 13:48:43,197 | INFO | [InjectionController] Loading script...
+2025-11-19 13:48:43,225 | INFO | 
+[*] Hooks loaded. Please open the Grindr app and navigate to Browse and Favorites tabs...
+2025-11-19 13:48:43,249 | INFO | [MainController] Injection state: running
+2025-11-19 13:48:43,254 | INFO | [MainController] Injection succeeded
+2025-11-19 13:48:43,254 | INFO | [InjectionController] Script injected successfully
+2025-11-19 13:49:04,546 | INFO | ==================================================
+2025-11-19 13:49:04,546 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.home.presentation.ui.TabbedHomeFragment
+2025-11-19 13:49:04,546 | INFO | ==================================================
+2025-11-19 13:49:04,547 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 13:49:04,548 | INFO | Field Name: 'i' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 13:49:04,549 | INFO | Field Name: 'j' | Type: kotlin.Lazy
+2025-11-19 13:49:04,550 | INFO | Field Name: 'k' | Type: kotlin.Lazy
+2025-11-19 13:49:04,550 | INFO | Field Name: 'l' | Type: kotlin.Lazy
+2025-11-19 13:49:04,551 | INFO | Field Name: 'm' | Type: kotlin.Lazy
+2025-11-19 13:49:04,552 | INFO | Field Name: 'n' | Type: androidx.viewpager2.widget.ViewPager2
+2025-11-19 13:49:04,552 | INFO | Field Name: 'o' | Type: kotlin.Lazy
+2025-11-19 13:49:04,553 | INFO | Field Name: 'p' | Type: K9.G0
+2025-11-19 13:49:04,553 | INFO | Field Name: 'q' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 13:49:04,554 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 13:49:04,561 | INFO |     >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 13:49:04,561 | INFO |         ID Int: 1
+2025-11-19 13:49:04,561 | INFO |         ID String: 'UNKNOWN_ID'  <-- USE THIS IN KOTLIN
+2025-11-19 13:49:04,562 | INFO |         LayoutManager: androidx.viewpager2.widget.ViewPager2$LinearLayoutManagerImpl
+2025-11-19 13:49:04,567 | INFO |               >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 13:49:04,567 | INFO |                   ID Int: 2131364389
+2025-11-19 13:49:04,568 | INFO |                   ID String: 'recycler_view'  <-- USE THIS IN KOTLIN
+2025-11-19 13:49:04,568 | INFO |                   LayoutManager: com.grindrapp.android.ui.browse.CascadeFragment$initRecyclerView$1$1
+2025-11-19 13:49:04,713 | INFO | ==================================================
+2025-11-19 13:49:04,713 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.ui.browse.CascadeFragment
+2025-11-19 13:49:04,713 | INFO | ==================================================
+2025-11-19 13:49:04,714 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 13:49:04,715 | INFO | Field Name: 'A' | Type: kotlinx.coroutines.CoroutineScope
+2025-11-19 13:49:04,715 | INFO | Field Name: 'B' | Type: com.grindrapp.android.utils.DispatcherFacade
+2025-11-19 13:49:04,716 | INFO | Field Name: 'C' | Type: com.grindrapp.android.utils.DistanceUtils
+2025-11-19 13:49:04,716 | INFO | Field Name: 'D' | Type: A9.c
+2025-11-19 13:49:04,716 | INFO | Field Name: 'E' | Type: com.grindrapp.android.platform.datastore.PermanentPrefs
+2025-11-19 13:49:04,717 | INFO | Field Name: 'F' | Type: j5.i
+2025-11-19 13:49:04,717 | INFO | Field Name: 'G' | Type: K5.a
+2025-11-19 13:49:04,718 | INFO | Field Name: 'H' | Type: com.grindrapp.android.featureflags.IsFeatureFlagEnabled
+2025-11-19 13:49:04,718 | INFO | Field Name: 'I' | Type: Y4.c
+2025-11-19 13:49:04,719 | INFO | Field Name: 'J' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 13:49:04,719 | INFO | Field Name: 'K' | Type: kotlin.Lazy
+2025-11-19 13:49:04,720 | INFO | Field Name: 'L' | Type: kotlin.Lazy
+2025-11-19 13:49:04,720 | INFO | Field Name: 'M' | Type: kotlin.Lazy
+2025-11-19 13:49:04,721 | INFO | Field Name: 'N' | Type: kotlin.Lazy
+2025-11-19 13:49:04,721 | INFO | Field Name: 'O' | Type: kotlin.Lazy
+2025-11-19 13:49:04,722 | INFO | Field Name: 'P' | Type: kotlin.Lazy
+2025-11-19 13:49:04,722 | INFO | Field Name: 'Q' | Type: kotlin.Lazy
+2025-11-19 13:49:04,722 | INFO | Field Name: 'R' | Type: Sg.O
+2025-11-19 13:49:04,723 | INFO | Field Name: 'S' | Type: kotlin.Lazy
+2025-11-19 13:49:04,723 | INFO | Field Name: 'T' | Type: kf.a
+2025-11-19 13:49:04,724 | INFO | Field Name: 'U' | Type: kf.m
+2025-11-19 13:49:04,724 | INFO | Field Name: 'V' | Type: java.util.ArrayList
+2025-11-19 13:49:04,725 | INFO | Field Name: 'W' | Type: float
+2025-11-19 13:49:04,725 | INFO | Field Name: 'X' | Type: kotlinx.coroutines.flow.MutableStateFlow
+2025-11-19 13:49:04,726 | INFO | Field Name: 'Y' | Type: int
+2025-11-19 13:49:04,726 | INFO | Field Name: 'Z' | Type: int
+2025-11-19 13:49:04,727 | INFO | Field Name: 'a0' | Type: boolean
+2025-11-19 13:49:04,727 | INFO | Field Name: 'b0' | Type: boolean
+2025-11-19 13:49:04,728 | INFO | Field Name: 'c0' | Type: boolean
+2025-11-19 13:49:04,728 | INFO | Field Name: 'd0' | Type: b9.b
+2025-11-19 13:49:04,729 | INFO | Field Name: 'e0' | Type: androidx.activity.result.ActivityResultLauncher
+2025-11-19 13:49:04,729 | INFO | Field Name: 'f0' | Type: kotlin.Lazy
+2025-11-19 13:49:04,730 | INFO | Field Name: 'g0' | Type: com.grindrapp.android.ui.browse.CascadeFragment$d
+2025-11-19 13:49:04,731 | INFO | Field Name: 'h0' | Type: kotlin.Lazy
+2025-11-19 13:49:04,731 | INFO | Field Name: 'i' | Type: K9.E1
+2025-11-19 13:49:04,732 | INFO | Field Name: 'i0' | Type: kotlin.Lazy
+2025-11-19 13:49:04,732 | INFO | Field Name: 'j' | Type: com.grindrapp.android.manager.store.f
+2025-11-19 13:49:04,732 | INFO | Field Name: 'j0' | Type: kotlin.Lazy
+2025-11-19 13:49:04,733 | INFO | Field Name: 'k' | Type: uc.b
+2025-11-19 13:49:04,733 | INFO | Field Name: 'k0' | Type: k8.a
+2025-11-19 13:49:04,734 | INFO | Field Name: 'l' | Type: com.grindrapp.android.analytics.GrindrAnalyticsV2
+2025-11-19 13:49:04,734 | INFO | Field Name: 'l0' | Type: androidx.activity.result.ActivityResultLauncher
+2025-11-19 13:49:04,735 | INFO | Field Name: 'm' | Type: xd.e
+2025-11-19 13:49:04,735 | INFO | Field Name: 'm0' | Type: androidx.activity.result.ActivityResultLauncher
+2025-11-19 13:49:04,736 | INFO | Field Name: 'n' | Type: com.grindrapp.android.usersession.UserSession
+2025-11-19 13:49:04,737 | INFO | Field Name: 'n0' | Type: androidx.activity.result.ActivityResultLauncher
+2025-11-19 13:49:04,737 | INFO | Field Name: 'o' | Type: com.grindrapp.android.persistence.repository.filters.CascadeFiltersRepo
+2025-11-19 13:49:04,738 | INFO | Field Name: 'p' | Type: com.grindrapp.android.ui.editprofile.d
+2025-11-19 13:49:04,738 | INFO | Field Name: 'q' | Type: t5.h
+2025-11-19 13:49:04,739 | INFO | Field Name: 'r' | Type: Td.a
+2025-11-19 13:49:04,740 | INFO | Field Name: 's' | Type: com.grindrapp.android.manager.SettingsManager
+2025-11-19 13:49:04,741 | INFO | Field Name: 't' | Type: K9.G0
+2025-11-19 13:49:04,741 | INFO | Field Name: 'u' | Type: Gf.i
+2025-11-19 13:49:04,742 | INFO | Field Name: 'v' | Type: w5.b
+2025-11-19 13:49:04,742 | INFO | Field Name: 'w' | Type: K5.h
+2025-11-19 13:49:04,743 | INFO | Field Name: 'x' | Type: K5.j
+2025-11-19 13:49:04,743 | INFO | Field Name: 'y' | Type: vf.a
+2025-11-19 13:49:04,744 | INFO | Field Name: 'z' | Type: vf.p
+2025-11-19 13:49:04,745 | INFO | Field Name: 'o0' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 13:49:04,746 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 13:49:04,749 | INFO |       >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 13:49:04,749 | INFO |           ID Int: 2131364389
+2025-11-19 13:49:04,749 | INFO |           ID String: 'recycler_view'  <-- USE THIS IN KOTLIN
+2025-11-19 13:49:04,750 | INFO |           LayoutManager: com.grindrapp.android.ui.browse.CascadeFragment$initRecyclerView$1$1
+2025-11-19 13:49:04,890 | INFO | ==================================================
+2025-11-19 13:49:04,891 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment
+2025-11-19 13:49:04,891 | INFO | ==================================================
+2025-11-19 13:49:04,891 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 13:49:04,891 | INFO | Field Name: 'i' | Type: K9.E1
+2025-11-19 13:49:04,892 | INFO | Field Name: 'j' | Type: uc.b
+2025-11-19 13:49:04,892 | INFO | Field Name: 'k' | Type: q8.c
+2025-11-19 13:49:04,893 | INFO | Field Name: 'l' | Type: q8.b
+2025-11-19 13:49:04,893 | INFO | Field Name: 'm' | Type: com.grindrapp.android.analytics.GrindrAnalyticsV2
+2025-11-19 13:49:04,895 | INFO | Field Name: 'n' | Type: com.grindrapp.android.usersession.UserSession
+2025-11-19 13:49:04,895 | INFO | Field Name: 'o' | Type: Sg.x
+2025-11-19 13:49:04,896 | INFO | Field Name: 'p' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 13:49:04,897 | INFO | Field Name: 'q' | Type: kotlin.Lazy
+2025-11-19 13:49:04,897 | INFO | Field Name: 'r' | Type: kotlin.Lazy
+2025-11-19 13:49:04,897 | INFO | Field Name: 's' | Type: k8.a
+2025-11-19 13:49:04,898 | INFO | Field Name: 't' | Type: com.grindrapp.android.view.GrindrSearchView
+2025-11-19 13:49:04,898 | INFO | Field Name: 'u' | Type: p8.a
+2025-11-19 13:49:04,899 | INFO | Field Name: 'v' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 13:49:04,899 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 13:49:04,909 | INFO |     >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 13:49:04,910 | INFO |         ID Int: 2131363169
+2025-11-19 13:49:04,910 | INFO |         ID String: 'fragment_favorite_recycler_view'  <-- USE THIS IN KOTLIN
+2025-11-19 13:49:04,910 | INFO |         LayoutManager: androidx.recyclerview.widget.GridLayoutManager
+2025-11-19 13:49:04,937 | INFO | ==================================================
+2025-11-19 13:49:04,937 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.ui.inbox.v3.ui.InboxFragment
+2025-11-19 13:49:04,937 | INFO | ==================================================
+2025-11-19 13:49:04,937 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 13:49:04,937 | INFO | Field Name: 'i' | Type: Td.a
+2025-11-19 13:49:04,938 | INFO | Field Name: 'j' | Type: kotlin.Lazy
+2025-11-19 13:49:04,939 | INFO | Field Name: 'k' | Type: kotlin.Lazy
+2025-11-19 13:49:04,940 | INFO | Field Name: 'l' | Type: kotlin.Lazy
+2025-11-19 13:49:04,941 | INFO | Field Name: 'm' | Type: vf.p
+2025-11-19 13:49:04,941 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 13:49:04,950 | INFO |                 >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 13:49:04,950 | INFO |                     ID Int: 2131361998
+2025-11-19 13:49:04,951 | INFO |                     ID String: 'albums_list'  <-- USE THIS IN KOTLIN
+2025-11-19 13:49:04,951 | INFO |                     LayoutManager: androidx.recyclerview.widget.GridLayoutManager
+2025-11-19 13:49:04,966 | INFO | ==================================================
+2025-11-19 13:49:04,966 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.ui.albums.AlbumsListFragment
+2025-11-19 13:49:04,967 | INFO | ==================================================
+2025-11-19 13:49:04,967 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 13:49:04,967 | INFO | Field Name: 'i' | Type: com.grindrapp.android.usersession.UserSession
+2025-11-19 13:49:04,968 | INFO | Field Name: 'j' | Type: com.grindrapp.android.analytics.GrindrAnalyticsV2
+2025-11-19 13:49:04,968 | INFO | Field Name: 'k' | Type: Td.a
+2025-11-19 13:49:04,969 | INFO | Field Name: 'l' | Type: l4.a
+2025-11-19 13:49:04,970 | INFO | Field Name: 'm' | Type: kotlin.Lazy
+2025-11-19 13:49:04,970 | INFO | Field Name: 'n' | Type: kotlin.Lazy
+2025-11-19 13:49:04,971 | INFO | Field Name: 'o' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 13:49:04,973 | INFO | Field Name: 'r' | Type: boolean
+2025-11-19 13:49:04,974 | INFO | Field Name: 's' | Type: com.grindrapp.android.ui.albums.e
+2025-11-19 13:49:04,975 | INFO | Field Name: 't' | Type: com.grindrapp.android.ui.albums.d
+2025-11-19 13:49:04,975 | INFO | Field Name: 'u' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 13:49:04,976 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 13:49:04,982 | INFO |       >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 13:49:04,982 | INFO |           ID Int: 2131361998
+2025-11-19 13:49:04,982 | INFO |           ID String: 'albums_list'  <-- USE THIS IN KOTLIN
+2025-11-19 13:49:04,982 | INFO |           LayoutManager: androidx.recyclerview.widget.GridLayoutManager
+2025-11-19 13:49:04,999 | INFO | ==================================================
+2025-11-19 13:49:04,999 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.radar.presentation.ui.RadarFragment
+2025-11-19 13:49:05,000 | INFO | ==================================================
+2025-11-19 13:49:05,000 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 13:49:05,000 | INFO | Field Name: 'i' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 13:49:05,001 | INFO | Field Name: 'j' | Type: W4.z
+2025-11-19 13:49:05,001 | INFO | Field Name: 'k' | Type: kotlin.Lazy
+2025-11-19 13:49:05,002 | INFO | Field Name: 'l' | Type: kotlin.Lazy
+2025-11-19 13:49:05,003 | INFO | Field Name: 'm' | Type: kotlin.Lazy
+2025-11-19 13:49:05,003 | INFO | Field Name: 'n' | Type: kotlin.Lazy
+2025-11-19 13:49:05,004 | INFO | Field Name: 'o' | Type: kotlin.Lazy
+2025-11-19 13:49:05,004 | INFO | Field Name: 'p' | Type: com.grindrapp.android.radar.presentation.ui.RadarFragment$a
+2025-11-19 13:49:05,005 | INFO | Field Name: 'q' | Type: com.grindrapp.android.radar.presentation.ui.RadarFragment$d
+2025-11-19 13:49:05,006 | INFO | Field Name: 'r' | Type: androidx.compose.runtime.MutableIntState
+2025-11-19 13:49:05,007 | INFO | Field Name: 's' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 13:49:05,007 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 13:49:05,009 | INFO |     >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 13:49:05,009 | INFO |         ID Int: 86
+2025-11-19 13:49:05,009 | INFO |         ID String: 'UNKNOWN_ID'  <-- USE THIS IN KOTLIN
+2025-11-19 13:49:05,010 | INFO |         LayoutManager: androidx.viewpager2.widget.ViewPager2$LinearLayoutManagerImpl
+2025-11-19 13:49:05,017 | INFO |                 >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 13:49:05,017 | INFO |                     ID Int: 2131364389
+2025-11-19 13:49:05,017 | INFO |                     ID String: 'recycler_view'  <-- USE THIS IN KOTLIN
+2025-11-19 13:49:05,018 | INFO |                     LayoutManager: androidx.recyclerview.widget.GridLayoutManager
+2025-11-19 13:49:05,100 | INFO | ==================================================
+2025-11-19 13:49:05,101 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.viewedme.presentation.ui.ViewedMeFragment
+2025-11-19 13:49:05,101 | INFO | ==================================================
+2025-11-19 13:49:05,101 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 13:49:05,101 | INFO | Field Name: 'A' | Type: boolean
+2025-11-19 13:49:05,102 | INFO | Field Name: 'B' | Type: dh.b
+2025-11-19 13:49:05,102 | INFO | Field Name: 'C' | Type: b9.b
+2025-11-19 13:49:05,103 | INFO | Field Name: 'D' | Type: androidx.activity.result.ActivityResultLauncher
+2025-11-19 13:49:05,103 | INFO | Field Name: 'E' | Type: kotlin.Lazy
+2025-11-19 13:49:05,104 | INFO | Field Name: 'F' | Type: Y6.L3
+2025-11-19 13:49:05,104 | INFO | Field Name: 'i' | Type: K9.y1
+2025-11-19 13:49:05,105 | INFO | Field Name: 'j' | Type: K9.E1
+2025-11-19 13:49:05,106 | INFO | Field Name: 'k' | Type: com.grindrapp.android.utils.ProfileUtilsV2
+2025-11-19 13:49:05,106 | INFO | Field Name: 'l' | Type: fh.a
+2025-11-19 13:49:05,107 | INFO | Field Name: 'm' | Type: Td.a
+2025-11-19 13:49:05,107 | INFO | Field Name: 'n' | Type: K9.G0
+2025-11-19 13:49:05,108 | INFO | Field Name: 'o' | Type: Sg.x
+2025-11-19 13:49:05,108 | INFO | Field Name: 'p' | Type: lh.a
+2025-11-19 13:49:05,108 | INFO | Field Name: 'q' | Type: com.grindrapp.android.utils.DistanceUtils
+2025-11-19 13:49:05,109 | INFO | Field Name: 'r' | Type: aa.r
+2025-11-19 13:49:05,110 | INFO | Field Name: 's' | Type: Sg.T
+2025-11-19 13:49:05,110 | INFO | Field Name: 't' | Type: android.view.View
+2025-11-19 13:49:05,110 | INFO | Field Name: 'u' | Type: a5.a
+2025-11-19 13:49:05,111 | INFO | Field Name: 'v' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 13:49:05,112 | INFO | Field Name: 'w' | Type: kotlin.Lazy
+2025-11-19 13:49:05,112 | INFO | Field Name: 'x' | Type: kotlin.Lazy
+2025-11-19 13:49:05,113 | INFO | Field Name: 'y' | Type: kotlin.Lazy
+2025-11-19 13:49:05,113 | INFO | Field Name: 'z' | Type: kotlin.Lazy
+2025-11-19 13:49:05,114 | INFO | Field Name: 'H' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 13:49:05,114 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 13:49:05,118 | INFO |         >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 13:49:05,118 | INFO |             ID Int: 2131364389
+2025-11-19 13:49:05,118 | INFO |             ID String: 'recycler_view'  <-- USE THIS IN KOTLIN
+2025-11-19 13:49:05,119 | INFO |             LayoutManager: androidx.recyclerview.widget.GridLayoutManager
+2025-11-19 13:51:36,829 | INFO | [InjectionController] Session detached: process-terminated

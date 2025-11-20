@@ -1,0 +1,36 @@
+2025-11-19 21:09:54,293 | INFO | Error refreshing favorites: HTTPSConnectionPool(host='konsumer.js.org', port=443): Max retries exceeded with url: /frida-codeshare/codeshare.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:992)')))
+2025-11-19 21:09:54,612 | INFO | Error fetching scripts: HTTPSConnectionPool(host='konsumer.js.org', port=443): Max retries exceeded with url: /frida-codeshare/codeshare.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:992)')))
+2025-11-19 21:09:54,668 | INFO | Error refreshing favorites: HTTPSConnectionPool(host='konsumer.js.org', port=443): Max retries exceeded with url: /frida-codeshare/codeshare.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:992)')))
+2025-11-19 21:09:55,182 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:09:55,455 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:10:00,854 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:10:00,865 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:10:21,766 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 21:10:21,766 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:10:21,798 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 21:10:41,911 | INFO | [InjectionController] Spawn/Injection failed: unexpectedly timed out while waiting for app to launch
+2025-11-19 21:10:41,911 | INFO | [MainController] Injection state: idle
+2025-11-19 21:10:41,912 | INFO | [MainController] Injection failed: unexpectedly timed out while waiting for app to launch
+2025-11-19 21:12:19,865 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 21:12:19,866 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:12:19,899 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 21:12:39,911 | INFO | [InjectionController] Spawn/Injection failed: unexpectedly timed out while waiting for app to launch
+2025-11-19 21:12:39,911 | INFO | [MainController] Injection state: idle
+2025-11-19 21:12:39,911 | INFO | [MainController] Injection failed: unexpectedly timed out while waiting for app to launch
+2025-11-19 21:13:51,605 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 21:13:51,606 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:13:51,640 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 21:14:11,912 | INFO | [InjectionController] Spawn/Injection failed: unexpectedly timed out while waiting for app to launch
+2025-11-19 21:14:11,912 | INFO | [MainController] Injection state: idle
+2025-11-19 21:14:11,912 | INFO | [MainController] Injection failed: unexpectedly timed out while waiting for app to launch
+2025-11-19 21:14:43,367 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:14:43,377 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:14:43,809 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:14:43,819 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:14:59,974 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 21:14:59,974 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:15:00,004 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 21:15:19,910 | INFO | [InjectionController] Spawn/Injection failed: unexpectedly timed out while waiting for app to launch
+2025-11-19 21:15:19,910 | INFO | [MainController] Injection state: idle
+2025-11-19 21:15:19,910 | INFO | [MainController] Injection failed: unexpectedly timed out while waiting for app to launch
+2025-11-19 21:21:15,668 | INFO | [MainController] Device selected: 127.0.0.1:58526

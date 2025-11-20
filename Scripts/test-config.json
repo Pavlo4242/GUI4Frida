@@ -1,0 +1,26 @@
+﻿{
+    "shape":  "VM.Standard.A1.Flex",
+    "shapeConfig":  {
+                        "memoryInGBs":  18,
+                        "ocpus":  3
+                    },
+    "availabilityDomain":  "POWm:US-PHOENIX-1-AD-1",
+    "displayName":  "PhatDNS",
+    "skipSourceDestCheck":  true,
+    "assignIpv6Ip":  true,
+    "assignPublicIp":  true,
+    "subnetId":  "ocid1.subnet.oc1.phx.aaaaaaaa22b7c5u4aombh2i4uy464rfpjc3hwuarxb2bxvr7u7nsfnd6clbq",
+    "metadata":  {
+                     "ssh_authorized_keys":  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEQzvyU0m+bIvsua6p1zZTyKgEkE2QcUteYC24++CeCcPOjfcOQNEz5GKwXPg/Q7IORyyOhhBY/K0ndYvn4bOOeUFZFMUm+u8+f791RTL9WheBt+NR5ho8ajlTt7oBssl8zL4Mf6aD4yT0hkDrwxbbT/wyewPfBUlwfu/B7urJmtbUXkrNT0D53BOy/fher4Aux6CN4jyuZi3ofEXYvikx0jVpEeqCUNEBQoQRxvFMCIs2UQS4gTfsJCsNT3/nLA+VBChKymoxQ95FZ7VW9aJvGcYQWv6it5rE9Y1qGychMt1GDKg8yTA/b1Mh2cuafxnW1limXy8wZdatC4CdkpZL ssh-key-2025-11-12"
+                 },
+    "compartmentId":  "ocid1.tenancy.oc1..aaaaaaaay74rl3ibuef3fdwl5mif5c6w75a3mwg62zq72vlzau23dav4w2wa",
+    "sourceDetails":  {
+                          "bootVolumeSizeInGBs":  50,
+                          "imageId":  "ocid1.image.oc1.phx.aaaaaaaa763q3puzj634z3wbwkywsomh2dfyqiv7yx764xjoj7a527324yaa",
+                          "sourceType":  "image"
+                      },
+    "availabilityConfig":  {
+                               "isLiveMigrationPreferred":  true
+                           },
+    "assignPrivateDnsRecord":  true
+}

@@ -1,0 +1,112 @@
+2025-11-19 21:30:36,471 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:30:36,740 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:30:40,936 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:30:40,946 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:30:50,696 | INFO | [MainController] Process selected: PID 71 on 127.0.0.1:58526
+2025-11-19 21:31:19,732 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:31:19,741 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:31:20,609 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:31:20,617 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:32:35,998 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:32:36,007 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:32:42,468 | INFO | [MainController] Process selected: PID 12834 on 127.0.0.1:58526
+2025-11-19 21:34:06,202 | INFO | ADB error: Command '['adb', '-s', '127.0.0.1:58526', 'shell', 'ps', '-A']' returned non-zero exit status 1.
+2025-11-19 21:34:09,208 | INFO | ADB error: Command '['adb', '-s', '127.0.0.1:58526', 'shell', 'ps', '-A']' returned non-zero exit status 1.
+2025-11-19 21:34:12,206 | INFO | ADB error: Command '['adb', '-s', '127.0.0.1:58526', 'shell', 'ps', '-A']' returned non-zero exit status 1.
+2025-11-19 21:34:15,203 | INFO | ADB error: Command '['adb', '-s', '127.0.0.1:58526', 'shell', 'ps', '-A']' returned non-zero exit status 1.
+2025-11-19 21:36:23,906 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:36:24,177 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 21:37:04,085 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 21:37:04,086 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:37:04,117 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 21:37:04,179 | INFO | [InjectionController] Attaching to spawned PID 7544...
+2025-11-19 21:37:04,443 | INFO | [InjectionController] Creating script for spawned process...
+2025-11-19 21:37:04,445 | INFO | [InjectionController] Loading script...
+2025-11-19 21:37:04,489 | INFO | [MainController] Injection state: running
+2025-11-19 21:37:04,490 | INFO | [MainController] Injection succeeded
+2025-11-19 21:37:04,492 | INFO | [InjectionController] Resuming application...
+2025-11-19 21:37:04,493 | INFO | [InjectionController] Spawn and injection successful
+2025-11-19 21:38:12,624 | INFO | [MainController] Injection state: stopping
+2025-11-19 21:38:12,632 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 21:38:12,633 | INFO | [MainController] Injection state: stopped
+2025-11-19 21:38:17,241 | INFO | [MainController] Process selected: PID 813 on 127.0.0.1:58526
+2025-11-19 21:38:17,388 | INFO | [MainController] Process selected: PID 255 on 127.0.0.1:58526
+2025-11-19 21:38:17,813 | INFO | [MainController] Process selected: PID 273 on 127.0.0.1:58526
+2025-11-19 21:38:20,526 | INFO | [MainController] Process selected: PID 273 on 127.0.0.1:58526
+2025-11-19 21:38:20,695 | INFO | [MainController] Process selected: PID 255 on 127.0.0.1:58526
+2025-11-19 21:38:20,856 | INFO | [MainController] Process selected: PID 813 on 127.0.0.1:58526
+2025-11-19 21:38:20,990 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 21:38:21,545 | INFO | [MainController] Process selected: PID 259 on 127.0.0.1:58526
+2025-11-19 21:38:21,861 | INFO | [MainController] Process selected: PID 7378 on 127.0.0.1:58526
+2025-11-19 21:38:23,457 | INFO | [MainController] Process selected: PID 7378 on 127.0.0.1:58526
+2025-11-19 21:38:23,604 | INFO | [MainController] Process selected: PID 259 on 127.0.0.1:58526
+2025-11-19 21:38:23,760 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 21:38:37,671 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:38:37,683 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 21:38:43,273 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:38:43,305 | INFO | [InjectionController] Attaching to PID 359...
+2025-11-19 21:38:43,575 | INFO | [InjectionController] Creating script...
+2025-11-19 21:38:43,576 | INFO | [InjectionController] Injection failed: script(line 17): SyntaxError: expecting ';'
+2025-11-19 21:38:43,576 | INFO | [MainController] Injection state: idle
+2025-11-19 21:38:43,577 | INFO | [MainController] Injection failed: script(line 17): SyntaxError: expecting ';'
+2025-11-19 21:40:55,060 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:40:55,094 | INFO | [InjectionController] Attaching to PID 359...
+2025-11-19 21:40:55,358 | INFO | [InjectionController] Creating script...
+2025-11-19 21:40:55,360 | INFO | [InjectionController] Loading script...
+2025-11-19 21:40:55,364 | INFO | [MainController] Injection state: running
+2025-11-19 21:40:55,365 | INFO | [MainController] Injection succeeded
+2025-11-19 21:40:55,365 | INFO | [InjectionController] Script injected successfully
+2025-11-19 21:45:06,191 | INFO | [MainController] Injection state: stopping
+2025-11-19 21:45:06,198 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 21:45:06,199 | INFO | [MainController] Injection state: stopped
+2025-11-19 21:45:07,168 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:45:07,198 | INFO | [InjectionController] Attaching to PID 359...
+2025-11-19 21:45:07,458 | INFO | [InjectionController] Creating script...
+2025-11-19 21:45:07,460 | INFO | [InjectionController] Loading script...
+2025-11-19 21:45:07,464 | INFO | [MainController] Injection state: running
+2025-11-19 21:45:07,464 | INFO | [MainController] Injection succeeded
+2025-11-19 21:45:07,465 | INFO | [InjectionController] Script injected successfully
+2025-11-19 21:45:10,466 | INFO | 
+
+[RECAPTCHA-WAITER] You are now on the password screen!
+2025-11-19 21:45:10,466 | INFO | [RECAPTCHA-WAITER] As soon as you type password + tap Continue → real token will print below
+2025-11-19 21:53:37,983 | INFO | [MainController] Injection state: stopping
+2025-11-19 21:53:37,991 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 21:53:37,991 | INFO | [MainController] Injection state: stopped
+2025-11-19 21:53:38,883 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:53:38,915 | INFO | [InjectionController] Attaching to PID 359...
+2025-11-19 21:53:39,181 | INFO | [InjectionController] Creating script...
+2025-11-19 21:53:39,182 | INFO | [InjectionController] Injection failed: script(line 1): SyntaxError: invalid first character of private name
+2025-11-19 21:53:39,182 | INFO | [MainController] Injection state: idle
+2025-11-19 21:53:39,183 | INFO | [MainController] Injection failed: script(line 1): SyntaxError: invalid first character of private name
+2025-11-19 21:53:49,240 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:53:49,271 | INFO | [InjectionController] Attaching to PID 359...
+2025-11-19 21:53:49,532 | INFO | [InjectionController] Creating script...
+2025-11-19 21:53:49,534 | INFO | [InjectionController] Injection failed: script(line 18): SyntaxError: unexpected end of string
+2025-11-19 21:53:49,534 | INFO | [MainController] Injection state: idle
+2025-11-19 21:53:49,535 | INFO | [MainController] Injection failed: script(line 18): SyntaxError: unexpected end of string
+2025-11-19 21:54:14,720 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:54:14,750 | INFO | [InjectionController] Attaching to PID 359...
+2025-11-19 21:54:15,007 | INFO | [InjectionController] Creating script...
+2025-11-19 21:54:15,008 | INFO | [InjectionController] Injection failed: script(line 18): SyntaxError: unexpected end of string
+2025-11-19 21:54:15,009 | INFO | [MainController] Injection state: idle
+2025-11-19 21:54:15,009 | INFO | [MainController] Injection failed: script(line 18): SyntaxError: unexpected end of string
+2025-11-19 21:54:19,922 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:54:19,952 | INFO | [InjectionController] Attaching to PID 359...
+2025-11-19 21:54:20,219 | INFO | [InjectionController] Creating script...
+2025-11-19 21:54:20,220 | INFO | [InjectionController] Injection failed: script(line 18): SyntaxError: unexpected end of string
+2025-11-19 21:54:20,220 | INFO | [MainController] Injection state: idle
+2025-11-19 21:54:20,221 | INFO | [MainController] Injection failed: script(line 18): SyntaxError: unexpected end of string
+2025-11-19 21:55:07,397 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:55:07,426 | INFO | [InjectionController] Attaching to PID 359...
+2025-11-19 21:55:07,687 | INFO | [InjectionController] Creating script...
+2025-11-19 21:55:07,688 | INFO | [InjectionController] Injection failed: script(line 40): SyntaxError: unexpected end of string
+2025-11-19 21:55:07,689 | INFO | [MainController] Injection state: idle
+2025-11-19 21:55:07,689 | INFO | [MainController] Injection failed: script(line 40): SyntaxError: unexpected end of string
+2025-11-19 21:55:40,045 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:55:40,075 | INFO | [InjectionController] Attaching to PID 359...
+2025-11-19 21:55:40,342 | INFO | [InjectionController] Creating script...
+2025-11-19 21:55:40,344 | INFO | [InjectionController] Loading script...
+2025-11-19 21:55:40,349 | INFO | [MainController] Injection state: running
+2025-11-19 21:55:40,353 | INFO | [MainController] Injection succeeded
+2025-11-19 21:55:40,354 | INFO | [InjectionController] Script injected successfully

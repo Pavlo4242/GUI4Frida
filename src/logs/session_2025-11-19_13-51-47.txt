@@ -1,0 +1,610 @@
+2025-11-19 13:51:50,379 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 13:51:50,657 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 13:55:50,813 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 13:55:50,824 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 13:56:11,768 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 13:56:11,768 | INFO | [MainController] Injection state: injecting
+2025-11-19 13:56:11,798 | INFO | [InjectionController] Spawning com.grindrapp.android...
+2025-11-19 13:56:11,859 | INFO | [InjectionController] Attaching to spawned PID 23144...
+2025-11-19 13:56:12,120 | INFO | [InjectionController] Creating script for spawned process...
+2025-11-19 13:56:12,122 | INFO | [InjectionController] Loading script...
+2025-11-19 13:56:12,165 | INFO | [MainController] Injection state: running
+2025-11-19 13:56:12,165 | INFO | [MainController] Injection succeeded
+2025-11-19 13:56:12,166 | INFO | [InjectionController] Resuming application...
+2025-11-19 13:56:12,167 | INFO | [InjectionController] Spawn and injection successful
+2025-11-19 13:56:35,776 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 13:56:35,786 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 13:56:38,856 | INFO | [MainController] Process selected: PID 709 on 127.0.0.1:58526
+2025-11-19 13:56:40,460 | INFO | [MainController] Process selected: PID 259 on 127.0.0.1:58526
+2025-11-19 13:56:40,633 | INFO | [MainController] Process selected: PID 260 on 127.0.0.1:58526
+2025-11-19 13:56:44,648 | INFO | [MainController] Process selected: PID 23144 on 127.0.0.1:58526
+2025-11-19 13:57:01,436 | INFO | [MainController] Injection state: stopping
+2025-11-19 13:57:01,443 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 13:57:01,445 | INFO | [MainController] Injection state: stopped
+2025-11-19 13:57:02,019 | INFO | [MainController] Injection state: injecting
+2025-11-19 13:57:02,051 | INFO | [InjectionController] Attaching to PID 23144...
+2025-11-19 13:57:02,351 | INFO | [InjectionController] Creating script...
+2025-11-19 13:57:02,353 | INFO | [InjectionController] Loading script...
+2025-11-19 13:57:02,382 | INFO | 
+[*] Hooks loaded. Please open the Grindr app and navigate to Browse and Favorites tabs...
+2025-11-19 13:57:02,405 | INFO | [MainController] Injection state: running
+2025-11-19 13:57:02,406 | INFO | [MainController] Injection succeeded
+2025-11-19 13:57:02,406 | INFO | [InjectionController] Script injected successfully
+2025-11-19 13:57:05,066 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 13:57:05,076 | INFO | [MainController] Process selected: PID 260 on 127.0.0.1:58526
+2025-11-19 13:57:07,351 | INFO | [MainController] Process selected: PID 23144 on 127.0.0.1:58526
+2025-11-19 13:57:13,983 | INFO | [MainController] Injection state: stopping
+2025-11-19 13:57:13,989 | INFO | [InjectionController] Session detached: application-requested
+2025-11-19 13:57:13,991 | INFO | [MainController] Injection state: stopped
+2025-11-19 13:57:19,710 | INFO | [MainController] Injection state: injecting
+2025-11-19 13:57:19,743 | INFO | [InjectionController] Attaching to PID 23144...
+2025-11-19 13:57:20,047 | INFO | [InjectionController] Creating script...
+2025-11-19 13:57:20,049 | INFO | [InjectionController] Loading script...
+2025-11-19 13:57:20,075 | INFO | 
+[*] Hooks loaded. Please open the Grindr app and navigate to Browse and Favorites tabs...
+2025-11-19 13:57:20,097 | INFO | [MainController] Injection state: running
+2025-11-19 13:57:20,097 | INFO | [MainController] Injection succeeded
+2025-11-19 13:57:20,098 | INFO | [InjectionController] Script injected successfully
+2025-11-19 13:57:39,636 | INFO | ==================================================
+2025-11-19 13:57:39,637 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.ui.inbox.v3.ui.InboxFragment
+2025-11-19 13:57:39,637 | INFO | ==================================================
+2025-11-19 13:57:39,637 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 13:57:39,639 | INFO | Field Name: 'i' | Type: Td.a
+2025-11-19 13:57:39,641 | INFO | Field Name: 'j' | Type: kotlin.Lazy
+2025-11-19 13:57:39,641 | INFO | Field Name: 'k' | Type: kotlin.Lazy
+2025-11-19 13:57:39,641 | INFO | Field Name: 'l' | Type: kotlin.Lazy
+2025-11-19 13:57:39,642 | INFO | Field Name: 'm' | Type: vf.p
+2025-11-19 13:57:39,643 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 13:57:39,731 | INFO | ==================================================
+2025-11-19 13:57:39,731 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.ui.albums.AlbumsListFragment
+2025-11-19 13:57:39,731 | INFO | ==================================================
+2025-11-19 13:57:39,731 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 13:57:39,731 | INFO | Field Name: 'i' | Type: com.grindrapp.android.usersession.UserSession
+2025-11-19 13:57:39,732 | INFO | Field Name: 'j' | Type: com.grindrapp.android.analytics.GrindrAnalyticsV2
+2025-11-19 13:57:39,732 | INFO | Field Name: 'k' | Type: Td.a
+2025-11-19 13:57:39,732 | INFO | Field Name: 'l' | Type: l4.a
+2025-11-19 13:57:39,733 | INFO | Field Name: 'm' | Type: kotlin.Lazy
+2025-11-19 13:57:39,733 | INFO | Field Name: 'n' | Type: kotlin.Lazy
+2025-11-19 13:57:39,733 | INFO | Field Name: 'o' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 13:57:39,734 | INFO | Field Name: 'r' | Type: boolean
+2025-11-19 13:57:39,735 | INFO | Field Name: 's' | Type: com.grindrapp.android.ui.albums.e
+2025-11-19 13:57:39,735 | INFO | Field Name: 't' | Type: com.grindrapp.android.ui.albums.d
+2025-11-19 13:57:39,736 | INFO | Field Name: 'u' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 13:57:39,736 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 13:57:39,744 | INFO |       >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 13:57:39,744 | INFO |           ID Int: 2131361998
+2025-11-19 13:57:39,745 | INFO |           ID String: 'albums_list'  <-- USE THIS IN KOTLIN
+2025-11-19 13:57:39,745 | INFO |           LayoutManager: androidx.recyclerview.widget.GridLayoutManager
+2025-11-19 13:58:15,285 | INFO | ==================================================
+2025-11-19 13:58:15,285 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment
+2025-11-19 13:58:15,285 | INFO | ==================================================
+2025-11-19 13:58:15,286 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 13:58:15,286 | INFO | Field Name: 'i' | Type: K9.E1
+2025-11-19 13:58:15,287 | INFO | Field Name: 'j' | Type: uc.b
+2025-11-19 13:58:15,287 | INFO | Field Name: 'k' | Type: q8.c
+2025-11-19 13:58:15,288 | INFO | Field Name: 'l' | Type: q8.b
+2025-11-19 13:58:15,288 | INFO | Field Name: 'm' | Type: com.grindrapp.android.analytics.GrindrAnalyticsV2
+2025-11-19 13:58:15,289 | INFO | Field Name: 'n' | Type: com.grindrapp.android.usersession.UserSession
+2025-11-19 13:58:15,290 | INFO | Field Name: 'o' | Type: Sg.x
+2025-11-19 13:58:15,291 | INFO | Field Name: 'p' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 13:58:15,291 | INFO | Field Name: 'q' | Type: kotlin.Lazy
+2025-11-19 13:58:15,292 | INFO | Field Name: 'r' | Type: kotlin.Lazy
+2025-11-19 13:58:15,292 | INFO | Field Name: 's' | Type: k8.a
+2025-11-19 13:58:15,293 | INFO | Field Name: 't' | Type: com.grindrapp.android.view.GrindrSearchView
+2025-11-19 13:58:15,293 | INFO | Field Name: 'u' | Type: p8.a
+2025-11-19 13:58:15,294 | INFO | Field Name: 'v' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 13:58:15,295 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 13:58:15,303 | INFO |     >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 13:58:15,303 | INFO |         ID Int: 2131363169
+2025-11-19 13:58:15,304 | INFO |         ID String: 'fragment_favorite_recycler_view'  <-- USE THIS IN KOTLIN
+2025-11-19 13:58:15,304 | INFO |         LayoutManager: androidx.recyclerview.widget.GridLayoutManager
+2025-11-19 13:59:10,145 | INFO | ==================================================
+2025-11-19 13:59:10,145 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.radar.presentation.ui.RadarFragment
+2025-11-19 13:59:10,146 | INFO | ==================================================
+2025-11-19 13:59:10,146 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 13:59:10,146 | INFO | Field Name: 'i' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 13:59:10,146 | INFO | Field Name: 'j' | Type: W4.z
+2025-11-19 13:59:10,147 | INFO | Field Name: 'k' | Type: kotlin.Lazy
+2025-11-19 13:59:10,148 | INFO | Field Name: 'l' | Type: kotlin.Lazy
+2025-11-19 13:59:10,149 | INFO | Field Name: 'm' | Type: kotlin.Lazy
+2025-11-19 13:59:10,150 | INFO | Field Name: 'n' | Type: kotlin.Lazy
+2025-11-19 13:59:10,151 | INFO | Field Name: 'o' | Type: kotlin.Lazy
+2025-11-19 13:59:10,152 | INFO | Field Name: 'p' | Type: com.grindrapp.android.radar.presentation.ui.RadarFragment$a
+2025-11-19 13:59:10,153 | INFO | Field Name: 'q' | Type: com.grindrapp.android.radar.presentation.ui.RadarFragment$d
+2025-11-19 13:59:10,153 | INFO | Field Name: 'r' | Type: androidx.compose.runtime.MutableIntState
+2025-11-19 13:59:10,154 | INFO | Field Name: 's' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 13:59:10,154 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 13:59:10,157 | INFO |     >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 13:59:10,157 | INFO |         ID Int: 3
+2025-11-19 13:59:10,157 | INFO |         ID String: 'UNKNOWN_ID'  <-- USE THIS IN KOTLIN
+2025-11-19 13:59:10,158 | INFO |         LayoutManager: androidx.viewpager2.widget.ViewPager2$LinearLayoutManagerImpl
+2025-11-19 13:59:10,212 | INFO | ==================================================
+2025-11-19 13:59:10,212 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.viewedme.presentation.ui.ViewedMeFragment
+2025-11-19 13:59:10,212 | INFO | ==================================================
+2025-11-19 13:59:10,212 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 13:59:10,213 | INFO | Field Name: 'A' | Type: boolean
+2025-11-19 13:59:10,213 | INFO | Field Name: 'B' | Type: dh.b
+2025-11-19 13:59:10,214 | INFO | Field Name: 'C' | Type: b9.b
+2025-11-19 13:59:10,215 | INFO | Field Name: 'D' | Type: androidx.activity.result.ActivityResultLauncher
+2025-11-19 13:59:10,216 | INFO | Field Name: 'E' | Type: kotlin.Lazy
+2025-11-19 13:59:10,216 | INFO | Field Name: 'F' | Type: Y6.L3
+2025-11-19 13:59:10,217 | INFO | Field Name: 'i' | Type: K9.y1
+2025-11-19 13:59:10,217 | INFO | Field Name: 'j' | Type: K9.E1
+2025-11-19 13:59:10,218 | INFO | Field Name: 'k' | Type: com.grindrapp.android.utils.ProfileUtilsV2
+2025-11-19 13:59:10,219 | INFO | Field Name: 'l' | Type: fh.a
+2025-11-19 13:59:10,219 | INFO | Field Name: 'm' | Type: Td.a
+2025-11-19 13:59:10,220 | INFO | Field Name: 'n' | Type: K9.G0
+2025-11-19 13:59:10,220 | INFO | Field Name: 'o' | Type: Sg.x
+2025-11-19 13:59:10,221 | INFO | Field Name: 'p' | Type: lh.a
+2025-11-19 13:59:10,222 | INFO | Field Name: 'q' | Type: com.grindrapp.android.utils.DistanceUtils
+2025-11-19 13:59:10,222 | INFO | Field Name: 'r' | Type: aa.r
+2025-11-19 13:59:10,223 | INFO | Field Name: 's' | Type: Sg.T
+2025-11-19 13:59:10,223 | INFO | Field Name: 't' | Type: android.view.View
+2025-11-19 13:59:10,224 | INFO | Field Name: 'u' | Type: a5.a
+2025-11-19 13:59:10,224 | INFO | Field Name: 'v' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 13:59:10,225 | INFO | Field Name: 'w' | Type: kotlin.Lazy
+2025-11-19 13:59:10,226 | INFO | Field Name: 'x' | Type: kotlin.Lazy
+2025-11-19 13:59:10,226 | INFO | Field Name: 'y' | Type: kotlin.Lazy
+2025-11-19 13:59:10,227 | INFO | Field Name: 'z' | Type: kotlin.Lazy
+2025-11-19 13:59:10,227 | INFO | Field Name: 'H' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 13:59:10,228 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 13:59:10,234 | INFO |         >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 13:59:10,234 | INFO |             ID Int: 2131364389
+2025-11-19 13:59:10,235 | INFO |             ID String: 'recycler_view'  <-- USE THIS IN KOTLIN
+2025-11-19 13:59:10,235 | INFO |             LayoutManager: androidx.recyclerview.widget.GridLayoutManager
+2025-11-19 13:59:29,064 | INFO | ==================================================
+2025-11-19 13:59:29,064 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.ui.inbox.TapsFragment
+2025-11-19 13:59:29,064 | INFO | ==================================================
+2025-11-19 13:59:29,065 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 13:59:29,065 | INFO | Field Name: 'A' | Type: kotlin.Lazy
+2025-11-19 13:59:29,065 | INFO | Field Name: 'i' | Type: Lf.i
+2025-11-19 13:59:29,066 | INFO | Field Name: 'j' | Type: dagger.Lazy
+2025-11-19 13:59:29,066 | INFO | Field Name: 'k' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 13:59:29,067 | INFO | Field Name: 'l' | Type: com.grindrapp.android.utils.ProfileUtilsV2
+2025-11-19 13:59:29,067 | INFO | Field Name: 'm' | Type: com.grindrapp.android.usersession.UserSession
+2025-11-19 13:59:29,068 | INFO | Field Name: 'n' | Type: com.grindrapp.android.analytics.GrindrAnalyticsV2
+2025-11-19 13:59:29,068 | INFO | Field Name: 'o' | Type: K9.G0
+2025-11-19 13:59:29,069 | INFO | Field Name: 'p' | Type: Sg.E0
+2025-11-19 13:59:29,069 | INFO | Field Name: 'q' | Type: com.grindrapp.android.featureflags.IsFeatureFlagEnabled
+2025-11-19 13:59:29,070 | INFO | Field Name: 'r' | Type: Sg.x
+2025-11-19 13:59:29,070 | INFO | Field Name: 's' | Type: com.grindrapp.android.manager.SettingsManager
+2025-11-19 13:59:29,071 | INFO | Field Name: 't' | Type: com.grindrapp.android.utils.DistanceUtils
+2025-11-19 13:59:29,071 | INFO | Field Name: 'u' | Type: Sg.T
+2025-11-19 13:59:29,072 | INFO | Field Name: 'v' | Type: j5.i
+2025-11-19 13:59:29,072 | INFO | Field Name: 'w' | Type: Td.a
+2025-11-19 13:59:29,072 | INFO | Field Name: 'x' | Type: Vg.a3
+2025-11-19 13:59:29,073 | INFO | Field Name: 'y' | Type: kotlin.Lazy
+2025-11-19 13:59:29,073 | INFO | Field Name: 'z' | Type: kotlin.Lazy
+2025-11-19 13:59:29,074 | INFO | Field Name: 'B' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 13:59:29,074 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 13:59:29,076 | INFO |     >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 13:59:29,076 | INFO |         ID Int: 2131364970
+2025-11-19 13:59:29,077 | INFO |         ID String: 'taps_list'  <-- USE THIS IN KOTLIN
+2025-11-19 13:59:29,077 | INFO |         LayoutManager: com.grindrapp.android.ui.inbox.TapsFragment$initTapListView$1$1
+2025-11-19 14:00:52,059 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 14:00:52,069 | INFO | [MainController] Process selected: PID 260 on 127.0.0.1:58526
+2025-11-19 14:00:54,608 | INFO | [MainController] Process selected: PID 23144 on 127.0.0.1:58526
+2025-11-19 14:01:05,026 | INFO | ==================================================
+2025-11-19 14:01:05,026 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.home.presentation.ui.TabbedHomeFragment
+2025-11-19 14:01:05,026 | INFO | ==================================================
+2025-11-19 14:01:05,026 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 14:01:05,027 | INFO | Field Name: 'i' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 14:01:05,027 | INFO | Field Name: 'j' | Type: kotlin.Lazy
+2025-11-19 14:01:05,027 | INFO | Field Name: 'k' | Type: kotlin.Lazy
+2025-11-19 14:01:05,028 | INFO | Field Name: 'l' | Type: kotlin.Lazy
+2025-11-19 14:01:05,028 | INFO | Field Name: 'm' | Type: kotlin.Lazy
+2025-11-19 14:01:05,029 | INFO | Field Name: 'n' | Type: androidx.viewpager2.widget.ViewPager2
+2025-11-19 14:01:05,030 | INFO | Field Name: 'o' | Type: kotlin.Lazy
+2025-11-19 14:01:05,031 | INFO | Field Name: 'p' | Type: K9.G0
+2025-11-19 14:01:05,031 | INFO | Field Name: 'q' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 14:01:05,032 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 14:01:05,035 | INFO |     >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:05,036 | INFO |         ID Int: 1
+2025-11-19 14:01:05,036 | INFO |         ID String: 'UNKNOWN_ID'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:05,036 | INFO |         LayoutManager: androidx.viewpager2.widget.ViewPager2$LinearLayoutManagerImpl
+2025-11-19 14:01:05,040 | INFO |               >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:05,040 | INFO |                   ID Int: 2131364389
+2025-11-19 14:01:05,040 | INFO |                   ID String: 'recycler_view'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:05,040 | INFO |                   LayoutManager: com.grindrapp.android.ui.browse.CascadeFragment$initRecyclerView$1$1
+2025-11-19 14:01:05,173 | INFO | ==================================================
+2025-11-19 14:01:05,173 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.ui.browse.CascadeFragment
+2025-11-19 14:01:05,173 | INFO | ==================================================
+2025-11-19 14:01:05,173 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 14:01:05,174 | INFO | Field Name: 'A' | Type: kotlinx.coroutines.CoroutineScope
+2025-11-19 14:01:05,175 | INFO | Field Name: 'B' | Type: com.grindrapp.android.utils.DispatcherFacade
+2025-11-19 14:01:05,175 | INFO | Field Name: 'C' | Type: com.grindrapp.android.utils.DistanceUtils
+2025-11-19 14:01:05,176 | INFO | Field Name: 'D' | Type: A9.c
+2025-11-19 14:01:05,176 | INFO | Field Name: 'E' | Type: com.grindrapp.android.platform.datastore.PermanentPrefs
+2025-11-19 14:01:05,177 | INFO | Field Name: 'F' | Type: j5.i
+2025-11-19 14:01:05,177 | INFO | Field Name: 'G' | Type: K5.a
+2025-11-19 14:01:05,177 | INFO | Field Name: 'H' | Type: com.grindrapp.android.featureflags.IsFeatureFlagEnabled
+2025-11-19 14:01:05,178 | INFO | Field Name: 'I' | Type: Y4.c
+2025-11-19 14:01:05,179 | INFO | Field Name: 'J' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 14:01:05,179 | INFO | Field Name: 'K' | Type: kotlin.Lazy
+2025-11-19 14:01:05,179 | INFO | Field Name: 'L' | Type: kotlin.Lazy
+2025-11-19 14:01:05,180 | INFO | Field Name: 'M' | Type: kotlin.Lazy
+2025-11-19 14:01:05,180 | INFO | Field Name: 'N' | Type: kotlin.Lazy
+2025-11-19 14:01:05,181 | INFO | Field Name: 'O' | Type: kotlin.Lazy
+2025-11-19 14:01:05,181 | INFO | Field Name: 'P' | Type: kotlin.Lazy
+2025-11-19 14:01:05,182 | INFO | Field Name: 'Q' | Type: kotlin.Lazy
+2025-11-19 14:01:05,182 | INFO | Field Name: 'R' | Type: Sg.O
+2025-11-19 14:01:05,183 | INFO | Field Name: 'S' | Type: kotlin.Lazy
+2025-11-19 14:01:05,183 | INFO | Field Name: 'T' | Type: kf.a
+2025-11-19 14:01:05,184 | INFO | Field Name: 'U' | Type: kf.m
+2025-11-19 14:01:05,184 | INFO | Field Name: 'V' | Type: java.util.ArrayList
+2025-11-19 14:01:05,184 | INFO | Field Name: 'W' | Type: float
+2025-11-19 14:01:05,185 | INFO | Field Name: 'X' | Type: kotlinx.coroutines.flow.MutableStateFlow
+2025-11-19 14:01:05,186 | INFO | Field Name: 'Y' | Type: int
+2025-11-19 14:01:05,186 | INFO | Field Name: 'Z' | Type: int
+2025-11-19 14:01:05,187 | INFO | Field Name: 'a0' | Type: boolean
+2025-11-19 14:01:05,187 | INFO | Field Name: 'b0' | Type: boolean
+2025-11-19 14:01:05,187 | INFO | Field Name: 'c0' | Type: boolean
+2025-11-19 14:01:05,188 | INFO | Field Name: 'd0' | Type: b9.b
+2025-11-19 14:01:05,188 | INFO | Field Name: 'e0' | Type: androidx.activity.result.ActivityResultLauncher
+2025-11-19 14:01:05,189 | INFO | Field Name: 'f0' | Type: kotlin.Lazy
+2025-11-19 14:01:05,190 | INFO | Field Name: 'g0' | Type: com.grindrapp.android.ui.browse.CascadeFragment$d
+2025-11-19 14:01:05,190 | INFO | Field Name: 'h0' | Type: kotlin.Lazy
+2025-11-19 14:01:05,191 | INFO | Field Name: 'i' | Type: K9.E1
+2025-11-19 14:01:05,191 | INFO | Field Name: 'i0' | Type: kotlin.Lazy
+2025-11-19 14:01:05,192 | INFO | Field Name: 'j' | Type: com.grindrapp.android.manager.store.f
+2025-11-19 14:01:05,192 | INFO | Field Name: 'j0' | Type: kotlin.Lazy
+2025-11-19 14:01:05,193 | INFO | Field Name: 'k' | Type: uc.b
+2025-11-19 14:01:05,193 | INFO | Field Name: 'k0' | Type: k8.a
+2025-11-19 14:01:05,194 | INFO | Field Name: 'l' | Type: com.grindrapp.android.analytics.GrindrAnalyticsV2
+2025-11-19 14:01:05,194 | INFO | Field Name: 'l0' | Type: androidx.activity.result.ActivityResultLauncher
+2025-11-19 14:01:05,195 | INFO | Field Name: 'm' | Type: xd.e
+2025-11-19 14:01:05,195 | INFO | Field Name: 'm0' | Type: androidx.activity.result.ActivityResultLauncher
+2025-11-19 14:01:05,196 | INFO | Field Name: 'n' | Type: com.grindrapp.android.usersession.UserSession
+2025-11-19 14:01:05,197 | INFO | Field Name: 'n0' | Type: androidx.activity.result.ActivityResultLauncher
+2025-11-19 14:01:05,197 | INFO | Field Name: 'o' | Type: com.grindrapp.android.persistence.repository.filters.CascadeFiltersRepo
+2025-11-19 14:01:05,198 | INFO | Field Name: 'p' | Type: com.grindrapp.android.ui.editprofile.d
+2025-11-19 14:01:05,198 | INFO | Field Name: 'q' | Type: t5.h
+2025-11-19 14:01:05,199 | INFO | Field Name: 'r' | Type: Td.a
+2025-11-19 14:01:05,199 | INFO | Field Name: 's' | Type: com.grindrapp.android.manager.SettingsManager
+2025-11-19 14:01:05,200 | INFO | Field Name: 't' | Type: K9.G0
+2025-11-19 14:01:05,201 | INFO | Field Name: 'u' | Type: Gf.i
+2025-11-19 14:01:05,201 | INFO | Field Name: 'v' | Type: w5.b
+2025-11-19 14:01:05,202 | INFO | Field Name: 'w' | Type: K5.h
+2025-11-19 14:01:05,202 | INFO | Field Name: 'x' | Type: K5.j
+2025-11-19 14:01:05,203 | INFO | Field Name: 'y' | Type: vf.a
+2025-11-19 14:01:05,203 | INFO | Field Name: 'z' | Type: vf.p
+2025-11-19 14:01:05,204 | INFO | Field Name: 'o0' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 14:01:05,204 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 14:01:05,207 | INFO |       >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:05,207 | INFO |           ID Int: 2131364389
+2025-11-19 14:01:05,207 | INFO |           ID String: 'recycler_view'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:05,207 | INFO |           LayoutManager: com.grindrapp.android.ui.browse.CascadeFragment$initRecyclerView$1$1
+2025-11-19 14:01:05,337 | INFO | ==================================================
+2025-11-19 14:01:05,338 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.ui.inbox.v3.ui.InboxFragment
+2025-11-19 14:01:05,338 | INFO | ==================================================
+2025-11-19 14:01:05,338 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 14:01:05,339 | INFO | Field Name: 'i' | Type: Td.a
+2025-11-19 14:01:05,339 | INFO | Field Name: 'j' | Type: kotlin.Lazy
+2025-11-19 14:01:05,339 | INFO | Field Name: 'k' | Type: kotlin.Lazy
+2025-11-19 14:01:05,340 | INFO | Field Name: 'l' | Type: kotlin.Lazy
+2025-11-19 14:01:05,340 | INFO | Field Name: 'm' | Type: vf.p
+2025-11-19 14:01:05,341 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 14:01:05,349 | INFO |                 >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:05,349 | INFO |                     ID Int: 2131361998
+2025-11-19 14:01:05,349 | INFO |                     ID String: 'albums_list'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:05,350 | INFO |                     LayoutManager: androidx.recyclerview.widget.GridLayoutManager
+2025-11-19 14:01:05,367 | INFO | ==================================================
+2025-11-19 14:01:05,367 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.ui.albums.AlbumsListFragment
+2025-11-19 14:01:05,367 | INFO | ==================================================
+2025-11-19 14:01:05,367 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 14:01:05,368 | INFO | Field Name: 'i' | Type: com.grindrapp.android.usersession.UserSession
+2025-11-19 14:01:05,368 | INFO | Field Name: 'j' | Type: com.grindrapp.android.analytics.GrindrAnalyticsV2
+2025-11-19 14:01:05,369 | INFO | Field Name: 'k' | Type: Td.a
+2025-11-19 14:01:05,370 | INFO | Field Name: 'l' | Type: l4.a
+2025-11-19 14:01:05,370 | INFO | Field Name: 'm' | Type: kotlin.Lazy
+2025-11-19 14:01:05,371 | INFO | Field Name: 'n' | Type: kotlin.Lazy
+2025-11-19 14:01:05,372 | INFO | Field Name: 'o' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 14:01:05,373 | INFO | Field Name: 'r' | Type: boolean
+2025-11-19 14:01:05,373 | INFO | Field Name: 's' | Type: com.grindrapp.android.ui.albums.e
+2025-11-19 14:01:05,374 | INFO | Field Name: 't' | Type: com.grindrapp.android.ui.albums.d
+2025-11-19 14:01:05,375 | INFO | Field Name: 'u' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 14:01:05,375 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 14:01:05,380 | INFO |       >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:05,380 | INFO |           ID Int: 2131361998
+2025-11-19 14:01:05,381 | INFO |           ID String: 'albums_list'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:05,381 | INFO |           LayoutManager: androidx.recyclerview.widget.GridLayoutManager
+2025-11-19 14:01:05,398 | INFO | ==================================================
+2025-11-19 14:01:05,398 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment
+2025-11-19 14:01:05,398 | INFO | ==================================================
+2025-11-19 14:01:05,398 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 14:01:05,399 | INFO | Field Name: 'i' | Type: K9.E1
+2025-11-19 14:01:05,399 | INFO | Field Name: 'j' | Type: uc.b
+2025-11-19 14:01:05,400 | INFO | Field Name: 'k' | Type: q8.c
+2025-11-19 14:01:05,400 | INFO | Field Name: 'l' | Type: q8.b
+2025-11-19 14:01:05,401 | INFO | Field Name: 'm' | Type: com.grindrapp.android.analytics.GrindrAnalyticsV2
+2025-11-19 14:01:05,401 | INFO | Field Name: 'n' | Type: com.grindrapp.android.usersession.UserSession
+2025-11-19 14:01:05,402 | INFO | Field Name: 'o' | Type: Sg.x
+2025-11-19 14:01:05,402 | INFO | Field Name: 'p' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 14:01:05,403 | INFO | Field Name: 'q' | Type: kotlin.Lazy
+2025-11-19 14:01:05,403 | INFO | Field Name: 'r' | Type: kotlin.Lazy
+2025-11-19 14:01:05,404 | INFO | Field Name: 's' | Type: k8.a
+2025-11-19 14:01:05,405 | INFO | Field Name: 't' | Type: com.grindrapp.android.view.GrindrSearchView
+2025-11-19 14:01:05,406 | INFO | Field Name: 'u' | Type: p8.a
+2025-11-19 14:01:05,406 | INFO | Field Name: 'v' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 14:01:05,407 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 14:01:05,416 | INFO |     >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:05,416 | INFO |         ID Int: 2131363169
+2025-11-19 14:01:05,416 | INFO |         ID String: 'fragment_favorite_recycler_view'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:05,416 | INFO |         LayoutManager: androidx.recyclerview.widget.GridLayoutManager
+2025-11-19 14:01:05,435 | INFO | ==================================================
+2025-11-19 14:01:05,435 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.radar.presentation.ui.RadarFragment
+2025-11-19 14:01:05,435 | INFO | ==================================================
+2025-11-19 14:01:05,435 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 14:01:05,435 | INFO | Field Name: 'i' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 14:01:05,436 | INFO | Field Name: 'j' | Type: W4.z
+2025-11-19 14:01:05,437 | INFO | Field Name: 'k' | Type: kotlin.Lazy
+2025-11-19 14:01:05,437 | INFO | Field Name: 'l' | Type: kotlin.Lazy
+2025-11-19 14:01:05,438 | INFO | Field Name: 'm' | Type: kotlin.Lazy
+2025-11-19 14:01:05,438 | INFO | Field Name: 'n' | Type: kotlin.Lazy
+2025-11-19 14:01:05,439 | INFO | Field Name: 'o' | Type: kotlin.Lazy
+2025-11-19 14:01:05,439 | INFO | Field Name: 'p' | Type: com.grindrapp.android.radar.presentation.ui.RadarFragment$a
+2025-11-19 14:01:05,440 | INFO | Field Name: 'q' | Type: com.grindrapp.android.radar.presentation.ui.RadarFragment$d
+2025-11-19 14:01:05,440 | INFO | Field Name: 'r' | Type: androidx.compose.runtime.MutableIntState
+2025-11-19 14:01:05,441 | INFO | Field Name: 's' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 14:01:05,441 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 14:01:05,443 | INFO |     >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:05,443 | INFO |         ID Int: 3
+2025-11-19 14:01:05,443 | INFO |         ID String: 'UNKNOWN_ID'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:05,444 | INFO |         LayoutManager: androidx.viewpager2.widget.ViewPager2$LinearLayoutManagerImpl
+2025-11-19 14:01:05,446 | INFO |             >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:05,447 | INFO |                 ID Int: 2131364970
+2025-11-19 14:01:05,447 | INFO |                 ID String: 'taps_list'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:05,447 | INFO |                 LayoutManager: com.grindrapp.android.ui.inbox.TapsFragment$initTapListView$1$1
+2025-11-19 14:01:05,480 | INFO | ==================================================
+2025-11-19 14:01:05,480 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.ui.inbox.TapsFragment
+2025-11-19 14:01:05,480 | INFO | ==================================================
+2025-11-19 14:01:05,481 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 14:01:05,481 | INFO | Field Name: 'A' | Type: kotlin.Lazy
+2025-11-19 14:01:05,481 | INFO | Field Name: 'i' | Type: Lf.i
+2025-11-19 14:01:05,482 | INFO | Field Name: 'j' | Type: dagger.Lazy
+2025-11-19 14:01:05,483 | INFO | Field Name: 'k' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 14:01:05,483 | INFO | Field Name: 'l' | Type: com.grindrapp.android.utils.ProfileUtilsV2
+2025-11-19 14:01:05,484 | INFO | Field Name: 'm' | Type: com.grindrapp.android.usersession.UserSession
+2025-11-19 14:01:05,484 | INFO | Field Name: 'n' | Type: com.grindrapp.android.analytics.GrindrAnalyticsV2
+2025-11-19 14:01:05,484 | INFO | Field Name: 'o' | Type: K9.G0
+2025-11-19 14:01:05,485 | INFO | Field Name: 'p' | Type: Sg.E0
+2025-11-19 14:01:05,486 | INFO | Field Name: 'q' | Type: com.grindrapp.android.featureflags.IsFeatureFlagEnabled
+2025-11-19 14:01:05,486 | INFO | Field Name: 'r' | Type: Sg.x
+2025-11-19 14:01:05,487 | INFO | Field Name: 's' | Type: com.grindrapp.android.manager.SettingsManager
+2025-11-19 14:01:05,487 | INFO | Field Name: 't' | Type: com.grindrapp.android.utils.DistanceUtils
+2025-11-19 14:01:05,488 | INFO | Field Name: 'u' | Type: Sg.T
+2025-11-19 14:01:05,488 | INFO | Field Name: 'v' | Type: j5.i
+2025-11-19 14:01:05,489 | INFO | Field Name: 'w' | Type: Td.a
+2025-11-19 14:01:05,489 | INFO | Field Name: 'x' | Type: Vg.a3
+2025-11-19 14:01:05,490 | INFO | Field Name: 'y' | Type: kotlin.Lazy
+2025-11-19 14:01:05,490 | INFO | Field Name: 'z' | Type: kotlin.Lazy
+2025-11-19 14:01:05,491 | INFO | Field Name: 'B' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 14:01:05,491 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 14:01:05,494 | INFO |     >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:05,494 | INFO |         ID Int: 2131364970
+2025-11-19 14:01:05,494 | INFO |         ID String: 'taps_list'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:05,494 | INFO |         LayoutManager: com.grindrapp.android.ui.inbox.TapsFragment$initTapListView$1$1
+2025-11-19 14:01:15,177 | INFO | ==================================================
+2025-11-19 14:01:15,178 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.home.presentation.ui.TabbedHomeFragment
+2025-11-19 14:01:15,178 | INFO | ==================================================
+2025-11-19 14:01:15,178 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 14:01:15,178 | INFO | Field Name: 'i' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 14:01:15,178 | INFO | Field Name: 'j' | Type: kotlin.Lazy
+2025-11-19 14:01:15,179 | INFO | Field Name: 'k' | Type: kotlin.Lazy
+2025-11-19 14:01:15,180 | INFO | Field Name: 'l' | Type: kotlin.Lazy
+2025-11-19 14:01:15,181 | INFO | Field Name: 'm' | Type: kotlin.Lazy
+2025-11-19 14:01:15,181 | INFO | Field Name: 'n' | Type: androidx.viewpager2.widget.ViewPager2
+2025-11-19 14:01:15,182 | INFO | Field Name: 'o' | Type: kotlin.Lazy
+2025-11-19 14:01:15,183 | INFO | Field Name: 'p' | Type: K9.G0
+2025-11-19 14:01:15,183 | INFO | Field Name: 'q' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 14:01:15,184 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 14:01:15,188 | INFO |     >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:15,188 | INFO |         ID Int: 1
+2025-11-19 14:01:15,189 | INFO |         ID String: 'UNKNOWN_ID'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:15,189 | INFO |         LayoutManager: androidx.viewpager2.widget.ViewPager2$LinearLayoutManagerImpl
+2025-11-19 14:01:15,193 | INFO |               >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:15,193 | INFO |                   ID Int: 2131364389
+2025-11-19 14:01:15,193 | INFO |                   ID String: 'recycler_view'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:15,194 | INFO |                   LayoutManager: com.grindrapp.android.ui.browse.CascadeFragment$initRecyclerView$1$1
+2025-11-19 14:01:15,335 | INFO | ==================================================
+2025-11-19 14:01:15,335 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.ui.browse.CascadeFragment
+2025-11-19 14:01:15,335 | INFO | ==================================================
+2025-11-19 14:01:15,336 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 14:01:15,336 | INFO | Field Name: 'A' | Type: kotlinx.coroutines.CoroutineScope
+2025-11-19 14:01:15,337 | INFO | Field Name: 'B' | Type: com.grindrapp.android.utils.DispatcherFacade
+2025-11-19 14:01:15,337 | INFO | Field Name: 'C' | Type: com.grindrapp.android.utils.DistanceUtils
+2025-11-19 14:01:15,338 | INFO | Field Name: 'D' | Type: A9.c
+2025-11-19 14:01:15,338 | INFO | Field Name: 'E' | Type: com.grindrapp.android.platform.datastore.PermanentPrefs
+2025-11-19 14:01:15,339 | INFO | Field Name: 'F' | Type: j5.i
+2025-11-19 14:01:15,339 | INFO | Field Name: 'G' | Type: K5.a
+2025-11-19 14:01:15,340 | INFO | Field Name: 'H' | Type: com.grindrapp.android.featureflags.IsFeatureFlagEnabled
+2025-11-19 14:01:15,340 | INFO | Field Name: 'I' | Type: Y4.c
+2025-11-19 14:01:15,340 | INFO | Field Name: 'J' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 14:01:15,341 | INFO | Field Name: 'K' | Type: kotlin.Lazy
+2025-11-19 14:01:15,341 | INFO | Field Name: 'L' | Type: kotlin.Lazy
+2025-11-19 14:01:15,342 | INFO | Field Name: 'M' | Type: kotlin.Lazy
+2025-11-19 14:01:15,342 | INFO | Field Name: 'N' | Type: kotlin.Lazy
+2025-11-19 14:01:15,342 | INFO | Field Name: 'O' | Type: kotlin.Lazy
+2025-11-19 14:01:15,343 | INFO | Field Name: 'P' | Type: kotlin.Lazy
+2025-11-19 14:01:15,343 | INFO | Field Name: 'Q' | Type: kotlin.Lazy
+2025-11-19 14:01:15,344 | INFO | Field Name: 'R' | Type: Sg.O
+2025-11-19 14:01:15,344 | INFO | Field Name: 'S' | Type: kotlin.Lazy
+2025-11-19 14:01:15,344 | INFO | Field Name: 'T' | Type: kf.a
+2025-11-19 14:01:15,345 | INFO | Field Name: 'U' | Type: kf.m
+2025-11-19 14:01:15,345 | INFO | Field Name: 'V' | Type: java.util.ArrayList
+2025-11-19 14:01:15,346 | INFO | Field Name: 'W' | Type: float
+2025-11-19 14:01:15,347 | INFO | Field Name: 'X' | Type: kotlinx.coroutines.flow.MutableStateFlow
+2025-11-19 14:01:15,347 | INFO | Field Name: 'Y' | Type: int
+2025-11-19 14:01:15,348 | INFO | Field Name: 'Z' | Type: int
+2025-11-19 14:01:15,348 | INFO | Field Name: 'a0' | Type: boolean
+2025-11-19 14:01:15,348 | INFO | Field Name: 'b0' | Type: boolean
+2025-11-19 14:01:15,349 | INFO | Field Name: 'c0' | Type: boolean
+2025-11-19 14:01:15,349 | INFO | Field Name: 'd0' | Type: b9.b
+2025-11-19 14:01:15,350 | INFO | Field Name: 'e0' | Type: androidx.activity.result.ActivityResultLauncher
+2025-11-19 14:01:15,350 | INFO | Field Name: 'f0' | Type: kotlin.Lazy
+2025-11-19 14:01:15,351 | INFO | Field Name: 'g0' | Type: com.grindrapp.android.ui.browse.CascadeFragment$d
+2025-11-19 14:01:15,351 | INFO | Field Name: 'h0' | Type: kotlin.Lazy
+2025-11-19 14:01:15,352 | INFO | Field Name: 'i' | Type: K9.E1
+2025-11-19 14:01:15,352 | INFO | Field Name: 'i0' | Type: kotlin.Lazy
+2025-11-19 14:01:15,352 | INFO | Field Name: 'j' | Type: com.grindrapp.android.manager.store.f
+2025-11-19 14:01:15,353 | INFO | Field Name: 'j0' | Type: kotlin.Lazy
+2025-11-19 14:01:15,353 | INFO | Field Name: 'k' | Type: uc.b
+2025-11-19 14:01:15,354 | INFO | Field Name: 'k0' | Type: k8.a
+2025-11-19 14:01:15,355 | INFO | Field Name: 'l' | Type: com.grindrapp.android.analytics.GrindrAnalyticsV2
+2025-11-19 14:01:15,355 | INFO | Field Name: 'l0' | Type: androidx.activity.result.ActivityResultLauncher
+2025-11-19 14:01:15,356 | INFO | Field Name: 'm' | Type: xd.e
+2025-11-19 14:01:15,356 | INFO | Field Name: 'm0' | Type: androidx.activity.result.ActivityResultLauncher
+2025-11-19 14:01:15,357 | INFO | Field Name: 'n' | Type: com.grindrapp.android.usersession.UserSession
+2025-11-19 14:01:15,357 | INFO | Field Name: 'n0' | Type: androidx.activity.result.ActivityResultLauncher
+2025-11-19 14:01:15,357 | INFO | Field Name: 'o' | Type: com.grindrapp.android.persistence.repository.filters.CascadeFiltersRepo
+2025-11-19 14:01:15,358 | INFO | Field Name: 'p' | Type: com.grindrapp.android.ui.editprofile.d
+2025-11-19 14:01:15,358 | INFO | Field Name: 'q' | Type: t5.h
+2025-11-19 14:01:15,359 | INFO | Field Name: 'r' | Type: Td.a
+2025-11-19 14:01:15,359 | INFO | Field Name: 's' | Type: com.grindrapp.android.manager.SettingsManager
+2025-11-19 14:01:15,360 | INFO | Field Name: 't' | Type: K9.G0
+2025-11-19 14:01:15,360 | INFO | Field Name: 'u' | Type: Gf.i
+2025-11-19 14:01:15,360 | INFO | Field Name: 'v' | Type: w5.b
+2025-11-19 14:01:15,361 | INFO | Field Name: 'w' | Type: K5.h
+2025-11-19 14:01:15,361 | INFO | Field Name: 'x' | Type: K5.j
+2025-11-19 14:01:15,362 | INFO | Field Name: 'y' | Type: vf.a
+2025-11-19 14:01:15,362 | INFO | Field Name: 'z' | Type: vf.p
+2025-11-19 14:01:15,363 | INFO | Field Name: 'o0' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 14:01:15,363 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 14:01:15,366 | INFO |       >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:15,366 | INFO |           ID Int: 2131364389
+2025-11-19 14:01:15,366 | INFO |           ID String: 'recycler_view'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:15,366 | INFO |           LayoutManager: com.grindrapp.android.ui.browse.CascadeFragment$initRecyclerView$1$1
+2025-11-19 14:01:15,498 | INFO | ==================================================
+2025-11-19 14:01:15,498 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.ui.inbox.v3.ui.InboxFragment
+2025-11-19 14:01:15,498 | INFO | ==================================================
+2025-11-19 14:01:15,499 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 14:01:15,499 | INFO | Field Name: 'i' | Type: Td.a
+2025-11-19 14:01:15,499 | INFO | Field Name: 'j' | Type: kotlin.Lazy
+2025-11-19 14:01:15,500 | INFO | Field Name: 'k' | Type: kotlin.Lazy
+2025-11-19 14:01:15,500 | INFO | Field Name: 'l' | Type: kotlin.Lazy
+2025-11-19 14:01:15,501 | INFO | Field Name: 'm' | Type: vf.p
+2025-11-19 14:01:15,502 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 14:01:15,511 | INFO |                 >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:15,511 | INFO |                     ID Int: 2131361998
+2025-11-19 14:01:15,511 | INFO |                     ID String: 'albums_list'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:15,511 | INFO |                     LayoutManager: androidx.recyclerview.widget.GridLayoutManager
+2025-11-19 14:01:15,529 | INFO | ==================================================
+2025-11-19 14:01:15,529 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.ui.albums.AlbumsListFragment
+2025-11-19 14:01:15,530 | INFO | ==================================================
+2025-11-19 14:01:15,530 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 14:01:15,530 | INFO | Field Name: 'i' | Type: com.grindrapp.android.usersession.UserSession
+2025-11-19 14:01:15,530 | INFO | Field Name: 'j' | Type: com.grindrapp.android.analytics.GrindrAnalyticsV2
+2025-11-19 14:01:15,532 | INFO | Field Name: 'k' | Type: Td.a
+2025-11-19 14:01:15,532 | INFO | Field Name: 'l' | Type: l4.a
+2025-11-19 14:01:15,533 | INFO | Field Name: 'm' | Type: kotlin.Lazy
+2025-11-19 14:01:15,534 | INFO | Field Name: 'n' | Type: kotlin.Lazy
+2025-11-19 14:01:15,534 | INFO | Field Name: 'o' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 14:01:15,536 | INFO | Field Name: 'r' | Type: boolean
+2025-11-19 14:01:15,536 | INFO | Field Name: 's' | Type: com.grindrapp.android.ui.albums.e
+2025-11-19 14:01:15,537 | INFO | Field Name: 't' | Type: com.grindrapp.android.ui.albums.d
+2025-11-19 14:01:15,537 | INFO | Field Name: 'u' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 14:01:15,538 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 14:01:15,544 | INFO |       >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:15,544 | INFO |           ID Int: 2131361998
+2025-11-19 14:01:15,544 | INFO |           ID String: 'albums_list'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:15,544 | INFO |           LayoutManager: androidx.recyclerview.widget.GridLayoutManager
+2025-11-19 14:01:15,560 | INFO | ==================================================
+2025-11-19 14:01:15,560 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.favorites.presentation.ui.FavoritesFragment
+2025-11-19 14:01:15,560 | INFO | ==================================================
+2025-11-19 14:01:15,561 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 14:01:15,561 | INFO | Field Name: 'i' | Type: K9.E1
+2025-11-19 14:01:15,561 | INFO | Field Name: 'j' | Type: uc.b
+2025-11-19 14:01:15,562 | INFO | Field Name: 'k' | Type: q8.c
+2025-11-19 14:01:15,563 | INFO | Field Name: 'l' | Type: q8.b
+2025-11-19 14:01:15,563 | INFO | Field Name: 'm' | Type: com.grindrapp.android.analytics.GrindrAnalyticsV2
+2025-11-19 14:01:15,564 | INFO | Field Name: 'n' | Type: com.grindrapp.android.usersession.UserSession
+2025-11-19 14:01:15,564 | INFO | Field Name: 'o' | Type: Sg.x
+2025-11-19 14:01:15,565 | INFO | Field Name: 'p' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 14:01:15,566 | INFO | Field Name: 'q' | Type: kotlin.Lazy
+2025-11-19 14:01:15,567 | INFO | Field Name: 'r' | Type: kotlin.Lazy
+2025-11-19 14:01:15,567 | INFO | Field Name: 's' | Type: k8.a
+2025-11-19 14:01:15,568 | INFO | Field Name: 't' | Type: com.grindrapp.android.view.GrindrSearchView
+2025-11-19 14:01:15,568 | INFO | Field Name: 'u' | Type: p8.a
+2025-11-19 14:01:15,569 | INFO | Field Name: 'v' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 14:01:15,569 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 14:01:15,578 | INFO |     >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:15,579 | INFO |         ID Int: 2131363169
+2025-11-19 14:01:15,579 | INFO |         ID String: 'fragment_favorite_recycler_view'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:15,579 | INFO |         LayoutManager: androidx.recyclerview.widget.GridLayoutManager
+2025-11-19 14:01:15,604 | INFO | ==================================================
+2025-11-19 14:01:15,604 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.radar.presentation.ui.RadarFragment
+2025-11-19 14:01:15,605 | INFO | ==================================================
+2025-11-19 14:01:15,605 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 14:01:15,605 | INFO | Field Name: 'i' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 14:01:15,606 | INFO | Field Name: 'j' | Type: W4.z
+2025-11-19 14:01:15,607 | INFO | Field Name: 'k' | Type: kotlin.Lazy
+2025-11-19 14:01:15,607 | INFO | Field Name: 'l' | Type: kotlin.Lazy
+2025-11-19 14:01:15,608 | INFO | Field Name: 'm' | Type: kotlin.Lazy
+2025-11-19 14:01:15,608 | INFO | Field Name: 'n' | Type: kotlin.Lazy
+2025-11-19 14:01:15,609 | INFO | Field Name: 'o' | Type: kotlin.Lazy
+2025-11-19 14:01:15,609 | INFO | Field Name: 'p' | Type: com.grindrapp.android.radar.presentation.ui.RadarFragment$a
+2025-11-19 14:01:15,610 | INFO | Field Name: 'q' | Type: com.grindrapp.android.radar.presentation.ui.RadarFragment$d
+2025-11-19 14:01:15,611 | INFO | Field Name: 'r' | Type: androidx.compose.runtime.MutableIntState
+2025-11-19 14:01:15,611 | INFO | Field Name: 's' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 14:01:15,612 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 14:01:15,613 | INFO |     >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:15,614 | INFO |         ID Int: 3
+2025-11-19 14:01:15,614 | INFO |         ID String: 'UNKNOWN_ID'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:15,614 | INFO |         LayoutManager: androidx.viewpager2.widget.ViewPager2$LinearLayoutManagerImpl
+2025-11-19 14:01:15,616 | INFO |             >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:15,616 | INFO |                 ID Int: 2131364970
+2025-11-19 14:01:15,616 | INFO |                 ID String: 'taps_list'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:15,617 | INFO |                 LayoutManager: com.grindrapp.android.ui.inbox.TapsFragment$initTapListView$1$1
+2025-11-19 14:01:15,642 | INFO | ==================================================
+2025-11-19 14:01:15,642 | INFO | [+] CURRENT FRAGMENT: com.grindrapp.android.ui.inbox.TapsFragment
+2025-11-19 14:01:15,642 | INFO | ==================================================
+2025-11-19 14:01:15,643 | INFO | --- [ FIELDS DUMP ] ---
+2025-11-19 14:01:15,643 | INFO | Field Name: 'A' | Type: kotlin.Lazy
+2025-11-19 14:01:15,644 | INFO | Field Name: 'i' | Type: Lf.i
+2025-11-19 14:01:15,644 | INFO | Field Name: 'j' | Type: dagger.Lazy
+2025-11-19 14:01:15,645 | INFO | Field Name: 'k' | Type: com.zhuinden.fragmentviewbindingdelegatekt.FragmentViewBindingDelegate
+2025-11-19 14:01:15,645 | INFO | Field Name: 'l' | Type: com.grindrapp.android.utils.ProfileUtilsV2
+2025-11-19 14:01:15,646 | INFO | Field Name: 'm' | Type: com.grindrapp.android.usersession.UserSession
+2025-11-19 14:01:15,646 | INFO | Field Name: 'n' | Type: com.grindrapp.android.analytics.GrindrAnalyticsV2
+2025-11-19 14:01:15,646 | INFO | Field Name: 'o' | Type: K9.G0
+2025-11-19 14:01:15,647 | INFO | Field Name: 'p' | Type: Sg.E0
+2025-11-19 14:01:15,647 | INFO | Field Name: 'q' | Type: com.grindrapp.android.featureflags.IsFeatureFlagEnabled
+2025-11-19 14:01:15,648 | INFO | Field Name: 'r' | Type: Sg.x
+2025-11-19 14:01:15,648 | INFO | Field Name: 's' | Type: com.grindrapp.android.manager.SettingsManager
+2025-11-19 14:01:15,649 | INFO | Field Name: 't' | Type: com.grindrapp.android.utils.DistanceUtils
+2025-11-19 14:01:15,649 | INFO | Field Name: 'u' | Type: Sg.T
+2025-11-19 14:01:15,650 | INFO | Field Name: 'v' | Type: j5.i
+2025-11-19 14:01:15,650 | INFO | Field Name: 'w' | Type: Td.a
+2025-11-19 14:01:15,651 | INFO | Field Name: 'x' | Type: Vg.a3
+2025-11-19 14:01:15,651 | INFO | Field Name: 'y' | Type: kotlin.Lazy
+2025-11-19 14:01:15,652 | INFO | Field Name: 'z' | Type: kotlin.Lazy
+2025-11-19 14:01:15,652 | INFO | Field Name: 'B' | Type: [Lkotlin.reflect.KProperty;
+2025-11-19 14:01:15,653 | INFO | 
+--- [ VIEW HIERARCHY SEARCH ] ---
+2025-11-19 14:01:15,654 | INFO |     >>> FOUND RECYCLERVIEW! <<<
+2025-11-19 14:01:15,654 | INFO |         ID Int: 2131364970
+2025-11-19 14:01:15,654 | INFO |         ID String: 'taps_list'  <-- USE THIS IN KOTLIN
+2025-11-19 14:01:15,655 | INFO |         LayoutManager: com.grindrapp.android.ui.inbox.TapsFragment$initTapListView$1$1
+2025-11-19 14:14:39,137 | INFO | [InjectionController] Session detached: process-terminated
+2025-11-19 14:14:39,138 | INFO | [MainController] Injection state: stopping
+2025-11-19 14:14:39,139 | INFO | [StopScriptWorker] Error unloading script: script is destroyed
+2025-11-19 14:14:39,143 | INFO | [MainController] Injection state: stopped

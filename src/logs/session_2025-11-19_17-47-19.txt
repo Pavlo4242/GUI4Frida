@@ -1,0 +1,44 @@
+2025-11-19 17:47:21,508 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 17:47:21,781 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 17:47:23,926 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 17:47:23,936 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 17:47:27,480 | INFO | [MainController] Process selected: PID 10762 on 127.0.0.1:58526
+2025-11-19 17:47:37,994 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 17:47:37,995 | INFO | [MainController] Injection state: injecting
+2025-11-19 17:47:38,025 | INFO | [InjectionController] Spawning org.mozilla.firefox...
+2025-11-19 17:47:38,221 | INFO | [InjectionController] Attaching to spawned PID 11576...
+2025-11-19 17:47:38,485 | INFO | [InjectionController] Creating script for spawned process...
+2025-11-19 17:47:38,487 | INFO | [InjectionController] Loading script...
+2025-11-19 17:47:38,488 | INFO | [*] Starting comprehensive SSL/HSTS bypass script
+2025-11-19 17:47:38,531 | INFO | [-] TrustManager bypass failed: Error: checkTrusted(): has more than one overload, use .overload(<signature>) to choose from:
+	.overload('[Ljava.security.cert.X509Certificate;', 'java.lang.String', 'javax.net.ssl.SSLSession', 'javax.net.ssl.SSLParameters', 'boolean')
+	.overload('[Ljava.security.cert.X509Certificate;', '[B', '[B', 'java.lang.String', 'java.lang.String', 'boolean')
+2025-11-19 17:47:38,531 | INFO | [-] OkHttp bypass failed: Error: java.lang.ClassNotFoundException: okhttp3.CertificatePinner
+2025-11-19 17:47:38,533 | INFO | [*] Using legacy TrustManager bypass
+2025-11-19 17:47:38,533 | INFO | [*] All bypass hooks loaded. Launch app and check proxy traffic.
+2025-11-19 17:47:38,533 | INFO | [MainController] Injection state: running
+2025-11-19 17:47:38,533 | INFO | [MainController] Injection succeeded
+2025-11-19 17:47:38,534 | INFO | [InjectionController] Resuming application...
+2025-11-19 17:47:38,535 | INFO | [InjectionController] Spawn and injection successful
+2025-11-19 17:47:38,558 | INFO | [+] Bypassing root check: /data/user/0/org.mozilla.firefox/shared_prefs/mozac_support_base_locale_manager_preference.xml.bak
+2025-11-19 17:47:38,559 | INFO | [+] Bypassing root check: /data/user/0/org.mozilla.firefox/shared_prefs/mozac_support_base_locale_manager_preference.xml
+2025-11-19 17:47:39,818 | INFO | [+] Bypassing root check: /sbin/su
+2025-11-19 17:47:39,820 | INFO | [+] Bypassing root check: /data/local/xbin/su
+2025-11-19 17:47:39,830 | INFO | [+] Bypassing root check: /system/bin/su
+2025-11-19 17:47:39,832 | INFO | [+] Bypassing root check: /system/xbin/su
+2025-11-19 17:47:39,832 | INFO | [+] Bypassing root check: /data/local/bin/su
+2025-11-19 17:47:39,834 | INFO | [+] Bypassing root check: /system/sd/xbin/su
+2025-11-19 17:47:39,838 | INFO | [+] Bypassing root check: /system/bin/failsafe/su
+2025-11-19 17:47:39,840 | INFO | [+] Bypassing root check: /data/local/su
+2025-11-19 17:47:39,840 | INFO | [+] Bypassing root check: /su/bin/su
+2025-11-19 17:47:39,840 | INFO | [+] Bypassing root check: /su/bin
+2025-11-19 17:47:39,843 | INFO | [+] Bypassing root check: /system/xbin/daemonsu
+2025-11-19 18:05:32,204 | INFO | [+] Bypassing root check: /data/user/0/org.mozilla.firefox/shared_prefs/mozac_support_base_shared_ids_helper.xml.bak
+2025-11-19 18:05:32,204 | INFO | [+] Bypassing root check: /data/user/0/org.mozilla.firefox/shared_prefs/mozac_support_base_shared_ids_helper.xml
+2025-11-19 18:05:32,304 | INFO | [+] Bypassing root check: /data/user/0/org.mozilla.firefox/shared_prefs/mozac_support_base_shared_ids_helper.xml
+2025-11-19 18:08:57,419 | INFO | [+] Bypassing root check: /data/user/0/org.mozilla.firefox/shared_prefs/mozac_support_base_shared_ids_helper.xml
+2025-11-19 18:08:59,956 | INFO | [InjectionController] Session detached: process-terminated
+2025-11-19 18:08:59,957 | INFO | [MainController] Injection state: stopping
+2025-11-19 18:08:59,958 | INFO | [StopScriptWorker] Error unloading script: script is destroyed
+2025-11-19 18:08:59,964 | INFO | [MainController] Injection state: stopped
+2025-11-19 18:11:57,208 | INFO | Fetching script from: https://codeshare.frida.re/@fdciabdul/frida-multiple-bypass

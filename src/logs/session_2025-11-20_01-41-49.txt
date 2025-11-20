@@ -1,0 +1,87 @@
+2025-11-20 01:41:52,488 | INFO | [MainController] Device selected: R94XC0N5S9E
+2025-11-20 01:41:54,943 | INFO | [MainController] Process selected: PID 3206 on R94XC0N5S9E
+2025-11-20 01:41:59,801 | INFO | [MainController] Process selected: PID 864 on R94XC0N5S9E
+2025-11-20 01:41:59,879 | INFO | [MainController] Process selected: PID 866 on R94XC0N5S9E
+2025-11-20 01:42:01,548 | INFO | [MainController] Process selected: PID 864 on R94XC0N5S9E
+2025-11-20 01:42:01,716 | INFO | [MainController] Process selected: PID 3206 on R94XC0N5S9E
+2025-11-20 01:42:02,700 | INFO | [MainController] Process selected: PID 9441 on R94XC0N5S9E
+2025-11-20 01:42:02,813 | INFO | [MainController] Process selected: PID 9441 on R94XC0N5S9E
+2025-11-20 01:42:03,112 | INFO | [MainController] Process selected: PID 907 on R94XC0N5S9E
+2025-11-20 01:42:03,945 | INFO | [MainController] Process selected: PID 10644 on R94XC0N5S9E
+2025-11-20 01:42:17,958 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:42:18,862 | INFO | [InjectionController] Attaching to PID 10644...
+2025-11-20 01:42:18,880 | INFO | [InjectionController] Creating script...
+2025-11-20 01:42:18,895 | INFO | [InjectionController] Injection failed: script(line 59): SyntaxError: unexpected token in expression: ''
+2025-11-20 01:42:18,895 | INFO | [MainController] Injection state: idle
+2025-11-20 01:42:18,896 | INFO | [MainController] Injection failed: script(line 59): SyntaxError: unexpected token in expression: ''
+2025-11-20 01:42:36,246 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:42:37,159 | INFO | [InjectionController] Attaching to PID 10644...
+2025-11-20 01:42:37,167 | INFO | [InjectionController] Creating script...
+2025-11-20 01:42:37,178 | INFO | [InjectionController] Injection failed: script(line 59): SyntaxError: unexpected token in expression: ''
+2025-11-20 01:42:37,178 | INFO | [MainController] Injection state: idle
+2025-11-20 01:42:37,179 | INFO | [MainController] Injection failed: script(line 59): SyntaxError: unexpected token in expression: ''
+2025-11-20 01:43:09,707 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:43:10,614 | INFO | [InjectionController] Attaching to PID 10644...
+2025-11-20 01:43:10,622 | INFO | [InjectionController] Creating script...
+2025-11-20 01:43:10,632 | INFO | [InjectionController] Injection failed: script(line 41): SyntaxError: unexpected end of string
+2025-11-20 01:43:10,633 | INFO | [MainController] Injection state: idle
+2025-11-20 01:43:10,633 | INFO | [MainController] Injection failed: script(line 41): SyntaxError: unexpected end of string
+2025-11-20 01:43:49,859 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:43:50,736 | INFO | [InjectionController] Attaching to PID 10644...
+2025-11-20 01:43:50,741 | INFO | [InjectionController] Creating script...
+2025-11-20 01:43:50,765 | INFO | [InjectionController] Loading script...
+2025-11-20 01:43:50,777 | INFO | [MainController] Injection state: running
+2025-11-20 01:43:50,778 | INFO | [MainController] Injection succeeded
+2025-11-20 01:43:50,779 | INFO | [InjectionController] Script injected successfully
+2025-11-20 01:44:32,112 | INFO | [MainController] Injection state: stopping
+2025-11-20 01:44:32,136 | INFO | [InjectionController] Session detached: application-requested
+2025-11-20 01:44:32,139 | INFO | [MainController] Injection state: stopped
+2025-11-20 01:44:41,667 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:44:42,533 | INFO | [InjectionController] Attaching to PID 10644...
+2025-11-20 01:44:42,540 | INFO | [InjectionController] Creating script...
+2025-11-20 01:44:42,554 | INFO | [InjectionController] Loading script...
+2025-11-20 01:44:42,566 | INFO | [MainController] Injection state: running
+2025-11-20 01:44:42,567 | INFO | [MainController] Injection succeeded
+2025-11-20 01:44:42,567 | INFO | [InjectionController] Script injected successfully
+2025-11-20 01:45:00,116 | INFO | [MainController] Injection state: stopping
+2025-11-20 01:45:00,141 | INFO | [InjectionController] Session detached: application-requested
+2025-11-20 01:45:00,142 | INFO | [MainController] Injection state: stopped
+2025-11-20 01:45:02,178 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:45:03,053 | INFO | [InjectionController] Attaching to PID 10644...
+2025-11-20 01:45:03,061 | INFO | [InjectionController] Creating script...
+2025-11-20 01:45:03,075 | INFO | [InjectionController] Loading script...
+2025-11-20 01:45:03,087 | INFO | [MainController] Injection state: running
+2025-11-20 01:45:03,087 | INFO | [MainController] Injection succeeded
+2025-11-20 01:45:03,088 | INFO | [InjectionController] Script injected successfully
+2025-11-20 01:45:25,503 | INFO | [MainController] Injection state: stopping
+2025-11-20 01:45:25,525 | INFO | [InjectionController] Session detached: application-requested
+2025-11-20 01:45:25,526 | INFO | [MainController] Injection state: stopped
+2025-11-20 01:45:26,173 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:45:27,059 | INFO | [InjectionController] Attaching to PID 10644...
+2025-11-20 01:45:27,071 | INFO | [InjectionController] Creating script...
+2025-11-20 01:45:27,084 | INFO | [InjectionController] Loading script...
+2025-11-20 01:45:27,096 | INFO | [MainController] Injection state: running
+2025-11-20 01:45:27,096 | INFO | [MainController] Injection succeeded
+2025-11-20 01:45:27,097 | INFO | [InjectionController] Script injected successfully
+2025-11-20 01:45:51,767 | INFO | [MainController] Injection state: stopping
+2025-11-20 01:45:51,789 | INFO | [InjectionController] Session detached: application-requested
+2025-11-20 01:45:51,790 | INFO | [MainController] Injection state: stopped
+2025-11-20 01:45:56,289 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:45:57,158 | INFO | [InjectionController] Attaching to PID 10644...
+2025-11-20 01:45:57,165 | INFO | [InjectionController] Creating script...
+2025-11-20 01:45:57,176 | INFO | [InjectionController] Injection failed: script(line 9): SyntaxError: expecting ';'
+2025-11-20 01:45:57,176 | INFO | [MainController] Injection state: idle
+2025-11-20 01:45:57,177 | INFO | [MainController] Injection failed: script(line 9): SyntaxError: expecting ';'
+2025-11-20 01:46:12,908 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:46:13,793 | INFO | [InjectionController] Attaching to PID 10644...
+2025-11-20 01:46:13,801 | INFO | [InjectionController] Creating script...
+2025-11-20 01:46:13,810 | INFO | [InjectionController] Injection failed: script(line 9): SyntaxError: expecting ';'
+2025-11-20 01:46:13,810 | INFO | [MainController] Injection state: idle
+2025-11-20 01:46:13,810 | INFO | [MainController] Injection failed: script(line 9): SyntaxError: expecting ';'
+2025-11-20 01:46:21,833 | INFO | [MainController] Injection state: injecting
+2025-11-20 01:46:22,697 | INFO | [InjectionController] Attaching to PID 10644...
+2025-11-20 01:46:22,704 | INFO | [InjectionController] Creating script...
+2025-11-20 01:46:22,713 | INFO | [InjectionController] Injection failed: script(line 9): SyntaxError: expecting ';'
+2025-11-20 01:46:22,713 | INFO | [MainController] Injection state: idle
+2025-11-20 01:46:22,713 | INFO | [MainController] Injection failed: script(line 9): SyntaxError: expecting ';'
+2025-11-20 01:47:04,148 | INFO | Fetching script from: https://codeshare.frida.re/@fdciabdul/frida-multiple-bypass

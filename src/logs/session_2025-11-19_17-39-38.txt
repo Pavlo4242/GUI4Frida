@@ -1,0 +1,71 @@
+2025-11-19 17:39:41,447 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 17:39:41,719 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 17:39:48,194 | INFO | [MainController] Process selected: PID 5127 on 127.0.0.1:58526
+2025-11-19 17:39:51,353 | INFO | [MainController] Injection state: injecting
+2025-11-19 17:39:51,383 | INFO | [InjectionController] Attaching to PID 5127...
+2025-11-19 17:39:51,673 | INFO | [InjectionController] Creating script...
+2025-11-19 17:39:51,677 | INFO | [InjectionController] Loading script...
+2025-11-19 17:39:51,679 | INFO | [MainController] Injection state: running
+2025-11-19 17:39:51,679 | INFO | [MainController] Injection succeeded
+2025-11-19 17:39:51,682 | INFO | [InjectionController] Script injected successfully
+2025-11-19 17:39:51,706 | INFO | ======
+2025-11-19 17:39:51,706 | INFO | [#] Android Bypass for various Certificate Pinning methods [#]
+2025-11-19 17:39:51,707 | INFO | ======
+2025-11-19 17:39:51,733 | INFO | [-] OkHTTPv3 {1} pinner not found
+2025-11-19 17:39:51,733 | INFO | [-] OkHTTPv3 {2} pinner not found
+2025-11-19 17:39:51,734 | INFO | [-] OkHTTPv3 {3} pinner not found
+2025-11-19 17:39:51,734 | INFO | [-] OkHTTPv3 {4} pinner not found
+2025-11-19 17:39:51,734 | INFO | [-] Trustkit {1} pinner not found
+2025-11-19 17:39:51,735 | INFO | [-] Trustkit {2} pinner not found
+2025-11-19 17:39:51,735 | INFO | [-] Trustkit {3} pinner not found
+2025-11-19 17:39:51,737 | INFO | [-] Appcelerator PinningTrustManager pinner not found
+2025-11-19 17:39:51,737 | INFO | [-] Fabric PinningTrustManager pinner not found
+2025-11-19 17:39:51,738 | INFO | [-] OpenSSLSocketImpl Conscrypt {1} pinner not found
+2025-11-19 17:39:51,738 | INFO | [-] OpenSSLSocketImpl Conscrypt {2} pinner not found
+2025-11-19 17:39:51,739 | INFO | [-] OpenSSLEngineSocketImpl Conscrypt pinner not found
+2025-11-19 17:39:51,739 | INFO | [-] OpenSSLSocketImpl Apache Harmony pinner not found
+2025-11-19 17:39:51,739 | INFO | [-] PhoneGap sslCertificateChecker pinner not found
+2025-11-19 17:39:51,740 | INFO | [-] IBM MobileFirst pinTrustedCertificatePublicKey {1} pinner not found
+2025-11-19 17:39:51,740 | INFO | [-] IBM MobileFirst pinTrustedCertificatePublicKey {2} pinner not found
+2025-11-19 17:39:51,740 | INFO | [-] IBM WorkLight HostNameVerifierWithCertificatePinning {1} pinner not found
+2025-11-19 17:39:51,741 | INFO | [-] IBM WorkLight HostNameVerifierWithCertificatePinning {2} pinner not found
+2025-11-19 17:39:51,741 | INFO | [-] IBM WorkLight HostNameVerifierWithCertificatePinning {3} pinner not found
+2025-11-19 17:39:51,741 | INFO | [-] IBM WorkLight HostNameVerifierWithCertificatePinning {4} pinner not found
+2025-11-19 17:39:51,742 | INFO | [-] Conscrypt CertPinManager (Legacy) pinner not found
+2025-11-19 17:39:51,742 | INFO | [-] CWAC-Netsecurity CertPinManager pinner not found
+2025-11-19 17:39:51,742 | INFO | [-] Worklight Androidgap WLCertificatePinningPlugin pinner not found
+2025-11-19 17:39:51,743 | INFO | [-] Netty FingerprintTrustManagerFactory pinner not found
+2025-11-19 17:39:51,743 | INFO | [-] Squareup CertificatePinner {1} pinner not found
+2025-11-19 17:39:51,743 | INFO | [-] Squareup CertificatePinner {2} pinner not found
+2025-11-19 17:39:51,744 | INFO | [-] Squareup OkHostnameVerifier check not found
+2025-11-19 17:39:51,744 | INFO | [-] Squareup OkHostnameVerifier check not found
+2025-11-19 17:39:51,745 | INFO | [-] Android WebViewClient {3} check not found
+2025-11-19 17:39:51,745 | INFO | [-] Apache Cordova WebViewClient check not found
+2025-11-19 17:39:51,746 | INFO | [-] Boye AbstractVerifier check not found
+2025-11-19 17:39:51,747 | INFO | [-] Chromium Cronet pinner not found
+2025-11-19 17:39:51,748 | INFO | [-] Flutter HttpCertificatePinning pinner not found
+2025-11-19 17:39:51,748 | INFO | [-] Flutter SslPinningPlugin pinner not found
+2025-11-19 17:40:12,610 | INFO | [InjectionController] Session detached: process-terminated
+2025-11-19 17:40:12,611 | INFO | [MainController] Injection state: stopping
+2025-11-19 17:40:12,612 | INFO | [StopScriptWorker] Error unloading script: script is destroyed
+2025-11-19 17:40:12,618 | INFO | [MainController] Injection state: stopped
+2025-11-19 17:40:32,967 | INFO | Fetching script from: https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida
+2025-11-19 17:41:04,952 | INFO | [MainController] Injection state: injecting
+2025-11-19 17:41:04,984 | INFO | [InjectionController] Attaching to PID 5127...
+2025-11-19 17:41:04,985 | INFO | [InjectionController] Injection failed: process not found
+2025-11-19 17:41:04,986 | INFO | [MainController] Injection state: idle
+2025-11-19 17:41:04,986 | INFO | [MainController] Injection failed: process not found
+2025-11-19 17:41:08,075 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 17:41:08,084 | INFO | [MainController] Process selected: PID 359 on 127.0.0.1:58526
+2025-11-19 17:41:09,746 | INFO | [MainController] Process selected: PID 6772 on 127.0.0.1:58526
+2025-11-19 17:41:11,140 | INFO | [MainController] Injection state: injecting
+2025-11-19 17:41:11,172 | INFO | [InjectionController] Attaching to PID 6772...
+2025-11-19 17:41:11,474 | INFO | [InjectionController] Creating script...
+2025-11-19 17:41:11,476 | INFO | [InjectionController] Loading script...
+2025-11-19 17:41:11,477 | INFO | [MainController] Injection state: running
+2025-11-19 17:41:11,477 | INFO | [MainController] Injection succeeded
+2025-11-19 17:41:11,478 | INFO | [InjectionController] Script injected successfully
+2025-11-19 17:41:11,504 | INFO | [.] Cert Pinning Bypass/Re-Pinning
+2025-11-19 17:41:11,505 | INFO | [+] Loading our CA...
+2025-11-19 17:41:11,508 | INFO | [o] Error: java.io.FileNotFoundException: /data/local/tmp/cert-der.crt: open failed: ENOENT (No such file or directory)
+2025-11-19 17:45:06,517 | INFO | [InjectionController] Session detached: process-terminated

@@ -1,0 +1,33 @@
+2025-11-19 21:24:15,552 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:24:15,823 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:24:26,638 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 21:24:26,638 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:24:27,054 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 21:24:27,060 | INFO | [InjectionController] Spawn/Injection failed: remote_write PTRACE_POKEDATA head failed: 5
+2025-11-19 21:24:27,061 | INFO | [MainController] Injection state: idle
+2025-11-19 21:24:27,061 | INFO | [MainController] Injection failed: remote_write PTRACE_POKEDATA head failed: 5
+2025-11-19 21:25:44,821 | INFO | [MainController] Process selected: PID 0 on 127.0.0.1:58526
+2025-11-19 21:25:44,822 | INFO | [MainController] Injection state: injecting
+2025-11-19 21:25:45,231 | INFO | [InjectionController] Spawning com.reddit.frontpage...
+2025-11-19 21:25:45,237 | INFO | [InjectionController] Spawn/Injection failed: remote_write PTRACE_POKEDATA head failed: 5
+2025-11-19 21:25:45,238 | INFO | [MainController] Injection state: idle
+2025-11-19 21:25:45,238 | INFO | [MainController] Injection failed: remote_write PTRACE_POKEDATA head failed: 5
+2025-11-19 21:25:48,628 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:25:48,636 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:26:12,903 | INFO | [MainController] Process selected: PID 728 on 127.0.0.1:58526
+2025-11-19 21:26:12,990 | INFO | [MainController] Process selected: PID 255 on 127.0.0.1:58526
+2025-11-19 21:26:13,332 | INFO | [MainController] Process selected: PID 271 on 127.0.0.1:58526
+2025-11-19 21:26:19,824 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
+2025-11-19 21:26:20,154 | INFO | [MainController] Process selected: PID 259 on 127.0.0.1:58526
+2025-11-19 21:26:20,314 | INFO | [MainController] Process selected: PID 12834 on 127.0.0.1:58526
+2025-11-19 21:26:21,740 | INFO | [MainController] Process selected: PID 728 on 127.0.0.1:58526
+2025-11-19 21:26:21,846 | INFO | [MainController] Process selected: PID 63 on 127.0.0.1:58526
+2025-11-19 21:26:22,741 | INFO | [MainController] Process selected: PID 63 on 127.0.0.1:58526
+2025-11-19 21:26:22,894 | INFO | [MainController] Process selected: PID 728 on 127.0.0.1:58526
+2025-11-19 21:26:23,565 | INFO | [MainController] Process selected: PID 255 on 127.0.0.1:58526
+2025-11-19 21:26:23,721 | INFO | [MainController] Process selected: PID 271 on 127.0.0.1:58526
+2025-11-19 21:28:06,697 | INFO | [MainController] Device selected: 127.0.0.1:58526
+2025-11-19 21:28:06,707 | INFO | [MainController] Process selected: PID 271 on 127.0.0.1:58526
+2025-11-19 21:28:08,840 | INFO | [MainController] Process selected: PID 255 on 127.0.0.1:58526
+2025-11-19 21:28:09,347 | INFO | [MainController] Process selected: PID 728 on 127.0.0.1:58526
+2025-11-19 21:28:09,377 | INFO | [MainController] Process selected: PID 6895 on 127.0.0.1:58526
